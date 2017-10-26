@@ -1,0 +1,92 @@
+<HTML>
+<HEAD>
+<TITLE>Editor de Tabela de Financiamento 2</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function trunca(x){
+	var z=Math.round(x*10000000)/10000000;
+	return Math.floor(z*100)/100;
+}
+
+
+function num2str(x){
+	var z=String(x);
+	     if (z.length>0){
+		if(z.indexOf(".")==-1){
+			z=z+".00";
+            	}else{
+			if(z.indexOf(".")==(z.length-2)){
+				z=z+"0";
+			}
+		}
+ 	    }
+            return z;
+}
+
+
+
+function viewPage() {
+	view = window.open("", "tabela","menubar,resizable,scrollbars");
+	view.document.open("text/html");
+	txjuint=document.entradas.juroint.value;
+	nd=document.entradas.num.value;
+          	view.document.writeln("<center><H1>Taxa de Juros em Peíodos não Inteiros</H1>");
+         	view.document.writeln("<H2>Reginaldo J. Santos</H2>");
+         	view.document.writeln("<H3>Departamento de Matemática<br>");
+         	view.document.writeln("Instituto de Ciências Exatas<br>");
+         	view.document.writeln("Universidade Federal de Minas Gerais</H3>");
+            view.document.writeln("Taxa no Período Inteiro = "+txjuint+" % <br>");
+	view.document.writeln("Número de divisões = "+nd+"<br>");
+	view.document.writeln("</center>");
+   
+      view.document.writeln("<center><table BORDER CELLPADDING=2><tr>");
+      view.document.writeln("<td align=center><b>N</b></td><td align=center><b>Taxa</b></td>");
+      view.document.writeln("</tr>");
+            for (var i=1;i<=nd;i++){
+		txjui=Math.pow(1+txjuint/100,i/nd)-1;
+		txjui=trunca(txjui*100);
+		view.document.writeln("<tr>");
+      view.document.writeln("<td align=center>"+i+"</td><td align=right>"+num2str(txjui)+"</td>");
+		view.document.writeln("</tr>");
+	}
+	view.document.writeln("</table></center>");
+	view.document.write("<BR>"); // solves a bug
+      view.document.writeln("");
+      	view.document.close();
+}
+function viewSource() {
+	view = window.open("", "tabela","menubar,resizable,scrollbars");
+	view.document.open("text/plain")
+	view.document.write(document.entradas.body.value) // value of text area
+	view.document.close()
+}
+
+
+// -->
+</SCRIPT>
+</HEAD>
+<BODY >
+<FORM name="entradas">
+<CENTER>
+<TABLE BORDER=0 CELLPADDING=2>
+<TR><TD BGCOLOR="#ffffcc" colspan=2>
+<CENTER>
+<FONT SIZE=+2>Taxas em Períodos não Inteiros</FONT>
+</CENTER>
+</TD></TR>
+<tr>
+<td>Taxa no Período Inteiro: </td><td><input type="text" name="juroint" size=5 value="12"> % </input></td></tr><tr>
+<tr>
+<td>Número de divisões no Período: </td><td> <input type="text" name="num" size=10 value="12"></input></td></tr>
+<TR><TD BGCOLOR="#ffffcc" colspan=2>
+<CENTER>
+<INPUT TYPE="button" VALUE="Gerar Tabela" onClick="viewPage()">
+<INPUT TYPE="reset" VALUE="Apaga Tudo">
+</CENTER>
+</TD></TR>
+</TABLE>
+</CENTER>
+</FORM>
+</BODY>
+</HTML>

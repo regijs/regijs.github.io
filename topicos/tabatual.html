@@ -1,0 +1,124 @@
+<html>
+<title>Tabelas de Atualização Monetária</title>
+
+<script> 
+
+function trunca(x){
+	var z=Math.round(x*10000000)/10000000;
+	return Math.floor(z*100)/100;
+}
+
+function num2str(x){
+	var z=String(x);
+		if(z.indexOf(".")==-1){
+			z=z+".00";
+		}else{
+			if(z.indexOf(".")==(z.length-2)){
+				z=z+"0";
+            		}
+		}
+            return z;
+}
+
+
+function tabelafutu( ){
+
+	view = window.open("", "tabela","menubar,resizable,scrollbars");
+	view.document.open("text/html");
+	d0=document.entradas.saldo.value;
+	ju=document.entradas.txju.value;
+	n=parseInt(document.entradas.prazo.value);
+         	view.document.writeln("<center><H1>Tabela de Atualização Monetária</H1>");
+         	view.document.writeln("<H2>Reginaldo J. Santos</H2>");
+         	view.document.writeln("<H3>Departamento de Matemática<br>");
+         	view.document.writeln("Instituto de Ciências Exatas<br>");
+         	view.document.writeln("Universidade Federal de Minas Gerais</H3>");
+	view.document.writeln("Valor = R$ "+num2str(d0)+"<br>");
+	view.document.writeln("Taxa de Juros  = "+ju+" %<br>");
+	view.document.writeln(n+" períodos. ");
+	var xk=trunca(d0); 
+	var jk=trunca(0); 
+	ju/=100; 
+	var k=0;
+     view.document.writeln("<center><table BORDER CELLPADDING=2><tr>");
+      view.document.writeln("<td align=center><b>No.</b></td>");
+      view.document.writeln("<td align=center><b>Valor</b></td></tr>");
+	for (k=0; k<=n; k++){
+			xk=d0*Math.pow(1+ju,k);
+			xk=trunca(xk);
+			view.document.writeln("<tr><td align=right>"+k+"</td>");
+      			view.document.writeln("<td align=right>"+num2str(xk)+"</td></tr>");
+	}
+	view.document.writeln("</table></center>");
+	view.document.close;
+}
+
+function tabelaatual( ){
+
+	view = window.open("", "tabela","menubar,resizable,scrollbars");
+	view.document.open("text/html");
+	d0=document.entradas.saldo.value;
+	ju=document.entradas.txju.value;
+	n=parseInt(document.entradas.prazo.value);
+         	view.document.writeln("<center><H1>Tabela de Atualização Monetária</H1>");
+         	view.document.writeln("<H2>Reginaldo J. Santos</H2>");
+         	view.document.writeln("<H3>Departamento de Matemática<br>");
+         	view.document.writeln("Instituto de Ciências Exatas<br>");
+         	view.document.writeln("Universidade Federal de Minas Gerais</H3>");
+	view.document.writeln("Valor = R$ "+num2str(d0)+"<br>");
+	view.document.writeln("Taxa de Juros  = "+ju+" %<br>");
+	view.document.writeln(n+" períodos. ");
+	var xk=trunca(d0); 
+	var jk=trunca(0); 
+	ju/=100; 
+	var k=0;
+     view.document.writeln("<center><table BORDER CELLPADDING=2><tr>");
+      view.document.writeln("<td align=center><b>No.</b></td>");
+      view.document.writeln("<td align=center><b>Valor</b></td></tr>");
+	for (k=0; k<=n; k++){
+			xk=d0*Math.pow(1+ju,k-n);
+			xk=trunca(xk);
+			view.document.writeln("<tr><td align=right>"+k+"</td>");
+      			view.document.writeln("<td align=right>"+num2str(xk)+"</td></tr>");
+	}
+	view.document.writeln("</table></center>");
+	view.document.close;
+}
+
+function viewtabela( ){
+	if (document.entradas.tab.selectedIndex==1){
+			tabelaatual();
+            }else{
+			tabelafutu();
+
+}
+
+}
+</script>
+
+<center>
+<H1>Tabelas de Atualização Monetária</H1>
+<H2>Reginaldo J. Santos</H2>
+<H3>Departamento de Matemática<br>
+Instituto de Ciências Exatas<br>
+Universidade Federal de Minas Gerais</H3>
+
+<H4>4 de outubro de 1999</H4>
+</center>
+<form action="" name="entradas" method="GET" onsubmit="return verifica()">
+
+<center>
+<table>
+<tr>
+<td>Valor <SELECT NAME="tab">
+<OPTION value="Atual" >Atual
+<OPTION value="Futuro">Futuro
+</SELECT>: </td><td>R$ <input type="text" name="saldo" size=10 value="129.00"></input></td></tr><tr>
+<td>Taxa de Juros: </td><td><input type="text" name="txju" size=4 value="4.85"> %</input></td></tr><tr>
+<td>No. de períodos: </td><td><input type="text" name="prazo" size=3 value="4"> </input></td></tr>
+</table>
+<input type="button" value="GERAR TABELA" onClick="viewtabela()"></input>
+</center>
+
+</form>
+</html>

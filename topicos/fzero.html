@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+
+<HEAD>
+<TITLE>Find a Zero</TITLE>
+<META NAME="GENERATOR" CONTENT="Arachnophilia 3.5">
+<META NAME="FORMATTER" CONTENT="Arachnophilia 3.5">
+</HEAD>
+
+<BODY BACKGROUND="" BGCOLOR="#ffffff" TEXT="#000000" LINK="#0000ff" VLINK="#800080" ALINK="#ff0000">
+
+
+
+</BODY>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- ;
+
+function calcula( ){
+	view = window.open("", "tabela");
+	view.document.open("text/html");
+
+	view.document.writeln("<center><b>Iterações:</b></center>");
+	fzero(document.entradas.func.value,document.entradas.dfunc.value,document.entradas.valor.value);
+	view.document.close;
+}
+
+function trunca(x){
+	var z=Math.round(x*1000000000000)/1000000000000;
+	return Math.floor(z*100000)/100000;
+}
+
+
+function num2str(x){
+	var z=String(x);
+	if (navigator.appVersion.charAt(0)=="4"){
+		if(z.indexOf(".")==-1){
+			z=z.concat(".00000");
+		}else{
+			if(z.indexOf(".")==(z.length-2)){
+				z=z.concat("0000");
+            		}
+			if(z.indexOf(".")==(z.length-3)){
+				z=z.concat("000");
+            		}
+			if(z.indexOf(".")==(z.length-4)){
+				z=z.concat("00");
+            		}
+			if(z.indexOf(".")==(z.length-5)){
+				z=z.concat("0");
+            		}
+		}
+	}
+            return z;
+}
+
+
+function feval(fun,x){
+	with (Math) {
+		return eval(fun);
+	}
+}
+
+
+function fzero(f,df,x){
+
+var tol=0.00001;
+var k=0;
+view.document.writeln("<center><table BORDER CELLPADDING=2><tr>");
+view.document.writeln("<td align=center><b>Iter. k</b></td><td align=center><b>Valor de xk </b></td></tr>");
+view.document.writeln("<tr><td align=right>"+k+"</td><td align=right>"+num2str(x)+"</td></tr>");
+var xnew=x-feval(f,x)/feval(df,x);
+xnew=trunca(xnew);
+k+=1;
+view.document.writeln("<tr><td align=right>"+k+"</td><td align=right>"+num2str(xnew)+"</td></tr>");
+
+while ( (Math.abs(xnew-x)>tol) && (k<20) ) {
+	k+=1;
+	x=xnew;
+	xnew=x-feval(f,x)/feval(df,x);
+	xnew=trunca(xnew);
+	view.document.writeln("<tr><td align=right>"+k+"</td><td align=right>"+num2str(xnew)+"</td></tr>");
+}
+view.document.writeln("</table></center>");
+return 
+ } 
+
+// end hide -->
+</SCRIPT>
+
+<form action="" name="entradas" method="GET" onsubmit="return verifica()">
+<center><b>Dados para o Método de Newton</b>
+<br>
+<table>
+<tr>
+<td>Função: </td> <td><input type="text" name="func" size=70 value="(1-pow(1+x,-4))*36.25/x-129"></input></td></tr>
+<tr>
+<td>Derivada:</td><td><input type="text" name="dfunc" size=70 value="36.25*(4*pow(1+x,-5)/x-(1-pow(1+x,-4))/(x*x))"></input></td></tr>
+<tr>
+<td>Valor Inicial:</td><td><input type="text" name="valor" size=5 value="0.01"></input></td></tr>
+</table>
+
+<input type="button" value="GERAR ITERAÇÕES" onClick="calcula()"></input>
+</center>
+
+</form>
+
+
+</HTML>

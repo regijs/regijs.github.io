@@ -1,0 +1,832 @@
+\tthdump{\chapter{Matemática Financeira com o MATLAB}}
+%%tth:\def\latexhtml#1#2{\special{html:#2}}
+%%tth:\def\eqc#1{\begin{center}\setlength{\unitlength}{1pt}\begin{picture}(50,12)\put(0,0){\large$\displaystyle #1$}\end{picture}\end{center}}
+%%tth:\def\eq#1{\setlength{\unitlength}{1pt}\begin{picture}(10,12)\put(0,0){\large$\displaystyle #1$}\end{picture}}
+%%tth:\def\eqn#1#2{\begin{center}\eq{\displaystyle #2}\end{center}\begin{equation}\label{#1}\end{equation}}
+%%tth:\def\hyperref#1#2{\special{html:<A href="\##2">#1</A>}}
+%%tth:\def\hyperpageref#1#2{\special{html:<A href="\##2">#1</A>}}
+
+%%tth:\begin{html}<title>Matemática Financeira Interativa</title>\end{html}
+%%tth:\title{Matemática Financeira Interativa
+%%tth:        }
+%%tth:\author{Reginaldo J. Santos\\
+%%tth:        Departamento de Matemática\\
+%%tth:        Instituto de Ciências Exatas\\
+%%tth:        Universidade Federal de Minas Gerais\\
+%%tth:        \href{http://www.mat.ufmg.br/~regi}
+%%tth:        {\texttt{http://www.mat.ufmg.br/\~{}regi}}
+%%tth:        }
+%%tth:\begin{center}
+%%tth:\begin{html}<script>document.write("This page was last modified on : ",document.lastModified);</script>\end{html}
+%%tth:\end{center}
+%%tth:{\LARGE Conteúdo}
+%%tth:
+%%tth:\contentsline {section}{\numberline {1}Série de Pagamentos Iguais}{44}
+%%tth:\contentsline {subsection}{\numberline {1.1}Valor Futuro e Valor Presente de uma Quantia}{44}
+%%tth:\contentsline {subsection}{\numberline {1.2}Períodos não Inteiros - Taxas Equivalentes}{45}
+%%tth:\contentsline {subsection}{\numberline {1.3}Valor Futuro e Valor Presente de uma Série de Pagamentos Iguais}{45}
+%%tth:\contentsline {section}{\numberline {2}Sistema de Financiamento com Prestações Constantes}{46}
+%%tth:\contentsline {subsection}{\numberline {2.1}Sem Entrada}{47}
+%%tth:\contentsline {subsection}{\numberline {2.2}Com Entrada}{48}
+%%tth:\contentsline {section}{\numberline {3}Sistema de Financiamento com Amortizações Constantes}{50}
+%%tth:\contentsline {subsection}{\numberline {3.1}Tabela de Amortização}{50}
+%%tth:\contentsline {section}{\numberline {4}Sistemas de Financiamento Habitacional da CEF}{51}
+%%tth:\contentsline {subsection}{\numberline {4.1}Tabela SACRE}{51}
+%%tth:\contentsline {subsection}{\numberline {4.2}Tabela Price}{52}
+%%tth:\contentsline {section}{\numberline {5}Páginas Interativas}{}
+\def\tila{a'} \def\tilj{j'}
+
+\latexhtml{}{
+ <script>
+function tabatual(){
+        window.open("tabatual.html","tabatual",
+        "height=450,width=600,resizable,scrollbars,alwaysRaised,parent")
+}
+function tabpenin(){
+        window.open("tabpenin.html","tabpenin",
+        "height=450,width=600,resizable,scrollbars,alwaysRaised,parent")
+}
+function tabamor1(){
+        window.open("tabamor1.html","tabamor",
+        "height=450,width=600,resizable,scrollbars,alwaysRaised,parent")
+}
+function tabretir(){
+        window.open("tabretir.html","tabretir",
+        "height=450,width=600,resizable,scrollbars,alwaysRaised,parent")
+}
+function tabserie(){
+        window.open("tabserie.html","tabserie",
+        "height=450,width=600,resizable,scrollbars,alwaysRaised,parent")
+}
+function tabcef(){
+        window.open("tabcef.html","tabcef",
+        "height=450,width=600,resizable,scrollbars,alwaysRaised,parent")
+}
+function tabcef2(){
+        window.open("tabcef2.html","tabcef2",
+        "height=500,width=600,resizable,scrollbars,alwaysRaised,parent")
+}
+function calcju(){
+        window.open("calcju.html","calcju",
+        "height=450,width=600,resizable,scrollbars,alwaysRaised,parent")
+}
+ </script>
+}
+
+
+\section{Série de Pagamentos Iguais}
+\subsection{Valor Futuro e Valor Presente de uma Quantia}
+Em um regime com uma taxa de juros $j$ por período
+(período aqui pode ser um mês, um ano, etc), o
+valor futuro de uma quantia $q_0$ depois de um período é
+igual a
+$$q_1=q_0 + j\cdot q_0=(1+j)q_0.$$
+Inversamente, se daqui a um período eu tenho uma quantia
+$q_1$, ela vale hoje, no presente,
+$$q_0=(1+j)^{-1}q_1$$
+
+Aplicando-se o raciocínio acima, sucessivas vezes, temos que, se no presente eu tenho
+uma quantia $q_0$, então no futuro, depois de $n$ períodos,
+a uma taxa de juros $j$ por período, esta quantia vai
+valer
+$$q_n=(1+j)^nq_0.$$
+
+Reciprocamente, se depois de $n$ períodos eu tenho uma
+quantia $q_n$, esta quantia vale hoje
+$$q_0=(1+j)^{-n}q_n.$$
+
+Escrevemos um programa que roda em uma página na web para
+fazer a atualização monetária de um valor, ou seja, se você sabe o valor de uma quantia hoje, o programa diz quanto ela valerá no futuro e inversamente, se você sabe o valor de uma quantia no futuro, ele diz quanto ela vale hoje.
+\href{javascript:tabatual()}{Clique aqui} para experimentar o
+programa.
+
+
+\hrule
+\tthdump{\medskip}
+\textbf{Exercício 1.} 
+Uma loja oferece duas opções de pagamento:
+à vista com 2\% de desconto ou em duas vezes,
+sem desconto, a primeira sendo paga no ato da compra.
+Qual a taxa de juros mensal que está embutido na
+venda a prazo?
+
+
+\hrule\tthdump{\medskip}
+\textbf{Exercício 2.}
+Investindo uma quantia $q$ (uma única vez!) a uma taxa de
+juros mensal de 1\% , em quanto tempo o seu capital dobrará?
+
+\hrule\tthdump{\medskip}
+
+\subsection{Períodos não Inteiros - Taxas
+Equivalentes}
+
+Se uma taxa de juros relativamente a um determinado período
+é $J$, então a taxa correspondente a uma fração $1/n$ deste
+período, ~$j$, é obtida da forma que descreveremos a seguir.
+Como já vimos, o valor futuro de uma quantia $q$ após o
+período inteiro é $$(1+J)q.$$ Por outro lado, o período
+inteiro é igual a $n$ subperíodos e se a taxa correspondente
+a um subperíodo é $j$, então o valor futuro de uma quantia
+$q$ após $n$ subperíodos é $$(1+j)^nq.$$ Portanto,
+$$(1+J)q=(1+j)^nq,$$
+ou seja, a taxa correspondente a um período $J$ e a taxa
+correspondente a uma fração $1/n$ deste período satisfazem
+$$1+J=(1+j)^n.$$
+Neste caso, as taxas $J$ e $j$ são ditas
+\textbf{equivalentes}.
+
+Portanto, se $J$ é a
+taxa de juros correspondente a um período inteiro, então
+a taxa, ~$j$, correspondente a uma fração $1/n$ deste
+período é dada por
+$$j=(1+J)^{1/n}-1.$$
+
+
+Escrevemos um programa que roda em uma página na web para
+fazer a atualização monetária de um valor em divisões de um período, ou seja, se você sabe o valor de uma quantia hoje, o programa diz quanto ela valerá no futuro em divisões de um período, no qual é conhecida a taxa de juros. \href{javascript:tabpenin()}{Clique aqui} para experimentar o
+programa.
+
+
+\tthdump{\medskip}\hrule\tthdump{\medskip}
+\textbf{Exercício 3.} 
+Se a taxa de juros de um cheque especial é de 10\% ao mês,
+qual é a taxa equivalente a um dia? Se o meu cheque especial
+fica negativo no valor de R\$ 300,00 por 3 dias quanto devo
+pagar de juro? (chamamos de \textbf{juro} a diferença entre
+o valor futuro e o valor presente de uma quantia)
+\hrule\tthdump{\medskip}
+\textbf{Exercício 4.}
+Se em um financiamento está escrito que a taxa de juros
+\textbf{nominal} anual é de 12\% , isto significa que a
+taxa mensal é igual a 1 \% . Outra forma, é dizer que a taxa
+é de 12\% ao ano com capitalização mensal. Qual é a taxa de
+juros
+\textbf{real} anual neste caso?
+
+\hrule\tthdump{\medskip}
+\subsection{Valor
+Futuro e Valor Presente de uma Série de Pagamentos Iguais}
+
+Suponha que depositamos todo mês uma quantia fixa $p$ numa
+caderneta de poupança que remunera a uma taxa fixa mensal
+igual $j$. Qual será o saldo após $n$ meses?
+
+\begin{center}
+\setlength{\unitlength}{1mm}
+\begin{picture}(70,25)
+\put(0,5){\line(1,0){70}}% linha horizontal
+\put(-0.5,0){0}
+\put(0,3){\vector(0,1){8}}
+\put(0,5){\circle*{0.7}}
+\put(-0.5,13){$p$}
+\put(9.5,0){1}
+\put(10,3){\vector(0,1){8}}
+\put(10,5){\circle*{0.7}}
+\put(9.5,13){$p$}
+\put(19.5,0){2}
+\put(20,3){\vector(0,1){8}}
+\put(20,5){\circle*{0.7}}
+\put(38,0){$\cdots$}
+\put(19.5,13){$p$}
+\put(59,0){$n-1$}
+\put(60,3){\vector(0,1){8}}
+\put(60,5){\circle*{0.7}}
+\put(59.5,13){$p$}
+\end{picture}
+\end{center}
+
+Após o primeiro mês, o saldo é de $(1+j)p$ mais o depósito
+do segundo mês $p$.  Após o segundo mês, o saldo é de
+$(1+j)^2p + (1+j)p$ mais o depósito do segundo mês $p$. E assim por diante, após $n$ meses
+o saldo é
+$$
+s_n=(1+j)^np + (1+j)^{(n-1)}p + \cdots + (1+j)p
+$$
+Assim, o saldo em $n$ meses após
+$n$ pagamentos iguais a $p$ é dado por uma soma de uma progressão geométrica, que é dada por
+$$s_n=(1+j)\frac{(1+j)^n-1}{j}p$$
+
+
+Escrevemos um programa que roda em uma página na web que dá o valor desta soma, ou seja, se você fornece o valor do depósito por período, o programa diz qual o saldo após $n$ períodos e inversamente, se você fornece o saldo após $n$ períodos, ele diz quanto deverá ser o valor do depósito por período para que em $n$ períodos se alcance aquele saldo.
+\href{javascript:tabserie()}{Clique aqui} para experimentar o
+programa.
+
+
+\hrule\tthdump{\medskip}
+\textbf{Exercício 5.} Suponha que uma pessoa deposite mensalmente 10 \% de seu salário numa caderneta de poupança, que rende 1 \% ao mês, pensando em se aposentar em 20 anos. Quantos salários ela terá disponível após este período? 
+
+\tthdump{\medskip}\hrule\tthdump{\medskip}
+
+\medskip
+Suponha, agora, que eu tenha uma caderneta de poupança, que rende juros mensais $j$, com um saldo inicial $s_0$ e que todo mês eu faça um retirada de $p$. Após a retirada do primeiro mês, o saldo será $s_1=(1+j)s_0-p$. Após a retirada do segundo mês, o saldo será de $s_2=(1+j)s_1-p=(1+j)^2s_0-[(1+j)p+p]$. Após a retirada do $n$-ésimo mês o saldo será 
+$$s_n=(1+j)^ns_0 - [(1+j)^{n-1}+\ldots+(1+j)p+p].$$
+ou seja,
+$$s_n=(1+j)^ns_0 - \frac{(1+j)^n-1}{j}p.$$
+
+Se após $n$ mêses o saldo é igual a zero, então o valor da retirada, $p$, deve ser
+
+$$p=\frac{j}{1-(1+j)^{-n}}s_0.$$
+
+
+Escrevemos um programa que roda em uma página na web que dá o saldo após cada retirada, ou seja, se você fornece o valor do saldo inicial e a taxa de juros, o programa diz o valor da retirada mensal e o saldo após cada retirada para que após $n$ períodos o saldo seja igual a zero. \href{javascript:tabretir()}{Clique aqui} para experimentar o
+programa.
+
+
+
+\hrule\tthdump{\medskip}
+\textbf{Exercício 6.}
+Se após anos de depósitos em uma caderneta de poupança, que rende 1\% ao mês, uma pessoa conseguiu um saldo igual a 100 salários seus. Quanto tempo este saldo poderá pagar a sua aposentadoria integral?
+
+
+\tthdump{\medskip}\hrule\tthdump{\medskip}
+
+
+\medskip
+Agora, vamos considerar o problema de um financiamento de
+uma quantia $q$ em $n$ parcelas iguais a $p$, a uma taxa de
+juros por período igual a ~$j$.
+
+\begin{center}
+\setlength{\unitlength}{1mm}
+\begin{picture}(70,25)
+\put(0,5){\line(1,0){70}}% linha horizontal
+\put(-0.5,0){0}
+% \put(0,3){\vector(0,1){8}}
+\put(0,5){\circle*{0.7}}
+% \put(-0.5,12){\scriptsize $p$}
+\put(9.5,0){1}
+\put(10,3){\vector(0,1){8}}
+\put(10,5){\circle*{0.7}}
+\put(9.5,13){$p$}
+\put(19.5,0){2}
+\put(20,3){\vector(0,1){8}}
+\put(20,5){\circle*{0.7}}
+\put(38,0){$\cdots$}
+\put(19.5,13){$p$}
+\put(59.5,0){$n$}
+\put(60,3){\vector(0,1){8}}
+\put(60,5){\circle*{0.7}}
+\put(59.5,13){$p$}
+\end{picture}
+\end{center}
+
+Para determinarmos o valor atual $q$, correspondente a uma
+série de pagamentos iguais a $p$, vamos
+considerar todos os pagamentos no instante zero.
+A primeira parcela vale $(1+j)^{-1}p$ no instante zero.
+A segunda parcela vale $(1+j)^{-2}p$, a terceira,
+$(1+j)^{-3}p$ e assim por diante. A $n$-ésima parcela
+vale no instante zero $(1+j)^{-n}p$. Assim,
+$$q=(1+j)^{-1}p + (1+j)^{-2}p + \cdots + (1+j)^{-n}p.$$
+Assim, uma série de pagamentos
+iguais a $p$, num regime de juros $j$ por período,
+corresponde a um valor à vista é o resultado de uma soma de uma progressão geométrica, que é dada por
+$$q=\frac{1-(1+j)^{-n}}{j}p$$
+
+\hrule\tthdump{\medskip}
+\textbf{Exercício 7.} 
+\hrule\tthdump{\medskip}
+\textbf{Exercício 8.}
+Um telefone sem fio é vendido por uma
+loja em duas opções: 9 $\times$ R\$ 24,70 (com entrada) ou R\$ 168,00 à
+vista. Se você tem a opção de aplicar o seu dinheiro a uma
+taxa de juros mensal de 1\% , qual a forma de pagamento mais
+vantajosa neste caso. Justifique. (Sugestão: calcule o valor atual das
+nove parcelas (1+8) num regime de taxa de juros de 1\% ao mês e
+compare com o valor à vista.)
+\tthdump{\medskip}\hrule\tthdump{\medskip}
+
+\section{Sistema de Financiamento com Presta\c c\~oes Constantes}
+
+Este sistema de financiamento é conhecido como
+\textbf{Sistema Francês} ou \textbf{Tabela Price}.
+
+\subsection{Sem Entrada}
+Como já vimos na seção anterior, se uma quantia $q$ é
+financiada em $n$ parcelas iguais a $p$, a uma taxa de juros
+por período igual a $j$, então
+\begin{equation}\label{qsentr}
+q=\frac{1-(1+j)^{-n}}{j}p
+\end{equation}
+
+\begin{center}
+\setlength{\unitlength}{1mm}
+\begin{picture}(70,25)
+\put(0,5){\line(1,0){70}}% linha horizontal
+\put(-0.5,0){0}
+% \put(0,3){\vector(0,1){8}}
+\put(0,5){\circle*{0.7}}
+% \put(-0.5,12){\scriptsize $p$}
+\put(9.5,0){1}
+\put(10,3){\vector(0,1){8}}
+\put(10,5){\circle*{0.7}}
+\put(9.5,13){$p$}
+\put(19.5,0){2}
+\put(20,3){\vector(0,1){8}}
+\put(20,5){\circle*{0.7}}
+\put(38,0){$\cdots$}
+\put(19.5,13){$p$}
+\put(59.5,0){$n$}
+\put(60,3){\vector(0,1){8}}
+\put(60,5){\circle*{0.7}}
+\put(59.5,13){$p$}
+\end{picture}
+\end{center}
+
+\hrule\tthdump{\medskip}
+\textbf{Exercício 9.} Mostre que se uma quantia $q$ é financiada em $n$ parcelas
+iguais a $p$, a uma taxa de juros por período igual a $j$,
+então o valor da prestação é dada por
+$$p=\frac{j}{1-(1+j)^{-n}}q$$
+\hrule\tthdump{\medskip}
+\textbf{Exercício 10.}
+Uma bicicleta é vendida numa loja
+com duas opções de pagamento: à vista por R\$ 129,00 ou em
+0+4 pagamentos com juros de 4,85 \% de juros ao mês. Qual o
+valor da prestação na segunda opção de pagamento?
+\tthdump{\medskip}\hrule\tthdump{\medskip}
+Vamos calcular a tabela de amortização de um financiamento
+com prestações constantes, sem entrada.
+
+Cada prestação é composta de uma parcela de juro e uma
+parcela de \textbf{amortização} (diminuição na dívida), ou
+seja, para $k=1,\ldots,n$,
+$$p_k=j_k + a_k$$
+O juro é calculado sobre o saldo devedor no mês anterior, ou
+seja, $$j_k=j\cdot d_{k-1},$$ onde $j$ é a taxa de juros e
+$d_{k-1}$ é o saldo devedor no mês $k-1$. E assim, a
+amortização é igual a $$a_k=p_k - j_k.$$ O saldo devedor
+imediatamente depois de paga a parcela $p_k$ é igual a
+$$d_k=d_{k-1} - a_k.$$
+\tthdump{\medskip}\hrule\tthdump{\medskip}
+\textbf{Exercício 11.} Prove a seguinte fórmula para o
+saldo devedor $d_k$:
+$$d_k=(1+j)d_{k-1} - p_k.$$
+Qual o significado desta fórmula?
+\tthdump{\medskip}\hrule\tthdump{\medskip}
+
+Escrevemos um programa que roda em uma página na web para
+fazer o cálculo das prestações e da tabela de amortização
+para os dois sistemas de financiamento: tabela price e
+sistema SAC (que veremos mais adiante).
+\href{javascript:tabamor1()}{Clique aqui} para experimentar o
+programa.
+
+\tthdump{\medskip}\hrule\tthdump{\medskip}
+\textbf{Exercício 12.} Escreva a tabela de
+amortização do Exercício 10.
+\tthdump{\medskip}\hrule\tthdump{\medskip}
+
+Agora, vamos considerar o problema inverso, suponha que
+conhecemos o valor do débito inicial $d_0$ e o valor das
+prestações fixas e queremos determinar a taxa de juros
+embutida no financiamento. Para isto temos que resolver a
+equação (\ref{qsentr}):
+$$q=\frac{1-(1+j)^{-n}}{j}p$$
+para $j$. Observe que esta não é uma equação simples de se
+resolver para $n$ maior que 2. No caso geral precisamos usar um método
+para resolver esta equação de forma aproximada. Vamos usar um método
+iterativo chamado
+\textbf{método de Newton}. Um método iterativo começa com uma aproximação
+inicial da solução, $x_0$, e gera uma nova aproximação a partir da
+anterior. Este processo é  repetido, até que se atinja a precisão
+desejada ou que um número máximo de iterações seja atingido. No
+caso do   método de Newton, se $x_{k-1}$ é a aproximação anterior, a
+nova  aproximação da solução de $F(x)=0$ é a solução de
+ uma aproximação linear da equação, ou seja, a solução de
+$$F'(x_{k-1})(x-x_{k-1})+F(x_{k-1})=0,$$
+onde $F'$ é a derivada de $F$.
+Assim, a aproximação $x_{k}$ é dada por
+$$x_{k}=x_{k-1}-\frac{F(x_{k-1})}{F'(x_{k-1})}.$$
+Neste caso específico
+$$F(x)=\frac{1-(1+x)^{-n}}{x}p - q.$$
+e a derivada de $F(x)$
+$$F'(x)=p\left(\frac{n(1+x)^{-(n+1)}}{x} - \frac{1-(1+x)^{-n}}{x^2}\right).$$
+
+Escrevemos um programa que roda em uma página da web, que usa este método
+para determinar a taxa de juros.
+\href{javascript:calcju()}{Clique aqui} para experimentar o programa.
+
+\hrule\tthdump{\medskip}
+\textbf{Exercício 13.} Verifique que realmente a taxa de juros do exemplo
+anterior é 4,85 \% .
+\tthdump{\medskip}\hrule\tthdump{\medskip}
+\subsection{Com Entrada}
+\begin{center}
+\setlength{\unitlength}{1mm}
+\begin{picture}(70,25)
+\put(0,5){\line(1,0){70}}% linha horizontal
+\put(-0.5,0){0}
+\put(0,3){\vector(0,1){8}}
+\put(0,5){\circle*{0.7}}
+\put(-0.5,13){$p$}
+\put(9.5,0){1}
+\put(10,3){\vector(0,1){8}}
+\put(10,5){\circle*{0.7}}
+\put(9.5,13){$p$}
+\put(19.5,0){2}
+\put(20,3){\vector(0,1){8}}
+\put(20,5){\circle*{0.7}}
+\put(38,0){$\cdots$}
+\put(19.5,13){$p$}
+\put(59,0){$n-1$}
+\put(60,3){\vector(0,1){8}}
+\put(60,5){\circle*{0.7}}
+\put(59.5,13){$p$}
+\end{picture}
+\end{center}
+
+Este caso é semelhante ao anterior, apenas substituindo
+$n$ por $n-1$ e $q$ por $q-p$ na equação (\ref{qsentr}),
+pois o número de parcelas do financiamento é realmente $n-1$
+e não $n$ e o valor a ser financiado é realmente $q-p$ e não
+$q$. Assim, para determinarmos o valor da prestação $p$
+basta resolvermos a equação
+$$q-p=\frac{1-(1+j)^{-(n-1)}}{j}p$$
+para $p$.
+
+%\newpage
+\hrule\tthdump{\medskip}
+\textbf{Exercício 14.} Mostre que se uma quantia $q$ é
+financiada em $n$ parcelas iguais a $p$, a uma taxa de juros
+por período igual a $j$, sendo a primeira paga no ato do
+financiamento, então o valor da prestação é dada por
+\begin{equation}\label{qcentr}
+p=\frac{j}{1+j-(1+j)^{-(n-1)}}q
+\end{equation}
+\hrule\tthdump{\medskip}
+\textbf{Exercício 15.}
+Uma bicicleta é vendida numa loja com duas opções de
+pagamento: à vista por R\$ 129,00 ou em 1+3 pagamentos com
+juros de 4,85 \% de juros ao mês. Qual o valor da prestação
+na segunda opção de pagamento?
+\tthdump{\medskip}\hrule\tthdump{\medskip}
+Para calcular a tabela de amortização de um financiamento
+com prestações constantes, com entrada, o processo é o mesmo
+que sem entrada. Vamos repetir para enfatizar o processo.
+
+Cada prestação é composta de uma parcela de juro e uma
+parcela de \textbf{amortização} (diminuição na dívida), ou
+seja, para $k=1,\ldots,n$,
+$$p_k=j_k + a_k$$
+O juro é calculado sobre o saldo devedor no mês anterior, ou
+seja, $$j_k=j\cdot d_{k-1},$$ onde $j$ é a taxa de juros e
+$d_{k-1}$ é o saldo devedor no mês $k-1$. E assim, a
+amortização é igual a $$a_k=p_k - j_k.$$ O saldo devedor
+imediatamente depois de paga a parcela $p_k$ é igual a
+$$d_k=d_{k-1} - a_k.$$
+
+Escrevemos um programa que roda em uma página na web para
+fazer o cálculo das prestações e da tabela de amortização
+para os dois sistemas de financiamento: tabela price e
+sistema SAC.
+\href{javascript:tabamor1()}{Clique aqui} para experimentar o
+programa.
+
+
+\hrule\tthdump{\medskip}
+\textbf{Exercício 16.} Escreva o exemplo da tabela de
+amortização do Exercício 15.
+\tthdump{\medskip}\hrule\tthdump{\medskip}
+Agora, vamos considerar o problema inverso, suponha que
+conhecemos o valor do débito inicial $d_0$ e o valor das
+prestações fixas e queremos determinar a taxa de juros
+embutida no financiamento. Para isto temos que resolver a
+equação (\ref{qcentr}):
+$$p=\frac{j}{1+j-(1+j)^{-(n-1)}}q$$
+para $j$. Observe que esta não é uma equação simples de se
+resolver para $n$ maior que 3. Precisamos usar um método
+iterativo para resolver esta equação. Vamos usar novamente o
+método de Newton.
+Um método iterativo começa com uma aproximação
+inicial da solução, $x_0$, e gera uma nova aproximação a partir da anterior, repetidamente, até que se atinja a precisão desejada. No caso do método de Newton, se $x_{k-1}$ é a aproximação anterior, a nova aproximação da solução de $F(x)=0$ é a solução de
+ uma aproximação linear da equação, nas proximidades da aproximação anterior da solução, ou seja, a solução de
+$$F'(x_{k-1})(x-x_{k-1}) + F(x_{k-1})=0,$$
+onde $F'$ é a derivada de $F$.
+Assim, a aproximação $x_{k}$ é dada por
+$$x_{k}=x_{k-1} - \frac{F(x_{k-1})}{F'(x_{k-1})}.$$
+Neste caso específico
+$$F(x)=\frac{1-(1+x)^{-(n-1)}}{x}p + p - q.$$
+e a derivada de $F(x)$
+$$F'(x)=p\left(\frac{(n-1)(1+x)^{-n}}{x} - \frac{1-(1+x)^{-(n-1)}}{x^2}\right).$$
+
+Escrevemos um programa que roda em página da web, que usa este método para
+deterrminar a taxa de juros.
+\href{calcju.html}{Clique aqui} para experimentar o programa.
+
+\hrule\tthdump{\medskip}
+\textbf{Exercício 17.} Verifique que realmente a taxa de juros do exemplo
+anterior é 4,85 \% .
+\tthdump{\medskip}\hrule\tthdump{\medskip}
+\section{Sistema de Financiamento com Amortiza\c c\~oes
+Constantes}
+
+Este sistema de financiamento é conhecido como SAC.
+Neste sistema o débito é dividido em parcelas iguais que
+serão as amortizações correspondentes a cada parcela.
+
+\subsection{Tabela de Amortização}
+
+
+Assim como no sistema francês, cada prestação é composta de
+uma parcela de juro e uma parcela de amortização, ou seja,
+para $k=1,\ldots,n$, temos
+$$p_k = a_k + j_k.$$
+Agora, neste caso, a amortização em cada período é dada por
+$$a_k=\frac{d_0}{n}.$$
+A parcela de juro é, assim como no sistema francês,
+calculada sobre o saldo devedor no período anterior, ou
+seja,
+$$j_k=j\cdot d_{k-1}.$$
+O saldo devedor imediatamente após ter sido paga a parcela
+$p_k$ é dado por
+$$d_k=d_{k-1} - a_k.$$
+
+\hrule\tthdump{\medskip}
+\textbf{Exercício 18.} Prove a seguinte fórmula para o
+saldo devedor $d_k$:
+$$d_k=(1+j)d_{k-1} - p_k$$
+\tthdump{\medskip}\hrule\tthdump{\medskip}
+\textbf{Exercício 19.} Escreva a solução do exemplo do
+Exercício 10, mas agora no sistema SAC:\\
+Uma bicicleta é vendida numa loja com duas opções de
+pagamento: à vista por R\$ 129,00 ou em 0+4 pagamentos com
+juros de 4,85 \% de juros ao mês, no sistema SAC. Observe
+que as prestações são decrescentes.
+\href{tabamor1.html}{Clique aqui} para usar o
+programa que calcula a tabela de amortização.
+
+\tthdump{\medskip}\hrule\tthdump{\medskip}
+
+\section{Sistemas de Financiamento Habitacional da
+CEF}
+
+Para financiamento da casa própria a CEF dispõe atualmente
+de dois sistemas. Nos dois sistemas o saldo devedor é
+corrigido mês a mês pela $TR$ (taxa referêncial de juros) e
+cada período de 12 meses é feito o recálculo da prestação (a
+partir do terceiro ano o recálculo pode passar a ser feito
+trimestralmente, a critério da CEF), baseado no saldo
+devedor e no período restante. A diferença entre os dois
+sistemas está no cálculo do valor da prestação.
+
+\subsection{Tabela SACRE}
+
+Este é o sistema que a CEF chama de
+\textbf{Sistema de Amortização Crescente}.
+Na verdade este sistema usa para o cálculo do valor das
+prestações a metodologia do sistema de amortização constante
+- SAC anual, sem levar em conta o valor da $TR$.
+Com a inclusão, posteriormente, do valor da $TR$ nos
+cálculos, este sistema resulta em uma amortização variável.
+A denominação é inadequada, pois com um valor da $TR$ baixo,
+este sistema pode resultar até em uma amortização
+decrescente.
+
+
+\medskip
+\noindent\textbf{Cálculo da prestação a cada 12 meses}
+
+\medskip
+Para calcular o valor da prestação, fazemos o cálculo como
+se fosse o sistema de amortizações constantes e o pagamento
+fosse anual. Depois dividimos o valor da suposta parcela
+anual por 12.
+
+Sejam $A$ a suposta amortização anual (a amortização real
+vai depender do valor da $TR$) e $J$ o suposto juro anual
+(sem levar em conta o valor da $TR$). Sejam $j$ a taxa de
+juros nominal anual, $d_0$ o saldo devedor atual e $n$ o
+número de anos restante. Para a suposta amortização anual
+temos
+$$A=\frac{d_0}{n},$$
+pois em $n$ anos, com amortizações constantes iguais a $A$,
+a amortização total seria igual a $d_0$. Para o suposto juro
+anual temos
+$$J=j\cdot d_0.$$
+A suposta prestação anual é então a soma da suposta
+amortização anual com o suposto juro:
+$$A + J = \frac{d_0}{n} + j\cdot d_0.$$
+Agora, a prestação mensal é igual a suposta prestação anual
+dividido por 12:
+$$p_k=\frac{A + J}{12}=\frac{d_0/n + j\cdot d_0}{12},$$
+para $k=1,\ldots,12$. Pelas regras da CEF, atualmente em
+vigor, este cálculo é feito anualmente nos dois primeiros
+anos e pode a partir do terceiro ano, ser feito
+trimestralmente, a critério da CEF.
+
+\medskip
+\noindent\textbf{Cálculo da tabela de amortização}
+
+\medskip
+A cada mês o saldo devedor é reajustado pelo valor da $TR$
+no dia do pagamento e o juro real é calculado sobre este
+valor, ou seja, a taxa de juros real é igual ao valor da
+$TR$ somado a taxa de juros $j/12$.
+
+Para cada mês $k$, primeiro calculamos o juro correspondente
+a este mês, $\tilj_k$, que é calculado sobre o saldo devedor
+no mês anterior $d_{k-1}$ atualizado pelo valor da $TR$:
+\begin{equation}\label{psju}
+\tilj_k=(j/12)\cdot (1+TR)\cdot d_{k-1}.
+\end{equation}
+Agora, calculamos a amortização correspondente a este mês,
+$\tila_k$, que é a diferença entre o valor da prestação,
+$p_k$ e o valor do juro, $\tilj_k$
+\begin{equation}\label{psamor}
+\tila_k=p_k - \tilj_k,
+\end{equation}
+ pois cada prestação é a soma de uma parcela
+de amortização e de uma parcela de juro,
+$p_k=\tila_k+\tilj_k$.
+
+Para calcular o novo saldo devedor, imediatamente depois de
+ter sido paga a prestação $p_k$  a CEF usa o seguinte
+raciocínio.  O novo saldo devedor, $d_k$, imediatamente
+depois de ter sido paga a prestação $p_k$ é igual ao saldo
+devedor no mês anterior, $d_{k-1}$ \textbf{atualizado pelo
+valor da $TR$} subtraindo-se o valor da amortização
+correspondente a este mês, $\tila_k$:
+\begin{equation}\label{nosadev}
+d_k=(1 + TR)\cdot d_{k-1} - \tila_k.
+\end{equation}
+Este cálculo feito pela CEF \textbf{está incorreto!}
+Pois, não faz sentido atualizar novamente o saldo devedor
+pelo valor da $TR$. O saldo devedor já foi atualizado pelo
+valor da $TR$ no cálculo do juro. Desta forma a taxa de
+juros verdadeira é maior do que a que foi contratada (o
+valor da $TR$ mais $j/12$). A verdadeira amortização é
+aquela que é a diferença entre o saldo devedor no mês
+anterior e o saldo devedor atual:
+\begin{equation}\label{veramor}
+a_k=d_{k-1}-d_k.
+\end{equation}
+O verdadeiro juro é aquele que é a diferença entre o valor
+da prestação e o valor da amortização:
+\begin{equation}\label{verju}
+j_k=p_k-a_k.
+\end{equation}
+ A taxa de juros que está realmente sendo
+praticada, além da $TR$, pode ser obtida da segunte forma:
+$$ju=\frac{j_k}{(1+TR)d_{k-1}}.$$
+Usando as equações (\ref{verju}), (\ref{veramor}),
+(\ref{nosadev}), (\ref{psamor}) e (\ref{psju}) e
+simplificando obtemos
+$$ju=\frac{TR}{1+TR}+\frac{j}{12}.$$
+
+\subsection{Tabela Price}
+
+Neste sistema da CEF, ela usa a sistemática do sistema
+francês (tabela Price) apenas para o cálculo da prestação
+sem levar em conta o valor da $TR$ e a cada período de 12
+meses é feito o recálculo da prestação baseado no saldo
+devedor e no tempo restante. Aqui também a denominação é
+inadequada, pois para um valor da $TR$ diferente de zero a
+cada recálculo a prestação sobe contradizendo a filosofia da
+Tabela Price, que é que as prestações são constantes.
+
+\textbf{Cálculo da prestação a cada 12 meses}\\
+Para calcular o valor da prestação, fazemos o cálculo como
+se fosse o sistema francês (sem levar em conta o valor da
+$TR$). Se $j$ é a taxa de juros nominal anual, $d_0$ é o saldo
+devedor atual e $n$ o número de anos restante, então a taxa
+de juros real mensal é igual $j/12$ e para cada mês $k$, a
+prestação, $p_k$, é dada por
+$$p_k=\frac{j/12}{1 - (1+j/12)^{-n\cdot 12}}d_0,$$
+para $k$ variando entre 1 e 12. A cada ano este cálculo tem
+que ser refeito levando-se em conta o novo saldo devedor e o
+tempo restante. Pelas regras da CEF, este cálculo pode ser
+refeito a cada trimestre.
+
+\medskip
+\noindent\textbf{Cálculo da tabela de amortização}
+
+\medskip
+A sistemática é a mesma da tabela SACRE. Vamos repetir aqui
+apenas, para enfatizar a metodologia. A cada mês o saldo devedor é reajustado pelo valor da $TR$
+no dia do pagamento e o juro real é calculado sobre este
+valor, ou seja, a taxa de juros real é igual ao valor da
+$TR$ somado a taxa de juros $j/12$.
+
+Para cada mês $k$, primeiro calculamos o juro correspondente
+a este mês, $\tilj_k$, que é calculado sobre o saldo devedor
+no mês anterior $d_{k-1}$ atualizado pelo valor da $TR$:
+\begin{equation}\label{psju2}
+\tilj_k=(j/12)\cdot (1+TR)\cdot d_{k-1}.
+\end{equation}
+Agora, calculamos a amortização correspondente a este mês,
+$\tila_k$, que é a diferença entre o valor da prestação,
+$p_k$ e o valor do juro, $\tilj_k$
+\begin{equation}\label{psamor2}
+\tila_k=p_k - \tilj_k,
+\end{equation}
+ pois cada prestação é a soma de uma parcela
+de amortização e de uma parcela de juro,
+$p_k=\tila_k+\tilj_k$.
+
+Para calcular o novo saldo devedor, imediatamente depois de
+ter sido paga a prestação $p_k$  a CEF usa o seguinte
+raciocínio.  O novo saldo devedor, $d_k$, imediatamente
+depois de ter sido paga a prestação $p_k$ é igual ao saldo
+devedor no mês anterior, $d_{k-1}$ \textbf{atualizado pelo
+valor da $TR$} subtraindo-se o valor da amortização
+correspondente a este mês, $\tila_k$:
+\begin{equation}\label{nosadev2}
+d_k=(1 + TR)\cdot d_{k-1} - \tila_k.
+\end{equation}
+Este cálculo feito pela CEF \textbf{está incorreto!}
+Não faz sentido atualizar novamente o saldo devedor pelo
+valor da $TR$. O saldo devedor já foi atualizado pelo valor
+da $TR$ no cálculo do juro. Desta forma a taxa de juros
+verdadeira é maior do que a que foi contratada (o valor da
+$TR$ mais $j/12$). A verdadeira amortização é aquela que é a
+diferença entre o saldo devedor no mês anterior e o saldo
+devedor atual:
+\begin{equation}\label{veramor2}
+a_k=d_{k-1}-d_k.
+\end{equation}
+O verdadeiro juro é aquele que é a diferença entre o valor
+da prestação e o valor da amortização:
+\begin{equation}\label{verju2}
+j_k=p_k-a_k.
+\end{equation}
+ A taxa de juros que está realmente sendo
+praticada, além da $TR$, pode ser obtida da segunte forma:
+$$ju=\frac{j_k}{(1+TR)d_{k-1}}.$$
+Usando as equações (\ref{verju2}), (\ref{veramor2}),
+(\ref{nosadev2}), (\ref{psamor2}) e (\ref{psju2}) e
+simplificando obtemos
+$$ju=\frac{TR}{1+TR}+\frac{j}{12}.$$
+
+Escrevemos um programa que roda em uma página na web para
+fazer simulação do cálculo das prestações e da tabela de
+amortização para os dois sistemas de financiamento
+habitacional da CEF. \href{javascript:tabcef()}{Clique aqui}
+ para experimentar o programa.
+
+
+\tthdump{\medskip}\hrule\tthdump{\medskip}
+\textbf{Exercício 20.}
+Calcule a tabela de amortização nos dois sistemas da CEF,
+para um financiamento habitacional no valor de R\$ 30000,00
+em 15 anos, com taxa de juros nominal de 12 \% ao ano e com
+uma $TR$ de 0,5 \% . Observe que na tabela ``Price'', a cada
+ano a prestação é crescente. Experimente um valor da $TR$
+igual a zero, na tabela ``Price'' e veja que neste caso o
+financiamento faz juz ao nome. Experimente, na tabela SACRE,
+variar o valor da $TR$ para mais e para menos. A amortização é
+crescente? Tente escrever uma regra para o comportamento da
+amortização. E para a prestação?
+\href{javascript:tabcef()}{Clique aqui} para usar o
+programa que faz a simulação.
+
+\tthdump{\medskip}\hrule\tthdump{\medskip}
+\textbf{Exercício 21.} Faça um estudo comparativo dos dois
+sistemas de financiamento habitacional da CEF.
+\tthdump{\medskip}\hrule\tthdump{\medskip}
+
+Escrevemos um programa que roda em uma página na web para
+fazer simulação \textbf{de como deveriam ser} o cálculo das
+prestações e a tabela de amortização para os dois sistemas
+de financiamento habitacional da CEF.
+\href{javascript:tabcef2()}{Clique aqui}
+ para experimentar o programa.
+
+
+\section{Páginas Interativas}
+
+Escrevemos alguns programas que rodam em páginas da web para
+alguns cálculos financeiros:
+\begin{itemize}
+\item \href{javascript:tabatual()}{Tabelas de Atualizações Monetárias} -
+para calcular os valores futuros e o valor atual de uma quantia.
+
+\item \href{javascript:tabpenin()}{Tabelas de Atualizações para Períodos não Inteiros} -
+para calcular os valores futuros de uma quantia em frações de um período, no qual é conhecida a taxa de juros.
+
+\item \href{javascript:tabserie()}{Tabela de Série de Pagamentos Iguais} -
+se você fornece o valor do depósito por período, o programa diz qual o saldo após $n$ períodos e inversamente, se você fornece o saldo após $n$ períodos, ele diz quanto deverá ser o valor do depósito por período para que em $n$ períodos se alcance aquele saldo.
+
+\item \href{javascript:tabretir()}{Tabela de Saldos após Retiradas Iguais} - fornece o valor da retirada mensal e o saldo após cada retirada para que após $n$ períodos o saldo seja igual a zero. 
+
+\item \href{javascript:tabamor1()}{Tabelas de Financiamentos} -
+para calcular as tabelas de financiamento do sistema de
+amortizações constantes (SAC) e do sistema francês (Tabela
+Price).
+\item \href{javascript:calcju()}{Cálculo da Taxa de Juros pelo Método
+de Newton} - para calcular a taxa de juros praticada na
+tabela Price, sendo conhecidos o valor do débito e das
+prestações (fixas).
+\item \href{javascript:tabcef()}{Simulação das Tabelas de Financiamento
+Habitacional da CEF} - para fazer a simulação dos dois
+sistemas de financiamento Habitacional da CEF: SACRE e
+Tabela Price, para um valor fixo da $TR$ e uma taxa de juros
+nominal anual igual a ~$j$.
+\item \href{javascript:tabcef2()}{Simulação de como Deveriam Ser as
+Tabelas de Fiananciamento da CEF}  - para fazer a simulação
+dos dois sistemas de financiamento Habitacional da CEF:
+SACRE e Tabela Price, se a taxa de juros praticada fosse
+realmente a $TR$ mais uma taxa fixa nominal anual igual a
+~$j$.
+\end{itemize}

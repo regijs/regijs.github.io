@@ -1,0 +1,181 @@
+<html>
+<title>Tabelas de Amortização</title>
+
+<script> 
+
+function trunca(x){
+	var z=Math.round(x*10000000)/10000000;
+	return Math.floor(z*100)/100;
+}
+
+function num2str(x){
+	var z=String(x);
+		if(z.indexOf(".")==-1){
+			z=z+".00";
+		}else{
+			if(z.indexOf(".")==(z.length-2)){
+				z=z+"0";
+            		}
+		}
+            return z;
+}
+
+function tabelasac(entr){
+	view = window.open("", "tabela","menubar,resizable,scrollbars");
+	view.document.open("text/html");
+	d0=document.entradas.saldo.value;
+	ju=document.entradas.txju.value;
+	n=parseInt(document.entradas.prazo.value);
+         	view.document.writeln("<center><H1>Tabela SAC</H1>");
+         	view.document.writeln("<H2>Reginaldo J. Santos</H2>");
+         	view.document.writeln("<H3>Departamento de Matemática<br>");
+         	view.document.writeln("Instituto de Ciências Exatas<br>");
+         	view.document.writeln("Universidade Federal de Minas Gerais</H3>");
+         	view.document.writeln("Saldo Devedor = R$ "+num2str(d0)+"<br>");
+	view.document.writeln("Taxa de Juros  = "+ju+" %<br>");
+	view.document.writeln(n+" parcelas, ");
+	if (entr=="comentr"){
+		view.document.writeln("<b>com</b>  entrada <br></center>")
+	}else{
+		view.document.writeln("<b>sem</b>  entrada <br></center>")
+	}
+	var xk=d0; 
+	var jk=trunca(0); 
+	var ak=d0/n;
+	ak=trunca(ak); 
+	var pk=ak;
+	ju/=100; 
+	var k=0;
+      view.document.writeln("<center><table BORDER CELLPADDING=2><tr>");
+      view.document.writeln("<td align=center><b>No.</b></td><td align=center><b>Prestação </b></td><td align=center><b>Amortização</b></td>");
+      view.document.writeln("<td align=center><b>Juro</b></td><td align=center><b>Saldo Devedor</b></td></tr>");
+	if (entr=="comentr"){
+		n-=1;
+		xk=xk-ak;
+		xk=trunca(xk);
+		view.document.writeln("<tr><td align=right>"+k+"</td><td align=right>"+num2str(pk)+"</td><td align=right>"+num2str(ak));
+      		view.document.writeln("</td><td align=right>"+num2str(jk)+"</td><td align=right>"+num2str(xk)+"</td></tr>");
+	}
+
+
+	for (k=1; k<=n; k++){
+		jk=xk*ju;
+		jk=trunca(jk);
+   		pk=ak+jk;
+   		pk=trunca(pk);
+		xk=xk-ak;
+		xk=trunca(xk);
+			view.document.writeln("<tr><td align=right>"+k+"</td><td align=right>"+num2str(pk)+"</td><td align=right>"+num2str(ak));
+      			view.document.writeln("</td><td align=right>"+num2str(jk)+"</td><td align=right>"+num2str(xk)+"</td></tr>");
+	}
+	view.document.writeln("</table></center>");
+	view.document.close;
+}
+
+function tabelaprice(entr){
+
+	view = window.open("", "tabela","menubar,resizable,scrollbars");
+	view.document.open("text/html");
+	d0=document.entradas.saldo.value;
+	ju=document.entradas.txju.value;
+	n=parseInt(document.entradas.prazo.value);
+         	view.document.writeln("<center><H1>Tabela Price</H1>");
+         	view.document.writeln("<H2>Reginaldo J. Santos</H2>");
+         	view.document.writeln("<H3>Departamento de Matemática<br>");
+         	view.document.writeln("Instituto de Ciências Exatas<br>");
+         	view.document.writeln("Universidade Federal de Minas Gerais</H3>");
+	view.document.writeln("Saldo Devedor = R$ "+num2str(d0)+"<br>");
+	view.document.writeln("Taxa de Juros  = "+ju+" %<br>");
+	view.document.writeln(n+" parcelas, ");
+	if (entr=="comentr"){
+		n-=1;
+		view.document.writeln("<b>com</b>  entrada <br></center>")
+	}else{
+		view.document.writeln("<b>sem</b>  entrada <br></center>")
+	}
+	var xk=d0; 
+	var jk=trunca(0); 
+	var ak=0; 
+	ju/=100; 
+	var k=0;
+	if (entr=="comentr"){
+	  	pk=ju/(1+ju-Math.pow(1+ju,-n))*xk;
+		ak=trunca(pk);
+		xk=xk-ak;
+		xk=trunca(xk);
+	}else{
+	  	pk=ju/(1-Math.pow(1+ju,-n))*xk;
+	}
+ 	pk=trunca(pk);
+     view.document.writeln("<center><table BORDER CELLPADDING=2><tr>");
+      view.document.writeln("<td align=center><b>No.</b></td><td align=center><b>Prestação </b></td><td align=center><b>Amortização</b></td>");
+      view.document.writeln("<td align=center><b>Juro</b></td><td align=center><b>Saldo Devedor</b></td></tr>");
+	if (entr=="comentr"){
+			view.document.writeln("<tr><td align=right>"+k+"</td><td align=right>"+num2str(pk)+"</td><td align=right>"+num2str(ak));
+      			view.document.writeln("</td><td align=right>"+num2str(jk)+"</td><td align=right>"+num2str(xk)+"</td></tr>");
+	}
+	for (k=1; k<=n; k++){
+     			 jk=xk*ju;
+      			jk=trunca(jk);
+      			ak=pk-jk;
+			ak=trunca(ak);
+      			xk=xk-ak;
+			xk=trunca(xk);
+			view.document.writeln("<tr><td align=right>"+k+"</td><td align=right>"+num2str(pk)+"</td><td align=right>"+num2str(ak));
+      			view.document.writeln("</td><td align=right>"+num2str(jk)+"</td><td align=right>"+num2str(xk)+"</td></tr>");
+	}
+	view.document.writeln("</table></center>");
+	view.document.close;
+}
+
+function viewtabela( ){
+	if (document.entradas.tab.selectedIndex==0){
+		if (document.entradas.entr[0].checked=="1"){
+			tabelasac("comentr");
+		}else{
+			tabelasac("sementr");
+		}
+	}else{
+		if (document.entradas.entr[0].checked=="1"){
+			tabelaprice("comentr");
+		}else{
+			tabelaprice("sementr");
+		}
+	}
+
+}
+
+
+</script>
+
+<center>
+<H1>Tabelas de Financiamento</H1>
+<H2>Reginaldo J. Santos</H2>
+<H3>Departamento de Matemática<br>
+Instituto de Ciências Exatas<br>
+Universidade Federal de Minas Gerais</H3>
+
+<H4>14 de outubro de 1998</H4>
+</center>
+<form action="" name="entradas" method="GET" onsubmit="return verifica()">
+<center><b>Tabela </b>
+
+<SELECT NAME="tab">
+<OPTION value="SAC" >SAC
+<OPTION value="Price">Price
+</SELECT><BR>
+
+<INPUT TYPE="radio" NAME="entr" ></INPUT> Com Entrada 
+<INPUT TYPE="radio" NAME="entr"  CHECKED></INPUT> Sem Entrada 
+<br>
+<table>
+<tr>
+<td>Saldo Devedor: </td><td>R$ <input type="text" name="saldo" size=10 value="100.00"></input></td></tr><tr>
+<td>Taxa de Juros: </td><td><input type="text" name="txju" size=4 value="15"> %</input></td></tr><tr>
+<td>No. de Parcelas: </td><td><input type="text" name="prazo" size=3 value="5"> </input></td></tr>
+</table>
+<input type="button" value="GERAR TABELA" onClick="viewtabela()"></input>
+</center>
+
+</form>
+</html>

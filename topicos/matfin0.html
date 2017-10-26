@@ -1,0 +1,1208 @@
+  <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+           "http://www.w3.org/TR/REC-html40/loose.dtd"><HTML>
+<META NAME="GENERATOR" CONTENT="TtH 1.55">                                                <title>Matemática Financeira Interativa</title>
+<H1 align=center>Matemática Financeira Interativa
+        </H1>
+
+<p> 
+
+<H3 align=center>Reginaldo J. Santos<br>
+        Departamento de Matemática<br>
+        Instituto de Ciências Exatas<br>
+        Universidade Federal de Minas Gerais<br>
+        <a href="http://www.mat.ufmg.br/~regi"></a>        <tt>http://www.mat.ufmg.br/&#126;regi</tt>
+        </H3>
+<p>
+
+<center><script>document.write("This page was last modified on : ",document.lastModified);</script></center><font size="+3">Conteúdo</font>
+
+<p>
+<A href="#tth_sEc1"
+>1&nbsp; Série de Pagamentos Iguais</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc1.1"
+>1.1&nbsp; Valor Futuro e Valor Presente de uma Quantia</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc1.2"
+>1.2&nbsp; Períodos não Inteiros - Taxas Equivalentes</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc1.3"
+>1.3&nbsp; Valor Futuro e Valor Presente de uma Série de Pagamentos Iguais</A><br><A href="#tth_sEc2"
+>2&nbsp; Sistema de Financiamento com Prestações Constantes</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc2.1"
+>2.1&nbsp; Sem Entrada</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc2.2"
+>2.2&nbsp; Com Entrada</A><br><A href="#tth_sEc3"
+>3&nbsp; Sistema de Financiamento com Amortizações Constantes</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc3.1"
+>3.1&nbsp; Tabela de Amortização</A><br><A href="#tth_sEc4"
+>4&nbsp; Sistemas de Financiamento Habitacional da CEF</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc4.1"
+>4.1&nbsp; Tabela SACRE</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc4.2"
+>4.2&nbsp; Tabela Price</A><br><A href="#tth_sEc5"
+>5&nbsp; Páginas Interativas</A><br> 
+ <script>
+function tabatual(){
+        window.open("tabatual.html","tabatual",
+        "height=450,width=600,resizable,scrollbars,alwaysRaised,parent")
+}
+function tabamor1(){
+        window.open("tabamor1.html","tabamor",
+        "height=450,width=600,resizable,scrollbars,alwaysRaised,parent")
+}
+function tabamor(){
+        window.open("tabamor.html","tabamor",
+        "height=450,width=600,resizable,scrollbars,alwaysRaised,parent")
+}
+function tabcef(){
+        window.open("tabcef.html","tabcef",
+        "height=450,width=600,resizable,scrollbars,alwaysRaised,parent")
+}
+function tabcef2(){
+        window.open("tabcef2.html","tabcef2",
+        "height=500,width=600,resizable,scrollbars,alwaysRaised,parent")
+}
+function calcju(){
+        window.open("calcju.html","calcju",
+        "height=450,width=600,resizable,scrollbars,alwaysRaised,parent")
+}
+ </script>
+      <H2><A NAME="tth_sEc1">1</A>&nbsp;&nbsp;Série de Pagamentos Iguais</H2>      <H3><A NAME="tth_sEc1.1">1.1</A>&nbsp;&nbsp;Valor Futuro e Valor Presente de uma Quantia</H3>Em um regime com uma taxa de juros <i>j</i> por período
+(período aqui pode ser um mês, um ano, etc), o
+valor futuro de uma quantia <i>q</i><sub>0</sub> depois de um período é
+igual a
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>q</i><sub>1</sub> = <i>q</i><sub>0</sub> + <i>j</i>&#183;<i>q</i><sub>0</sub> = (1+<i>j</i>)<i>q</i><sub>0</sub>.</td></Table>
+</td></table></centEr>
+
+
+Inversamente, se daqui a um período eu tenho uma quantia
+<i>q</i><sub>1</sub>, ela vale hoje, no presente,
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>q</i><sub>0</sub> = (1+<i>j</i>)<sup>-1</sup><i>q</i><sub>1</sub></td></Table>
+</td></table></centEr>
+
+
+
+<p>
+Aplicando-se o raciocínio acima, temos que, se no presente eu tenho
+uma quantia <i>q</i><sub>0</sub>, então no futuro, depois de <i>n</i> períodos,
+a uma taxa de juros <i>j</i> por período, esta quantia vai
+valer
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>q</i><sub><i>n</i></sub> = (1+<i>j</i>)<sup><i>n</i></sup><i>q</i><sub>0</sub>.</td></Table>
+</td></table></centEr>
+
+
+
+<p>
+Reciprocamente, se depois de <i>n</i> períodos eu tenho uma
+quantia <i>q</i><sub><i>n</i></sub>, esta quantia vale hoje
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>q</i><sub>0</sub> = (1+<i>j</i>)<sup>-<i>n</i></sup><i>q</i><sub><i>n</i></sub>.</td></Table>
+</td></table></centEr>
+
+
+
+<p>
+Escrevemos um programa que roda em uma página na web para
+fazer a atualização monetária de um valor, ou seja, se você sabe o valor de uma quantia hoje, o programa diz quanto ela valerá no futuro e inversamente, se você sabe o valor de uma quantia no futuro, quanto ela vale hoje.
+<a href="javascript:tabatual()">Clique aqui</a> para experimentar o
+programa.
+
+<p>
+<HR>
+<b>Exercício 1.</b> 
+Uma loja oferece duas opções de pagamento:
+à vista com 2% de desconto ou em duas vezes,
+sem desconto, a primeira sendo paga no ato da compra.
+Qual a taxa de juros mensal que está embutido na
+venda a prazo?
+
+<p>
+<HR>
+<b>Exercício 2.</b>
+Investindo uma quantia <i>q</i> (uma única vez!) a uma taxa de
+juros mensal de 1% , em quanto tempo o seu capital dobrará?
+
+<p>
+<HR>
+      <H3><A NAME="tth_sEc1.2">1.2</A>&nbsp;&nbsp;Períodos não Inteiros - Taxas
+Equivalentes</H3>Se uma taxa de juros relativamente a um determinado período
+é <i>J</i>, então a taxa correspondente a uma fração 1/<i>n</i> deste
+período, &nbsp;<i>j</i>, é obtida da forma que descreveremos a seguir.
+Como já vimos, o valor futuro de uma quantia <i>q</i> após o
+período inteiro é 
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+(1+<i>J</i>)<i>q</i>.</td></Table>
+</td></table></centEr>
+
+ Por outro lado, o período
+inteiro é igual a <i>n</i> subperíodos e se a taxa correspondente
+a um subperíodo é <i>j</i>, então o valor futuro de uma quantia
+<i>q</i> após <i>n</i> subperíodos é 
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+(1+<i>j</i>)<sup><i>n</i></sup><i>q</i>.</td></Table>
+</td></table></centEr>
+
+ Portanto,
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+(1+<i>J</i>)<i>q</i> = (1+<i>j</i>)<sup><i>n</i></sup><i>q</i>,</td></Table>
+</td></table></centEr>
+
+
+ou seja, a taxa correspondente a um período <i>J</i> e a taxa
+correspondente a uma fração 1/<i>n</i> deste período satisfazem
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+1+<i>J</i> = (1+<i>j</i>)<sup><i>n</i></sup>.</td></Table>
+</td></table></centEr>
+
+
+Neste caso, as taxas <i>J</i> e <i>j</i> são ditas
+<b>equivalentes</b>.
+
+<p>
+<HR>
+<b>Exercício 3.</b> Seja <i>J</i> a
+taxa de juros correspondente a um período inteiro. Mostre
+que a taxa, &nbsp;<i>j</i>, correspondente a uma fração 1/<i>n</i> deste
+período é dada por
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>j</i> = (1+<i>J</i>)<sup>1/<i>n</i></sup>-1.</td></Table>
+</td></table></centEr>
+
+
+<HR>
+
+<p>
+<b>Exercício 4.</b>
+
+<OL type="1">
+<p>
+
+<li>Se a taxa de juros de um cheque especial é de 10% ao mês,
+qual é a taxa equivalente a um dia? Se o meu cheque especial
+fica negativo no valor de R$ 300,00 por 3 dias quanto devo
+pagar de juro? (chamamos de <b>juro</b> a diferença entre
+o valor futuro e o valor presente de uma quantia)
+
+<li>
+<p>
+Se em um financiamento está escrito que a taxa de juros
+<b>nominal</b> anual é de 12% , isto significa que a
+taxa mensal é igual a 1 % . Outra forma, é dizer que a taxa
+é de 12% ao ano com capitalização mensal. Qual é a taxa de
+juros
+<b>real</b> anual neste caso?
+</OL>
+<p>
+<HR>
+      <H3><A NAME="tth_sEc1.3">1.3</A>&nbsp;&nbsp;Valor
+Futuro e Valor Presente de uma Série de Pagamentos Iguais</H3>Suponha que depositamos todo mês uma quantia fixa <i>p</i> numa
+caderneta de poupança que remunera a uma taxa fixa mensal
+igual <i>j</i>. Qual será o saldo após <i>n</i> meses?
+
+<p>
+
+<center><img src="picmf1.gif" align="absmiddle">
+</center>Após o primeiro mês, o saldo é de (1+<i>j</i>)<i>p</i> mais o depósito
+do segundo mês <i>p</i>.  Após o segundo mês, o saldo é de
+(1+<i>j</i>)<sup>2</sup><i>p</i> + (1+<i>j</i>)<i>p</i> + <i>p</i>. E assim por diante, após <i>n</i> meses
+o saldo é
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>s</i><sub><i>n</i></sub> = (1+<i>j</i>)<sup><i>n</i></sup><i>p</i> + (1+<i>j</i>)<sup>(<i>n</i>-1)</sup><i>p</i> + <font face=symbol>¼</font
+>+ (1+<i>j</i>)<i>p</i></td></Table>
+</td></table></centEr>
+
+
+
+<p>
+<HR>
+<b>Exercício 5.</b> Mostre que o saldo em <i>n</i> meses após
+<i>n</i> pagamentos iguais a <i>p</i> é
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>s</i><sub><i>n</i></sub> = (1+<i>j</i>)</td><td nowrap align=center>
+(1+<i>j</i>)<sup><i>n</i></sup>-1<hr NOSHADE>
+ <i>j</i><Br></td><td nowrap align=center>
+<i>p</i></td></Table>
+</td></table></centEr>
+
+
+<HR>
+
+<p>
+<b>Exercício 6.</b>
+Depositando mensalmente numa
+caderneta de poupança uma quantia fixa, que rende juros
+de 1 % ao mês, em quanto tempo eu terei 100 vêzes o valor
+do depósito mensal?
+
+<p>
+<HR>
+Agora, vamos considerar o problema de um financiamento de
+uma quantia <i>q</i> em <i>n</i> parcelas iguais a <i>p</i>, a uma taxa de
+juros por período igual a &nbsp;<i>j</i>.
+
+<p>
+
+<center><img src="picmf2.gif" align="absmiddle">
+</center>Para determinarmos o valor atual <i>q</i>, correspondente a uma
+série de pagamentos iguais a <i>p</i>, vamos
+considerar todos os pagamentos no instante zero.
+A primeira parcela vale (1+<i>j</i>)<sup>-1</sup><i>p</i> no instante zero.
+A segunda parcela vale (1+<i>j</i>)<sup>-2</sup><i>p</i>, a terceira,
+(1+<i>j</i>)<sup>-3</sup><i>p</i> e assim por diante. A <i>n</i>-ésima parcela
+vale no instante zero (1+<i>j</i>)<sup>-<i>n</i></sup><i>p</i>. Assim,
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>q</i> = (1+<i>j</i>)<sup>-1</sup><i>p</i> + (1+<i>j</i>)<sup>-2</sup><i>p</i> + <font face=symbol>¼</font
+>+ (1+<i>j</i>)<sup>-<i>n</i></sup><i>p</i>.</td></Table>
+</td></table></centEr>
+
+
+
+<p>
+<HR>
+<b>Exercício 7.</b> Mostre que uma série de pagamentos
+iguais a <i>p</i>, num regime de juros <i>j</i> por período,
+corresponde a um valor à vista dado por
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>q</i> = </td><td nowrap align=center>
+1-(1+<i>j</i>)<sup>-<i>n</i></sup><hr NOSHADE>
+ <i>j</i><Br></td><td nowrap align=center>
+<i>p</i></td></Table>
+</td></table></centEr>
+
+
+<HR>
+
+<p>
+<b>Exercício 8.</b>
+Um telefone sem fio é vendido por uma
+loja em duas opções: 9 &times; R$ 24,70 (com entrada) ou R$ 168,00 à
+vista. Se você tem a opção de aplicar o seu dinheiro a uma
+taxa de juros mensal de 1% , qual a forma de pagamento mais
+vantajosa neste caso. Justifique. (Sugestão: calcule o valor atual das
+nove parcelas (1+8) num regime de taxa de juros de 1% ao mês e
+compare com o valor à vista.)
+<HR>
+
+<p>
+      <H2><A NAME="tth_sEc2">2</A>&nbsp;&nbsp;Sistema de Financiamento com Presta&#231;&#245;es Constantes</H2>Este sistema de financiamento é conhecido como
+<b>Sistema Francês</b> ou <b>Tabela Price</b>.
+
+<p>
+      <H3><A NAME="tth_sEc2.1">2.1</A>&nbsp;&nbsp;Sem Entrada</H3>Como já vimos na seção anterior, se uma quantia <i>q</i> é
+financiada em <i>n</i> parcelas iguais a <i>p</i>, a uma taxa de juros
+por período igual a <i>j</i>, então
+<A NAME="qsentr">
+</A>
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>q</i> = </td><td nowrap align=center>
+1-(1+<i>j</i>)<sup>-<i>n</i></sup><hr NOSHADE>
+ <i>j</i><Br></td><td nowrap align=center>
+<i>p</i></td></Table>
+</td><td width=100 align=right>(1)</td></table></centEr>
+
+
+
+<p>
+
+<center><img src="picmf3.gif" align="absmiddle">
+</center><HR>
+<b>Exercício 9.</b> Mostre que se uma quantia <i>q</i> é financiada em <i>n</i> parcelas
+iguais a <i>p</i>, a uma taxa de juros por período igual a <i>j</i>,
+então o valor da prestação é dada por
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>p</i> = </td><td nowrap align=center>
+<i>j</i><hr NOSHADE>
+ 1-(1+<i>j</i>)<sup>-<i>n</i></sup><Br></td><td nowrap align=center>
+<i>q</i></td></Table>
+</td></table></centEr>
+
+
+<HR>
+
+<p>
+<b>Exercício 10.</b>
+Uma bicicleta é vendida numa loja
+com duas opções de pagamento: à vista por R$ 129,00 ou em
+0+4 pagamentos com juros de 4,85 % de juros ao mês. Qual o
+valor da prestação na segunda opção de pagamento?
+<HR>
+
+<p>
+Vamos calcular a tabela de amortização de um financiamento
+com prestações constantes, sem entrada.
+
+<p>
+Cada prestação é composta de uma parcela de juro e uma
+parcela de <b>amortização</b> (diminuição na dívida), ou
+seja, para <i>k</i> = 1,<font face=symbol>¼</font
+>,<i>n</i>,
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>p</i><sub><i>k</i></sub> = <i>j</i><sub><i>k</i></sub> + <i>a</i><sub><i>k</i></sub></td></Table>
+</td></table></centEr>
+
+
+O juro é calculado sobre o saldo devedor no mês anterior, ou
+seja, 
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>j</i><sub><i>k</i></sub> = <i>j</i>&#183;<i>d</i><sub><i>k</i>-1</sub>,</td></Table>
+</td></table></centEr>
+
+ onde <i>j</i> é a taxa de juros e
+<i>d</i><sub><i>k</i>-1</sub> é o saldo devedor no mês <i>k</i>-1. E assim, a
+amortização é igual a 
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>a</i><sub><i>k</i></sub> = <i>p</i><sub><i>k</i></sub> - <i>j</i><sub><i>k</i></sub>.</td></Table>
+</td></table></centEr>
+
+ O saldo devedor
+imediatamente depois de paga a parcela <i>p</i><sub><i>k</i></sub> é igual a
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>d</i><sub><i>k</i></sub> = <i>d</i><sub><i>k</i>-1</sub> - <i>a</i><sub><i>k</i></sub>.</td></Table>
+</td></table></centEr>
+
+
+<HR>
+
+<p>
+<b>Exercício 11.</b> Prove a seguinte fórmula para o
+saldo devedor <i>d</i><sub><i>k</i></sub>:
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>d</i><sub><i>k</i></sub> = (1+<i>j</i>)<i>d</i><sub><i>k</i>-1</sub> - <i>p</i><sub><i>k</i></sub>.</td></Table>
+</td></table></centEr>
+
+
+Qual o significado desta fórmula?
+<HR>
+
+<p>
+Escrevemos um programa que roda em uma página na web para
+fazer o cálculo das prestações e da tabela de amortização
+para os dois sistemas de financiamento: tabela price e
+sistema SAC (que veremos mais adiante).
+<a href="javascript:tabamor1()">Clique aqui</a> para experimentar o
+programa.
+
+<p>
+<HR>
+<b>Exercício 12.</b> Escreva a tabela de
+amortização do Exercício 10.
+<HR>
+
+<p>
+Agora, vamos considerar o problema inverso, suponha que
+conhecemos o valor do débito inicial <i>d</i><sub>0</sub> e o valor das
+prestações fixas e queremos determinar a taxa de juros
+embutida no financiamento. Para isto temos que resolver a
+equação (<A href="#qsentr">1</A>):
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>q</i> = </td><td nowrap align=center>
+1-(1+<i>j</i>)<sup>-<i>n</i></sup><hr NOSHADE>
+ <i>j</i><Br></td><td nowrap align=center>
+<i>p</i></td></Table>
+</td></table></centEr>
+
+
+para <i>j</i>. Observe que esta não é uma equação simples de se
+resolver para <i>n</i> maior que 2. Precisamos usar um método
+iterativo para resolver esta equação. Vamos usar o
+<b>método de Newton</b>. Um método iterativo começa com uma aproximação
+inicial da solução, <i>x</i><sub>0</sub>, e gera uma nova aproximação a partir da anterior, repetidamente, até que se atinja a precisão desejada. No caso do método de Newton, se <i>x</i><sub><i>k</i>-1</sub> é a aproximação anterior, a nova aproximação da solução de <i>F</i>(<i>x</i>) = 0 é a solução de
+ uma aproximação linear da equação, nas proximidades da aproximação anterior da solução, ou seja, a solução de
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>F</i><font face=symbol>¢</font
+>(<i>x</i><sub><i>k</i>-1</sub>)(<i>x</i>-<i>x</i><sub><i>k</i>-1</sub>)+<i>F</i>(<i>x</i><sub><i>k</i>-1</sub>) = 0,</td></Table>
+</td></table></centEr>
+
+
+onde <i>F</i><font face=symbol>¢</font
+> é a derivada de <i>F</i>.
+Assim, a aproximação <i>x</i><sub><i>k</i></sub> é dada por
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>x</i><sub><i>k</i></sub> = <i>x</i><sub><i>k</i>-1</sub>-</td><td nowrap align=center>
+<i>F</i>(<i>x</i><sub><i>k</i>-1</sub>)<hr NOSHADE>
+ <i>F</i><font face=symbol>¢</font
+>(<i>x</i><sub><i>k</i>-1</sub>)<Br></td><td nowrap align=center>
+.</td></Table>
+</td></table></centEr>
+
+
+Neste caso específico
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>F</i>(<i>x</i>) = </td><td nowrap align=center>
+1-(1+<i>x</i>)<sup>-<i>n</i></sup><hr NOSHADE>
+ <i>x</i><Br></td><td nowrap align=center>
+<i>p</i> - <i>q</i>.</td></Table>
+</td></table></centEr>
+
+
+e a derivada de <i>F</i>(<i>x</i>)
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>F</i><font face=symbol>¢</font
+>(<i>x</i>) = <i>p</i></td><td align=left><font face=symbol>
+æ<br>ç<br>
+è
+</font></td><td>
+</td><td nowrap align=center>
+<i>n</i>(1+<i>x</i>)<sup>-(<i>n</i>+1)</sup><hr NOSHADE>
+ <i>x</i><Br></td><td nowrap align=center>
+- </td><td nowrap align=center>
+1-(1+<i>x</i>)<sup>-<i>n</i></sup><hr NOSHADE>
+ <i>x</i><sup>2</sup><Br></td><td nowrap align=center>
+</td><td align=left><font face=symbol>
+ö<br>÷<br>
+ø
+</font></td><td>
+.</td></Table>
+</td></table></centEr>
+
+
+
+<p>
+Escrevemos um programa que roda em uma página da web, que usa este método
+para determinar a taxa de juros.
+<a href="javascript:calcju()">Clique aqui</a> para experimentar o programa.
+
+<p>
+<HR>
+<b>Exercício 13.</b> Verifique que realmente a taxa de juros do exemplo
+anterior é 4,85 % .
+<HR>
+
+<p>
+      <H3><A NAME="tth_sEc2.2">2.2</A>&nbsp;&nbsp;Com Entrada</H3>
+<center><img src="picmf4.gif" align="absmiddle">
+</center>Este caso é semelhante ao anterior, apenas substituindo
+<i>n</i> por <i>n</i>-1 e <i>q</i> por <i>q</i>-<i>p</i> na equação (<A href="#qsentr">1</A>),
+pois o número de parcelas do financiamento é realmente <i>n</i>-1
+e não <i>n</i> e o valor a ser financiado é realmente <i>q</i>-<i>p</i> e não
+<i>q</i>. Assim, para determinarmos o valor da prestação <i>p</i>
+basta resolvermos a equação
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>q</i>-<i>p</i> = </td><td nowrap align=center>
+1-(1+<i>j</i>)<sup>-(<i>n</i>-1)</sup><hr NOSHADE>
+ <i>j</i><Br></td><td nowrap align=center>
+<i>p</i></td></Table>
+</td></table></centEr>
+
+
+para <i>p</i>.
+
+<p>
+<HR>
+<b>Exercício 14.</b> Mostre que se uma quantia <i>q</i> é
+financiada em <i>n</i> parcelas iguais a <i>p</i>, a uma taxa de juros
+por período igual a <i>j</i>, sendo a primeira paga no ato do
+financiamento, então o valor da prestação é dada por
+<A NAME="qcentr">
+</A>
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>p</i> = </td><td nowrap align=center>
+<i>j</i><hr NOSHADE>
+ 1+<i>j</i>-(1+<i>j</i>)<sup>-(<i>n</i>-1)</sup><Br></td><td nowrap align=center>
+<i>q</i></td></Table>
+</td><td width=100 align=right>(2)</td></table></centEr>
+
+
+<HR>
+
+<p>
+<b>Exercício 15.</b>
+Uma bicicleta é vendida numa loja com duas opções de
+pagamento: à vista por R$ 129,00 ou em 1+3 pagamentos com
+juros de 4,85 % de juros ao mês. Qual o valor da prestação
+na segunda opção de pagamento?
+<HR>
+
+<p>
+Para calcular a tabela de amortização de um financiamento
+com prestações constantes, com entrada, o processo é o mesmo
+que sem entrada. Vamos repetir para enfatizar o processo.
+
+<p>
+Cada prestação é composta de uma parcela de juro e uma
+parcela de <b>amortização</b> (diminuição na dívida), ou
+seja, para <i>k</i> = 1,<font face=symbol>¼</font
+>,<i>n</i>,
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>p</i><sub><i>k</i></sub> = <i>j</i><sub><i>k</i></sub> + <i>a</i><sub><i>k</i></sub></td></Table>
+</td></table></centEr>
+
+
+O juro é calculado sobre o saldo devedor no mês anterior, ou
+seja, 
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>j</i><sub><i>k</i></sub> = <i>j</i>&#183;<i>d</i><sub><i>k</i>-1</sub>,</td></Table>
+</td></table></centEr>
+
+ onde <i>j</i> é a taxa de juros e
+<i>d</i><sub><i>k</i>-1</sub> é o saldo devedor no mês <i>k</i>-1. E assim, a
+amortização é igual a 
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>a</i><sub><i>k</i></sub> = <i>p</i><sub><i>k</i></sub> - <i>j</i><sub><i>k</i></sub>.</td></Table>
+</td></table></centEr>
+
+ O saldo devedor
+imediatamente depois de paga a parcela <i>p</i><sub><i>k</i></sub> é igual a
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>d</i><sub><i>k</i></sub> = <i>d</i><sub><i>k</i>-1</sub> - <i>a</i><sub><i>k</i></sub>.</td></Table>
+</td></table></centEr>
+
+
+
+<p>
+Escrevemos um programa que roda em uma página na web para
+fazer o cálculo das prestações e da tabela de amortização
+para os dois sistemas de financiamento: tabela price e
+sistema SAC.
+<a href="javascript:tabamor()">Clique aqui</a> para experimentar o
+programa.
+
+<p>
+<HR>
+<b>Exercício 16.</b> Escreva o exemplo da tabela de
+amortização do Exercício 15.
+<HR>
+
+<p>
+Agora, vamos considerar o problema inverso, suponha que
+conhecemos o valor do débito inicial <i>d</i><sub>0</sub> e o valor das
+prestações fixas e queremos determinar a taxa de juros
+embutida no financiamento. Para isto temos que resolver a
+equação (<A href="#qcentr">2</A>):
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>p</i> = </td><td nowrap align=center>
+<i>j</i><hr NOSHADE>
+ 1+<i>j</i>-(1+<i>j</i>)<sup>-(<i>n</i>-1)</sup><Br></td><td nowrap align=center>
+<i>q</i></td></Table>
+</td></table></centEr>
+
+
+para <i>j</i>. Observe que esta não é uma equação simples de se
+resolver para <i>n</i> maior que 3. Precisamos usar um método
+iterativo para resolver esta equação. Vamos usar novamente o
+método de Newton.
+Um método iterativo começa com uma aproximação
+inicial da solução, <i>x</i><sub>0</sub>, e gera uma nova aproximação a partir da anterior, repetidamente, até que se atinja a precisão desejada. No caso do método de Newton, se <i>x</i><sub><i>k</i>-1</sub> é a aproximação anterior, a nova aproximação da solução de <i>F</i>(<i>x</i>) = 0 é a solução de
+ uma aproximação linear da equação, nas proximidades da aproximação anterior da solução, ou seja, a solução de
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>F</i><font face=symbol>¢</font
+>(<i>x</i><sub><i>k</i>-1</sub>)(<i>x</i>-<i>x</i><sub><i>k</i>-1</sub>) + <i>F</i>(<i>x</i><sub><i>k</i>-1</sub>) = 0,</td></Table>
+</td></table></centEr>
+
+
+onde <i>F</i><font face=symbol>¢</font
+> é a derivada de <i>F</i>.
+Assim, a aproximação <i>x</i><sub><i>k</i></sub> é dada por
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>x</i><sub><i>k</i></sub> = <i>x</i><sub><i>k</i>-1</sub> - </td><td nowrap align=center>
+<i>F</i>(<i>x</i><sub><i>k</i>-1</sub>)<hr NOSHADE>
+ <i>F</i><font face=symbol>¢</font
+>(<i>x</i><sub><i>k</i>-1</sub>)<Br></td><td nowrap align=center>
+.</td></Table>
+</td></table></centEr>
+
+
+Neste caso específico
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>F</i>(<i>x</i>) = </td><td nowrap align=center>
+1-(1+<i>x</i>)<sup>-(<i>n</i>-1)</sup><hr NOSHADE>
+ <i>x</i><Br></td><td nowrap align=center>
+<i>p</i> + <i>p</i> - <i>q</i>.</td></Table>
+</td></table></centEr>
+
+
+e a derivada de <i>F</i>(<i>x</i>)
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>F</i><font face=symbol>¢</font
+>(<i>x</i>) = <i>p</i></td><td align=left><font face=symbol>
+æ<br>ç<br>
+è
+</font></td><td>
+</td><td nowrap align=center>
+(<i>n</i>-1)(1+<i>x</i>)<sup>-<i>n</i></sup><hr NOSHADE>
+ <i>x</i><Br></td><td nowrap align=center>
+- </td><td nowrap align=center>
+1-(1+<i>x</i>)<sup>-(<i>n</i>-1)</sup><hr NOSHADE>
+ <i>x</i><sup>2</sup><Br></td><td nowrap align=center>
+</td><td align=left><font face=symbol>
+ö<br>÷<br>
+ø
+</font></td><td>
+.</td></Table>
+</td></table></centEr>
+
+
+
+<p>
+Escrevemos um programa que roda em página da web, que usa este método para
+deterrminar a taxa de juros.
+<a href="calcju.html">Clique aqui</a> para experimentar o programa.
+
+<p>
+<HR>
+<b>Exercício 17.</b> Verifique que realmente a taxa de juros do exemplo
+anterior é 4,85 % .
+<HR>
+
+<p>
+      <H2><A NAME="tth_sEc3">3</A>&nbsp;&nbsp;Sistema de Financiamento com Amortiza&#231;&#245;es
+Constantes</H2>Este sistema de financiamento é conhecido como SAC.
+Neste sistema o débito é dividido em parcelas iguais que
+serão as amortizações correspondentes a cada parcela.
+
+<p>
+      <H3><A NAME="tth_sEc3.1">3.1</A>&nbsp;&nbsp;Tabela de Amortização</H3>Assim como no sistema francês, cada prestação é composta de
+uma parcela de juro e uma parcela de amortização, ou seja,
+para <i>k</i> = 1,<font face=symbol>¼</font
+>,<i>n</i>, temos
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>p</i><sub><i>k</i></sub> = <i>a</i><sub><i>k</i></sub> + <i>j</i><sub><i>k</i></sub>.</td></Table>
+</td></table></centEr>
+
+
+Agora, neste caso, a amortização em cada período é dada por
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>a</i><sub><i>k</i></sub> = </td><td nowrap align=center>
+<i>d</i><sub>0</sub><hr NOSHADE>
+ <i>n</i><Br></td><td nowrap align=center>
+.</td></Table>
+</td></table></centEr>
+
+
+A parcela de juro é, assim como no sistema francês,
+calculada sobre o saldo devedor no período anterior, ou
+seja,
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>j</i><sub><i>k</i></sub> = <i>j</i>&#183;<i>d</i><sub><i>k</i>-1</sub>.</td></Table>
+</td></table></centEr>
+
+
+O saldo devedor imediatamente após ter sido paga a parcela
+<i>p</i><sub><i>k</i></sub> é dado por
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>d</i><sub><i>k</i></sub> = <i>d</i><sub><i>k</i>-1</sub> - <i>a</i><sub><i>k</i></sub>.</td></Table>
+</td></table></centEr>
+
+
+
+<p>
+<HR>
+<b>Exercício 18.</b> Prove a seguinte fórmula para o
+saldo devedor <i>d</i><sub><i>k</i></sub>:
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>d</i><sub><i>k</i></sub> = (1+<i>j</i>)<i>d</i><sub><i>k</i>-1</sub> - <i>p</i><sub><i>k</i></sub></td></Table>
+</td></table></centEr>
+
+
+<HR>
+
+<p>
+<b>Exercício 19.</b> Escreva a solução do exemplo do
+Exercício 10, mas agora no sistema SAC:<br>
+Uma bicicleta é vendida numa loja com duas opções de
+pagamento: à vista por R$ 129,00 ou em 0+4 pagamentos com
+juros de 4,85 % de juros ao mês, no sistema SAC. Observe
+que as prestações são decrescentes.
+<a href="tabamor.html">Clique aqui</a> para usar o
+programa que calcula a tabela de amortização.
+
+<p>
+<HR>
+      <H2><A NAME="tth_sEc4">4</A>&nbsp;&nbsp;Sistemas de Financiamento Habitacional da
+CEF</H2>Para financiamento da casa própria a CEF dispõe atualmente
+de dois sistemas. Nos dois sistemas o saldo devedor é
+corrigido mês a mês pela <i>T</i><i>R</i> (taxa referêncial de juros) e
+cada período de 12 meses é feito o recálculo da prestação (a
+partir do terceiro ano o recálculo pode passar a ser feito
+trimestralmente, a critério da CEF), baseado no saldo
+devedor e no período restante. A diferença entre os dois
+sistemas está no cálculo do valor da prestação.
+
+<p>
+      <H3><A NAME="tth_sEc4.1">4.1</A>&nbsp;&nbsp;Tabela SACRE</H3>Este é o sistema que a CEF chama de
+<b>Sistema de Amortização Crescente</b>.
+Na verdade este sistema usa para o cálculo do valor das
+prestações a metodologia do sistema de amortização constante
+- SAC anual, sem levar em conta o valor da <i>T</i><i>R</i>.
+Com a inclusão, posteriormente, do valor da <i>T</i><i>R</i> nos
+cálculos, este sistema resulta em uma amortização variável.
+A denominação é inadequada, pois com um valor da <i>T</i><i>R</i> baixo,
+este sistema pode resultar até em uma amortização
+decrescente.
+
+<p>
+<p><br><b>Cálculo da prestação a cada 12 meses</b>
+
+<p>
+<p><br>Para calcular o valor da prestação, fazemos o cálculo como
+se fosse o sistema de amortizações constantes e o pagamento
+fosse anual. Depois dividimos o valor da suposta parcela
+anual por 12.
+
+<p>
+Sejam <i>A</i> a suposta amortização anual (a amortização real
+vai depender do valor da <i>T</i><i>R</i>) e <i>J</i> o suposto juro anual
+(sem levar em conta o valor da <i>T</i><i>R</i>). Sejam <i>j</i> a taxa de
+juros nominal anual, <i>d</i><sub>0</sub> o saldo devedor atual e <i>n</i> o
+número de anos restante. Para a suposta amortização anual
+temos
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>A</i> = </td><td nowrap align=center>
+<i>d</i><sub>0</sub><hr NOSHADE>
+ <i>n</i><Br></td><td nowrap align=center>
+,</td></Table>
+</td></table></centEr>
+
+
+pois em <i>n</i> anos, com amortizações constantes iguais a <i>A</i>,
+a amortização total seria igual a <i>d</i><sub>0</sub>. Para o suposto juro
+anual temos
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>J</i> = <i>j</i>&#183;<i>d</i><sub>0</sub>.</td></Table>
+</td></table></centEr>
+
+
+A suposta prestação anual é então a soma da suposta
+amortização anual com o suposto juro:
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>A</i> + <i>J</i> = </td><td nowrap align=center>
+<i>d</i><sub>0</sub><hr NOSHADE>
+ <i>n</i><Br></td><td nowrap align=center>
++ <i>j</i>&#183;<i>d</i><sub>0</sub>.</td></Table>
+</td></table></centEr>
+
+
+Agora, a prestação mensal é igual a suposta prestação anual
+dividido por 12:
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>p</i><sub><i>k</i></sub> = </td><td nowrap align=center>
+<i>A</i> + <i>J</i><hr NOSHADE>
+ 12<Br></td><td nowrap align=center>
+ = </td><td nowrap align=center>
+<i>d</i><sub>0</sub>/<i>n</i> + <i>j</i>&#183;<i>d</i><sub>0</sub><hr NOSHADE>
+ 12<Br></td><td nowrap align=center>
+,</td></Table>
+</td></table></centEr>
+
+
+para <i>k</i> = 1,<font face=symbol>¼</font
+>,12. Pelas regras da CEF, atualmente em
+vigor, este cálculo é feito anualmente nos dois primeiros
+anos e pode a partir do terceiro ano, ser feito
+trimestralmente, a critério da CEF.
+
+<p>
+<p><br><b>Cálculo da tabela de amortização</b>
+
+<p>
+<p><br>A cada mês o saldo devedor é reajustado pelo valor da <i>T</i><i>R</i>
+no dia do pagamento e o juro real é calculado sobre este
+valor, ou seja, a taxa de juros real é igual ao valor da
+<i>T</i><i>R</i> somado a taxa de juros <i>j</i>/12.
+
+<p>
+Para cada mês <i>k</i>, primeiro calculamos o juro correspondente
+a este mês, <i>j</i><font face=symbol>¢</font
+><sub><i>k</i></sub>, que é calculado sobre o saldo devedor
+no mês anterior <i>d</i><sub><i>k</i>-1</sub> atualizado pelo valor da <i>T</i><i>R</i>:
+<A NAME="psju">
+</A>
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>j</i><font face=symbol>¢</font
+><sub><i>k</i></sub> = (<i>j</i>/12)&#183;(1+<i>T</i><i>R</i>)&#183;<i>d</i><sub><i>k</i>-1</sub>.</td></Table>
+</td><td width=100 align=right>(3)</td></table></centEr>
+
+
+Agora, calculamos a amortização correspondente a este mês,
+<i>a</i><font face=symbol>¢</font
+><sub><i>k</i></sub>, que é a diferença entre o valor da prestação,
+<i>p</i><sub><i>k</i></sub> e o valor do juro, <i>j</i><font face=symbol>¢</font
+><sub><i>k</i></sub>
+<A NAME="psamor">
+</A>
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>a</i><font face=symbol>¢</font
+><sub><i>k</i></sub> = <i>p</i><sub><i>k</i></sub> - <i>j</i><font face=symbol>¢</font
+><sub><i>k</i></sub>,</td></Table>
+</td><td width=100 align=right>(4)</td></table></centEr>
+
+
+ pois cada prestação é a soma de uma parcela
+de amortização e de uma parcela de juro,
+<i>p</i><sub><i>k</i></sub> = <i>a</i><font face=symbol>¢</font
+><sub><i>k</i></sub>+<i>j</i><font face=symbol>¢</font
+><sub><i>k</i></sub>.
+
+<p>
+Para calcular o novo saldo devedor, imediatamente depois de
+ter sido paga a prestação <i>p</i><sub><i>k</i></sub>  a CEF usa o seguinte
+raciocínio.  O novo saldo devedor, <i>d</i><sub><i>k</i></sub>, imediatamente
+depois de ter sido paga a prestação <i>p</i><sub><i>k</i></sub> é igual ao saldo
+devedor no mês anterior, <i>d</i><sub><i>k</i>-1</sub> <b>atualizado pelo
+valor da <i>T</i><i>R</i></b> subtraindo-se o valor da amortização
+correspondente a este mês, <i>a</i><font face=symbol>¢</font
+><sub><i>k</i></sub>:
+<A NAME="nosadev">
+</A>
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>d</i><sub><i>k</i></sub> = (1 + <i>T</i><i>R</i>)&#183;<i>d</i><sub><i>k</i>-1</sub> - <i>a</i><font face=symbol>¢</font
+><sub><i>k</i></sub>.</td></Table>
+</td><td width=100 align=right>(5)</td></table></centEr>
+
+
+Este cálculo feito pela CEF <b>está incorreto!</b>
+Pois, não faz sentido atualizar novamente o saldo devedor
+pelo valor da <i>T</i><i>R</i>. O saldo devedor já foi atualizado pelo
+valor da <i>T</i><i>R</i> no cálculo do juro. Desta forma a taxa de
+juros verdadeira é maior do que a que foi contratada (o
+valor da <i>T</i><i>R</i> mais <i>j</i>/12). A verdadeira amortização é
+aquela que é a diferença entre o saldo devedor no mês
+anterior e o saldo devedor atual:
+<A NAME="veramor">
+</A>
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>a</i><sub><i>k</i></sub> = <i>d</i><sub><i>k</i>-1</sub>-<i>d</i><sub><i>k</i></sub>.</td></Table>
+</td><td width=100 align=right>(6)</td></table></centEr>
+
+
+O verdadeiro juro é aquele que é a diferença entre o valor
+da prestação e o valor da amortização:
+<A NAME="verju">
+</A>
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>j</i><sub><i>k</i></sub> = <i>p</i><sub><i>k</i></sub>-<i>a</i><sub><i>k</i></sub>.</td></Table>
+</td><td width=100 align=right>(7)</td></table></centEr>
+
+
+ A taxa de juros que está realmente sendo
+praticada, além da <i>T</i><i>R</i>, pode ser obtida da segunte forma:
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>j</i><i>u</i> = </td><td nowrap align=center>
+<i>j</i><sub><i>k</i></sub><hr NOSHADE>
+ (1+<i>T</i><i>R</i>)<i>d</i><sub><i>k</i>-1</sub><Br></td><td nowrap align=center>
+.</td></Table>
+</td></table></centEr>
+
+
+Usando as equações (<A href="#verju">7</A>), (<A href="#veramor">6</A>),
+(<A href="#nosadev">5</A>), (<A href="#psamor">4</A>) e (<A href="#psju">3</A>) e
+simplificando obtemos
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>j</i><i>u</i> = </td><td nowrap align=center>
+<i>T</i><i>R</i><hr NOSHADE>
+ 1+<i>T</i><i>R</i><Br></td><td nowrap align=center>
++</td><td nowrap align=center>
+<i>j</i><hr NOSHADE>
+ 12<Br></td><td nowrap align=center>
+.</td></Table>
+</td></table></centEr>
+
+
+
+<p>
+      <H3><A NAME="tth_sEc4.2">4.2</A>&nbsp;&nbsp;Tabela Price</H3>Neste sistema da CEF, ela usa a sistemática do sistema
+francês (tabela Price) apenas para o cálculo da prestação
+sem levar em conta o valor da <i>T</i><i>R</i> e a cada período de 12
+meses é feito o recálculo da prestação baseado no saldo
+devedor e no tempo restante. Aqui também a denominação é
+inadequada, pois para um valor da <i>T</i><i>R</i> diferente de zero a
+cada recálculo a prestação sobe contradizendo a filosofia da
+Tabela Price, que é que as prestações são constantes.
+
+<p>
+<b>Cálculo da prestação a cada 12 meses</b><br>
+Para calcular o valor da prestação, fazemos o cálculo como
+se fosse o sistema francês (sem levar em conta o valor da
+<i>T</i><i>R</i>). Se <i>j</i> é a taxa de juros nominal anual, <i>d</i><sub>0</sub> é o saldo
+devedor atual e <i>n</i> o número de anos restante, então a taxa
+de juros real mensal é igual <i>j</i>/12 e para cada mês <i>k</i>, a
+prestação, <i>p</i><sub><i>k</i></sub>, é dada por
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>p</i><sub><i>k</i></sub> = </td><td nowrap align=center>
+<i>j</i>/12<hr NOSHADE>
+ 1 - (1+<i>j</i>/12)<sup>-<i>n</i>&#183;12</sup><Br></td><td nowrap align=center>
+<i>d</i><sub>0</sub>,</td></Table>
+</td></table></centEr>
+
+
+para <i>k</i> variando entre 1 e 12. A cada ano este cálculo tem
+que ser refeito levando-se em conta o novo saldo devedor e o
+tempo restante. Pelas regras da CEF, este cálculo pode ser
+refeito a cada trimestre.
+
+<p>
+<p><br><b>Cálculo da tabela de amortização</b>
+
+<p>
+<p><br>A sistemática é a mesma da tabela SACRE. Vamos repetir aqui
+apenas, para enfatizar a metodologia. A cada mês o saldo devedor é reajustado pelo valor da <i>T</i><i>R</i>
+no dia do pagamento e o juro real é calculado sobre este
+valor, ou seja, a taxa de juros real é igual ao valor da
+<i>T</i><i>R</i> somado a taxa de juros <i>j</i>/12.
+
+<p>
+Para cada mês <i>k</i>, primeiro calculamos o juro correspondente
+a este mês, <i>j</i><font face=symbol>¢</font
+><sub><i>k</i></sub>, que é calculado sobre o saldo devedor
+no mês anterior <i>d</i><sub><i>k</i>-1</sub> atualizado pelo valor da <i>T</i><i>R</i>:
+<A NAME="psju2">
+</A>
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>j</i><font face=symbol>¢</font
+><sub><i>k</i></sub> = (<i>j</i>/12)&#183;(1+<i>T</i><i>R</i>)&#183;<i>d</i><sub><i>k</i>-1</sub>.</td></Table>
+</td><td width=100 align=right>(8)</td></table></centEr>
+
+
+Agora, calculamos a amortização correspondente a este mês,
+<i>a</i><font face=symbol>¢</font
+><sub><i>k</i></sub>, que é a diferença entre o valor da prestação,
+<i>p</i><sub><i>k</i></sub> e o valor do juro, <i>j</i><font face=symbol>¢</font
+><sub><i>k</i></sub>
+<A NAME="psamor2">
+</A>
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>a</i><font face=symbol>¢</font
+><sub><i>k</i></sub> = <i>p</i><sub><i>k</i></sub> - <i>j</i><font face=symbol>¢</font
+><sub><i>k</i></sub>,</td></Table>
+</td><td width=100 align=right>(9)</td></table></centEr>
+
+
+ pois cada prestação é a soma de uma parcela
+de amortização e de uma parcela de juro,
+<i>p</i><sub><i>k</i></sub> = <i>a</i><font face=symbol>¢</font
+><sub><i>k</i></sub>+<i>j</i><font face=symbol>¢</font
+><sub><i>k</i></sub>.
+
+<p>
+Para calcular o novo saldo devedor, imediatamente depois de
+ter sido paga a prestação <i>p</i><sub><i>k</i></sub>  a CEF usa o seguinte
+raciocínio.  O novo saldo devedor, <i>d</i><sub><i>k</i></sub>, imediatamente
+depois de ter sido paga a prestação <i>p</i><sub><i>k</i></sub> é igual ao saldo
+devedor no mês anterior, <i>d</i><sub><i>k</i>-1</sub> <b>atualizado pelo
+valor da <i>T</i><i>R</i></b> subtraindo-se o valor da amortização
+correspondente a este mês, <i>a</i><font face=symbol>¢</font
+><sub><i>k</i></sub>:
+<A NAME="nosadev2">
+</A>
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>d</i><sub><i>k</i></sub> = (1 + <i>T</i><i>R</i>)&#183;<i>d</i><sub><i>k</i>-1</sub> - <i>a</i><font face=symbol>¢</font
+><sub><i>k</i></sub>.</td></Table>
+</td><td width=100 align=right>(10)</td></table></centEr>
+
+
+Este cálculo feito pela CEF <b>está incorreto!</b>
+Não faz sentido atualizar novamente o saldo devedor pelo
+valor da <i>T</i><i>R</i>. O saldo devedor já foi atualizado pelo valor
+da <i>T</i><i>R</i> no cálculo do juro. Desta forma a taxa de juros
+verdadeira é maior do que a que foi contratada (o valor da
+<i>T</i><i>R</i> mais <i>j</i>/12). A verdadeira amortização é aquela que é a
+diferença entre o saldo devedor no mês anterior e o saldo
+devedor atual:
+<A NAME="veramor2">
+</A>
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>a</i><sub><i>k</i></sub> = <i>d</i><sub><i>k</i>-1</sub>-<i>d</i><sub><i>k</i></sub>.</td></Table>
+</td><td width=100 align=right>(11)</td></table></centEr>
+
+
+O verdadeiro juro é aquele que é a diferença entre o valor
+da prestação e o valor da amortização:
+<A NAME="verju2">
+</A>
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>j</i><sub><i>k</i></sub> = <i>p</i><sub><i>k</i></sub>-<i>a</i><sub><i>k</i></sub>.</td></Table>
+</td><td width=100 align=right>(12)</td></table></centEr>
+
+
+ A taxa de juros que está realmente sendo
+praticada, além da <i>T</i><i>R</i>, pode ser obtida da segunte forma:
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>j</i><i>u</i> = </td><td nowrap align=center>
+<i>j</i><sub><i>k</i></sub><hr NOSHADE>
+ (1+<i>T</i><i>R</i>)<i>d</i><sub><i>k</i>-1</sub><Br></td><td nowrap align=center>
+.</td></Table>
+</td></table></centEr>
+
+
+Usando as equações (<A href="#verju2">12</A>), (<A href="#veramor2">11</A>),
+(<A href="#nosadev2">10</A>), (<A href="#psamor2">9</A>) e (<A href="#psju2">8</A>) e
+simplificando obtemos
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>j</i><i>u</i> = </td><td nowrap align=center>
+<i>T</i><i>R</i><hr NOSHADE>
+ 1+<i>T</i><i>R</i><Br></td><td nowrap align=center>
++</td><td nowrap align=center>
+<i>j</i><hr NOSHADE>
+ 12<Br></td><td nowrap align=center>
+.</td></Table>
+</td></table></centEr>
+
+
+
+<p>
+Escrevemos um programa que roda em uma página na web para
+fazer simulação do cálculo das prestações e da tabela de
+amortização para os dois sistemas de financiamento
+habitacional da CEF. <a href="javascript:tabcef()">Clique aqui</a> para experimentar o programa.
+
+<p>
+<HR>
+<b>Exercício 20.</b>
+Calcule a tabela de amortização nos dois sistemas da CEF,
+para um financiamento habitacional no valor de R$ 30000,00
+em 15 anos, com taxa de juros nominal de 12 % ao ano e com
+uma <i>T</i><i>R</i> de 0,5 % . Observe que na tabela ``Price'', a cada
+ano a prestação é crescente. Experimente um valor da <i>T</i><i>R</i>
+igual a zero, na tabela ``Price'' e veja que neste caso o
+financiamento faz juz ao nome. Experimente, na tabela SACRE,
+variar o valor da <i>T</i><i>R</i> para mais e para menos. A amortização é
+crescente? Tente escrever uma regra para o comportamento da
+amortização. E para a prestação?
+<a href="javascript:tabcef()">Clique aqui</a> para usar o
+programa que faz a simulação.
+
+<p>
+<HR>
+<b>Exercício 21.</b> Faça um estudo comparativo dos dois
+sistemas de financiamento habitacional da CEF.
+<HR>
+
+<p>
+Escrevemos um programa que roda em uma página na web para
+fazer simulação <b>de como deveriam ser</b> o cálculo das
+prestações e a tabela de amortização para os dois sistemas
+de financiamento habitacional da CEF.
+<a href="javascript:tabcef2()">Clique aqui</a> para experimentar o programa.
+
+<p>
+      <H2><A NAME="tth_sEc5">5</A>&nbsp;&nbsp;Páginas Interativas</H2>Escrevemos alguns programas que rodam em páginas da web para
+alguns cálculos financeiros:
+
+<UL>
+<p>
+
+<li> <a href="javascript:tabatual()">Tabelas de Atualizações Monetárias</a> -
+para calcular os valores futuros e o valor atual de uma quantia.
+
+<li> <a href="javascript:tabamor1()">Tabelas de Financiamentos</a> -
+para calcular as tabelas de financiamento do sistema de
+amortizações constantes (SAC) e do sistema francês (Tabela
+Price).
+
+<li> <a href="javascript:calcju()">Cálculo da Taxa de Juros pelo Método
+de Newton</a> - para calcular a taxa de juros praticada na
+tabela Price, sendo conhecidos o valor do débito e das
+prestações (fixas).
+
+<li> <a href="javascript:tabcef()">Simulação das Tabelas de Financiamento
+Habitacional da CEF</a> - para fazer a simulação dos dois
+sistemas de financiamento Habitacional da CEF: SACRE e
+Tabela Price, para um valor fixo da <i>T</i><i>R</i> e uma taxa de juros
+nominal anual igual a &nbsp;<i>j</i>.
+
+<li> <a href="javascript:tabcef2()">Simulação de como Deveriam Ser as
+Tabelas de Fiananciamento da CEF</a>  - para fazer a simulação
+dos dois sistemas de financiamento Habitacional da CEF:
+SACRE e Tabela Price, se a taxa de juros praticada fosse
+realmente a <i>T</i><i>R</i> mais uma taxa fixa nominal anual igual a
+&nbsp;<i>j</i>.
+</UL>
+<p>
+
+<p><hr><small>File translated from T<sub><font size="-1">E</font></sub>X by <a href="http://hutchinson.belmont.ma.us/tth/">T<sub><font size="-1">T</font></sub>H</a>, version 1.55.</small>
+</HTML>

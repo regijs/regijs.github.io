@@ -1,0 +1,2 @@
+#!/bin/sh
+tth -i -e2 -a -P$2 -Ltopicos <$1.tex>$1.html

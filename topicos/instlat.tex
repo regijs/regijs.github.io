@@ -1,0 +1,78 @@
+%%tth:\def\latexhtml#1#2{\special{html:#2}}
+%%tth:\def\eqc#1{\begin{center}\setlength{\unitlength}{1pt}\begin{picture}(50,12)\put(0,0){$\displaystyle #1$}\end{picture}\end{center}}
+%%tth:\def\eq#1{\setlength{\unitlength}{1pt}\begin{picture}(10,12)\put(0,0){$\displaystyle #1$}\end{picture}}
+%%tth:\def\eqn#1{\begin{equation}\begin{center}\eq{\displaystyle #1}\end{center}\end{equation}}
+%%tth:\def\hyperref#1#2{\special{html:<A href="\##2">#1</A>}}
+%%tth:\def\hyperpageref#1#2{\special{html:<A href="\##2">#1</A>}}
+
+%%tth:\begin{html}<title>Instalação do LATEX</title>\end{html}
+%%tth:\title{Instalação do \LaTeX
+%%tth:        }
+%%tth:\author{Reginaldo J. Santos\\
+%%tth:        Departamento de Matemática\\
+%%tth:        Instituto de Ciências Exatas\\
+%%tth:        Universidade Federal de Minas Gerais\\
+%%tth:        \href{http://www.mat.ufmg.br/~regi}
+%%tth:        {\texttt{http://www.mat.ufmg.br/\~{}regi}}
+%%tth:        }
+%%tth:\begin{center}
+%%tth:\begin{html}<script>document.write("This page was last modified on : ",document.lastModified);</script>\end{html}
+%%tth:\end{center}
+
+%%tth:\medskip
+
+
+O \LaTeX\ é um programa de domínio púplico, por isso existem
+várias implementações. Vamos usar uma implementação chamada
+em$\!$\TeX, uma interface gráfica junto com um editor de
+textos chamada, \TeX mEx, e um visualizador, DVIWIN. Todos
+estes programas são ``freeware'', isto é, são gratuítos e
+podem trabalhar juntos como se fossem um só, mas, para que
+isto aconteça, é necessário configurá-los. Estamos
+disponibilizando uma versão já configurada que pode ser
+instalada simplesmente descompactando certos arquivos. Para
+isto, siga os passos seguintes:
+\begin{itemize}
+\item Faça o ``download'' dos
+arquivos
+\texttt{emtex.zip, texmex.zip, dviwin.zip,
+autoexec.emtex.bat} e \texttt{grupolatex.port.zip} ou
+\texttt{grupolatex.eng.zip} (dependendo se seu Windows é em português ou
+em inglês), que estão no endereço
+\href{ftp://ftp.mat.ufmg.br/pub/prog/tex}{ftp://ftp.mat.ufmg.br/pub/prog/tex}
+ (basta clicar com
+o botão esquerdo do mouse sobre os nomes dos arquivos, depois salve em
+uma pasta temporária, p. ex.
+\texttt{c:$\backslash$windows$\backslash$temp}).
+\item Descompacte os arquivos \texttt{.zip} a partir da raiz
+\texttt{c:$\backslash$} com a opção ``Use Folder Names''
+(no caso do descompactador ser o WINZIP, clique duas vezes em cada um
+dos arquivos, clique no botão \textbf{Extract}, depois em
+\textbf{Extract to:} escreva \texttt{c:$\backslash$} e marque
+\textbf{Use Folder Names}).
+
+\item
+Acrescente as linhas
+que estão no \texttt{autoexec.emtex.bat} no arquivo \texttt{autoexec.bat}
+do seu computador (ele fica em \texttt{c:$\backslash$}). Para isso, clique
+em cada um dos arquivos com o botão direito do mouse e escolha
+\textbf{Editar}, desta forma os arquivos serão abertos no Bloco de notas.
+
+\end{itemize}
+Se tudo estiver certo, você terá criado a seguinte
+estrutura:
+\begin{verbatim}
+c:\emtex
+c:\emx
+c:\texmex
+c:\dviwin
+\end{verbatim}
+Além disso, você deve ter criado também o grupo
+\textbf{LaTeX}, isto é, se você clicar em \textbf{Iniciar} e
+depois em \textbf{Programas} você deve encontrar uma pasta
+chamada \textbf{LaTeX}, onde estão atalhos para os programas
+\textbf{Texmex} e \textbf{Dviwin} e para diversas ajudas.
+
+Para começar a usar o \LaTeX\ você deve clicar em \textbf{Iniciar}, depois
+em \textbf{Programas}, depois em \textbf{LaTeX} e finalmente clicar em
+\textbf{Texmex}.

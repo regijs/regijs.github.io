@@ -1,0 +1,158 @@
+<html>
+<title>Simulação de como Deveriam Ser as Tabelas da CEF </title>
+
+<script> 
+
+function trunca(x){
+	var z=Math.round(x*10000000)/10000000;
+	return Math.floor(z*100)/100;
+}
+
+
+function num2str(x){
+	var z=String(x);
+		if(z.indexOf(".")==-1){
+			z=z+".00";
+            	}else{
+			if(z.indexOf(".")==(z.length-2)){
+				z=z+"0";
+			}
+		}
+            return z;
+}
+
+function tabelasacre(){
+	view = window.open("", "tabela","menubar,resizable,scrollbars");
+	view.document.open("text/html");
+	d0=document.entradas.saldo.value;
+	ju=document.entradas.txju.value;
+	tr=document.entradas.tr.value;
+	n=parseInt(document.entradas.prazo.value);
+          	view.document.writeln("<center><H1>Simulação de como Deveria Ser a Tabela SACRE</H1>");
+         	view.document.writeln("<H2>Reginaldo J. Santos</H2>");
+         	view.document.writeln("<H3>Departamento de Matemática<br>");
+         	view.document.writeln("Instituto de Ciências Exatas<br>");
+         	view.document.writeln("Universidade Federal de Minas Gerais</H3>");
+            view.document.writeln("Saldo Devedor = R$ "+num2str(d0)+"<br>");
+	view.document.writeln("Taxa de Juros Nominal Anual = "+ju+" %<br>");
+	view.document.writeln("Taxa Referencial Mensal (TR) = "+tr+" %<br>");
+	view.document.writeln("Prazo = "+n+" anos<br>");
+	var xk=d0; 
+	var jk=0; 
+	var ak=0; 
+	var ind=0;
+	ju/=100; 
+	tr/=100;
+      view.document.writeln("<center><table BORDER CELLPADDING=2><tr>");
+      view.document.writeln("<td align=center><b>Mês</b></td><td align=center><b>Saldo Devedor</b></td><td align=center><b>Amortização</b></td>");
+      view.document.writeln("<td align=center><b>Juro</b></td><td align=center><b>Prestação </b></td></tr>");
+	for (var k=1; k<=n; k++){
+		jk=ju*xk;
+		ak=xk/(n-k+1);
+   		pk=ak+jk;
+   		pk/=12;
+   		pk=trunca(pk);
+   		for (var i=1; i<=12; i++){
+      			jk=xk*(1+tr)*ju/12;
+      			jk=trunca(jk);
+      			ak=pk-jk;
+			ak=trunca(ak);
+      			xk=xk-ak;
+			xk=trunca(xk);
+			ind=(k-1)*12+i;
+			view.document.writeln("<tr><td align=right>"+ind+"</td><td align=right>"+num2str(xk)+"</td><td align=right>"+num2str(ak));
+      			view.document.writeln("</td><td align=right>"+num2str(jk)+"</td><td align=right>"+num2str(pk)+"</td></tr>");
+		}
+	}
+	view.document.writeln("</table></center>");
+	view.document.close;
+}
+
+function tabelaprice( ){
+
+	view = window.open("", "tabela","menubar,resizable,scrollbars");
+	view.document.open("text/html");
+	d0=document.entradas.saldo.value;
+	ju=document.entradas.txju.value;
+	tr=document.entradas.tr.value;
+	n=parseInt(document.entradas.prazo.value);
+         	view.document.writeln("<center><H1>Simulação de como Deveria Ser a Tabela Price da CEF</H1>");
+         	view.document.writeln("<H2>Reginaldo J. Santos</H2>");
+         	view.document.writeln("<H3>Departamento de Matemática<br>");
+         	view.document.writeln("Instituto de Ciências Exatas<br>");
+        	view.document.writeln("Universidade Federal de Minas Gerais</H3>");
+	view.document.writeln("Saldo Devedor = R$ "+num2str(d0)+"<br>");
+	view.document.writeln("Taxa de Juros Nominal Anual = "+ju+" %<br>");
+	view.document.writeln("Taxa Referencial Mensal (TR) = "+tr+" %<br>");
+	view.document.writeln("Prazo = "+n+" anos<br>");
+	var xk=d0; 
+	var jk=0; 
+	var ak=0; 
+	var ind=0;
+	ju/=12;
+	ju/=100; 
+	tr/=100;
+      view.document.writeln("<center><table BORDER CELLPADDING=2><tr>");
+      view.document.writeln("<td align=center><b>Mês</b></td><td align=center><b>Saldo Devedor</b></td><td align=center><b>Amortização</b></td>");
+      view.document.writeln("<td align=center><b>Juro</b></td><td align=center><b>Prestação </b></td></tr>");
+	for (var k=1; k<=n; k++){
+  		pk=ju/(1-Math.pow(1+ju,(-n+k-1)*12))*xk;
+		pk=trunca(pk);
+   		for (var i=1; i<=12; i++){
+     			jk=xk*(1+tr)*ju;
+      			jk=trunca(jk);
+      			ak=pk-jk;
+			ak=trunca(ak);
+      			xk=xk-ak;
+			xk=trunca(xk);
+			ind=(k-1)*12+i;
+			view.document.writeln("<tr><td align=right>"+ind+"</td><td align=right>"+num2str(xk)+"</td><td align=right>"+num2str(ak));
+      			view.document.writeln("</td><td align=right>"+num2str(jk)+"</td><td align=right>"+num2str(pk)+"</td></tr>");
+		}
+	}
+	view.document.writeln("</table></center>");
+	view.document.close;
+}
+
+function viewtabela( ){
+	if (document.entradas.tab.selectedIndex==0){
+		tabelasacre( );
+	}else{
+		tabelaprice( );
+	}
+
+}
+
+
+</script>
+
+<center>
+<H1>Simulação de como Deveriam Ser as Tabelas de Financiamento Habitacional da CEF</H1>
+<H2>Reginaldo J. Santos</H2>
+<H3>Departamento de Matemática<br>
+Instituto de Ciências Exatas<br>
+Universidade Federal de Minas Gerais</H3>
+
+<H4>14 de outubro de 1998</H4>
+</center>
+<form action="" name="entradas" method="GET" onsubmit="return verifica()">
+<center><b>Tabela </b>
+
+<SELECT NAME="tab">
+<OPTION value="SACRE" >SACRE
+<OPTION value="Price da CEF">Price da CEF
+</SELECT>
+
+<br>
+<table>
+<tr>
+<td>Saldo Devedor: </td><td>R$ <input type="text" name="saldo" size=10 value="30000.00"></input></td></tr><tr>
+<td>Taxa de Juros Nominal Anual:</td><td><input type="text" name="txju" size=4 value="12"> %</input></td></tr><tr>
+<td>Taxa Referencial Mensal (TR):</td><td> <input type="text" name="tr" size=4 value="0.5"> %</input></td></tr><tr>
+<td>Prazo:</td><td> <input type="text" name="prazo" size=3 value="15"> anos</input></td></tr>
+</table>
+<input type="button" value="GERAR TABELA" onClick="viewtabela()"></input>
+</center>
+
+</form>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+
+<HEAD>
+<TITLE>Cálculo da Taxa de Juros</TITLE>
+<META NAME="GENERATOR" CONTENT="Arachnophilia 3.5">
+<META NAME="FORMATTER" CONTENT="Arachnophilia 3.5">
+</HEAD>
+
+<BODY BACKGROUND="" BGCOLOR="#ffffff" TEXT="#000000" LINK="#0000ff" VLINK="#800080" ALINK="#ff0000">
+
+
+
+</BODY>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- ;
+
+function calcula( ){
+	view = window.open("", "tabela","menubar,resizable,scrollbars");
+	view.document.open("text/html");
+	d0=document.entradas.deb.value;
+	p=document.entradas.pre.value;
+	n=document.entradas.np.value;
+         	view.document.writeln("<center><H1>Cálculo da Taxa de Juros Usando o Método de Newton</H1>");
+         	view.document.writeln("<H2>Reginaldo J. Santos</H2>");
+         	view.document.writeln("<H3>Departamento de Matemática<br>");
+         	view.document.writeln("Instituto de Ciências Exatas<br>");
+         	view.document.writeln("Universidade Federal de Minas Gerais</H3>");
+	view.document.writeln("Débito = R$ "+d0+"<br>");
+	view.document.writeln("Prestações  =  R$ "+p+"<br>");
+	view.document.writeln(n+" parcelas, ");
+	if (document.entradas.entr[0].checked=="1"){
+		view.document.writeln("<b>com</b>  entrada <br>")
+	}else{
+		view.document.writeln("<b>sem</b>  entrada <br>")
+	}
+	view.document.writeln("<b>Iterações:</b></center>");
+	if (document.entradas.entr[1].checked=="1"){
+		f="(1-Math.pow(1+x,-"+this.document.entradas.np.value+"))*"+this.document.entradas.pre.value+"/x-"+this.document.entradas.deb.value;
+		df=this.document.entradas.pre.value+"*("+this.document.entradas.np.value+"*Math.pow(1+x,-"+this.document.entradas.np.value+"-1)/x-(1-Math.pow(1+x,-"+this.document.entradas.np.value+"))/(x*x))";
+	}else{
+		var nnp=this.document.entradas.np.value-1;
+		f="(1-Math.pow(1+x,-"+nnp+"))*"+this.document.entradas.pre.value+"/x-"+this.document.entradas.deb.value+"+"+this.document.entradas.pre.value;
+		df=this.document.entradas.pre.value+"*("+nnp+"*Math.pow(1+x,-"+nnp+"-1)/x-(1-Math.pow(1+x,-"+nnp+"))/(x*x))";
+	}
+	x=fzero(f,df,document.entradas.valor.value/100);
+	view.document.writeln("<center>A taxa de juros encontrada é de "+x+" % </center>");
+	view.document.close;
+}
+
+function trunca(x){
+	var z=Math.round(x*1000000000000)/1000000000000;
+	return Math.floor(z*100000)/100000;
+}
+
+
+function num2str(x){
+	var z=String(x);
+		if(z.indexOf(".")==-1){
+			z=z+".00000";
+		}else{
+			if(z.indexOf(".")==(z.length-2)){
+				z=z+"0000";
+            		}
+			if(z.indexOf(".")==(z.length-3)){
+				z=z+"000";
+            		}
+			if(z.indexOf(".")==(z.length-4)){
+				z=z+"00";
+            		}
+			if(z.indexOf(".")==(z.length-5)){
+				z=z+"0";
+            		}
+		}
+            return z;
+}
+
+
+function feval(fun,x){
+	with (Math) {
+		return eval(fun);
+	}
+}
+
+
+function fzero(f,df,x){
+
+var tol=0.0000001;
+var k=0;
+view.document.writeln("<center><table BORDER CELLPADDING=2><tr>");
+view.document.writeln("<td align=center><b>Iter. </b></td><td align=center><b>Aproximação</b></td></tr>");
+view.document.writeln("<tr><td align=right>"+k+"</td><td align=right>"+num2str(trunca(x*100))+"</td></tr>");
+var xnew=x-feval(f,x)/feval(df,x);
+k+=1;
+view.document.writeln("<tr><td align=right>"+k+"</td><td align=right>"+num2str(trunca(xnew*100))+"</td></tr>");
+
+while ( (Math.abs(xnew-x)>tol) && (k<20) ) {
+	k+=1;
+	x=xnew;
+	xnew=x-feval(f,x)/feval(df,x);
+	view.document.writeln("<tr><td align=right>"+k+"</td><td align=right>"+num2str(trunca(xnew*100))+"</td></tr>");
+}
+view.document.writeln("</table></center>");
+return num2str(trunca(xnew*100));
+ } 
+
+
+// end hide -->
+</SCRIPT>
+
+<form action="" name="entradas" method="GET" onsubmit="return verifica()">
+<center>
+<H1>Cálculo da Taxa de Juros Usando o Método de Newton</H1>
+<H2>Reginaldo J. Santos</H2>
+<H3>Departamento de Matemática<br>
+Instituto de Ciências Exatas<br>
+Universidade Federal de Minas Gerais</H3>
+
+<H4>15 de outubro de 1998</H4>
+
+<INPUT TYPE="radio" NAME="entr" ></INPUT> Com Entrada 
+<INPUT TYPE="radio" NAME="entr"  CHECKED></INPUT> Sem Entrada 
+<br>
+<table>
+<tr>
+<td>Valor do Débito: </td> <td>R$ <input type="text" name="deb" size=10 value="129.00"></input></td></tr>
+<tr>
+<td>Valor das Prestações: </td> <td>R$ <input type="text" name="pre" size=10 value="36.25"></input></td></tr>
+<tr>
+<td>No. de Parcelas: </td> <td><input type="text" name="np" size=5 value="4"></input></td></tr>
+<tr>
+<td>Aproximação Inicial:</td><td><input type="text" name="valor" size=5 value="1.0"> %</input></td></tr>
+</table>
+<input type="button" value="GERAR ITERAÇÕES" onClick="calcula()"></input>
+</center>
+</form>
+
+
+</HTML>

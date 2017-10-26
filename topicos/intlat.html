@@ -1,0 +1,1806 @@
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+           "http://www.w3.org/TR/REC-html40/loose.dtd"><HTML>
+<META NAME="GENERATOR" CONTENT="TtH 1.55">                                                <title>Introdução ao LATEX</title>
+<title>Introdução ao L<sup>A</sup>T<sub>E</sub>X
+        </title>
+<H1 align=center>Introdução ao L<sup>A</sup>T<sub>E</sub>X
+        </H1>
+
+<p>
+
+<H3 align=center>Reginaldo J. Santos<br>
+        Departamento de Matemática<br>
+        Instituto de Ciências Exatas<br>
+        Universidade Federal de Minas Gerais<br>
+        
+        <a href="http://www.mat.ufmg.br/~regi"><tt>http://www.mat.ufmg.br/~regi</tt></a>        </H3>
+<center>
+<script type="text/javascript"> <!--
+window.location = "intlat.pdf"
+--> </script>
+<script>document.write("This page was last modified on : ",document.lastModified);</script></center><font size="+3">Conteúdo</font>
+
+<p>
+<A href="#tth_sEc0"
+>0&nbsp; Introdução</A><br><A href="#tth_sEc1"
+>1&nbsp; Texto, Comandos e Ambientes</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc1.1"
+>1.1&nbsp; Um aviso</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc1.2"
+>1.2&nbsp; Estrutura Básica de um Arquivo Fonte L<sup>A</sup>T<sub>E</sub>X </A><br><A href="#tth_sEc2"
+>2&nbsp; Diferentes Formas de Exibição de Texto</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc2.1"
+>2.1&nbsp; Mudando o Tipo das Letras</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc2.2"
+>2.2&nbsp; Centralizando e Indentando</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc2.3"
+>2.3&nbsp; Listas</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc2.4"
+>2.4&nbsp; Teoremas, Proposições, etc</A><br><A href="#tth_sEc3"
+>3&nbsp; Fórmulas Matemáticas</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc3.1"
+>3.1&nbsp; Principais Elementos do Modo Matemático</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc3.2"
+>3.2&nbsp; Expoentes e Índices</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc3.3"
+>3.3&nbsp; Frações</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc3.4"
+>3.4&nbsp; Raízes</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc3.5"
+>3.5&nbsp; Somatórios e Integrais</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc3.6"
+>3.6&nbsp; Pontos, Espaços e Texto no Modo Matemático</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc3.7"
+>3.7&nbsp; Símbolos Matemáticos</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc3.8"
+>3.8&nbsp; Funções Matemáticas</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc3.9"
+>3.9&nbsp; Fórmulas com Til, Barra, Chapéu, etc</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc3.10"
+>3.10&nbsp; Tamanho automático de parênteses e similares</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc3.11"
+>3.11&nbsp; Matrizes</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc3.12"
+>3.12&nbsp; Equações ou Inequações Multi-linhas</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc3.13"
+>3.13&nbsp; Fórmulas dentro de uma Moldura</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc3.14"
+>3.14&nbsp; Mudança dos Tipos de Letras no Modo Matemático</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc3.15"
+>3.15&nbsp; Espaços no Modo Matemático</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc3.16"
+2>3.16&nbsp; Usando o MATLAB para Gerar Fórmulas</A><br><A href="#tth_sEc4"
+>24&nbsp; Figuras</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc4.1"
+>4.1&nbsp; Ambiente picture</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc4.2"
+>4.2&nbsp; Figuras Importadas de Outros Programas</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc4.3"
+>4.3&nbsp; Ambiente figure</A><br><A href="#tth_sEc5"
+>5&nbsp; Partes do Documento</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc5.1"
+>5.1&nbsp; Título</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc5.2"
+>5.2&nbsp; Seções</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc5.3"
+>5.3&nbsp; Conteúdo</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc5.4"
+>5.4&nbsp; Bibliografia</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc5.5"
+>5.5&nbsp; Índice Alfabético</A><br><A href="#tth_sEc6"
+>6&nbsp; Outros Recursos</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc6.1"
+>6.1&nbsp; Referências Cruzadas</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc6.2"
+>6.2&nbsp; Espaçamento</A><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Espaçamento Horizontal<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Espaçamento Vertical<br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc6.3"
+>6.3&nbsp; Dividindo o Arquivo Fonte</A><br>&nbsp;&nbsp;&nbsp;&nbsp;<A href="#tth_sEc6.4"
+>6.4&nbsp; Tabelas</A><br>
+ <script>
+function instlat(){
+
+window.open("http://www.mat.ufmg.br/~regi/latex/instlat2.html","instlat",
+        "menubar,resizable,scrollbars")
+}
+ </script>
+
+<H2><A NAME="tth_sEc0">0.&nbsp;</A>Introdução</H2><p>O L<sup>A</sup>T<sub>E</sub>X&nbsp;é um pacote feito para a preparação de textos
+impressos de alta qualidade, especialmente para textos
+matemáticos.
+Ele foi desenvolvido por Leslie Lamport a partir do programa
+T<sub>E</sub>X&nbsp;criado por Donald Knuth.
+
+<p>
+Podemos dividir os programas de processamento de texto em
+du2as classes. Com os chamados <i>processadores de
+texto</i>, existe um menu na tela apresentando os recursos, que
+podem ser usados no processamento do texto, que por sua vez
+podem ser selecionados com o uso do mouse. Depois de
+selecionado um recurso, o texto é digitado e aparece na tela
+exatamente como vai ser impresso no papel. O usuário pode
+ver logo no estágio de entrada do texto, se o texto será
+impresso como esperado. Este método é chamado
+``what-you-see-is-what-you-get'' ou simplesmente WYSWYG.
+A segunda classe, que é a que pertence o L<sup>A</sup>T<sub>E</sub>X, o
+processamento do texto é feito em duas etapas distintas. O
+texto a ser impresso e os comandos de formatação são
+escritos em um <b>arquivo fonte</b> com o uso de um
+<i>editor de textos</i>, isto é, um programa que escreve
+textos em meio magnético. Em seguida o arquivo fonte é
+submetido a um programa formatador de textos, no nosso caso
+o L<sup>A</sup>T<sub>E</sub>X, que gera um arquivo de saída, que pode ser
+impresso ou visualizado na tela. Programas deste tipo podem
+parecer inicialmente mais complicados do que os do outro
+tipo, mas apresentam uma série de vantagens em relação aos
+processadores de texto, como por exemplo:
+
+<UL>
+<p>
+
+<li> Mudanças na formatação do texto
+inteiro com apenas a mudança de alguns comandos.
+
+<li> Escrita de fórmulas complexas usando apenas comandos,
+por exemplo, <font face=symbol>ò</font
+><sub>0</sub><sup><i>a</i></sup> <i>e</i><sup>-<i>x</i><sup>2</sup></sup><i>d</i><i>x</i>, é impressa com o
+comando
+<tt>$\int_{0}^a e^{-x^2}dx$</tt>;
+
+<li> Numeração automática de fórmulas, seções, definições,
+exemplos e teoremas, o que permite que você faça mudanças na
+ordem do texto sem que seja necessário trocar os números dos
+itens. 
+<li> As citações a fórmulas, seções, definições,
+exemplos, teoremas além de citações bibliográficas também
+podem ser automatizadas, de forma que mudanças no texto não
+produzem erros nas citações.
+</UL>
+<p>
+<a name="instlat"> </a>O
+L<sup>A</sup>T<sub>E</sub>X&nbsp;é
+um programa de domínio púplico, por isso existem
+várias implementações. Vamos usar uma implementação chamada
+MikT<sub>E</sub>X, uma interface gráfica junto com um editor de
+textos chamada, T<sub>E</sub>XShell, e um visualizador, YAP. Todos
+estes programas são ``freeware'', isto é, são gratuítos e
+podem trabalhar juntos como se fossem um só, mas é
+necessário configurá-los para que isto aconteça. Estamos
+disponibilizando uma versão já configurada que pode ser
+instalada simplesmente descompactando certos arquivos. Para
+isto, siga os passos que estão em
+<a
+href="javascript:instlat()">http://www.mat.ufmg.br/~regi/latex/instlat2.html</a>.
+
+<p>
+Para começar a usar o L<sup>A</sup>T<sub>E</sub>X&nbsp;você deve clicar em <b>Iniciar</b>, depois
+em <b>Programas</b>, depois em <b>MikTeX</b> e finalmente clicar em
+<b>TeXShell</b>.
+
+<p>
+Depois de inicializado o T<sub>E</sub>XShell, a primeira coisa a fazer
+é abrir um arquivo no editor do T<sub>E</sub>XShell. Para isto, no menu,
+escolha <b>Open...</b> e o nome do arquivo existente ou 
+<b>New</b> e ele inicia um novo arquivo.
+
+<p>
+Aqui está um pequeno arquivo exemplo, que você pode usar como modelo para os
+seus arquivos. 
+Para isto marque o seu conteúdo com o mouse e cole-o
+no TeXShell.
+
+<pre>
+%ARQUIVO small.tex
+% Este é um pequeno arquivo fonte para o LaTeX (versão de 11 de setembro de 2000)
+%
+% Use este arquivo como modelo para fazer seus próprios arquivos  LaTeX.
+% Tudo que está à direita de um  %  é um comentário e é ignorado pelo LaTeX.
+%
+\documentclass[a4paper,12pt]{article}% Seu arquivo fonte precisa conter
+\usepackage[brazil]{babel}           % estas quatro linhas
+\usepackage[latin1]{inputenc}        % além do comando \end{document}
+\begin{document}                     % no fim.
+
+\section{Texto, Comandos e Ambientes} % Este comando faz o título da seção.
+
+Um arquivo fonte do \LaTeX\ contem além do texto a ser
+processado, comandos que indicam como o texto deve ser
+processado. Palavras são separadas por um ou mais espaços.
+Parágrafos são separados por uma ou mais linhas em branco. A
+saída não é afetada por espaços extras ou por linhas em
+branco extras. A maioria dos comandos do \LaTeX \ são
+iniciados com o caracter $\backslash$. Uma $\backslash$
+sozinha produz um espaço. Um ambiente é uma região do texto
+que tem um tratamento especial. Um ambiente é iniciado com\\
+\texttt{$\backslash$begin\{nome do ambiente\}} e terminado
+por  \texttt{$\backslash$end\{nome do ambiente\}}.
+
+%Aspas são digitadas assim:
+``Texto entre aspas''.
+
+%Texto em itálico deve ser digitado como:
+\textit{Isto está em itálico}.
+
+%Texto em negrito deve ser digitado como:
+\textbf{Isto está em negrito}.
+
+\subsection{Um aviso}  % Este comando faz o título da subseção.
+
+Lembre-se de não digitar nenhum dos 10 caracteres especiais
+%                &   $   #   %   _   {   }   ^   ~   \
+\& \$ \# \% \_ \{ \} \^{} \ \~{}\ $\backslash$
+exceto como um comando! Eles são impressos
+com os comandos
+%Este comando inicia um ambiente ``verbatim''(ao pé da letra)
+\begin{verbatim}
+\& \$ \# \% \_ \{ \} \^{} \~{} $\backslash$.
+</pre> <tt>\end{verbatim}</tt>
+ 
+<p>
+
+<pre>
+                 %Este comando termina o ambiente ``verbatim''.
+                 %Tudo que estiver dentro deste ambiente é impresso
+                 %exatamente como é digitado
+\end{document}   % O arquivo fonte termina com este comando.
+
+</pre>
+
+Grave o novo arquivo em uma pasta,
+por exemplo, em <tt>c:\windows\temp</tt>. Para isso,
+no menu, escolha
+<b>File</b> e depois
+<b>Save as:</b>. Escreva na caixa <b>Nome do Arquivo:</b>
+<tt>small.tex</tt>.
+<p>
+<img src="saveas.jpg" border=0 width=472 height=267 alt="save as">
+<p>
+Para que este arquivo seja processado pelo L<sup>A</sup>T<sub>E</sub>X, você precisa definir
+<i>Arquivo Principal</i>. Para isto, você
+deve no menu, escolher <b>File</b> e depois, <b>Main
+File</b> (ou simplesmente tecle <b>F4</b>) e na caixa
+<b>File Name:</b> escreva, por exemplo,
+<tt>small.tex</tt>.
+Vai aparecer na barra de status (em baixo) o nome
+do arquivo escolhido. Com isto, você já pode processar este
+arquivo através do L<sup>A</sup>T<sub>E</sub>X.
+
+<p>
+Para processar o arquivo
+principal (aquele que aparece na barra de ferramentas)
+através do
+L<sup>A</sup>T<sub>E</sub>X, basta clicar na barra de ferramentas no botão
+
+<img src="tex.jpg">. Depois de terminado o processamento,
+para visualizar o resultado (arquivo de saída
+<tt>small.dvi</tt>), basta clicar no botão
+<img src="dvi.jpg">.
+
+<p>
+Na próxima seção está um conjunto de informações básicas e
+em seguida está a listagem de como poderia ser um arquivo
+fonte para imprimí-las. Este conteúdo está  no arquivo
+<tt>small.tex</tt> que você processou.
+
+     
+
+<H2><A NAME="tth_sEc1">1</A>&nbsp;&nbsp;Texto, Comandos e Ambientes</H2> Um arquivo fonte do L<sup>A</sup>T<sub>E</sub>X&nbsp;contem além do texto a ser
+processado, comandos que indicam como o texto deve ser
+processado. Palavras são separadas por um ou mais espaços.
+Parágrafos são separados por uma ou mais linhas em branco. A
+saída não é afetada por espaços extras ou por linhas em
+branco extras. A maioria dos comandos do L<sup>A</sup>T<sub>E</sub>X &nbsp;são
+iniciados com o caracter \. Uma \
+sozinha produz um espaço. Um ambiente é uma região do texto
+que tem um tratamento especial. Um ambiente é iniciado com<br>
+<tt>\begin{nome do ambiente}</tt> e terminado
+por  <tt>\end{nome do ambiente}</tt>.
+
+<p>
+``Texto entre aspas''.
+
+<p>
+<i>Isto está em itálico</i>.
+
+<p>
+<b>Isto está em negrito</b>.
+
+<p>
+      <H3><A NAME="tth_sEc1.1">1.1</A>&nbsp;&nbsp;Um aviso</H3>  Lembre-se de não digitar nenhum  dos 10 caracteres especiais
+&amp; $ # % _ { } ^ ~ \&nbsp;exceto como um comando! Eles são impressos
+com os comandos
+
+<pre>
+\& \$ \# \% \_ \{ \} \^{} \~{} $\backslash$.
+</pre>                                     
+<p>
+
+
+
+<H3><A NAME="tth_sEc1.2">1.2</A>&nbsp;&nbsp;Estrutura Básica de um Arquivo Fonte L<sup>A</sup>T<sub>E</sub>X </H3>Todo arquivo fonte L<sup>A</sup>T<sub>E</sub>X, que normalmente tem a extensão
+<tt>.tex</tt> tem um preâmbulo e um corpo.
+No preâmbulo estão comandos que especificam parâmetros
+globais para o processamento do texto, tais como tipo de
+documento, formato do papel, altura e largura do texto, a
+forma de saída das páginas com a sua paginação e cabeçalhos
+automáticos. O preâmbulo deve conter pelo menos o comando
+<tt>\documentclass</tt>. Se não existem outros
+comandos no preâmbulo, então L<sup>A</sup>T<sub>E</sub>X&nbsp;seleciona valores
+standard para as várias variáveis que determinam o formato
+global do texto.
+
+<p>
+O preâmbulo termina com o comando
+<tt>\begin{document}</tt>. Tudo que fica abaixo
+deste comando é interpretado como corpo. No corpo fica o
+texto propriamente dito junto com comandos adicionais, que
+só têm efeito local.
+
+<p>
+O corpo termina com o comando
+<tt>\end{document}</tt>. Isto também é
+normalmente o fim do arquivo fonte.
+
+<p>
+
+<blockquote><tt>\documentclass[opções]{tipo}</tt><br>
+Comandos globais<br>
+<tt>\begin{document}</tt><br>
+Texto junto com comandos de efeito local<br>
+<tt>\end{document}</tt>
+</blockquote>
+<p>
+O tipo pode ser: <b>article, report, book</b> ou
+<b>letter</b>. Algumas das opções são: <b>10pt, 11pt</b>
+ou <b>12pt</b> para o tamanho base das letras usadas no
+texto, <b>a4paper</b> se o papel for A4 (para o papel
+letter, não é necessário nenhuma indicação) e
+<b>twocolumn</b> para a impressão em duas colunas.
+
+<p>
+Alguns exemplos de comandos globais:<br>
+<tt>\usepackage[brazil]{babel}</tt>
+indica para usar o pacote <tt>babel</tt>, com a opção de
+língua <tt>brazil</tt>, faz com que ele gere datas e nomes
+como Capítulo, Bibliografia em português com estilo
+brasileiro.<br>
+<tt>\usepackage{graphicx}</tt>
+indica para usar o pacote <tt>graficx</tt>, que permite
+entre outras co
+isas incluir figuras.<br>
+<tt>\usepackage[T1]{fontenc}</tt>
+indica para usar o pacote <tt>fontenc</tt> com a opção
+<tt>T1</tt>, que define uma codificação para os caracteres
+em que os acentos são digitados diretamente pelo teclado.<br>
+<tt>\usepackage{amsthm,amsfonts}</tt>
+indica para usar os pacotes da American Mathematical Society
+<tt>amsthm</tt> e <tt>amsfonts</tt>. O primeiro, entre outras
+coisas, define um estilo para a escrita dos teoremas e o
+segundo adiciona alguns estilos de letras, por exemplo
+<img src="rcn.gif" hspace=3 vspace=5 align="top">foram geradas com
+<tt>$\mathbb{R}$</tt>,
+<tt>$\mathbb{C}$</tt> e <tt>$\mathbb{N}$</tt> por causa da adição deste
+pacote.<br>
+<tt>\setlength{\textwidth}{6 in}</tt>
+ indica que a largura do texto é de 6 polegadas.<br>
+<tt>\setlength{\textheight}{23 cm}</tt>
+ indica que a altura do texto é de 23 cm.<br>
+<tt>\evensidemargin 0 in</tt>
+ indica que a margem esquerda das páginas pares é zero.<br>
+<tt>\oddsidemargin 0.25 in</tt>
+ indica que a margem esquerda das páginas ímpares é 0.25 polegadas.<br>
+
+<p>
+Além destes um comando que pode ser útil é  o
+<tt>\newcommand</tt>. Com ele você pode definir nomes
+mais simples para comandos que têm nomes grandes. Por
+exemplo:<br>
+<tt>\newcommand{\binv}{$\backslash$}</tt>
+dá um novo nome para o comando que imprime \.<br>
+<tt>\newcommand{\pot}{\^{}}</tt>
+cria um novo nome para o comando que imprime ^.<br>
+<tt>\newcommand{\til}{\~{}}</tt>
+define um novo nome para o comando que imprime ~.<br>
+
+<p>
+      <H2><A NAME="tth_sEc2">2</A>&nbsp;&nbsp;Diferentes Formas de Exibição de Texto</H2>O L<sup>A</sup>T<sub>E</sub>X&nbsp;permite uma variedade de formas de exibição de
+texto: pode-se mudar o tamanho e o tipo das letras, pode-se
+centralizar, criar diferentes tipos de listas, etc.
+
+<p>
+      <H3><A NAME="tth_sEc2.1">2.1</A>&nbsp;&nbsp;Mudando o Tipo das Letras</H3>
+<OL type="1">
+<li> Mudando o estilo:<br>
+<tt>\textit{itálico}</tt> produz <i>itálico;</i><br>
+<tt>\textbf{negrito}</tt> produz <b>negrito;</b><br>
+<tt>\textrm{romano}</tt> produz </i></b></tt>romano;<br><tt>\textsf{sans serif}</tt> produz <font face="helvetica">sans serif;</font><br>
+<tt>\texttt{máquina de escrever}</tt> produz <tt>máquina de escrever;</tt><br>
+<tt>\textsc{caixa alta}</tt> produz  <font size="-2">CAIXA</font> <font size="-2">ALTA</font>.<br>
+
+<p>
+
+<li> Mudando o tamanho:<br>
+<tt>{\tiny o menor}</tt> produz <font size="-4">o menor;</font><br>
+<tt>{\scriptsize muito pequeno}</tt> produz <font size="-3">muito pequeno;</font><br>
+<tt>{\footnotesize menor}</tt> produz <font size="-2">menor;</font><br>
+<tt>{\small pequeno}</tt> produz <font size="-1">pequeno;</font><br>
+<tt>{\large grande}</tt> produz <font size="+1">grande;</font><br>
+<tt>{\Large maior}</tt> produz <font size="+2">maior;</font><br>
+<tt>{\LARGE maior ainda}</tt> produz <font size="+3">maior ainda;</font><br>
+<tt>{\huge ainda maior}</tt> produz <font size="+4">ainda maior;</font><br>
+<tt>{\Huge o maior de todos}</tt> produz <font size="+4">o maior de todos.</font><br>
+</OL>
+<p>
+      <H3><A NAME="tth_sEc2.2">2.2</A>&nbsp;&nbsp;Centralizando e Indentando</H3>
+<OL type="1">
+<li> Centralizando:<br>
+<tt>\begin{center} <br>
+linha 1 \\ <br> segunda linha
+\\<br> \ldots
+\\<br> linha n <br> \
+end{center}</tt><br> produz<br>
+
+<center>
+<p>
+linha 1 <br> segunda linha<br> ... <br> linha n </center>
+
+<p>
+
+<li> Indentando:<br>
+<tt>\begin{quote}</tt>  Texto a ser indentado.
+<tt>\end{quote}</tt><br>
+produz
+
+<blockquote>
+<p>
+Texto a ser indentado. </blockquote>
+</OL>
+<p>
+      <H3><A NAME="tth_sEc2.3">2.3</A>&nbsp;&nbsp;Listas</H3>As listas são construidas com ambientes:<br>
+
+<p>
+ - Ambiente <tt>itemize</tt><br>
+
+<pre>
+\begin{itemize}
+\item Os itens são precedidos por $\bullet$;
+\item Os itens são separados por um espaço adicional.
+\end{itemize}
+</pre>
+<p>
+produz
+
+<UL>
+<p>
+
+<li> Os itens são precedidos por <font face=symbol>·</font
+>;
+
+<li> Os itens são separados por um espaço adicional.
+</UL>
+<p>
+ - Ambiente <tt>enumerate</tt><br>
+
+<pre>
+\begin{enumerate}
+\item Os itens são numerados com algarismos arábicos, no primeiro nível,
+    \begin{enumerate}
+    \item são numerados com letras no segundo nível e
+        \begin{enumerate}
+        \item são numerados com algarismos romanos no terceiro nível.
+        \end{enumerate}
+    \end{enumerate}
+\end{enumerate}
+</pre>
+<p>
+produz
+
+<OL type="1">
+<p>
+
+<li> Os itens são numerados com algarismos arábicos, no primeiro nível,
+    
+<OL type="a">
+<p>
+    
+<li> são numerados com letras no segundo nível e
+        
+<OL type="i">
+<p>
+        
+<li> são numerados com algarismos romanos no terceiro nível.
+        </OL>
+<p>
+    </OL></OL>      <H3><A NAME="tth_sEc2.4">2.4</A>&nbsp;&nbsp;Teoremas, Proposições, etc</H3>O comando
+<tt>\newtheorem{ambiente}{título}</tt>
+define
+um ambiente para a escrita de teoremas, proposições, etc,
+onde
+<tt>ambiente</tt> é um apelido para o ambiente e
+<tt>título</tt> é o título que será impresso no início do
+texto, como <b>Teorema, Lema, Corolário,</b> etc. Por
+exemplo:
+
+<pre>
+\newtheorem{teo}{Teorema}[section]
+\newtheorem{lema}[teo]{Lema}
+\newtheorem{cor}[teo]{Corolário}
+\newtheorem{prop}[teo]{Proposição}
+</pre>
+<p>
+define quatro ambientes com apelidos <tt>teo, lema, cor</tt>
+e <tt>prop</tt>. A numeração é automática e o argumento
+<tt>[teo]</tt> faz com que os outros ambientes sigam a
+numeração do ambiente <tt>teo</tt>. O argumento
+<tt>[section]</tt> faz com que apareça o número da seção
+junto ao número do teorema.
+
+<p>
+Uma vez definidos os ambientes no corpo do arquivo fonte,
+eles podem ser chamados em qualquer ponto após a definição
+dos ambientes, como no exemplo seguinte:
+
+<pre>
+\begin{teo}[Pitágoras]
+Em todo triângulo retângulo o quadrado do comprimento da
+hipotenusa é igual a soma dos quadrados dos comprimentos dos
+catetos.
+\end{teo}
+</pre>
+<p>
+produz
+
+<p>
+<A NAME="teo.pita">
+</A><b>Teorema 2.1 (Pitágoras).</b>
+<i>Em todo triângulo retângulo o quadrado do comprimento da
+hipotenusa é igual a soma dos quadrados dos comprimentos dos
+catetos.</i>
+
+<p>
+      <H2><A NAME="tth_sEc3">3</A>&nbsp;&nbsp;Fórmulas Matemáticas</H2>      <H3><A NAME="tth_sEc3.1">3.1</A>&nbsp;&nbsp;Principais Elementos do Modo Matemático</H3>Fórmulas matemáticas são produzidas digitando no arquivo
+fonte texto descrevendo-as. Isto significa que o L<sup>A</sup>T<sub>E</sub>X&nbsp;deve ser informado que o texto que vem a seguir é uma
+fórmula e também quando ela termina e o texto normal
+recomeça. As fórmulas podem ocorrer em uma linha de texto
+como <i>a</i><i>x</i><sup>2</sup>+<i>b</i><i>x</i>+<i>c</i> = 0, ou destacada do texto principal como
+
+<center><img src="picil1.gif" align="absmiddle">
+</center>
+<p>
+No meio do texto o modo matemático é iniciado e terminado
+com o sinal <tt>$</tt>. A primeira fórmula acima foi
+produzida com <tt>$ax^2+bx+c=0$</tt>. Quando a fórmula
+é destacada, então o modo matemático é iniciado e terminado
+com <tt>$$</tt>. A segunda fórmula acima foi produzida com
+
+<pre>
+$$
+x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}.
+$$
+</pre>
+<p>
+As fórmulas destacadas podem ser numeradas usando o ambiente
+<tt>\begin{equation}</tt> <i>equação</i>
+<tt>\end{equation}</tt>. Por exemplo
+
+<pre>
+\begin{equation}
+x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}.
+\end{equation}
+</pre>
+<p>
+produz
+
+<center><img src="picil2.gif" align="absmiddle">
+</center>
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+</td></Table>
+</td><td width=100 align=right>(1)</td></table></centEr>
+
+
+Fórmulas com várias linhas podem ser produzidas com os
+ambientes <br>
+<tt>\begin{eqnarray}</tt><br>
+ <i>equação 1</i> <tt>\\</tt><br>
+ ... <tt>\\</tt> <br>
+ <i>equação n</i><br>
+<tt>\end{eqnarray}</tt>,<br>
+que numera as equações e trocando <tt>eqnarray</tt> por
+<tt>eqnarray*</tt> as equações não são numeradas.
+Para que apenas algumas das equações não sejam numeradas
+usamos o comando <tt>\nonumber</tt> no final de
+cada equação que não deve ser numerada.
+
+<p>
+Os espaços digitados nas fórmulas são ignorados pelo
+L<sup>A</sup>T<sub>E</sub>X. Os símbolos matemáticos:
+
+<pre>
++ - = &lt; > / : ! ' | [ ] ( )
+</pre>
+<p>
+podem ser digitados diretamente do teclado.
+Por exemplo:<br>
+<font face=symbol>|</font
+><i>x</i><font face=symbol>|</font
+><font face=symbol> &lt; </font
+><i>a</i> se, e somente se, -<i>a</i><font face=symbol> &lt; </font
+><i>x</i><font face=symbol> &lt; </font
+><i>a</i> <br>
+foi produzido com
+
+<pre>
+$|x   |&lt;a$ se, e somente se, $-a   &lt;x&lt;a$
+</pre>
+<p>
+As chaves
+<tt>{ }</tt> servem para agrupar logicamente partes
+da fórmula e não são impressas diretamente. Para incluir
+chaves em uma fórmula tem que ser usados
+<tt>\{</tt> e
+<tt>\}</tt>.
+
+<p>
+      <H3><A NAME="tth_sEc3.2">3.2</A>&nbsp;&nbsp;Expoentes e Índices</H3>O L<sup>A</sup>T<sub>E</sub>X&nbsp;permite, de maneira simples, a produção de
+qualquer combinação de expoentes e índices com o tamanho
+correto. O caracter <tt>^</tt> indica que o próximo
+caracter é um expoente e <tt>_</tt> indica que o próximo
+carcter é um índice. Por exemplo:<br>
+
+<pre>
+$$x^2, a_n, x_i^2, x^2_i, x^{2n}, x^{y^2}, x^{y_1}$$
+</pre>
+<p>
+produz 
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>x</i><sup>2</sup>, <i>a</i><sub><i>n</i></sub>, <i>x</i><sub><i>i</i></sub><sup>2</sup>, <i>x</i><sub><i>i</i></sub><sup>2</sup>, <i>x</i><sup>2<i>n</i></sup>, <i>x</i><sup><i>y</i><sup>2</sup></sup>, <i>x</i><sup><i>y</i><sub>1</sub></sup></td></Table
+
+
+
+
+>
+</td></table></centEr>
+
+
+Observe que quando índices e expoentes ocorrem juntos a
+ordem é indiferente. Observe também que quando o índice ou
+expoente tem mais de um caracter, eles devem estar dentro de
+chaves.
+
+<p>
+      <H3><A NAME="tth_sEc3.3">3.3</A>&nbsp;&nbsp;Frações</H3>Pequenas frações no meio do texto podem ser escritas usando
+o caracter /, como <tt>$(a+b)/2$</tt>, que produz
+(<i>a</i>+<i>b</i>)/2. Para frações mais complexas o comando <br>
+<tt>\frac{numerador}{denominador}</tt><br>
+é empregado para escrever o numerador em cima e o
+denominador em baixo com um traço de fração entre eles. Por
+exemplo, <tt>$\frac{(a+b)}{2}$</tt> produz
+<img src="apb1.gif" hspace=3 align="absmiddle">. Para
+que uma fórmula que aparece no meio do texto apareça maior
+usamos o comando
+<tt>\displaystyle</tt> no início da fórmula. Por exemplo,
+<tt>$\displaystyle\frac{(a+b)}{2}$</tt> produz
+<img src="apb2.gif" hspace=3 align="absmiddle">.
+
+<p>
+      <H3><A NAME="tth_sEc3.4">3.4</A>&nbsp;&nbsp;Raízes</H3>As raízes são produzidas com o comando<br>
+<tt>\sqrt[n]{radicando}</tt><br>
+Por exemplo, <tt>$\sqrt[3]{8}=2$</tt> produz
+<sup><font size="-2">3</font></sup><font face=symbol>Ö</font
+>8 = 2. Se o argumento opcional <tt>[n]</tt> for
+omitido, então a raiz quadrada é gerada. Por exemplo,
+<tt>$\sqrt{4}=2$</tt> produz <font face=symbol>Ö</font
+>4 = 2.
+O tamanho e o comprimento do radical são automaticamente
+ajustados ao tamanho do radicando.
+
+<p>
+      <H3><A NAME="tth_sEc3.5">3.5</A>&nbsp;&nbsp;Somatórios e Integrais</H3>Somatórios e integrais são obtidos com os comandos
+<tt>\sum</tt> e <tt>\int</tt>, respectivamente.
+Eles podem aparecer em diferentes estilos, dependendo se
+aparecem no meio do texto ou destacado. Por exemplo,
+<tt>$\sum_{i=1}^n a_i$</tt> e <tt>$\int_{a}^b
+f(x)dx$</tt> produzem <font face=symbol>å</font
+><sub><i>i</i> = 1</sub><sup><i>n</i></sup> <i>a</i><sub><i>i</i></sub> e <font face=symbol>ò</font
+><sub><i>a</i></sub><sup><i>b</i></sup> <i>f</i>(<i>x</i>)<i>d</i><i>x</i>
+respectivamente, enquanto <tt>$$\sum_{i=1}^n a_i$$</tt> e
+<tt>$$\int_{a}^b f(x)dx$$</tt>
+produzem 
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+</td><td nowrap align=center>
+<font size="-1"><i>n</i></font> <Br><font face=symbol size="+3">å<br></font>
+<font size="-1"><i>i</i> = 1</font>&nbsp;<br></td><td nowrap>
+<i>a</i><sub><i>i</i></sub></td></Table>
+</td></table></centEr>
+
+ e
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+</td><td align=left><font face=symbol>
+ó<br>õ
+</font></td><td>
+<font size="-1"><i>b</i></font> <Br><br>
+<font size="-1"><i>a</i></font>&nbsp;<br></td><td nowrap>
+<i>f</i>(<i>x</i>)<i>d</i><i>x</i></td></Table>
+</td></table></centEr>
+
+ respectivamente. Assim como no caso das
+frações, para que o somatório ou a integral no meio do texto
+tenha uma saída como teria se estivesse em destaque usamos o
+comando
+<tt>\displaystyle</tt> no início da fórmula.
+
+<p>
+      <H3><A NAME="tth_sEc3.6">3.6</A>&nbsp;&nbsp;Pontos, Espaços  e Texto no Modo Matemático</H3>O comando <tt>\ldots</tt> produz três pontos,
+como em <i>a</i><sub>1</sub>+<font face=symbol>¼</font
+>+<i>a</i><sub><i>n</i></sub>, que foi produzida com
+<tt>$a_1+\ldots + a_n$</tt>. Os comandos
+<tt>\quad</tt> e <tt>\qquad</tt> produzem espaços
+no modo matemático, sendo o último maior do que o primeiro,
+para o caso de escrita de duas fórmulas sem sair do modo
+matemático. O comando <tt>\mbox</tt> deve ser
+usado para produzir texto no modo matemático. Por exemplo,
+<tt>$$x_1=\frac{-b-\sqrt{b^2-4ac}}{
+2a}\quad\mbox{e}\quad
+x_2=\frac{-b+\sqrt{b^2-4ac}}{2a}.$$</tt>
+produz
+
+<center><img src="picil3.gif" align="absmiddle">
+</center>
+<p>
+      <H3><A NAME="tth_sEc3.7">3.7</A>&nbsp;&nbsp;Símbolos Matemáticos</H3>O T<sub>E</sub>Xshell oferece a possibilidade de,  com o uso do mouse,
+se inserir os comandos que geram os símbolos matemáticos.
+Para isso, vá até o menu e clique em
+<b>Toolboxes</b>. 
+
+<p>
+
+<center><img src="insert.jpg"></center>
+
+Os símbolos estão divididos em: <br>
+<b>Math</b> para
+Símbolos Matemáticos, como<br>
+
+ <font face=symbol>£</font
+> ,&nbsp;&nbsp;&nbsp; <font face=symbol>³</font
+> ,&nbsp;&nbsp;&nbsp; <font face=symbol>¹</font
+> ,&nbsp;&nbsp;&nbsp; <font face=symbol>Ì</font
+> ,&nbsp;&nbsp;&nbsp; <font face=symbol>É</font
+> ,&nbsp;&nbsp;&nbsp; <font face=symbol>Î</font
+> ,&nbsp;&nbsp;&nbsp; <font face=symbol>»</font
+> , <br>
+que foram produzidos com<br>
+<tt>$\le,\quad\ge,
+\quad\neq,\quad
+\subset,\quad
+\supset,\quad\in,
+\quad\approx$</tt>.<br> As negações destas
+relações podem ser conseguidas acrescentando o comando
+<t8t>\not</tt> antes da relação.<br>
+
+<center>
+<p>
+<img src="math.jpg"></center>
+<b>Greek Letter</b> para as letras gregas, como<br>
+<font face=symbol>a</font
+>,&nbsp;&nbsp;&nbsp;<font face=symbol>b</font
+>,&nbsp;&nbsp;&nbsp;<font face=symbol>g</font
+>,&nbsp;&nbsp;&nbsp;<font face=symbol>d</font
+>,&nbsp;&nbsp;&nbsp;<font face=symbol>q</font
+>,&nbsp;&nbsp;&nbsp;<font face=symbol>W</font
+><br>
+que foram produzidas com<br>
+<tt>$\alpha,\quad
+\beta,\quad\gamma,
+\quad\delta,\quad
+\theta,\quad\Omega$</tt>.
+
+<center>
+<p>
+<img src="greek.jpg"></center><b>Symbol</b> para outros símbolos.
+
+<center>
+<p>
+<img src="symbols.jpg"></center> 
+
+
+     <H3><A NAME="tth_sEc3.8">3.8</A>&nbsp;&nbsp;Funções Matemáticas</H3>São usadas tipos de letras diferentes para variáveis e para
+nomes de funções. Por exemplo,
+<tt>$\cos x$</tt> produz cos&nbsp;<i>x</i>.
+enquanto <tt>$cos x$</tt> produz <i>c</i><i>o</i><i>s</i><i>x</i>. Muitos nomes de
+funções já estão definidos, bastando para chamá-los usar uma
+\&nbsp;antes do nome (principalmente aquelas em que o
+nome em português é o mesmo que em inglês). Para outros
+nomes é necessário definí-los. Por exemplo,
+
+<pre>
+\newcommand{\sen}{\mathrm{sen}}
+\newcommand{\dist}{\mathrm{dist}}
+</pre>
+<p>
+no preâmbulo do arquivo fonte define o nome das funções
+sen e dist. Depois de definidas, podemos usar como em
+sen&nbsp;<i>x</i> e sen(<i>x</i>), que foram produzidos com
+<tt>$\sen\,x$</tt> e <tt>$\sen(x)$</tt>,
+respectivamente. Alguns nomes de funções prédefinidos são:
+<tt>\arccos, \arctan, \cos, \cosh,
+\cot, \coth, \csc,
+\det, \exp, \lim,
+\ln, \log, \max,
+\min, \sec, \tan,
+\tanh</tt>. Por exemplo, para se conseguir
+<img src="sx_x.gif" hspace=3 align="absmiddle"> deve-se
+escrever
+<tt>$\lim_{x\to 0}\frac{\sen(x)}{x}$</tt>.
+
+<p>
+      <H3><A NAME="tth_sEc3.9">3.9</A>&nbsp;&nbsp;Fórmulas com Til, Barra, Chapéu, etc</H3>Os comandos <tt>\overline{fórmula}</tt> e
+<tt>\underline{fórmula}</tt> servem para colocar barras
+em cima e em baixo de uma letra ou uma fórmula. Por exemplo,
+<img src="olul.gif" hspace=3 align="absmiddle"> foi
+conseguido com
+<tt>$\overline{a}^2+\underline{bc}$</tt>.
+Pode-se colocar também chaves em cima e em baixo de fórmulas
+com os comandos <tt>\overbrace{fórmula}</tt> e
+<tt>\underbrace{fórmula}</tt>. Por exemplo,
+<img src="obub.gif" hspace=3 align="absmiddle"> foi
+obtida com
+<tt>$\overbrace{x_1+\underbrace{x_2+\ldots+x_{n-1}}_{n-2}+x_n}^n$</tt>. Setas em cima de
+letras são conseguidas com o comando
+<tt>\vec{letra}</tt>, como em
+<img src="vec.gif" hspace=3 align="absmiddle">, que foi
+obtido com
+<tt>$\vec{v}$</tt>. Chapéu e til em cima de letras
+são conseguidas com os comandos <tt>\hat</tt>,
+<tt>\widehat</tt>, <tt>\tilde</tt> e
+<tt>\widetilde</tt>. Por exemplo,
+<img src="hat.gif" hspace=3 align="absmiddle"> foram
+conseguidos com
+<tt>$\hat{A}$</tt> e
+<tt>$\widehat{ABC}</tt>.
+
+<p>
+      <H3><A NAME="tth_sEc3.10">3.10</A>&nbsp;&nbsp;Tamanho automático de parênteses e similares</H3>Os comandos <tt>\left(</tt> e
+<tt>\right)</tt> produzem parênteses com
+tamanho ajustado na altura para conter a fórmula que é
+englobada por eles. Observe a diferença entre
+<img src="cos12.gif" hspace=3 align="absmiddle"> foram
+obtidos com
+<tt>$\cos(\frac{\pi}{2}x^2)$</tt> e
+<tt>$\cos\left(\frac{\pi}{2}x^2\right)$</tt>
+respectivamente. O mesmo acontece com colchetes e chaves,
+usando os comandos
+<tt>\left[</tt>, <tt>\right]</tt>,
+<tt>\left\{</tt> e <tt>\right\}</tt>.
+Os comandos <tt>\left</tt> e
+<tt>\right</tt> devem aparecer sempre aos
+pares.
+
+<p>
+      <H3><A NAME="tth_sEc3.11">3.11</A>&nbsp;&nbsp;Matrizes</H3>As matrizes são produzidas com o uso do ambiente
+<tt>array</tt>. Os elementos de uma mesma linha são
+separados pelo caracter &amp; e as linhas são separadas por
+\\. É necessário passar para o
+L<sup>A</sup>T<sub>E</sub>X&nbsp;como as colunas devem ser alinhadas. Isto é feito em
+seguida ao comando que inicia o ambiente. Por exemplo,
+<tt>\begin{array}{ccrll}</tt> diz ao L<sup>A</sup>T<sub>E</sub>X&nbsp;que a matriz tem 5 colunas e que as duas primeiras devem ser
+alinhadas ao centro, que a do meio deve ser alinhada à
+direita e que as duas últimas devem ser alinhadas à
+esquerda. Por exemplo, as matrizes
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>A</i> = </td><td align=left><font face=symbol>
+é<br>ê<br>
+ë
+</font></td><td>
+</td><td nowrap><TablE border=0 align=left><tr><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+1</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+3</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+0</td></tabLe></TD></TR><TR><TD NOWRAP align="center" colspan=0><tabLe border=0><tr><td nowrap Align=center>
+2</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+4</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+-2</td></tabLe></TD></TR></TablE>
+</td><td nowrap></td><td align=left><font face=symbol>
+ù<br>ú<br>
+û
+</font></td><td>
+,&nbsp;&nbsp;&nbsp;<i>B</i> = </td><td align=left><font face=symbol>
+é<br>ë
+</font></td><td>
+</td><td nowrap><TablE border=0 align=left><tr><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+1</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+3</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+-2</td></tabLe></TD></TR></TablE>
+</td><td nowrap></td><td align=left><font face=symbol>
+ù<br>û
+</font></td><td>
+,&nbsp;&nbsp;&nbsp; e&nbsp;&nbsp;&nbsp;<i>C</i> = </td><td align=left><font face=symbol>
+é<br>ê<br>ê<br>
+ê<br>ê<br>ë
+</font></td><td>
+</td><td nowrap><TablE border=0 align=left><tr><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+1</td></tabLe></TD></TR><TR><TD NOWRAP align="center" colspan=0><tabLe border=0><tr><td nowrap Align=center>
+4</td></tabLe></TD></TR><TR><TD NOWRAP align="center" colspan=0><tabLe border=0><tr><td nowrap Align=center>
+-3</td></tabLe></TD></TR></TablE>
+</td><td nowrap></td><td align=left><font face=symbol>
+ù<br>ú<br>ú<br>
+ú<br>ú<br>û
+</font></td><td>
+</td></Table>
+</td></table></centEr>
+
+
+foram conseguidas com
+
+<pre>
+$$
+A=\left[\begin{array}{rrr}
+1&3&0\\
+2&4&-2
+\end{array}\right],\quad
+B=\left[\begin{array}{ccc}
+1&3&-2
+\end{array}\right],
+\quad \mbox{e}\quad
+C=\left[\begin{array}{r}
+1\\4\\-3
+\end{array}\right]
+$$
+</pre>
+<p>
+Um outro exemplo do uso do ambiente array é
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<font face=symbol>|</font
+><i>x</i><font face=symbol>|</font
+> = </td><td align=left><font face=symbol>
+ì<br>í<br>
+î
+</font></td><td>
+</td><td nowrap><TablE border=0 align=left><tr><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+-<i>x</i></td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+se&nbsp;&nbsp;&nbsp; <i>x</i> <font face=symbol>£</font
+> 0</td></tabLe></TD></TR><TR><TD NOWRAP align="center" colspan=0><tabLe border=0><tr><td nowrap Align=center>
+<i>x</i> </td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+se&nbsp;&nbsp;&nbsp; <i>x</i><font face=symbol> &gt; </font
+>0</td></tabLe></TD></TR></TablE>
+</td><td nowrap></td></Table>
+</td></table></centEr>
+
+
+
+<pre>
+$$|x|=\left\{\begin{array}{rc}
+-x&\mbox{se}\quad x\le 0\\
+x &\mbox{se}\quad x>0
+\end{array}\right.
+$$
+</pre>
+<p>
+Observe o uso do comando <tt>\right.</tt> para
+fechar o comando <tt>\left{</tt>.
+
+<p>
+      <H3><A NAME="tth_sEc3.12">3.12</A>&nbsp;&nbsp;Equações ou Inequações Multi-linhas</H3>Para a impressão de equações ou inequações em várias linhas
+pode-se usar os seguintes ambientes:<br>
+<tt>\begin{eqnarray}</tt>
+ <i>linha 1</i> <tt>\\</tt>
+ ... <tt>\\</tt>
+ <i>linha n</i>
+<tt>\end{eqnarray}</tt>,<br>
+<tt>\begin{eqnarray*}</tt>
+ <i>linha 1</i> <tt>\\</tt>
+ ... <tt>\\</tt>
+ <i>linha n</i>
+<tt>\end{eqnarray*}</tt>,<br>
+As linhas são separadas umas das outras por
+\\&nbsp;e cada linha tem a forma
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<tt><i>f</i>ó<i>r</i><i>m</i>.&nbsp;<i>d</i><i>a</i> <i>e</i><i>s</i><i>q</i>. & <i>f</i>ó<i>r</i><i>m</i>.&nbsp;<i>d</i><i>o</i> <i>c</i><i>e</i><i>n</i><i>t</i><i>r</i><i>o</i> & <i>f</i>ó<i>r</i><i>m</i>.&nbsp;<i>d</i><i>a</i> <i>d</i><i>i</i><i>r</i><
+
+
+
+
+i>e</i><i>i</i><i>t</i><i>a</i></tt></td></Table>
+</td></table></centEr>
+
+
+Normalmente a fórmula do centro é um único caracter, o
+sinal da relação (por exemplo,  =  ou  <font face=symbol>£</font
+> ).
+A diferença entre <tt>eqnarray</tt> e <tt>eqnarray*</tt> é
+que no primeiro são acrescentadas às linhas  números de equações.
+O efeito
+deste ambiente é semelhante ao de se usar
+<tt>\begin{array}{rcl} ... \
+end{array}</tt>. Exemplo:
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+</td><td nowrap><TablE border=0 align=left><tr><td nowrap align=left>
+<tabLe border=0><tr><td nowrap Align=left>
+(<i>A</i>+<i>B</i>)(<i>A</i>-<i>B</i>)</td></tabLe></td><td nowrap align=left>
+<tabLe border=0><tr><td nowrap Align=left>
+ = </td></tabLe></td><td nowrap align=left>
+<tabLe border=0><tr><td nowrap Align=left>
+(<i>A</i>+<i>B</i>)<i>A</i>+(<i>A</i>+<i>B</i>)(-<i>B</i>)</td></tabLe></TD></TR><TR><TD NOWRAP align="left" colspan=0><tabLe border=0><tr><td nowrap Align=left>
+</td></tabLe></td><td nowrap align=left>
+<tabLe border=0><tr><td nowrap Align=left>
+ = </td></tabLe></td><td nowrap align=left>
+<tabLe border=0><tr><td nowrap Align=left>
+<i>A</i><i>A</i>+<i>B</i><i>A</i>-<i>A</i><i>B</i>-<i>B</i><i>B</i></td></tabLe></TD></TR><TR><TD NOWRAP align="left" colspan=0><tabLe border=0><tr><td nowrap Align=left>
+</td></tabLe></td><td nowrap align=left>
+<tabLe border=0><tr><td nowrap Align=left>
+ = </td></tabLe></td><td nowrap align=left>
+<tabLe border=0><tr><td nowrap Align=left>
+<i>A</i><sup>2</sup>+<i>B</i><i>A</i>-<i>A</i><i>B</i>-<i>B</i><sup>2</sup></td></tabLe></TD></TR></TablE>
+</td><td nowrap></td></Table>
+</td><td width=100 align=right>(2)</td></table></centEr>
+
+
+foi obtido com
+
+<pre>
+\begin{eqnarray}
+(A+B)(A-B)&=&(A+B)A+(A+B)(-B)\nonumber\\
+&=&AA+BA-AB-BB\nonumber\\
+&=&A^2+BA-AB-B^2
+\end{eqnarray}
+</pre>
+<p>
+Observe o uso de <tt>\nonumber</tt> nas linhas
+que não devem ser numeradas.
+
+<p>
+      <H3><A NAME="tth_sEc3.13">3.13</A>&nbsp;&nbsp;Fórmulas dentro de uma Moldura</H3>As fórmulas podem ser colocadas dentro de uma moldura com o
+comando <tt>\fbox</tt>. Exemplo:
+
+<center>
+<p>
+<img src="picil4.gif" align="absmiddle">
+</center>foi conseguido com
+
+<pre>
+\begin{center}
+\fbox{$\displaystyle x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$}
+\end{center}
+</pre>
+<p>
+      <H3><A NAME="tth_sEc3.14">3.14</A>&nbsp;&nbsp;Mudança dos Tipos de Letras no Modo Matemático</H3>Uma mudança explícita nos tipos de letras dentro do modo
+matemático pode ser feito usando os comandos:
+<tt>\mathrm</tt>, <tt>\mathcal</tt>,
+<tt>\mathbf</tt>, <tt>\mathsf</tt>,
+<tt>\mathtt</tt>, <tt>\mathit</tt> e
+<tt>\mathbb</tt>. Por
+exemplo:<br>
+<tt>$\mathrm{AaBbCc}$</tt> produz AaBbCc, <br>
+<tt>$\mathcal{ABC}$</tt> produz
+<img src="calabc.gif" hspace=3 align=absmiddle>,<br>
+<tt>$\mathbf{AaBbCc}$</tt> produz <b>A</b><b>a</b><b>B</b><b>b</b><b>C</b><b>c</b>, <br>
+<tt>$\mathsf{aAbBcC}$</tt> produz <font face="helvetica"><i>a</i><i>A</i><i>b</i><i>B</i><i>c</i><i>C</i></font>, <br>
+<tt>$\mathtt{aAbBcC}$</tt> produz <tt><i>a</i><i>A</i><i>b</i><i>B</i><i>c</i><i>C</i></tt>, <br>
+<tt>$\mathit{aAbBcC}$</tt> produz <i>a</i><i>A</i><i>b</i><i>B</i><i>c</i><i>C</i> e <br>
+<tt>$\mathbb{ABCNR}$</tt> produz
+<img src="abcnr.gif" hspace=3 align=absmiddle> (este
+ último necessita o comando
+<tt>\usepackage{amsfonts}</tt> no preâmbulo).
+
+<p>
+      <H3><A NAME="tth_sEc3.15">3.15</A>&nbsp;&nbsp;Espaços no Modo Matemático</H3>Além dos comandos <tt>\quad</tt> e
+<tt>\qquad</tt> que produzem espaços no modo
+matemático, existem comandos para produzirem espaços menores
+ou até negativos.<br>
+<tt>\,</tt> produz um pequeno espaço, igual a 3/18 de
+um <tt>quad</tt>.<br>
+<tt>\:</tt> produz um espaço médio, igual a 4/18 de um
+<tt>quad</tt>.<br>
+<tt>\;</tt> produz um espaço maior, igual a 5/18 de um
+<tt>quad</tt>.<br>
+<tt>\!</tt> produz um espaço negativo de -3/18 de um
+<tt>quad</tt>.<br>
+Por exemplo,
+
+<img src="espmat.gif" hspace=3 align=top>foram produzidos com
+<tt>$x^2/2$</tt>, <tt>$x^2\!/2$</tt>,
+<tt>$\int\int_D f(x)dx$</tt> e
+<tt>$\int\!\!\!\int_D f(x)\
+,dx$</tt> respectivamente.
+
+<p>
+      <H3><A NAME="tth_sEc3.16">3.16</A>&nbsp;&nbsp;Usando o MATLAB para Gerar Fórmulas</H3>No MATLAB existe um comando <tt>latex(expr)</tt> que gera
+uma representação em L<sup>A</sup>T<sub>E</sub>X&nbsp;da expressão simbólica
+<tt>expr</tt>. Exemplo:
+
+<pre>
+>> syms x, expr1=sin(x)^2+cos(x)^2;
+>> latex(expr1)
+ans =\left(\sin(x)\right)^{2}+\left(\cos(x)\right)^{2}
+>> A=[1,2;3,4];
+>> A=sym(A);
+>> latex(A)
+ans =\left[\begin{array}{cc}1&2\\\noalign{\medskip}3&4\end{array}\right]
+</pre>
+<p>
+Depois, basta marcar e copiar para a área de transferência,
+a representação em L<sup>A</sup>T<sub>E</sub>X&nbsp;obtida e finalmente colar no
+arquivo fonte de L<sup>A</sup>T<sub>E</sub>X&nbsp;que você está trabalhando.
+
+<p>
+      <H2><A NAME="tth_sEc4">4</A>&nbsp;&nbsp;Figuras</H2>Podem ser construidos desenhos simples e diagramas com o
+L<sup>A</sup>T<sub>E</sub>X. Além disso, podem ser inseridas figuras ou imagens
+geradas por outros programas.
+
+<p>
+      <H3><A NAME="tth_sEc4.1">4.1</A>&nbsp;&nbsp;Ambiente picture</H3>As figuras criadas com o L<sup>A</sup>T<sub>E</sub>X&nbsp;são construídas dentro do
+ambiente
+<tt>picture</tt>, cuja sintaxe é a seguinte:
+
+<pre>
+\setlength{\unitlength}{unidade de comprimento}
+\begin{picture}(tam_x,tam_y)
+...
+\end{picture}
+</pre>
+<p>
+por exemplo,
+
+<pre>
+\setlength{\unitlength}{1.5 cm}
+\begin{picture}(3,4) ... \end{picture}
+</pre>
+<p>
+cria uma figura de 3 x 1.5 cm=4.5 cm de largura por 4 x 1.5
+cm=6 cm de altura.
+Os elementos da figura são posicionados
+usando-se o comando
+<tt>\put(x_coord,y_coord){elemento}</tt>. Os
+elementos podem ser
+
+<OL type="1">
+<p>
+
+<li><tt>\circle{diâmetro}</tt> para uma circunferência e
+<tt>\circle*{diâmetro}</tt> para um círculo (cheio).
+
+<li>
+<p>
+<tt>\line(<font face=symbol>D</font
+>x,<font face=symbol>D</font
+>y){comprimento da projeção}</tt>
+para um segmento de reta, onde <tt><font face=symbol>D</font
+>x</tt> e
+<tt><font face=symbol>D</font
+>y</tt> são números inteiros entre -6 e 6, primos
+entre si (isto é, não possuem divisores comuns) e
+<tt>comprimento da projeção</tt> é o comprimento da
+projeção do segmento no eixo <i>x</i> se este for diferente de
+zero ou o comprimento da projeção do segmento no eixo <i>y</i>,
+caso contrário.
+
+<li>
+<p>
+<tt>\vector(<font face=symbol>D</font
+>x,<font face=symbol>D</font
+>y){comprimento da
+projeção}</tt>, para um vetor, onde <tt><font face=symbol>D</font
+>x</tt>,
+<tt><font face=symbol>D</font
+>y</tt> e <tt>comprimento da projeção</tt> são
+como no item anterior.
+
+<li> Texto.
+</OL>
+<p>
+Exemplo:
+
+<center>
+<p>
+<img src="picil5.gif" align="absmiddle">
+</center>foi produzido com
+
+<pre>
+\begin{center}
+\setlength{\unitlength}{1mm}
+\begin{picture}(50,25)
+\put(0,0){\scriptsize$C$}
+\put(2,2){\circle*{0.7}}
+\put(2,2){\vector(1,0){50}} %segmento CB
+\put(52,2){\circle*{0.7}}
+\put(52,0){\scriptsize$B$}
+\put(2,2){\vector(1,1){20}} %segmento CA
+\put(22,22){\circle*{0.7}}
+\put(22,22.5){\scriptsize$A$}
+\put(2,2){\vector(2,1){28.5}} %segmento CX
+\put(34,16){\scriptsize$X$}
+\put(30.5,16.25){\circle*{0.7}}
+\put(22,22){\line(3,-2){30}} %segmento AB
+\end{picture}
+\end{center}
+</pre>
+<p>
+A espessura das linhas pode ser especificada com o comando
+<tt>\linethickness{espessura}</tt>. Por exemplo, o
+comando <tt>\linethickness{1.5mm}</tt> faz com
+que todas as linhas desenhadas depois deste comando tenham a
+espessura de 1.5 mm. Também existem os comandos com
+espessuras pré-definidas:
+<tt>\thicklines</tt> para linhas grossas e
+<tt>\thinlines</tt> para voltar às linhas finas.
+
+<p>
+      <H3><A NAME="tth_sEc4.2">4.2</A>&nbsp;&nbsp;Figuras Importadas de Outros Programas</H3>Podem ser importadas figuras de outros programas, desde
+que seja usado o pacote <tt>graphicx</tt>, com o comando
+<tt>\usepackage{graphicx}</tt> no preâmbulo.
+
+O comando para incluir uma figura que esteja armazenada em
+um arquivo é <tt>\
+includegraphics[opções]{arquivo}</tt>. Por exemplo:<br>
+
+<p><A NAME="tth_fIg1">
+</A> 
+<p>
+ <center>      Figure 1: <A NAME="exemgraf">
+</A>Figura proveniente do arquivo <tt>exemgraf.bmp</tt></center>
+<center><img src="exemgraf.gif"></center><p>a Figura <A href="#exemgraf">1</A> foi produzida com
+<tt>\includegraphics[height=5cm,width=7cm]{exemgraf.bmp}</tt>
+No MATLAB foram usados os comandos seguintes para gerar esta
+figura:
+
+<pre>
+>> syms x
+>> f=1/(1+x^2)
+f = 1/(1+x^2)
+>> plotf1(f,[-10,10])
+>> axis([-11 11 -0.2 1.2])
+>> eixos
+>> print -dbmp256 c:\users\regi\topicos\exemgraf.bmp
+</pre>
+<p>
+      <H3><A NAME="tth_sEc4.3">4.3</A>&nbsp;&nbsp;Ambiente figure</H3>Este ambiente oferece a possibilidade da figura, que é
+produzida com o ambiente <tt>picture</tt> ou importada com o
+comando <tt>\includegraphics</tt>, ter uma
+legenda e além disso, flutuar no texto se colocando num
+local em que a perda de espaço seja mínima. A sintaxe é a
+seguinte:
+
+<pre>
+\begin{figure}[onde]
+figura
+\caption{Texto da figura}
+\end{figure}
+</pre>
+<p>
+o argumento <tt>onde</tt> especifica o local, onde é
+permitido a colocação da figura, ou seja, consiste de zero
+a quatro letras com os seguintes significados:
+
+<DL compact>
+<p>
+<dt></dt><dd><tt>h</tt> significa aqui.
+<dt></dt><dd>
+<p>
+<tt>t</tt> significa em cima.
+<dt></dt><dd>
+<p>
+<tt>b</tt> significa em baixo.
+<dt></dt><dd>
+<p>
+<tt>p</tt> significa em uma página separada.
+</DL>
+<p>
+As letras devem ser colocados na ordem de prioridade. Se
+nenhum argumento for dado,
+L<sup>A</sup>T<sub>E</sub>X&nbsp;assume a combinação
+<tt>tbp</tt>.
+Por exemplo a Figura <A href="#exemgraf">1</A> foi obtida com
+
+<pre>
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[height=5cm,width=7cm]{exemgraf.bmp}
+\end{center}
+\caption{Figura proveniente do arquivo \texttt{exemgraf.bmp}}
+\end{figure}
+</pre>
+<p>
+O L<sup>A</sup>T<sub>E</sub>X&nbsp;coloca a figura seguindo certos critérios. O
+comando <tt>\clearpage</tt> força a que todas as
+figuras pendentes (isto é, que não foram impressas até o
+aparecimento do comando) sejam impressas.
+
+<p>
+      <H2><A NAME="tth_sEc5">5</A>&nbsp;&nbsp;Partes do Documento</H2>      <H3><A NAME="tth_sEc5.1">5.1</A>&nbsp;&nbsp;Título</H3>O título do documento é gerado com os comandos:
+
+<pre>
+\title{texto do título}
+\author{autor1\\enderêço1 \and autor2\\enderêço2}
+\maketitle
+</pre>
+<p>
+Com estes comandos também a data atual é impressa. O comando
+<tt>\date{texto}</tt> coloca o <tt>texto</tt> no lugar
+da data atual.  O comando <tt>\thanks{texto
+de rodapé}</tt> pode ser colocado no texto do título, do autor
+ou da data, produzindo uma marca onde o comando aparece e
+escreve <tt>texto de rodapé</tt> como texto de rodapé. Se o
+tipo de documento for <tt>book</tt>, então os comandos dados
+acima geram uma página separada para o título do documento.
+
+<p>
+      <H3><A NAME="tth_sEc5.2">5.2</A>&nbsp;&nbsp;Seções</H3>O L<sup>A</sup>T<sub>E</sub>X&nbsp;disponhe dos comandos seguintes para produzir um
+seccionamento automático e seqüencial:
+
+<pre>
+\part{título} \chapter{título} \section{título}
+\subsection{título} \subsubsection{título}
+</pre>
+<p>
+O comando <tt>\part</tt> está disponível apenas
+para o tipo de documento <tt>book</tt>. O comando
+<tt>\chapter</tt> está disponível apenas para os tipos
+de documento
+<tt>book</tt> e <tt>report</tt>. Os outros comandos de
+seccionamento estão disponíveis para todos os tipos de
+documento. Estes comandos formam um hierarquia. Os capítulos
+são produzidos com <tt>\chapter</tt>, que são
+divididos em seções com <tt>\section</tt>, que
+são divididas em subseções com
+<tt>\subsection</tt> e assim por diante. Se o tipo de documento for
+<tt>book</tt>, então o comando
+<tt>\chapter</tt> sempre começa o capítulo em uma nova
+página e normalmente, nas páginas de números ímpares,
+gerando uma página em branco se necessário. Para se evitar
+que ele gere uma página em branco, inicie o documento com o
+comando
+<tt>\documentclass[...,oneside]{book}</tt> ou com
+<tt>\documentclass[...,openany]{book}</tt>. No
+primeiro caso o
+L<sup>A</sup>T<sub>E</sub>X&nbsp;entende que o documento será impresso em somente um
+lado do papel e no segundo, que os capítulos podem ser
+iniciados em páginas pares também.
+
+<p>
+      <H3><A NAME="tth_sEc5.3">5.3</A>&nbsp;&nbsp;Conteúdo</H3>O conteúdo do documento é gerado automaticamente com o
+comando <tt>\tableofcontents</tt>. Para que o
+conteúdo seja gerado de forma correta é necessário que o
+documento seja processado pelo L<sup>A</sup>T<sub>E</sub>X&nbsp;pelo menos três
+vezes. Se no preâmbulo do seu documento contiver
+<tt>\usepackage[brazil]{babel}</tt>, então o título
+do conteúdo será ``Sumário''. Se você quiser mudar este nome
+basta colocar o comando
+<tt>\renewcommand{\contentsname}{novo nome}</tt>
+antes de <tt>\tableofcontents</tt>.
+
+<p>
+      <H3><A NAME="tth_sEc5.4">5.4</A>&nbsp;&nbsp;Bibliografia</H3>Para se gerar uma bibliografia em um documento, é necessário
+criar um arquivo na pasta onde está o arquivo fonte com nome
+terminado em <tt>.bib</tt> (por exemplo,
+<tt>bibli.bib</tt>) contendo um banco de dados bibliográficos. As
+entradas deste banco de dados devem ter a forma:
+
+<pre>
+@TIPO{apelido,
+        AUTHOR = "Fulano de Tal",
+        TITLE = "O Título Tal",
+        PUBLISHER = "A Editora",
+        ADDRESS = "Cidade Tal",
+        . . .
+        YEAR = "1998" }
+</pre>
+<p>
+onde o <tt>TIPO</tt> pode ser <tt>BOOK</tt> (para livros),
+<tt>ARTICLE</tt> (para artigos),
+<tt>INCOLLECTION</tt> (para partes de um livro),
+<tt>PROCEEDINGS</tt> (para artigo em atas de congressos) ou
+<tt>TECHREPORT</tt> (para relatórios técnicos). A publicação
+vai ser citada no documento com o comando
+<tt>\cite{apelido}</tt>. Cada <tt>TIPO</tt> de
+entrada tem um conjunto de campos obrigatório e outro
+conjunto de campos opcional. 
+
+O campo <b>LABEL</b> é onde deve ser colocado o
+<tt>apelido</tt> para a entrada.
+
+<p>
+Além do banco de dados bibliográficos, é necessário colocar
+no preâmbulo do arquivo fonte o comando
+<tt>\bibliographystyle{plain}</tt> e no
+local do documento onde a bibliografia deve aparecer deve-se
+colocar o comando
+<tt>\bibliography{arquivo}</tt>, onde <tt>arquivo</tt>
+é o nome do arquivo de banco de dados bibliográficos sem a
+terminação <tt>.bib</tt>. Nem todas as entradas do banco de
+dados vão aparecer na bibliografia do documento, somente
+aquelas que tenham sido referenciadas no texto com o comando
+<tt>\cite{apelido}</tt> e as que não foram, mas que
+você quer que elas apareçam. Neste caso, em qualquer local
+no documento deve aparecer o comando
+<tt>\nocite{apelido1,apelido2,...}</tt>.
+Depois de processar com o
+L<sup>A</sup>T<sub>E</sub>X&nbsp;o seu arquivo principal, você deve clicar no 
+menu em <b>Tex</b>. Depois em <b>BibTeX</b>.
+
+<img src="bibtexic.jpg">. Com isto um programa chamado
+BiBT<sub>E</sub>X&nbsp;lê o seu banco de dados, retira as entradas que
+foram referenciadas no texto, cria um arquivo com o mesmo
+nome do arquivo principal, mas com terminação <tt>.bbl</tt>.
+Este arquivo contem as publicações citadas, porém ordenadas
+e formatadas, para que seja automaticamente incluído no seu
+documento no local, onde estiver o comando
+<tt>\bibliography{arquivo}</tt>, através do
+processamento do
+L<sup>A</sup>T<sub>E</sub>X&nbsp;sobre o arquivo principal.
+Depois, é preciso que o arquivo principal seja processado
+pelo
+L<sup>A</sup>T<sub>E</sub>X&nbsp;pelo menos duas vezes para que a bibliografia
+apareça de forma correta no seu documento.
+
+<p>
+Por exemplo, a entrada
+
+<pre>
+@BOOK{lamp,
+AUTHOR = "Leslie Lamport",
+TITLE = "\LaTeX, A Document Preparation System",
+PUBLISHER = "Addison-Wesley", EDITION="2nd.",
+ADDRESS = "Reading", YEAR = "1994"}
+</pre>
+<p>
+no arquivo de banco de dados bibliográficos e a colocação do
+comando <tt>\cite{lamp}</tt> produz [1]. E o
+comando
+<tt>\bibliography{bibli}</tt> vai gerar algo
+semelhante a<br>
+
+<p>
+<font size="+2">Referências Bibliográficas</font>
+
+<p>
+ [1] Leslie Lamport.
+ <em>L<sup>A</sup>T<sub>E</sub>X, A Document Preparation System</em>.
+ Addison-Wesley, Reading, 2nd. edition, 1994.
+
+<p>
+Se você não gostar do título, pode mudar com o comando<br>
+<tt>\renewcommand{\bibname}{novo nome}</tt> colocado
+antes do comando <tt>\bibliography{bibli}</tt>.
+
+<p>
+      <H3><A NAME="tth_sEc5.5">5.5</A>&nbsp;&nbsp;Índice Alfabético</H3>A criação de um índice alfabético é semelhante a de criação
+da bibliografia. As palavras que devem aparecer no índice
+devem ser indicadas com o comando <tt>\index</tt> que deve ter uma das três formas:
+
+<pre>
+\index{entrada principal}
+\index{entrada principal!subentrada}
+\index{entrada principal!subentrada!subsubentrada}
+</pre>
+<p>
+As entradas não podem conter os caracteres !, @ e |. Se uma
+entrada contem um comando L<sup>A</sup>T<sub>E</sub>X, então ela deve aparecer na
+forma
+<tt>entrada alfabética@entrada impressa</tt>. Exemplo:
+
+<pre>
+\index{Matriz (matrizes)!identidade}
+\index{Matriz (matrizes)!soma de}
+\index{Conjunto R@Conjunto \mathbb{R}}.
+</pre>
+<p>
+Para que os comandos <tt>\index</tt> sejam
+considerados é necessário que no preâmbulo do arquivo
+principal, esteja o comando <tt>\makeindex</tt>.
+No local onde o índice vai ser impresso em seu documento
+deve conter o comando
+<p>
+<tt>
+\input{nome do arquivo principal sem extensao.ind}
+</tt> 
+<p>Depois de
+processar o seu
+arquivo principal com o L<sup>A</sup>T<sub>E</sub>X&nbsp;você deve clicar no menu em <b>TeX</b> depois em <b>Makeindex</b>.
+<img src="bibtexic.jpg">. Com isto um programa chamado
+MakeIndex vai criar um arquivo com o mesmo nome do arquivo
+principal, mas com terminação
+<tt>.ind</tt>, que vai ser incluído onde
+for colocado o comando <tt>\input{...}</tt>,
+através do processamento do L<sup>A</sup>T<sub>E</sub>X&nbsp;sobre o arquivo
+principal. É necessário que o arquivo principal seja
+processado pelo menos duas vezes pelo L<sup>A</sup>T<sub>E</sub>X&nbsp;para que o
+índice apareça de forma correta no seu documento.
+
+<p>
+      <H2><A NAME="tth_sEc6">6</A>&nbsp;&nbsp;Outros Recursos</H2>      
+<H3><A NAME="tth_sEc6.1">6.1</A>&nbsp;&nbsp;Referências Cruzadas</H3>
+O comando <tt>\label{marca}</tt> coloca uma
+marca naquele ponto do texto, onde ele aparece e pode ser
+usado para se referir a ele em outra parte do texto com o
+comando
+<tt>\ref{marca}</tt>.
+
+<p>
+O identificador da marca <tt>marca</tt> pode ser qualquer
+conjunto de caracteres, que não inclua os caracteres
+especiais, que o faça lembrar a que ela se refere. O número
+da página do ponto onde a
+<tt>marca</tt> foi colocada pode ser impresso com o comando
+<tt>\pageref{marca}</tt>. Se o comando
+<tt>\label{marca}</tt> é colocado dentro de um ambiente como
+<tt>equation</tt>, <tt>eqnarray</tt> ou <tt>newtheorem</tt>,
+então o comando <tt>\ref{marca}</tt>
+correspondente vai imprimir o número do ambiente em que a
+<tt>\label{marca}</tt> foi colocado. Para o ambiente
+<tt>enumerate</tt>, o comando <tt>\ref{marca}</tt>
+imprime o número do <tt>\item</tt>, onde
+<tt>\label{marca}</tt> foi colocado. Para o ambiente
+<tt>figure</tt> o comando <tt>\label{marca}</tt> deve
+ser colocado dentro do
+<tt>\caption{...}</tt>. Por exemplo, no
+Teorema de Pitágoras escrevemos
+<tt>\begin{teo}[Pitágoras]\label{teo.pita} ... \end{teo}</tt> para nos
+referirmos a ele escrevemos <tt>... pelo Teorema
+\ref{teo.pita} na página
+\pageref{teo.pita}
+...</tt> e obtemos ... pelo <A href="#teo.pita">Teorema</A>&nbsp;2.1 na
+<A href="#teo.pita">página</A> .... Para se referir à
+Figura <A href="#exemgraf">1</A> que está na
+<A href="#exemgraf">página</A> foi necessário ter escrito dentro do
+ambiente <tt>figure</tt>,
+<tt>\caption{\label{exemgraf}Figura
+proveniente do ...}</tt>.
+
+<p>
+      <H3><A NAME="tth_sEc6.2">6.2</A>&nbsp;&nbsp;Espaçamento</H3>       <H4><A NAME="tth_sEc6.2.1">1</A>&nbsp;&nbsp;Espaçamento Horizontal</H4>Para produzir espaçamento horizontal usamos os comandos
+
+<pre>
+\hspace{tamanho}
+\hspace*{tamanho}
+</pre>
+<p>
+onde o <tt>tamanho</tt> é o comprimento do espaçamento, por
+exemplo <tt>1.5cm</tt> ou <tt>3em</tt> (aqui <tt>em</tt> é a
+unidade que corresponde a largura da letra M do tipo de
+letra atual). A forma sem <tt>*</tt> suprime o espaço se ele
+ocorre entre duas linhas ou no início de uma linha. O
+<tt>tamanho</tt> pode ser negativo, neste caso comando
+funciona como retrocesso.
+
+<p>
+O comando <tt>\hfill</tt> é uma abreviação de
+<tt>\hspace{\fill}</tt>, que introduz espaço
+suficiente para que o que estiver à esquerda do comando
+fique alinhado à esquerda e o que estiver à direita do
+comando seja alinhado à direita. Por exemplo, com
+<tt>Esquerda\hfill Direita</tt> obtemos<br>
+
+<TABLE BORDER=0 WIDTH=100% > <TR> <TD>Esquerda</TD> <TD>
+<DIV ALIGN=right>Direita</DIV> </TD> </TR> </TABLE>Várias ocorrencias de <tt>\hfill</tt> dentro de
+uma linha faz com que o mesmo espaçamento seja introduzido
+de forma que a linha fique justificada à esquerda e à
+direita. Por exemplo, com
+<tt>Esquerda\hfill Centro \hfill
+Direita</tt> obtemos<br>
+
+<p>
+<TABLE BORDER=0 WIDTH=100%>
+<TR> <TD>Esquerda</TD>
+<TD><div align=center>Centro</div></TD>
+<TD> <DIV ALIGN=right>Direita</DIV> </TD> </TR>
+</TABLE>Se
+<tt>\hfill</tt> ocorre no início da linha, então
+o espaçamento é suprimido em concordância com o
+comportamento de <tt>\hspace</tt>. Neste caso,
+deve ser usado
+<tt>\hspace*{\fill}</tt>.
+
+<p>
+Dois comandos que funcionam como <tt>\hfill</tt>
+são
+<tt>\dotfill</tt> e <tt>\hrulefill</tt>,
+que preenchem o espaço com pontos e linha respectivamente.
+Por exemplo, com <tt>Esquerda\dotfill Centro
+\hrulefill Direita</tt> obtemos<br>
+<TABLE BORDER=0 WIDTH=100%>
+<TR>
+<TD>Esquerda...........</TD>
+<TD> <div align=center>.........Centro________</div></TD>
+<TD> <DIV ALIGN=right>_________Direita</DIV> </TD>
+</TR> </TABLE>       <H4><A NAME="tth_sEc6.2.2">2</A>&nbsp;&nbsp;Espaçamento Vertical</H4>Uma nova linha ou uma quebra de linha com ou sem espaço adicional pode ser
+conseguida com o comando
+
+<pre>
+\\[tamanho]
+</pre>
+<p>
+O argumento opcional <tt>tamanho</tt> é o comprimento que
+especifica qual o espaço adicional que deve ser colocado
+entre as duas linhas. Se for desejado a diminuição do espaço
+o comando pode ser usado com um <tt>tamanho</tt> negativo.
+Por exemplo, com o comando
+<tt>\\[10cm]</tt>,
+a linha atual é terminada e um espaço vertical
+de 10 cm é inserido antes da nova linha.
+Enquanto, <tt>\\[-0.38cm]</tt>,
+quebra a linha atual e a nova linha ocorre a -0.38 cm
+de onde ela normalmente começaria.
+
+<p>
+Comandos para aumentar o espaçamento vertical entre parágrafos
+são:
+
+<pre>
+\bigskip      \medskip      \smallskip
+</pre>
+<p>
+que adicionam espaço vertical dependendo do tamanho do tipo
+de letras declarado no comando <tt>\documentclass</tt>.
+
+<p>
+É possivel, também, adicionar espaço extra entre parágrafos com o
+comando
+
+<pre>
+\vspace{tamanho}
+</pre>
+<p>
+Se este comando ocorre dentro de um parágrafo, então o
+espaço adicional é introduzido após a linha atual. O
+parâmetro <tt>tamanho</tt> tem que conter um unidade de
+comprimento e pode ser negativo,
+para mover o texto que vem a seguir para cima.
+
+<p>
+O comando <tt>\vfill</tt> é uma abreviação de
+<tt>\vspace{\fill}</tt>. Este é análogo a
+<tt>\hfill</tt> (introduzido acima), para espaçamento
+vertical, introduzindo espaçamento vertical suficiente para
+que a parte superior e a inferior do texto casem com as
+margens superior e inferior da página respectivamente.
+
+<p>
+      <H3><A NAME="tth_sEc6.3">6.3</A>&nbsp;&nbsp;Dividindo o Arquivo Fonte</H3>Para a produção de textos maiores é essencial, que se divida
+o arquivo fonte em arquivos menores e que possam ser
+processados em separado para diminuir o tempo de
+processamento. Para isso, pode ser empregado o comando
+
+<pre>
+\include{arquivo}
+</pre>
+<p>
+junto com o comando
+
+<pre>
+\includeonly{lista de arquivos}
+</pre>
+<p>
+no preâmbulo, contendo uma <tt>lista de arquivos</tt> que
+devem ser lidos pelo L<sup>A</sup>T<sub>E</sub>X. Os nomes dos arquivos na lista
+de arquivos devem ser separados por vírgula a terminação
+<tt>.tex</tt> deve ser suprimida. Se o comando
+<tt>\includeonly</tt> for suprimido, então todos os
+arquivos são lidos e processados.
+
+<p>
+Os capítulos foram escritos em arquivos separados com nomes
+<tt>intwin.tex, intmatl.tex, intlat.tex, ...</tt>. O
+arquivo principal contém o texto
+
+<pre>
+\documentclass[a4paper,12pt]{book}
+. . . . . . .
+\includeonly{. . .}
+. . . . . . .
+\begin{document}
+\maketitle
+\tableofcontents
+\include{intwin}
+\include{intmatl}
+\include{intlat}
+. . . . . . .
+\end{document}
+</pre>
+<p>
+Colocando uma entrada apropriada no comando
+<tt>\includeonly</tt> é possivel o
+processamento de alguns capítulos seletivamente. Por
+exemplo, <tt>\includeonly{intmatl,intlat}</tt>
+faz com que o L<sup>A</sup>T<sub>E</sub>X processe o título, o conteúdo e os
+capítulos de Introdução ao MATLAB e de Introdução ao L<sup>A</sup>T<sub>E</sub>X.
+
+<p>
+      <H3><A NAME="tth_sEc6.4">6.4</A>&nbsp;&nbsp;Tabelas</H3>Para construir tabelas usamos o ambiente
+<tt>tabular</tt>, cuja sintaxe é
+
+<pre>
+\begin{tabular}{formato das colunas}
+. . . linhas . . . .
+\end{tabular}
+</pre>
+<p>
+Aqui, o <tt>formato das colunas</tt> deve ser uma entrada
+para cada coluna além, opcionalmente, de entradas extras
+para as bordas esquerda e direita e para a separação das
+colunas. Os símbolos possíveis para o <tt>formato das
+colunas</tt> são:
+
+<DL compact>
+<p>
+<dt></dt><dd><tt>l</tt> a coluna é alinhada à esquerda;
+<dt></dt><dd>
+<p>
+<tt>r</tt> a coluna é alinhada à direita;
+<dt></dt><dd>
+<p>
+<tt>c</tt> a coluna é centralizada.
+</DL>
+<p>
+e para as bordas e a separação das colunas:
+
+<DL compact>
+<p>
+<dt></dt><dd>| desenha uma linha vertical;
+<dt></dt><dd>
+<p>
+|| desenha duas linhas verticais;
+<dt></dt><dd>
+<p>
+<tt>@{texto}</tt> insere o <tt>texto</tt> em todas as linhas,
+entre as duas colunas onde ele aparece.
+</DL>
+<p>
+As <tt>linhas</tt> devem conter as entradas de cada linha da
+tabela separadas por <tt>&amp;</tt> e terminadas por
+\\. Além disso, elas podem conter os
+comandos:
+
+<DL compact>
+<p>
+<dt></dt><dd><tt>\hline</tt> - este comando deve somente aparecer
+antes da primeira linha ou imediatamente depois de
+\\. Ele faz desenhar uma linha
+horizontal de comprimento igual ao da tabela. Dois comandos
+<tt>\hline</tt> juntos produzem duas linha horizontais
+com um pequeno espaço entre elas.
+<dt></dt><dd>
+<p>
+<tt>\multicolumn{num}{formato}{texto}</tt> -
+este comando faz concatenar <tt>num</tt> colunas em uma só.
+O <tt>formato</tt> deve conter um dos caracteres <tt>l,
+r</tt> ou <tt>c</tt> antecedido e seguido por |, || ou
+<tt>@{texto}</tt>.
+</DL>
+<p>
+A tabela
+
+<p>
+
+<center>
+<table border><tr><td></td>
+<tr><td colspan=6 align=center><b>Horário de Tópicos em Matemática - MAT
+037/033</b> 
+<tr><td>Horário    </td><td>Seg  </td><td>Ter </td><td>Qua </td><td>Qui </td><td>Sex</tr><tr><td>
+<tr><td>13:00-14:40</td><td>&nbsp;     </td><td>&nbsp;    </td><td>&nbsp;    </td><td>&nbsp;    </td><td>&nbsp;    
+<tr><td>14:55-16:35</td><td>&nbsp;     </td><td>&nbsp;    </td><td>&nbsp;    </td><td>&nbsp;    </td><td>TURMA N    
+<tr><td>16:35-18:15</td><td>TURMA N     </td><td>&nbsp;    </td><td>TURMA N    </td><td> &nbsp;   </td><td>&nbsp;    
+<tr><td>18:15-19:00</td><td>&nbsp;     </td><td>&nbsp;    </td><td>&nbsp;    </td><td>&nbsp;    </td><td>&nbsp;   
+<tr><td>19:00-20:40</td><td>&nbsp;     </td><td>&nbsp;    </td><td>TURMA M    </td><td>&nbsp;    </td><td>&nbsp;    
+<tr><td>20:55-22:35</td><td>TURMA M     </td><td>&nbsp;    </td><td>&nbsp;    </td><td>&nbsp;    </td><td>&nbsp;    </table>
+
+</center>
+<p>
+foi produzida com
+
+<p>
+
+<pre>
+\begin{center}
+\begin{tabular}{|l||c|c|c|c|c|}
+\hline
+\multicolumn{6}{|c|}{\textbf{Horário de Tópicos em Matemática - MAT 037/033}}\\
+\hline
+Horário    &Seg  &Ter &Qua &Qui &Sex\\
+\hline\hline
+13:00-14:40&     &    &    &    &    \\
+\hline
+14:55-16:35&     &    &    &    &TURMA N    \\
+\hline
+16:35-18:15&TURMA N     &    &TURMA N    &    &    \\
+\hline
+18:15-19:00&     &    &    &    &    \\
+\hline
+19:00-20:40&     &    &TURMA M    &    &    \\
+\hline
+20:55-22:35&TURMA M     &    &    &    &    \\
+\hline
+\end{tabular}
+\end{center}
+</pre>
+<p><hr><small>File translated from T<sub><font size="-1">E</font></sub>X by <a href="http://hutchinson.belmont.ma.us/tth/">T<sub><font size="-1">T</font></sub>H</a>, version 1.55.</small>
+</HTML>

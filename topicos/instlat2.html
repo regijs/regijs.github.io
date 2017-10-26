@@ -1,0 +1,135 @@
+  <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+           "http://www.w3.org/TR/REC-html40/loose.dtd"><HTML>
+<META NAME="GENERATOR" CONTENT="TtH 1.55">                                                <title>Instalação do LATEX </title>
+<title>Instalação do LaTeX
+        </title>
+<H1 align=center>Instalação do L<sup>A</sup>T<sub>E</sub>X
+        </H1>
+
+<p>
+
+<H3 align=center>Reginaldo J. Santos<br>
+        Departamento de Matemática<br>
+        Instituto de Ciências Exatas<br>
+        Universidade Federal de Minas Gerais<br>
+        <a href="http://www.mat.ufmg.br/~regi"> 
+        <tt>http://www.mat.ufmg.br/~regi</tt></a>
+        </H3>
+<p>
+
+<center><script>document.write("This page was last modified on : ",document.lastModified);</script></center><p><br>O L<sup>A</sup>T<sub>E</sub>X&nbsp;é um programa de de código aberto, por isso existem
+várias implementações. Aqui está uma implementação de 32 bits
+chamada
+MikT<sub>E</sub>X com um visualizador, <b>YAP</b> e uma interface gráfica com um editor de
+textos chamada, T<sub>E</sub>X Shell, . 
+Todos
+estes programas são ``freeware'', isto é, são gratuítos e
+podem trabalhar juntos como se fossem um só, mas, para que
+isto aconteça, é necessário configurá-los. 
+Abaixo também está um arquivo de configuração que uso, que faz com
+que estes programas trabalhem integrados.
+
+
+Além destes programas aqui estão também:
+
+<OL type="1">
+<p>
+
+<li><a href="gsview29"><b>GhostView 2.9</b></a> para
+visualizar e imprimir arquivos no formato Postscript.
+
+<li>
+<p>
+<a href="ar40eng.exe"><b>Acrobat Reader 4.0</b></a> para visualizar e imprimir 
+arquivos no formato pdf.
+<li>
+<p>
+<a href="ltxmc108.exe"><b>LaTeX Macros 1.08</b></a> para facilitar a digitação de comandos
+do  L<sup>A</sup>T<sub>E</sub>X.
+<p>
+<center><font size="+2">Instalação</font>
+</center>
+<p>
+
+<UL>
+<li> Instale o Ghostview. Para isto 
+faça o download dos dois arquivos <a href="gsview29/gs601w32.exe">gs601w32</a> e <a href="gsview29/gsv29w32.exe">gsv29w32</a> e grave-os numa pasta temporária. 
+Depois, basta clicar duas vezes com
+o botão esquerdo do mouse no arquivo <tt>gs601w32</tt> e depois em <tt>gsv29w32</tt>.
+
+<li> Instale o MikT<sub>E</sub>X. Para isto 
+faça o download do arquivo <tt>small-miktex.exe</tt> que pode ser 
+encontrado no endereço
+<a 
+href="http://www.miktex.org/setup.html">
+http://www.miktex.org/setup.html</a> 
+ e grave-o numa pasta temporária. 
+Depois, basta clicar duas vezes com o botão esquerdo do mouse no 
+arquivo <tt>small-miktex.exe</tt>.
+
+
+<OL type="1">
+<p>
+
+<li>Quando perguntado por
+"the local TEXMF tree", aceite a sugestão dada. 
+
+<li>
+<p>
+Quando perguntado por uma lista de ``additional TEXMF root directories",
+marque `No preexisting TEXMF directory trees'. 
+</OL>
+<p>
+
+<li> 
+Instale o TeXShell. Para isto faça o download do arquivo
+<tt>WinTeXShell32.zip</tt> que pode ser encontrado em <a 
+href="http://www.projectory.de/texshell">
+http://www.projectory.de/texshell</a> 
+e grave-o numa pasta temporária. Depois descompacte-o 
+na pasta <tt>C:\texmf\miktex\bin</tt>.
+
+
+<li>Crie um atalho para o T<sub>E</sub>XShell. Para isso, clique com o botão direito do mouse na barra de 
+tarefas em cima de "Iniciar" e escolha "Abrir". Clique duas vezes com botão esquerdo do mouse em "Programas", depois em "Miktex". Vá no menu em "Arquivo", depois em "Novo" e finalmente em "Atalho".
+Na linha de comando escreva "c:\texmf\miktex\bin\texshell.exe" e clique em "Avançar". Em nome do atalho
+escreva "TeXShell" e clique em "Concluir".
+
+<li>Pegue o arquivo de configuração do TeXShell que uso,
+<a href="http://www.mat.ufmg.br/~regi/latex/texshell.ini">
+<tt>http://www.mat.ufmg.br/~regi/latex/texshell.ini</tt></a>. 
+Neste arquivo ficam gravadas as 
+configurações que fazem com que o TeXShell esteja integrado com
+os outros programas. Este arquivo deve ser gravado na pasta
+<tt>C:\texmf\miktex\bin</tt>.
+
+<li>Se o seu Windows for anterior ao 2000 pode ser necessário 
+acrescentar a linha
+
+<p>
+<tt>set PATH=%PATH%;c:\texmf\miktex\bin</tt>
+
+<p>
+no arquivo <tt>autoexec.bat</tt>
+do seu computador (ele fica em <tt>c:\</tt>). Para isso, clique
+no arquivo <tt>autoexec.bat</tt> com o botão direito do mouse e escolha
+<b>Editar</b>, desta forma o arquivo será aberto no Bloco 
+de Notas. Depois reinicialize o computador para que a alteração faça efeito.
+
+<p>
+
+
+<p>
+</UL>Para começar a usar o L<sup>A</sup>T<sub>E</sub>X&nbsp;você deve clicar em <b>Iniciar</b>, depois
+em <b>Programas</b>, depois em <b>MikTeX</b> e finalmente clicar em
+<b>TexShell</b>.
+
+<p>
+Escrevemos uma apostila de <a href="http://www.mat.ufmg.br/~regi/topicos/intlat.pdf">Introdução ao L<sup>A</sup>T<sub>E</sub>X</a>
+que
+está disponível em <a href="http://www.mat.ufmg.br/~regi/topicos/intlat.pdf"> <tt>http://www.mat.ufmg.br/~regi/topicos/intlat.pdf</tt></a>.
+
+<p>
+Boa Sorte!
+
+<p><hr></HTML>

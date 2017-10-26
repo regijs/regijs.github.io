@@ -1,0 +1,993 @@
+  <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+           "http://www.w3.org/TR/REC-html40/loose.dtd"><HTML>
+<META NAME="GENERATOR" CONTENT="TtH 1.55">                                                
+<title>Introdução ao MATLAB
+        </title>
+<script type="text/javascript"> <!--
+window.location = "intmatl.pdf"
+--> </script>
+<H1 align=center>Introdução ao MATLAB </H1>
+<p>
+
+<H3 align=center>Reginaldo J. Santos<br>
+        Departamento de Matemática<br>
+        Instituto de Ciências Exatas<br>
+        Universidade Federal de Minas Gerais<br>
+        
+        <a href="http://www.mat.ufmg.br/~regi"><tt>http://www.mat.ufmg.br/&#126;regi</tt></a>        </H3>
+<H3 align=center>8 de junho de 1998</H3>
+
+<p>
+<font size="+3">Conteúdo</font>
+
+<p>
+<A href="#tth_sEc1"
+>1&nbsp; C&#225;lculos Cient&#237;ficos</A><br><A href="#tth_sEc2"
+>2&nbsp; Vari&#225;veis e Express&#245;es Simb&#243;licas</A><br><A href="#tth_sEc3"
+>3&nbsp; Instalando o pacote <tt>gaal</tt></A><br><A href="#tth_sEc4"
+>4&nbsp; Matrizes</A><br><p><br><p><br>O MATLAB é um software destinado a fazer cálculos com
+matrizes (MATLAB = MATrix LABoratory). Os comandos do MATLAB
+são muito próximos da forma como escrevemos expressões
+algébricas, tornando mais simples o seu uso. Podem ser
+incorporados às rotinas pré-definidas, pacotes para cálculos
+específicos.
+Escrevemos
+um pacote chamado
+<tt>gaal</tt> com funções que são direcionadas para este curso.
+
+<p>
+O MATLAB pode ser adquirido em uma boa livraria a um preço
+bastente razoável. Por exemplo, a versão estudante pode ser
+adquirida através da internet, na livraria Blackwell's
+(
+<a href="http://bookshop.blackwell.co.uk"><tt>http://bookshop.blackwell.co.uk</tt></a>) na Inglaterra
+por
+<tt>US$ 68,00</tt> incluindo a despesa com o transporte.
+
+<p>
+Uma vez inicializado o MATLAB, aparecerá na janela de
+comandos um prompt <tt>&#62;&#62;</tt> ou <tt>EDU&#62;&#62;</tt>. O prompt
+significa que o MATLAB está esperando um comando. Todo
+comando deve ser finalizado teclando-se <b>Enter</b>.
+
+<p>
+<img src="matlabcw.gif"><br>
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+</td></Table>
+</td></table></centEr>
+
+
+
+<p>
+No MATLAB, pode-se obter ajuda sobre qualquer comando ou
+função. O comando<br> <tt>&#62;&#62; help</tt><br> mostra uma listagem
+de todos os pacotes disponíveis. Ajuda sobre um pacote
+específico ou sobre um comando ou função específica é obtida
+com o comando <br>
+<tt>&#62;&#62; help nome</tt>,<br> (sem a vírgula!)
+onde
+<tt>nome</tt> pode ser o nome de um pacote ou o nome de um
+comando ou função.
+
+<p>
+      <H2><A NAME="tth_sEc1">1</A>&nbsp;&nbsp;C&#225;lculos Cient&#237;ficos</H2>
+<H3>C&#225;lculos Simples</H3>
+O MATLAB faz cálculos simples e científicos como uma
+calculadora. Por exemplo, suponha que você vai a uma loja e
+compra 3 objetos que custam 25 reais cada e 5 objetos que
+custam 12 reais cada. Quanto custou a sua compra?
+
+<p>
+No MATLAB você pode resolver este problema de pelo menos
+duas maneiras. A mais simples é
+
+<p>
+
+<pre>
+EDU&#62;&#62; 3*25 + 5*12
+ans =
+   135
+</pre>Observe que no MATLAB a multiplicação tem precedência sobre
+a adição. Note também que ele chamou o resultado de
+<tt>ans</tt>.
+
+<p>
+Alternativamente, você pode usar <b>variáveis</b> para
+armazenar informação.
+
+<pre>
+EDU&#62;&#62; q1=3, p1=25, q2=5, p2=12
+q1 =
+     3
+p1 =
+    25
+q2 =
+     5
+p2 =
+    12
+EDU&#62;&#62; total=q1*p1+q2*p2
+total =
+   135
+</pre>
+<p>
+Primeiro, criamos quatro variáveis, <tt>q1, p1, q2</tt> e
+<tt>p2</tt>, atribuindo a elas os seus valores respectivos.
+Observe que no MATLAB o sinal de igual tem um sentido
+diferente daquele da Matemática. Aqui, igual significa
+atribuição. O que estiver à direita do sinal de igual é
+``colocado'' na variável que estiver à esquerda. Finalmente,
+criamos uma variável chamada <tt>total</tt> que recebeu o
+total da compra. Usamos a
+<b>vírgula</b> para separar os comandos que são dados em
+uma mesma linha. Esta separação poderia ser feita com
+<b>ponto e vírgula</b>. Mas, neste caso o MATLAB não
+mostra os resultados dos comandos. No exemplo anterior
+teríamos
+
+<pre>
+EDU&#62;&#62; q1=3; p1=25; q2=5; p2=12;
+EDU&#62;&#62; total=q1*p1+q2*p2;
+</pre>
+<p>
+Em qualquer momento, podemos ver o valor que está contido em
+uma variável, simplesmente digitando no prompt o seu
+nome.
+
+<pre>
+EDU&#62;&#62; total
+total =
+   135
+</pre>
+<p>
+O MATLAB oferece as seguintes operações aritméticas:<br>
+<tt>&#62;&#62; a+b</tt> soma <tt>a</tt> e <tt>b</tt>. Por exemplo,
+<tt>5+6</tt>.<br> <tt>&#62;&#62; a-b</tt> subtrai <tt>a</tt> de
+<tt>b</tt>. Por exemplo, <tt>15-12</tt>.<br> <tt>&#62;&#62; a*b</tt>
+multiplica <tt>a</tt> por <tt>b</tt>. Por exemplo,
+<tt>3.14*0.15</tt>.<br> <tt>&#62;&#62; a^b</tt> calcula <tt>a</tt>
+elevado a <tt>b</tt>. Por exemplo,
+<tt>5^(1/2)</tt>.<br>
+
+<p>
+A ordem com que são avaliadas as expressões é dada pela
+seguinte regra: expressões são avaliadas da esquerda para a
+direita, com a potência tendo a mais alta precedência,
+seguida pela multiplicação e divisão que têm igual
+precedência, seguidas pela adição e subtração que têm igual
+precedência. Parêntesis podem ser usados para alterar esta
+ordem. Sendo que neste caso, os parêntesis mais internos são
+avaliados antes dos mais externos.
+
+<p>
+
+<H3>&#193;rea de Trabalho</H3>
+
+<p>
+Comandos que foram dados anteriormente podem ser obtidos
+novamente usando as teclas <font face=symbol>­</font
+> e <font face=symbol>¯</font
+>. Por
+exemplo, pressionando a tecla <font face=symbol>­</font
+> uma vez você obtem
+o último comando digitado no prompt. Pressionando
+repetidamente a tecla <font face=symbol>­</font
+> se obtem os comandos
+digitados anteriormente, um de cada vez na direção para
+trás. Analogamente, pressionando-se a tecla <font face=symbol>¯</font
+>,
+mas na direção para frente. Mais ainda, digitando no prompt
+os primeiros caracteres de um comando dado anteriormente e
+então pressionando-se a tecla <font face=symbol>­</font
+>, obtem-se o comando
+mais recente tendo aqueles caracteres iniciais. Em qualquer
+momento, as teclas <font face=symbol>¬</font
+>, <font face=symbol>®</font
+> podem ser
+usadas para se mover o cursor dentro de um comando, no
+prompt. Desta forma um comando pode ser corrigido, além das
+teclas <b>Delete</b> e <b>Backspace</b>.
+
+<p>
+
+<H3>Vari&#225;veis</H3>
+
+<p>
+O MATLAB tem certas regras para nomear as variáveis. Os
+nomes de variáveis devem ser nomes iniciados por letras não
+podem conter espaços nem carcteres de pontuação. O MATLAB
+faz diferença entre letras maiúsculas e minúsculas. Alguns
+nomes são usados para variáveis predefinidas. Estas
+são:<br>
+<tt>ans</tt> - variável usada para os resultados.<br>
+<tt>pi</tt> - número <font face=symbol>p</font
+>.<br>
+<tt>eps</tt> - menor número tal que, quando adicionado a
+1, cria um número maior que 1 no computador.<br>
+<tt>flops</tt> - armazena o número de operações em ponto
+flutuante realizadas.<br>
+<tt>inf</tt> - significa infinito.<br>
+<tt>NaN</tt> ou <tt>nan</tt> - significa não é um número,
+por exemplo, 0/0.<br>
+<tt>i</tt> e <tt>j</tt> - unidade imaginária [<font face=symbol>Ö</font>(-1)].<br>
+<tt>nargin</tt> - número de argumentos de entrada de uma função.<br>
+<tt>nargout</tt> - número de argumentos de saída de uma função.<br>
+<tt>realmin</tt> - menor número que o computador pode armazenar.<br>
+<tt>realmax</tt> - maior número que o computador pode armazenar.<br>
+
+<p>
+As variáveis podem ser redefinidas a qualquer momento,
+bastando para isso atribuí-las um novo valor.
+
+<p>
+
+<H3>Fun&#231;&#245;es Cient&#237;ficas</H3>
+
+<p>
+O MATLAB tem uma série de funções científicas pré-definidas.
+A maioria pode ser usada da mesma forma que seria escrita
+matematicamente. Por exemplo:
+
+<pre>
+EDU&#62;&#62; x=sqrt(2)/2
+x =
+    0.7071
+EDU&#62;&#62; y=acos(x)
+y =
+    0.7854
+EDU&#62;&#62; y_graus=y*180/pi
+y_graus =
+   45.0000
+</pre>
+<p>
+Estes comandos calculam o arco cujo cosseno é <font face=symbol>Ö</font
+>2/2,
+inicialmente em radianos, depois em graus. Abaixo segue uma
+lista de funções científicas disponíveis:<br>
+<tt>abs(x)</tt> - valor absoluto de <tt>x</tt>.<br>
+<tt>acos(x)</tt> - arco cujo cosseno é <tt>x</tt>.<br>
+<tt>asin(x)</tt> - arco cujo seno é <tt>x</tt>.<br>
+<tt>atan(x)</tt> - arco cuja tangente é <tt>x</tt>.<br>
+<tt>cos(x)</tt> - cosseno de <tt>x</tt>.<br>
+<tt>exp(x)</tt> - exponencial <i>e</i><sup><i>x</i></sup>.<br>
+<tt>gcd(x,y)</tt> - máximo divisor comum de <tt>x</tt> e <tt>y</tt>.<br>
+<tt>lcm(x,y)</tt> - mínimo múltiplo comum de <tt>x</tt> e <tt>y</tt>.<br>
+<tt>log(x)</tt> - logaritmo de <tt>x</tt> na base <i>e</i>.<br>
+<tt>log10(x)</tt> - logaritmo de <tt>x</tt> na base 10.<br>
+<tt>rem(x,y)</tt> - resto da divisão de <tt>x</tt> por <tt>y</tt>.<br>
+<tt>sin(x)</tt> - seno de <tt>x</tt>.<br>
+<tt>sqrt(x)</tt> - raiz quadrada de <tt>x</tt>.<br>
+<tt>tan(x)</tt> - tangente de <tt>x</tt>.<br>
+
+<p>
+
+<H3>Formatos Num&#233;ricos</H3>
+Quando o MATLAB mostra um resultado numérico ele segue
+certas regras. No caso de nenhum formato estar definido, se
+um resultado é um número inteiro, o MATLAB mostra como um
+inteiro. Este foi o caso no exemplo das compras, que fizemos
+anteriormente. Quando um resultado é um número real, o
+MATLAB mostra uma aproximação com até quatro casas decimais.
+Este foi o caso no exemplo do arco cosseno, que fizemos
+ateririmente. Se os dígitos significativos estiverem fora
+desta faixa, o MATLAB mostra o resultado em notação
+científica. Você pode definir um formato diferente. Abaixo
+seguem algumas possibilidades:<br>
+<tt>format short</tt> - exibe 5 dígitos.<br>
+<tt>format long</tt> - exibe 16 dígitos.<br>
+<tt>format rat</tt> - exibe no formato racional.<br>
+
+<p>
+É importante salientar que o MATLAB não muda a sua forma de
+representar os números internamente, quando formatos
+diferentes de exibição de números são escolhidos.
+
+<p>
+      <H2><A NAME="tth_sEc2">2</A>&nbsp;&nbsp;Vari&#225;veis e Express&#245;es Simb&#243;licas</H2>Agora, vamos ver como podemos manipular com expressões que
+além de números e variáveis numéricas, contém também
+variáveis simbólicas. Por exemplo:
+
+<pre>
+EDU&#62;&#62; syms x
+EDU&#62;&#62; simplify((sin(x))^2+(cos(x))^2)
+ans =
+1
+</pre>
+<p>
+Estes comandos mandam o MATLAB simplificar a expressão
+sen<sup>2</sup><i>x</i>+cos<sup>2</sup><i>x</i>. Primeiro precisamos dizer ao
+MATLAB que
+<tt>x</tt> é uma variável simbólica, depois pedimos para
+simplificar a expressão que envolve <tt>x</tt>. Neste caso
+usamos uma <b>função</b> chamda <tt>simplify</tt>. A
+palavra função no MATLAB tem um significado diferente
+daquele que tem na Matemática. Aqui função é um comando, que
+pode ter alguns argumentos de entrada e alguns de saída.
+Neste caso, a função <tt>simplify</tt> tem como argumento de
+entrada uma expressão simbólica e de saída também.
+
+<p>
+Uma vez definido que a variável
+<tt>x</tt> é uma variável simbólica, podemos definir
+expressões que envolvem esta variável. Por exemplo, dadas
+duas funções
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>f</i>(<i>x</i>) = 2<i>x</i><sup>2</sup>+3<i>x</i>-5 &nbsp;&nbsp;&nbsp;e&nbsp;&nbsp;&nbsp; <i>g</i>(<i>x</i>) = <i>x</i><sup>2</sup>-<i>x</i>+7,</td></Table>
+</td></table></centEr>
+
+
+podemos fazer uma série de operações algébricas envolvendo
+estas funções.
+
+<p>
+
+<pre>
+EDU&#62;&#62; f=2*x^2+3*x-5; g=x^2-x+7;
+EDU&#62;&#62; f+g
+ans =
+3*x^2+2*x+2
+EDU&#62;&#62; f-g
+ans =
+x^2+4*x-12
+EDU&#62;&#62; f*g
+ans =
+(2*x^2+3*x-5)*(x^2-x+7)
+EDU&#62;&#62; expand(ans)
+ans =
+2*x^4+x^3+6*x^2+26*x-35
+EDU&#62;&#62; f/g
+ans =
+(2*x^2+3*x-5)/(x^2-x+7)
+EDU&#62;&#62; expand(ans)
+
+ans =
+
+2/(x^2-x+7)*x^2+3/(x^2-x+7)*x-5/(x^2-x+7)
+
+EDU&#62;&#62; pretty(ans)
+
+                          2
+                         x              x            5
+                   2 ---------- + 3 ---------- - ----------
+                      2              2            2
+                     x  - x + 7     x  - x + 7   x  - x + 7
+EDU&#62;&#62; f^3
+ans =
+(2*x^2+3*x-5)^3
+EDU&#62;&#62; expand(ans)
+ans =
+8*x^6+36*x^5-6*x^4-153*x^3+15*x^2+225*x-125
+</pre>Observe que o MATLAB não faz as simplificações ou expansões
+automaticamente.  Para isso, usamos os comandos
+ <tt>simplify</tt> que simplifica e <tt>expand</tt> que faz a
+expansão. Além destes, usamos acima também o comando
+ <tt>pretty</tt>, que mostra a expressão de uma forma mais
+ fácil de enxergar. Além destes, que já vimos, existe o comando
+<tt>simple</tt>, que tenta encontrar a forma mais simples de
+escrever uma expressão.
+
+<p>
+O MATLAB pode realizar operações mais avançadas sobre
+expressões simbólicas. A função
+<tt>compose</tt> calcula a composição das funções <i>f</i>(<i>x</i>) e
+<i>g</i>(<i>x</i>) em <i>f</i>(<i>g</i>(<i>x</i>)), a função <tt>finverse</tt> encontra a
+inversa funcional de uma expressão e a função <tt>subs</tt>
+substitui uma variável por um número (ou por outra variável)
+em uma expressão. Por exemplo:
+
+<p>
+
+<pre>
+EDU&#62;&#62; f=1/(1-x^2); g=sin(x);
+EDU&#62;&#62; compose(f,g)
+ans = 1/(1-sin(x)^2)
+EDU&#62;&#62; compose(g,f)
+ans = sin(1/(1-x^2))
+EDU&#62;&#62; finverse(g)
+ans = asin(x)
+EDU&#62;&#62; subs(f,x,2)
+ans = -1/3
+</pre>O MATLAB pode resolver equações. Por exemplo, para resolver
+a equação 
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>a</i><i>x</i><sup>2</sup>+<i>b</i><i>x</i>+<i>c</i> = 0,</td></Table>
+</td></table></centEr>
+
+ algebricamente, podemos usar os
+comandos:
+
+<pre>
+EDU&#62;&#62; syms a b c x
+EDU&#62;&#62; solve(a*x^2+b*x+c)
+ans =
+[1/2/a*(-b+(b^2-4*a*c)^(1/2))]
+[1/2/a*(-b-(b^2-4*a*c)^(1/2))]
+</pre>
+<p>
+O MATLAB pode exibir este resultado de uma forma mais fácil
+de enxergar usando a função <tt>pretty</tt>.
+
+<pre>
+EDU&#62;&#62; pretty(ans)
+                          [           2         1/2]
+                          [    -b + (b  - 4 a c)   ]
+                          [1/2 --------------------]
+                          [             a          ]
+                          [                        ]
+                          [           2         1/2]
+                          [    -b - (b  - 4 a c)   ]
+                          [1/2 --------------------]
+                          [             a          ]
+</pre>
+<p>
+Abaixo segue um resumo das funções para manipulação de
+expressões algébricas:<br>
+<tt>diff(f)</tt> - calcula a derivada de <tt>f</tt>.<br>
+<tt>compose(f,g)</tt> - determina a composta <i>f</i>(<i>g</i>(<i>x</i>)).<br>
+<tt>expand(expr)</tt> - expande uma expressão <tt>expr</tt>.<br>
+<tt>finverse(expr)</tt> - determina a inversa funcional da
+expressão <tt>expr</tt>.<br>
+<tt>pretty(expr)</tt> - exibe a expressão <tt>expr</tt> numa
+forma mais bonita.<br>
+<tt>simple</tt> - procura encontrar uma forma mais simples de
+escrever uma expressão <tt>expr</tt>.<br>
+<tt>simplify(expr)</tt> - simplifica a expressão
+<tt>expr</tt>.<br>
+<tt>solve(expr)</tt> - acha a(s)
+solução(es) da equação <tt>expr</tt> = 0.<br>
+<tt>subs(expr,x,a)</tt> - substitui na expressão
+<tt>expr</tt> a variável <tt>x</tt> por <tt>a</tt>.<br>
+<tt>syms x y z a b</tt> - define as variáveis simbólicas
+<tt>x, y, z, a</tt> e <tt>b</tt>.<br>
+
+<p>
+Existem várias outras funções para manipulação de expressões
+algébricas. Você pode obter informações sobre elas digitando
+<tt>help symbolic</tt>. Uma função interessante que mostra
+as capacidades do MATLAB em tratar com funções matemáticas é
+<tt>funtool</tt> que é uma calculadora para funções.
+
+<p>
+      <H2><A NAME="tth_sEc3">3</A>&nbsp;&nbsp;Instalando o pacote <tt>gaal</tt></H2>
+<OL type="1">
+<li>Entre em <b>Meu Computador</b> (clicando duas vezes com o
+botão esquerdo do mouse sobre <b>Meu Computador</b> no
+desktop). Entre em <b>drive C:</b>, <b>MATLAB</b> e
+depois em <b>TOOLBOX</b>. Crie uma pasta chamada
+<tt>gaal</tt>.
+
+<p>
+
+<li> Faça o ``download'' do pacote <tt>gaal</tt> em
+<a 
+href="http://www.mat.ufmg.br/~regi/gaal.zip"><tt>http://www.mat.ufmg.br/&#126;regi/gaal.zip</tt></a>&nbsp;, ou seja,
+traga o pacote para o seu computador.
+
+<p>
+Salve na pasta recém-criada <tt>gaal</tt>.
+
+<p>
+
+<li>Use <b>Alt+Tab</b> para alternar para a janela com o
+conteúdo de
+<tt>C:\MATLAB\TOOLBOX</tt>,
+ clique duas vezes com o botão
+esquerdo do mouse sobre o ícone da pasta <tt>gaal</tt> e
+depois faça o mesmo sobre o arquivo que você fez
+``download'', <tt>gaal.zip</tt>. O pacote será
+descompactado.
+
+<p>
+
+<li>Inicialize o MATLAB, se já não o tiver feito.
+
+<p>
+
+<li>Na barra de ferramentas
+<img src="matlabbt.gif"><br>
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+</td></Table>
+</td></table></centEr>
+
+
+clique com o botão esquerdo do mouse no
+botão
+<img src="matlabpb.gif"><br>
+<p>
+
+<li>Clique no botão <b>Add to Path...</b>.
+<img src="matlabp.gif"><br>
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+</td></Table>
+</td></table></centEr>
+
+
+Clique duas vezes  com o botão esquerdo do mouse em
+<tt>toolbox</tt> e depois o mesmo em
+<tt>gaal</tt>. Depois clique em <b>Add to Back</b>
+<img src="matlabap.gif"><br>
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+</td></Table>
+</td></table></centEr>
+
+
+
+<li>
+<p>
+Clique em <b>OK</b>. Depois, em <b>Save Settings</b> e
+por último em <b>Close</b>
+
+<p>
+
+<li>Verifique se o MATLAB adicionou o pacote <tt>gaal</tt> aos
+outros, digitando no prompt <tt>winhelp</tt>. Ele deve
+aparecer na última linha ou na primeira. Caso contrário
+repita o processo acima, com mais cuidado.
+
+<p>
+
+<li> Para informações sobre o pacote <tt>gaal</tt>
+digite no prompt do MATLAB <br>
+<tt>help gaal</tt>
+
+<p>
+</OL>
+<H3>Desenhando gr&#225;ficos</H3>
+Para desenhar o gráfico de uma função de uma variável,
+existe no pacote
+<tt>gaal</tt> a função <tt>plotf1</tt>
+(use <tt>help plotf1</tt> para saber seu uso). Para colocar
+os eixos coordenados temos no pacote <tt>gaal</tt> a função
+<tt>eixos</tt>. Usando a função <i>f</i>(<i>x</i>) = 1/(1-<i>x</i><sup>2</sup>) que
+definimos acima temos:
+
+<pre>
+EDU&#62;&#62; plotf1(f,[-10,10],200)
+</pre>
+<p>
+<img src="fun1_0.gif"><br>
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+</td></Table>
+</td></table></centEr>
+
+
+
+<pre>
+EDU&#62;&#62; eixos
+</pre>
+<p>
+<img src="fun1.gif"><br>
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+</td></Table>
+</td></table></centEr>
+
+
+Podemos mudar a escala do gráfico com a função
+<tt>axis</tt>
+
+<pre>
+EDU&#62;&#62; axis([-5,5,-5,5])
+</pre>
+<p>
+
+<p>
+<img src="fun1_2.gif"><br>
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+</td></Table>
+</td></table></centEr>
+
+
+Neste caso como os eixos já estavam traçados, o resultado
+não foi bom. Então, vamos limpar a figura com o comando
+<tt>clf</tt> e com a seta para cima <font face=symbol>­</font
+> vamos
+recuperar comandos que haviamos digitado anteriormente.
+
+<pre>
+EDU&#62;&#62; clf
+EDU&#62;&#62; plotf1(f,[-10,10])
+EDU&#62;&#62; axis([-5,5,-5,5])
+EDU&#62;&#62; eixos
+</pre>
+<p>
+<img src="fun1_3.gif"><br>
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+</td></Table>
+</td></table></centEr>
+
+
+
+<p>
+      <H2><A NAME="tth_sEc4">4</A>&nbsp;&nbsp;Matrizes</H2>Para criar uma variável onde é armazenada uma matriz, basta
+escrever os elementos da matriz entre colchetes [ ... ],
+sendo os elementos de uma mesma linha da matriz separados
+por vírgula e as linhas separadas por ponto e vírgula. Por
+exemplo, para armazenar a matriz
+
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+</td><td align=left><font face=symbol>
+é<br>ê<br>
+ë
+</font></td><td>
+ </td><td nowrap><TablE border=0 align=left><tr><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+ 1 </td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+ 2 </td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+ 3 </td></tabLe></TD></TR><TR><TD NOWRAP align="center" colspan=0><tabLe border=0><tr><td nowrap Align=center>
+ 4 </td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+ 5 </td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+ 6</td></tabLe></TD></TR></TablE>
+</td><td nowrap></td><td align=left><font face=symbol>
+ù<br>ú<br>
+û
+</font></td><td>
+</td></Table>
+</td></table></centEr>
+
+
+numa variável de nome <tt>A</tt> usamos o comando
+
+<pre>
+&#62;&#62; A=[1,2,3;4,5,6]
+</pre>
+<p>
+Podemos acessar os elementos de uma matriz usando os
+comandos
+
+<pre>
+EDU&#62;&#62; A(2,3)
+ans =
+     6
+EDU&#62;&#62; A(2,:)
+ans =
+     4     5     6
+EDU&#62;&#62; A(:,1)
+ans =
+     1
+     4
+EDU&#62;&#62; A(:,1:2)
+ans =
+     1     2
+     4     5
+</pre>
+<p>
+O primeiro comando foi para mostrar o elemento (1,2) da
+matriz
+<tt>A</tt>. O segundo, é para exibir a 2a. linha e o terceiro,
+é para exibir a 1a. coluna. Finalmente, o quarto comando é
+para exibir a submatriz formada pela 1a. e 2a. colunas da
+matriz
+<tt>A</tt>.
+
+<p>
+As matrizes podem ser concatenadas
+
+<pre>
+EDU&#62;&#62; B=[A,[7;8]]
+B =
+     1     2     3     7
+     4     5     6     8
+EDU&#62;&#62; [A;[7,8,9]]
+ans =
+     1     2     3
+     4     5     6
+     7     8     9
+</pre>
+<p>
+As operações matriciais são executadas de forma semelhante a
+que são executadas operações escalares
+
+<pre>
+EDU&#62;&#62; A=[1,2;3,4]; B=[-3;1]; C=[3,5;-5,2];
+EDU&#62;&#62; A+C
+ans =
+     4     7
+    -2     6
+EDU&#62;&#62; 3*A
+ans =
+     3     6
+     9    12
+EDU&#62;&#62; C*A
+ans =
+    18    26
+     1    -2
+EDU&#62;&#62; B*A
+??? Error using ==&#62; *
+Inner matrix dimensions must agree.
+EDU&#62;&#62; A^2
+ans =
+     7    10
+    15    22
+EDU&#62;&#62; (A*C)^2
+ans =
+   -50   144
+  -176   430
+</pre>
+<p>
+O MATLAB tem funções que geram matrizes especiais
+
+<p>
+
+<pre>
+EDU&#62;&#62; I=eye(3)
+I =
+     1     0     0
+     0     1     0
+     0     0     1
+EDU&#62;&#62; O=zeros(3,1)
+O =
+     0
+     0
+     0
+</pre>Além destas, o pacote <tt>gaal</tt> oferece as funções
+<tt>randi</tt> para gerar uma matriz com elementos
+inteiros aleatórios e <tt>matvand</tt> que cria a matriz de
+Vandermonde.
+
+<pre>
+EDU&#62;&#62; A=randi(3)
+A =
+     0     3     2
+     2     1     0
+    -2    -1    -1
+EDU&#62;&#62; B=randi(3,1)
+B =
+     4
+     2
+    -3
+EDU&#62;&#62; C=matvand(B,2)
+C =
+    16     4     1
+     4     2     1
+     9    -3     1
+</pre>
+<p>
+Abaixo um resumo das operações matriciais
+
+<p>
+<tt>&#62;&#62; A=[a11,a12,...,a1n;a21,a22,...; ...,amn]</tt>
+cria uma matriz, <i>m</i> por <i>n</i>, usando os elementos
+<tt>a11, a12, ..., amn</tt> e a armazena numa variável
+de nome <tt>A</tt>.
+
+<p>
+<tt>&#62;&#62; A+B</tt> é a soma de <tt>A</tt> e <tt>B</tt>, <br>
+<tt>&#62;&#62; A*B</tt> é o produto de <tt>A</tt> por <tt>B</tt>, <br>
+<tt>&#62;&#62; A.'</tt> é a transposta de <tt>A</tt>,
+
+<p>
+<tt>&#62;&#62; A-B</tt> é a diferença <tt>A</tt> menos <tt>B</tt>,<br>
+<tt>&#62;&#62; num*A</tt> é o produto do escalar <tt>num</tt>
+por <tt>A</tt>,<br>
+<tt>&#62;&#62; A^&nbsp;k</tt> é a potência <tt>A</tt> elevado a <i>k</i>.
+
+<p>
+<tt>&#62;&#62; Aj=A(:,j)</tt> é a coluna <i>j</i> da matriz <tt>A</tt>,
+<tt>&#62;&#62; Ai=A(i,:)</tt> é a linha <i>i</i> da matriz <tt>A</tt>.
+
+<p>
+
+<H3>Exerc&#237;cios</H3>
+
+<p>
+
+<OL type="1">
+<li> Use o MATLAB para encontrar o menor inteiro
+<i>k</i><font face=symbol> &gt; </font
+>1 tal que:
+
+<OL type="a">
+<p>
+
+<li><i>A</i><sup><i>k</i></sup> = <i>I</i><sub>3</sub>, onde 
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>A</i> = </td><td align=left><font face=symbol>
+é<br>ê<br>ê<br>
+ê<br>ê<br>ë
+</font></td><td>
+</td><td nowrap><TablE border=0 align=left><tr><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+ 0</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+0</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+1</td></tabLe></TD></TR><TR><TD NOWRAP align="center" colspan=0><tabLe border=0><tr><td nowrap Align=center>
+1</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+0</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+0</td></tabLe></TD></TR><TR><TD NOWRAP align="center" colspan=0><tabLe border=0><tr><td nowrap Align=center>
+0</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+1</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+0</td></tabLe></TD></TR></TablE>
+</td><td nowrap></td><td align=left><font face=symbol>
+ù<br>ú<br>ú<br>
+ú<br>ú<br>û
+</font></td><td>
+;</td></Table>
+</td></table></centEr>
+
+
+
+<li>
+<p>
+<i>A</i><sup><i>k</i></sup> = <i>A</i>, onde 
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>A</i> = </td><td align=left><font face=symbol>
+é<br>ê<br>ê<br>ê<br>
+ê<br>ê<br>ë
+</font></td><td>
+</td><td nowrap><TablE border=0 align=left><tr><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+0</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+1</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+0</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+0</td></tabLe></TD></TR><TR><TD NOWRAP align="center" colspan=0><tabLe border=0><tr><td nowrap Align=center>
+-1</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+0</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+0</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+0</td></tabLe></TD></TR><TR><TD NOWRAP align="center" colspan=0><tabLe border=0><tr><td nowrap Align=center>
+0</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+0</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+0</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+1</td></tabLe></TD></TR><TR><TD NOWRAP align="center" colspan=0><tabLe border=0><tr><td nowrap Align=center>
+0</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+0</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+1</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+0</td></tabLe></TD></TR></TablE>
+</td><td nowrap></td><td align=left><font face=symbol>
+ù<br>ú<br>ú<br>ú<br>
+ú<br>ú<br>û
+</font></td><td>
+;</td></Table>
+</td></table></centEr>
+
+
+
+<li>
+<p>
+<i>A</i><sup><i>k</i></sup> = <b>O</b>, onde 
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>A</i> = </td><td align=left><font face=symbol>
+é<br>ê<br>ê<br>ê<br>
+ê<br>ê<br>ë
+</font></td><td>
+</td><td nowrap><TablE border=0 align=left><tr><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+0</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+1</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+0</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+0</td></tabLe></TD></TR><TR><TD NOWRAP align="center" colspan=0><tabLe border=0><tr><td nowrap Align=center>
+0</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+0</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+1</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+0</td></tabLe></TD></TR><TR><TD NOWRAP align="center" colspan=0><tabLe border=0><tr><td nowrap Align=center>
+0</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+0</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+0</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+1</td></tabLe></TD></TR><TR><TD NOWRAP align="center" colspan=0><tabLe border=0><tr><td nowrap Align=center>
+0</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+0</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+0</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+0</td></tabLe></TD></TR></TablE>
+</td><td nowrap></td><td align=left><font face=symbol>
+ù<br>ú<br>ú<br>ú<br>
+ú<br>ú<br>û
+</font></td><td>
+.</td></Table>
+</td></table></centEr>
+
+
+</OL>
+<p>
+
+<li>Use o MATLAB para calcular os membros da seqüência
+<i>A</i>,&nbsp;<i>A</i><sup>2</sup>,&nbsp;<i>A</i><sup>3</sup>&nbsp;<font face=symbol>¼</font
+>,<i>A</i><sup><i>k</i></sup>,<font face=symbol>¼</font
+>, para
+
+<OL type="a">
+<p>
+
+<li>
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>A</i> = </td><td align=left><font face=symbol>
+é<br>ê<br>
+ë
+</font></td><td>
+</td><td nowrap><TablE border=0 align=left><tr><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+ 1</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+1/2</td></tabLe></TD></TR><TR><TD NOWRAP align="center" colspan=0><tabLe border=0><tr><td nowrap Align=center>
+0</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+1/3</td></tabLe></TD></TR></TablE>
+</td><td nowrap></td><td align=left><font face=symbol>
+ù<br>ú<br>
+û
+</font></td><td>
+;</td></Table>
+</td></table></centEr>
+
+
+
+<p>
+
+<li>
+<centEr><table border=0 align=center><tr><td>
+<Table align=left><tr><td nowrap align=center>
+<i>A</i> = </td><td align=left><font face=symbol>
+é<br>ê<br>
+ë
+</font></td><td>
+</td><td nowrap><TablE border=0 align=left><tr><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+ 1/2</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+1/3</td></tabLe></TD></TR><TR><TD NOWRAP align="center" colspan=0><tabLe border=0><tr><td nowrap Align=center>
+0</td></tabLe></td><td nowrap align=center>
+<tabLe border=0><tr><td nowrap Align=center>
+-1/5</td></tabLe></TD></TR></TablE>
+</td><td nowrap></td><td align=left><font face=symbol>
+ù<br>ú<br>
+û
+</font></td><td>
+.</td></Table>
+</td></table></centEr>
+
+
+
+<p>
+</OL>A seqüência parece estar convergindo para alguma matriz? Se
+estiver, para qual?
+
+<p>
+</OL>
+<p><hr><small>File translated from T<sub><font size="-1">E</font></sub>X by <a href="http://hutchinson.belmont.ma.us/tth/">T<sub><font size="-1">T</font></sub>H</a>, version 1.55.</small>
+</HTML>

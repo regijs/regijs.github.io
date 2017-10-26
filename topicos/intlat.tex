@@ -1,0 +1,1660 @@
+\tthdump{\chapter{Introdu\c c\~ao ao \LaTeX}}
+%%tth:\def\latexhtml#1#2{\special{html:#2}}
+%%tth:\def\eqc#1{\begin{center}\setlength{\unitlength}{1pt}\begin{picture}(50,12)\put(0,0){$\displaystyle #1$}\end{picture}\end{center}}
+%%tth:\def\eq#1{\setlength{\unitlength}{1pt}\begin{picture}(10,12)\put(0,0){$\displaystyle #1$}\end{picture}}
+%%tth:\def\eqn#1{\begin{equation}\begin{center}\eq{\displaystyle #1}\end{center}\end{equation}}
+%%tth:\def\hyperref#1#2{\special{html:<A href="\##2">#1</A>}}
+%%tth:\def\hyperpageref#1#2{\special{html:<A href="\##2">#1</A>}}
+
+%%tth:\begin{html}<title>Introdução ao LATEX</title>\end{html}
+%%tth:\title{Introdução ao \LaTeX
+%%tth:        }
+%%tth:\author{Reginaldo J. Santos\\
+%%tth:        Departamento de Matemática\\
+%%tth:        Instituto de Ciências Exatas\\
+%%tth:        Universidade Federal de Minas Gerais\\
+%%tth:        \href{http://www.mat.ufmg.br/~regi}
+%%tth:        {\texttt{http://www.mat.ufmg.br/\~{}regi}}
+%%tth:        }
+%%tth:\begin{center}
+%%tth:\begin{html}<script>document.write("This page was last modified on : ",document.lastModified);</script>\end{html}
+%%tth:\end{center}
+
+
+
+%%tth:{\LARGE Conteúdo}
+%%tth:
+%%tth:\contentsline {section}{\numberline {0}Introdução}{}
+%%tth:\contentsline {section}{\numberline {1}Texto, Comandos e Ambientes}{20}
+%%tth:\contentsline {subsection}{\numberline {1.1}Um aviso}{20}
+%%tth:\contentsline {subsection}{\numberline {1.2}Estrutura B\'asica de um Arquivo Fonte \LaTeX }{22}
+%%tth:\contentsline {section}{\numberline {2}Diferentes Formas de Exibi\c c\~ao de Texto}{23}
+%%tth:\contentsline {subsection}{\numberline {2.1}Mudando o Tipo das Letras}{23}
+%%tth:\contentsline {subsection}{\numberline {2.2}Centralizando e Indentando}{24}
+%%tth:\contentsline {subsection}{\numberline {2.3}Listas}{24}
+%%tth:\contentsline {subsection}{\numberline {2.4}Teoremas, Proposi\c c\~oes, etc}{25}
+%%tth:\contentsline {section}{\numberline {3}F\'ormulas Matem\'aticas}{25}
+%%tth:\contentsline {subsection}{\numberline {3.1}Principais Elementos do Modo Matem\'atico}{25}
+%%tth:\contentsline {subsection}{\numberline {3.2}Expoentes e \'Indices}{26}
+%%tth:\contentsline {subsection}{\numberline {3.3}Fra\c c\~oes}{27}
+%%tth:\contentsline {subsection}{\numberline {3.4}Ra\'izes}{27}
+%%tth:\contentsline {subsection}{\numberline {3.5}Somat\'orios e Integrais}{27}
+%%tth:\contentsline {subsection}{\numberline {3.6}Pontos, Espa\c cos e Texto no Modo Matem\'atico}{28}
+%%tth:\contentsline {subsection}{\numberline {3.7}S\'imbolos Matem\'aticos}{28}
+%%tth:\contentsline {subsection}{\numberline {3.8}Fun\c c\~oes Matem\'aticas}{29}
+%%tth:\contentsline {subsection}{\numberline {3.9}F\'ormulas com Til, Barra, Chap\'eu, etc}{30}
+%%tth:\contentsline {subsection}{\numberline {3.10}Tamanho autom\'atico de par\^enteses e similares}{30}
+%%tth:\contentsline {subsection}{\numberline {3.11}Matrizes}{30}
+%%tth:\contentsline {subsection}{\numberline {3.12}Equa\c c\~oes ou Inequa\c c\~oes Multi-linhas}{31}
+%%tth:\contentsline {subsection}{\numberline {3.13}F\'ormulas dentro de uma Moldura}{32}
+%%tth:\contentsline {subsection}{\numberline {3.14}Mudan\c ca dos Tipos de Letras no Modo Matem\'atico}{32}
+%%tth:\contentsline {subsection}{\numberline {3.15}Espa\c cos no Modo Matem\'atico}{32}
+%%tth:\contentsline {subsection}{\numberline {3.16}Usando o MATLAB para Gerar F\'ormulas}{32}
+%%tth:\contentsline {section}{\numberline {4}Figuras}{33}
+%%tth:\contentsline {subsection}{\numberline {4.1}Ambiente picture}{33}
+%%tth:\contentsline {subsection}{\numberline {4.2}Figuras Importadas de Outros Programas}{34}
+%%tth:\contentsline {subsection}{\numberline {4.3}Ambiente figure}{35}
+%%tth:\contentsline {section}{\numberline {5}Partes do Documento}{36}
+%%tth:\contentsline {subsection}{\numberline {5.1}T\'itulo}{36}
+%%tth:\contentsline {subsection}{\numberline {5.2}Se\c c\~oes}{36}
+%%tth:\contentsline {subsection}{\numberline {5.3}Conte\'udo}{37}
+%%tth:\contentsline {subsection}{\numberline {5.4}Bibliografia}{37}
+%%tth:\contentsline {subsection}{\numberline {5.5}\'Indice Alfab\'etico}{38}
+%%tth:\contentsline {section}{\numberline {6}Outros Recursos}{39}
+%%tth:\contentsline {subsection}{\numberline {6.1}Refer\^encias Cruzadas}{39}
+%%tth:\contentsline {subsection}{\numberline {6.2}Espa\c camento}{39}
+%%tth:\contentsline {subsubsection}{Espa\c camento Horizontal}{39}
+%%tth:\contentsline {subsubsection}{Espa\c camento Vertical}{40}
+%%tth:\contentsline {subsection}{\numberline {6.3}Dividindo o Arquivo Fonte}{41}
+%%tth:\contentsline {subsection}{\numberline {6.4}Tabelas}{41}
+\latexhtml{}{
+ <script>
+function instlat(){
+        window.open("instlat.html","instlat",
+        "menubar,resizable,scrollbars")
+}
+ </script>
+}
+
+\latexhtml{}{
+<H2><A NAME="tth_sEc0">0.&nbsp;</A>Introdução</H2><p>}
+
+
+O \LaTeX\ é um pacote feito para a preparação de textos
+impressos de alta qualidade, especialmente para textos
+matemáticos.
+Ele foi desenvolvido por Leslie Lamport a partir do programa
+\TeX\ criado por Donald Knuth.
+
+Podemos dividir os programas de processamento de texto em
+duas classes. Com os chamados \textit{processadores de
+texto}, existe um menu na tela apresentando os recursos, que
+podem ser usados no processamento do texto, que por sua vez
+podem ser selecionados com o uso do mouse. Depois de
+selecionado um recurso, o texto é digitado e aparece na tela
+exatamente como vai ser impresso no papel. O usuário pode
+ver logo no estágio de entrada do texto, se o texto será
+impresso como esperado. Este método é chamado
+``what-you-see-is-what-you-get'' ou simplesmente WYSWYG.
+
+A segunda classe, que é a que pertence o \LaTeX, o
+processamento do texto é feito em duas etapas distintas. O
+texto a ser impresso e os comandos de formatação são
+escritos em um \textbf{arquivo fonte} com o uso de um
+\textit{editor de textos}, isto é, um programa que escreve
+textos em meio magnético. Em seguida o arquivo fonte é
+submetido a um programa formatador de textos, no nosso caso
+o \LaTeX, que gera um arquivo de saída, que pode ser
+impresso ou visualizado na tela. Programas deste tipo podem
+parecer inicialmente mais complicados do que os do outro
+tipo, mas apresentam uma série de vantagens em relação aos
+processadores de texto, como por exemplo:
+\begin{itemize}
+\item Mudanças na formatação do texto
+inteiro com apenas a mudança de alguns comandos.
+\item Escrita de fórmulas complexas usando apenas comandos,
+por exemplo, $\int_{0}^a e^{-x^2}dx$, é impressa com o
+comando
+\texttt{\$$\backslash$int\_\{0\}\^{}a e\^{}\{-x\^{}2\}dx\$};
+\item Numeração automática de fórmulas, seções, definições,
+exemplos e teoremas, o que permite que você faça mudanças na
+ordem do texto sem que seja necessário trocar os números dos
+itens. \item As citações a fórmulas, seções, definições,
+exemplos, teoremas além de citações bibliográficas também
+podem ser automatizadas, de forma que mudanças no texto não
+produzem erros nas citações.
+\end{itemize}
+
+\special{html:<a name="instlat"> </a>}
+
+O \LaTeX\ é um programa de domínio púplico, por isso existem
+várias implementações. Vamos usar uma implementação chamada
+em$\!$\TeX, uma interface gráfica junto com um editor de
+textos chamada, \TeX mEx, e um visualizador, DVIWIN. Todos
+estes programas são ``freeware'', isto é, são gratuítos e
+podem trabalhar juntos como se fossem um só, mas é
+necessário configurá-los para que isto aconteça. Estamos
+disponibilizando uma versão já configurada que pode ser
+instalada simplesmente descompactando certos arquivos. Para
+isto, siga os passos que estão em
+\href{javascript:instlat()}{http://www.mat.ufmg.br/\~{}regi/topicos/instlat.html}.
+
+Para começar a usar o \LaTeX\ você deve clicar em \textbf{Iniciar}, depois
+em \textbf{Programas}, depois em \textbf{LaTeX} e finalmente clicar em
+\textbf{Texmex}.
+
+Depois de inicializado o \TeX mEx, a primeira coisa a fazer
+é abrir um arquivo no editor do \TeX mEx. Para isto, no menu,
+escolha \textbf{Open...}, depois você pode, por exemplo, abrir
+o arquivo
+\texttt{$\backslash$emtex$\backslash$texinput$\backslash$portu$\backslash$small.tex}.
+Este é um pequeno arquivo exemplo, que você pode usar como modelo para os
+seus arquivos. Para isto grave-o em outra pasta,
+por exemplo, em \texttt{c:$\backslash$temp}, pois ao
+processá-lo você estará gerando outros arquivos. Para isso,
+no menu, escolha
+\textbf{File} e depois
+\textbf{Save as}. Escreva na caixa \textbf{File Name:},
+\texttt{$\backslash$temp$\backslash$small.tex}.
+
+Para que este arquivo seja processado pelo \LaTeX, você precisa definir
+\textit{Arquivo Principal}. Para isto, você
+deve no menu, escolher \textbf{File} e depois, \textbf{Main
+File} (ou simplesmente tecle \textbf{F4}) e na caixa
+\textbf{File Name:} escreva, por exemplo,
+\texttt{$\backslash$temp$\backslash$small.tex}.
+Vai aparecer na barra de ferramentas o nome
+do arquivo escolhido. Com isto, você já pode processar este
+arquivo através do \LaTeX.
+
+Para processar o arquivo
+principal (aquele que aparece na barra de ferramentas)
+através do
+\LaTeX, basta clicar na barra de ferramentas no botão
+\latexhtml{
+\includegraphics[width=0.25in,height=0.25in]{tex.gif}.}
+{<img src="tex.gif">.} Depois de terminado o processamento,
+para visualizar o resultado (arquivo de saída
+\texttt{small.dvi}), basta clicar no botão
+\latexhtml{\includegraphics[width=0.25in,height=0.25in,
+keepaspectratio]{dvi.gif}}{<img src="dvi.gif">}.
+
+Na próxima seção está um conjunto de informações básicas e
+em seguida está a listagem de como poderia ser um arquivo
+fonte para imprimí-las. Este conteúdo está  no arquivo
+\texttt{small.tex} que você abriu.
+\begin{center}
+\includegraphics[width=4in,height=2.5in]{texmex1.gif}
+\end{center}
+%\newpage
+\section{Texto, Comandos e Ambientes} % Este comando faz o título da seção.
+
+Um arquivo fonte do \LaTeX\ contem além do texto a ser
+processado, comandos que indicam como o texto deve ser
+processado. Palavras são separadas por um ou mais espaços.
+Parágrafos são separados por uma ou mais linhas em branco. A
+saída não é afetada por espaços extras ou por linhas em
+branco extras. A maioria dos comandos do \LaTeX \ são
+iniciados com o caracter $\backslash$. Uma $\backslash$
+sozinha produz um espaço. Um ambiente é uma região do texto
+que tem um tratamento especial. Um ambiente é iniciado com\\
+\texttt{$\backslash$begin\{nome do ambiente\}} e terminado
+por  \texttt{$\backslash$end\{nome do ambiente\}}.
+
+%Aspas são digitadas assim:
+``Texto entre aspas''.
+
+%Texto em itálico deve ser digitado como:
+\textit{Isto está em itálico}.
+
+%Texto em negrito deve ser digitado como:
+\textbf{Isto está em negrito}.
+
+\subsection{Um aviso}  % Este comando faz o título da subseção.
+
+Lembre-se de não digitar nenhum  dos 10 caracteres especiais
+%                &   $   #   %   _   {   }   ^   ~   \
+\& \$ \# \% \_ \{ \} \^{} \~{} $\backslash$\ exceto como um comando! Eles são impressos
+com os comandos
+%Este comando inicia um ambiente ``verbatim''(ao pé da letra)
+\begin{verbatim}
+\& \$ \# \% \_ \{ \} \^{} \~{} $\backslash$.
+\end{verbatim}   %Este comando termina o ambiente ``verbatim''.
+                 %Tudo que estiver dentro deste ambiente é impresso
+                 %exatamente como é digitado
+
+
+
+%\newpage
+
+\begin{verbatim}
+ARQUIVO small.tex
+% Este é um pequeno arquivo fonte para o LaTeX (versão de 1o. de junho de 1998)
+%
+% Use este arquivo como modelo para fazer seus próprios arquivos  LaTeX.
+% Tudo que está à direita de um  %  é um comentário e é ignorado pelo LaTeX.
+%
+\documentclass[a4paper,12pt]{article}% Seu arquivo fonte precisa conter
+\usepackage[brazil]{babel}           % estas quatro linhas
+\usepackage[T1]{fontenc}             % além do comando \end{document}
+\begin{document}                     % no fim.
+
+\section{Texto, Comandos e Ambientes} % Este comando faz o título da seção.
+
+Um arquivo fonte do \LaTeX\ contem além do texto a ser
+processado, comandos que indicam como o texto deve ser
+processado. Palavras são separadas por um ou mais espaços.
+Parágrafos são separados por uma ou mais linhas em branco. A
+saída não é afetada por espaços extras ou por linhas em
+branco extras. A maioria dos comandos do \LaTeX \ são
+iniciados com o caracter $\backslash$. Uma $\backslash$
+sozinha produz um espaço. Um ambiente é uma região do texto
+que tem um tratamento especial. Um ambiente é iniciado com\\
+\texttt{$\backslash$begin\{nome do ambiente\}} e terminado
+por  \texttt{$\backslash$end\{nome do ambiente\}}.
+
+%Aspas são digitadas assim:
+``Texto entre aspas''.
+
+%Texto em itálico deve ser digitado como:
+\textit{Isto está em itálico}.
+
+%Texto em negrito deve ser digitado como:
+\textbf{Isto está em negrito}.
+
+\subsection{Um aviso}  % Este comando faz o título da subseção.
+
+Lembre-se de não digitar nenhum dos 10 caracteres especiais
+%                &   $   #   %   _   {   }   ^   ~   \
+\& \$ \# \% \_ \{ \} \^{} \ \~{}\ $\backslash$
+exceto como um comando! Eles são impressos
+com os comandos
+%Este comando inicia um ambiente ``verbatim''(ao pé da letra)
+\begin{verbatim}
+\& \$ \# \% \_ \{ \} \^{} \~{} $\backslash$.
+\end{verbatim}\vspace{-11pt}\texttt{$\backslash$end\{verbatim\}}
+\vspace{-21pt}
+\begin{verbatim}
+                 %Este comando termina o ambiente ``verbatim''.
+                 %Tudo que estiver dentro deste ambiente é impresso
+                 %exatamente como é digitado
+\end{document}   % O arquivo fonte termina com este comando.
+
+\end{verbatim}
+
+%\newpage
+\subsection{Estrutura B\'asica de um Arquivo Fonte \LaTeX}
+
+Todo arquivo fonte \LaTeX, que normalmente tem a extensão
+\texttt{.tex} tem um preâmbulo e um corpo.
+No preâmbulo estão comandos que especificam parâmetros
+globais para o processamento do texto, tais como tipo de
+documento, formato do papel, altura e largura do texto, a
+forma de saída das páginas com a sua paginação e cabeçalhos
+automáticos. O preâmbulo deve conter pelo menos o comando
+\texttt{$\backslash$documentclass}. Se não existem outros
+comandos no preâmbulo, então \LaTeX\ seleciona valores
+standard para as várias variáveis que determinam o formato
+global do texto.
+
+O preâmbulo termina com o comando
+\texttt{$\backslash$begin\{document\}}. Tudo que fica abaixo
+deste comando é interpretado como corpo. No corpo fica o
+texto propriamente dito junto com comandos adicionais, que
+só têm efeito local.
+
+O corpo termina com o comando
+\texttt{$\backslash$end\{document\}}. Isto também é
+normalmente o fim do arquivo fonte.
+
+\begin{verse}
+\texttt{$\backslash$documentclass[opções]\{tipo\}}\\
+Comandos globais\\
+\texttt{$\backslash$begin\{document\}}\\
+Texto junto com comandos de efeito local\\
+\texttt{$\backslash$end\{document\}}
+\end{verse}
+
+O tipo pode ser: \textbf{article, report, book} ou
+\textbf{letter}. Algumas das opções são: \textbf{10pt, 11pt}
+ou \textbf{12pt} para o tamanho base das letras usadas no
+texto, \textbf{a4paper} se o papel for A4 (para o papel
+letter, não é necessário nenhuma indicação) e
+\textbf{twocolumn} para a impressão em duas colunas.
+
+Alguns exemplos de comandos globais:\\[8pt]
+\texttt{$\backslash$usepackage[brazil]\{babel\}}
+indica para usar o pacote \texttt{babel}, com a opção de
+língua \texttt{brazil}, faz com que ele gere datas e nomes
+como Capítulo, Bibliografia em português com estilo
+brasileiro.\\
+\texttt{$\backslash$usepackage\{graphicx\}}
+indica para usar o pacote \texttt{graficx}, que permite
+entre outras co
+isas incluir figuras.\\
+\texttt{$\backslash$usepackage[T1]\{fontenc\}}
+indica para usar o pacote \texttt{fontenc} com a opção
+\texttt{T1}, que define uma codificação para os caracteres
+em que os acentos são digitados diretamente pelo teclado.\\
+\texttt{$\backslash$usepackage\{amsthm,amsfonts\}}
+indica para usar os pacotes da American Mathematical Society
+\texttt{amsthm} e \texttt{amsfonts}. O primeiro, entre outras
+coisas, define um estilo para a escrita dos teoremas e o
+segundo adiciona alguns estilos de letras, por exemplo
+\tthdump{$\mathbb{R}$,$\mathbb{C}$ e $\mathbb{N}$ foram geradas}%%tth:\begin{html}<img src="rcn.gif" hspace=3 vspace=5 align="top">\end{html}foram geradas com
+\texttt{\$$\backslash$mathbb\{R\}\$},
+\texttt{\$$\backslash$mathbb\{C\}\$} e \texttt{\$$\backslash$mathbb\{N\}\$} por causa da adição deste
+pacote.\\
+\texttt{$\backslash$setlength\{$\backslash$textwidth\}\{6 in\}}
+ indica que a largura do texto é de 6 polegadas.\\
+\texttt{$\backslash$setlength\{$\backslash$textheight\}\{23 cm\}}
+ indica que a altura do texto é de 23 cm.\\
+\texttt{$\backslash$evensidemargin 0 in}
+ indica que a margem esquerda das páginas pares é zero.\\
+\texttt{$\backslash$oddsidemargin 0.25 in}
+ indica que a margem esquerda das páginas ímpares é 0.25 polegadas.\\[4pt]
+
+Além destes um comando que pode ser útil é  o
+\texttt{$\backslash$newcommand}. Com ele você pode definir nomes
+mais simples para comandos que têm nomes grandes. Por
+exemplo:\\[8pt]
+\texttt{$\backslash$newcommand\{$\backslash$binv\}\{\$$\backslash$backslash\$\}}
+dá um novo nome para o comando que imprime $\backslash$.\\
+\texttt{$\backslash$newcommand\{$\backslash$pot\}\{$\backslash$\^{}\{\}\}}
+cria um novo nome para o comando que imprime \^{}.\\
+\texttt{$\backslash$newcommand\{$\backslash$til\}\{$\backslash$\~{}\{\}\}}
+define um novo nome para o comando que imprime \~{}.\\[4pt]
+
+\section{Diferentes Formas de Exibi\c c\~ao de Texto}
+
+O \LaTeX\ permite uma variedade de formas de exibição de
+texto: pode-se mudar o tamanho e o tipo das letras, pode-se
+centralizar, criar diferentes tipos de listas, etc.
+
+\subsection{Mudando o Tipo das Letras}
+
+\begin{enumerate}
+
+\item Mudando o estilo:\\
+\texttt{$\backslash$textit\{itálico\}} produz \textit{itálico;}\\
+\texttt{$\backslash$textbf\{negrito\}} produz \textbf{negrito;}\\
+\texttt{$\backslash$textrm\{romano\}} produz \renewcommand{\rmdefault}{cmr}
+\textrm{romano;}\renewcommand{\rmdefault}{cmss}\\
+\texttt{$\backslash$textsf\{sans serif\}} produz \textsf{sans serif;}\\
+\texttt{$\backslash$texttt\{máquina de escrever\}} produz \texttt{máquina de escrever;}\\
+\texttt{$\backslash$textsc\{caixa alta\}} produz \textsc{caixa alta.}\\
+
+\item Mudando o tamanho:\\
+%\fontsize{10}{\f@baselineskip}\selectfont
+\texttt{\{$\backslash$tiny o menor\}} produz {\tiny o menor;}\\
+\texttt{\{$\backslash$scriptsize muito pequeno\}} produz {\scriptsize muito pequeno;}\\
+\texttt{\{$\backslash$footnotesize menor\}} produz {\footnotesize menor;}\\
+\texttt{\{$\backslash$small pequeno\}} produz {\small pequeno;}\\
+\texttt{\{$\backslash$large grande\}} produz {\large grande;}\\
+\texttt{\{$\backslash$Large maior\}} produz {\Large maior;}\\
+\texttt{\{$\backslash$LARGE maior ainda\}} produz {\LARGE maior ainda;}\\
+\texttt{\{$\backslash$huge ainda maior\}} produz {\huge ainda maior;}\\
+\texttt{\{$\backslash$Huge o maior de todos\}} produz {\Huge o maior de todos.}\\
+%\fontsize{12}{\f@baselineskip}\selectfont
+\end{enumerate}
+
+\newpage
+\subsection{Centralizando e Indentando}
+
+\begin{enumerate}
+\item Centralizando:\\
+\texttt{$\backslash$begin\{center\} \\
+linha 1 $\backslash$$\backslash$ \\ segunda linha
+$\backslash$$\backslash$\\ $\backslash$ldots
+$\backslash$$\backslash$\\ linha n \\ $\backslash$
+end\{center\}}\\ produz\\
+\begin{center}
+linha 1 \\ segunda linha\\ \ldots \\ linha n \end{center}
+
+\item Indentando:\\
+\texttt{$\backslash$begin\{quote\}}  Texto a ser indentado.
+\texttt{$\backslash$end\{quote\}}\\
+produz
+\begin{quote}
+Texto a ser indentado. \end{quote}
+\end{enumerate}
+
+
+\subsection{Listas}
+
+As listas são construidas com ambientes:\\
+
+\noindent - Ambiente \texttt{itemize}\\[-18pt]
+\begin{verbatim}
+\begin{itemize}
+\item Os itens são precedidos por $\bullet$;
+\item Os itens são separados por um espaço adicional.
+\end{itemize}
+\end{verbatim}
+produz
+\begin{itemize}
+\item Os itens são precedidos por $\bullet$;
+\item Os itens são separados por um espaço adicional.
+\end{itemize}
+
+\noindent - Ambiente \texttt{enumerate}\\[-18pt]
+\begin{verbatim}
+\begin{enumerate}
+\item Os itens são numerados com algarismos arábicos, no primeiro nível,
+    \begin{enumerate}
+    \item são numerados com letras no segundo nível e
+        \begin{enumerate}
+        \item são numerados com algarismos romanos no terceiro nível.
+        \end{enumerate}
+    \end{enumerate}
+\end{enumerate}
+\end{verbatim}
+produz
+\begin{enumerate}
+\item Os itens são numerados com algarismos arábicos, no primeiro nível,
+    \begin{enumerate}
+    \item são numerados com letras no segundo nível e
+        \begin{enumerate}
+        \item são numerados com algarismos romanos no terceiro nível.
+        \end{enumerate}
+    \end{enumerate}
+\end{enumerate}
+
+\subsection{Teoremas, Proposi\c c\~oes, etc}
+O comando
+\texttt{$\backslash$newtheorem\{ambiente\}\{título\}}
+define
+um ambiente para a escrita de teoremas, proposições, etc,
+onde
+\texttt{ambiente} é um apelido para o ambiente e
+\texttt{título} é o título que será impresso no início do
+texto, como \textbf{Teorema, Lema, Corolário,} etc. Por
+exemplo:
+\begin{verbatim}
+\newtheorem{teo}{Teorema}[section]
+\newtheorem{lema}[teo]{Lema}
+\newtheorem{cor}[teo]{Corolário}
+\newtheorem{prop}[teo]{Proposição}
+\end{verbatim}
+define quatro ambientes com apelidos \texttt{teo, lema, cor}
+e \texttt{prop}. A numeração é automática e o argumento
+\texttt{[teo]} faz com que os outros ambientes sigam a
+numeração do ambiente \texttt{teo}. O argumento
+\texttt{[section]} faz com que apareça o número da seção
+junto ao número do teorema.
+
+Uma vez definidos os ambientes no corpo do arquivo fonte,
+eles podem ser chamados em qualquer ponto após a definição
+dos ambientes, como no exemplo seguinte:
+\begin{verbatim}
+\begin{teo}[Pitágoras]
+Em todo triângulo retângulo o quadrado do comprimento da
+hipotenusa é igual a soma dos quadrados dos comprimentos dos
+catetos.
+\end{teo}
+\end{verbatim}
+produz
+
+\tthdump{\begin{teo}[Pitágoras]\label{teo.pita}
+Em todo triângulo retângulo o quadrado do comprimento da
+hipotenusa é igual a soma dos quadrados dos comprimentos dos
+catetos.
+\end{teo}}
+%%tth:\label{teo.pita}
+%%tth:\textbf{Teorema 2.1 (Pitágoras).}
+%%tth:\textit{Em todo triângulo retângulo o quadrado do comprimento da
+%%tth:hipotenusa é igual a soma dos quadrados dos comprimentos dos
+%%tth:catetos.}
+
+
+\section{F\'ormulas Matem\'aticas}
+
+\subsection{Principais Elementos do Modo Matem\'atico}
+
+Fórmulas matemáticas são produzidas digitando no arquivo
+fonte texto descrevendo-as. Isto significa que o \LaTeX\
+deve ser informado que o texto que vem a seguir é uma
+fórmula e também quando ela termina e o texto normal
+recomeça. As fórmulas podem ocorrer em uma linha de texto
+como $ax^2+bx+c=0$, ou destacada do texto principal como
+\eqc{x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}.}
+
+No meio do texto o modo matemático é iniciado e terminado
+com o sinal \texttt{\$}. A primeira fórmula acima foi
+produzida com \texttt{\$ax\^{}2+bx+c=0\$}. Quando a fórmula
+é destacada, então o modo matemático é iniciado e terminado
+com \texttt{\$\$}. A segunda fórmula acima foi produzida com
+\begin{verbatim}
+$$
+x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}.
+$$
+\end{verbatim}
+
+As fórmulas destacadas podem ser numeradas usando o ambiente
+\texttt{$\backslash$begin\{equation\}} \textit{equação}
+\texttt{$\backslash$end\{equation\}}. Por exemplo
+\begin{verbatim}
+\begin{equation}
+x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}.
+\end{equation}
+\end{verbatim}
+produz
+%\begin{equation}
+\eqn{x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}.}
+%{<img src="pic1.gif" align="top">}
+%\end{equation}
+Fórmulas com várias linhas podem ser produzidas com os
+ambientes \\
+\texttt{$\backslash$begin\{eqnarray\}}\\
+ \textit{equação 1} \texttt{$\backslash$$\backslash$}\\
+ \ldots \texttt{$\backslash$$\backslash$} \\
+ \textit{equação n}\\
+\texttt{$\backslash$end\{eqnarray\}},\\
+que numera as equações e trocando \texttt{eqnarray} por
+\texttt{eqnarray*} as equações não são numeradas.
+Para que apenas algumas das equações não sejam numeradas
+usamos o comando \texttt{$\backslash$nonumber} no final de
+cada equação que não deve ser numerada.
+
+
+Os espaços digitados nas fórmulas são ignorados pelo
+\LaTeX. Os símbolos matemáticos:
+\begin{verbatim}
++ - = < > / : ! ' | [ ] ( )
+\end{verbatim}
+podem ser digitados diretamente do teclado.
+Por exemplo:\\
+$|x|<a$ se, e somente se, $-a<x<a$ \\
+foi produzido com
+\begin{verbatim}
+$|x   |<a$ se, e somente se, $-a   <x<a$
+\end{verbatim}
+As chaves
+\texttt{\{ \}} servem para agrupar logicamente partes
+da fórmula e não são impressas diretamente. Para incluir
+chaves em uma fórmula tem que ser usados
+\texttt{$\backslash$\{} e
+\texttt{$\backslash$\}}.
+
+%\begin{enumerate}
+\subsection{Expoentes e \'Indices}
+O \LaTeX\ permite, de maneira simples, a produção de
+qualquer combinação de expoentes e índices com o tamanho
+correto. O caracter \texttt{\^{}} indica que o próximo
+caracter é um expoente e \texttt{\_} indica que o próximo
+carcter é um índice. Por exemplo:\\
+\begin{verbatim}
+$$x^2, a_n, x_i^2, x^2_i, x^{2n}, x^{y^2}, x^{y_1}$$
+\end{verbatim}
+produz $$x^2, a_n, x_i^2, x_i^2, x^{2n}, x^{y^2}, x^{y_1}$$
+Observe que quando índices e expoentes ocorrem juntos a
+ordem é indiferente. Observe também que quando o índice ou
+expoente tem mais de um caracter, eles devem estar dentro de
+chaves.
+
+\subsection{Fra\c c\~oes}
+Pequenas frações no meio do texto podem ser escritas usando
+o caracter /, como \texttt{\$(a+b)/2\$}, que produz
+$(a+b)/2$. Para frações mais complexas o comando \\
+\fbox{\texttt{$\backslash$frac\{numerador\}\{denominador\}}}\\
+é empregado para escrever o numerador em cima e o
+denominador em baixo com um traço de fração entre eles. Por
+exemplo, \texttt{\$$\backslash$frac\{(a+b)\}\{2\}\$} produz
+\tthdump{$\frac{(a+b)}{2}$. Para }%%tth:\begin{html}<img src="apb1.gif" hspace=3 align="absmiddle">\end{html}. Para
+que uma fórmula que aparece no meio do texto apareça maior
+usamos o comando
+\texttt{$\backslash$displaystyle} no início da fórmula. Por exemplo,
+\texttt{\$$\backslash$displaystyle$\backslash$frac\{(a+b)\}\{2\}\$} produz
+\tthdump{$\displaystyle\frac{(a+b)}{2}$.}%%tth:\begin{html}<img src="apb2.gif" hspace=3 align="absmiddle">\end{html}.
+
+\subsection{Ra\'izes}
+As raízes são produzidas com o comando\\
+\fbox{\texttt{$\backslash$sqrt[n]\{radicando\}}}\\
+Por exemplo, \texttt{\$$\backslash$sqrt[3]\{8\}=2\$} produz
+$\sqrt[3]{8}=2$. Se o argumento opcional \texttt{[n]} for
+omitido, então a raiz quadrada é gerada. Por exemplo,
+\texttt{\$$\backslash$sqrt\{4\}=2\$} produz $\sqrt{4}=2$.
+O tamanho e o comprimento do radical são automaticamente
+ajustados ao tamanho do radicando.
+
+\subsection{Somat\'orios e Integrais}
+Somatórios e integrais são obtidos com os comandos
+\texttt{$\backslash$sum} e \texttt{$\backslash$int}, respectivamente.
+Eles podem aparecer em diferentes estilos, dependendo se
+aparecem no meio do texto ou destacado. Por exemplo,
+\texttt{\$$\backslash$sum\_\{i=1\}\^{}n a\_i\$} e \texttt{\$$\backslash$int\_\{a\}\^{}b
+f(x)dx\$} produzem $\sum_{i=1}^n a_i$ e $\int_a^b f(x)dx$
+respectivamente, enquanto \texttt{\$\$$\backslash$sum\_\{i=1\}\^{}n a\_i\$\$} e
+\texttt{\$\$$\backslash$int\_\{a\}\^{}b f(x)dx\$\$}
+produzem $$\sum_{i=1}^n a_i$$ e
+$$\int_a^b f(x)dx$$ respectivamente. Assim como no caso das
+frações, para que o somatório ou a integral no meio do texto
+tenha uma saída como teria se estivesse em destaque usamos o
+comando
+\texttt{$\backslash$displaystyle} no início da fórmula.
+
+\subsection{Pontos, Espa\c cos  e Texto no Modo Matem\'atico}
+O comando \texttt{$\backslash$ldots} produz três pontos,
+como em $a_1+\ldots+a_n$, que foi produzida com
+\texttt{\$a\_1+$\backslash$ldots + a\_n\$}. Os comandos
+\texttt{$\backslash$quad} e \texttt{$\backslash$qquad} produzem espaços
+no modo matemático, sendo o último maior do que o primeiro,
+para o caso de escrita de duas fórmulas sem sair do modo
+matemático. O comando \texttt{$\backslash$mbox} deve ser
+usado para produzir texto no modo matemático. Por exemplo,
+\texttt{\$\$x\_1=$\backslash$frac\{-b-$\backslash$sqrt\{b\^{}2-4ac\}\}\{
+2a\}$\backslash$quad$\backslash$mbox\{e\}$\backslash$quad
+x\_2=$\backslash$frac\{-b+$\backslash$sqrt\{b\^{}2-4ac\}\}\{2a\}.\$\$}
+produz
+\eqc{x_1=\frac{-b-\sqrt{b^2-4ac}}{2a}
+\quad\mbox{e}\quad x_2=\frac{-b+\sqrt{b^2-4ac}}{2a}.}
+
+
+\subsection{S\'imbolos Matem\'aticos}
+O \TeX mEx oferece a possibilidade de,  com o uso do mouse,
+se inserir os comandos que geram os símbolos matemáticos.
+Para isso, vá até o menu e clique em
+\textbf{Insert}. Vai aparecer seguinte submenu:
+
+\begin{center}
+\includegraphics[width=0.7in,height=1in]{insert.gif}
+\end{center}
+
+Os símbolos estão divididos em: \\
+\textbf{Math Operator} para
+operadores binários, como\\
+$\pm,\quad\mp,\quad\times,\quad\div,\quad\cup,\quad\cap$,\\
+que foram produzidos com\\
+\texttt{\$$\backslash$pm,$\backslash$quad$\backslash$mp,
+$\backslash$quad$\backslash$times,
+$\backslash$quad$\backslash$div,
+$\backslash$quad$\backslash$cup,$\backslash$quad
+$\backslash$cap\$}.\\
+\begin{center}
+\includegraphics[width=1in,height=1in]{operator.gif}
+\end{center}
+\textbf{Math Relation} para relações, como\\
+$\le,\quad\ge,\quad\neq,\quad\subset,\quad\supset,\quad\in,
+\quad\approx$, \\
+que foram produzidos com\\
+\texttt{\$$\backslash$le,$\backslash$quad$\backslash$ge,
+$\backslash$quad$\backslash$neq,$\backslash$quad
+$\backslash$subset,$\backslash$quad
+$\backslash$supset,$\backslash$quad$\backslash$in,
+$\backslash$quad$\backslash$approx\$}.\\ As negações destas
+relações podem ser conseguidas acrescentando o comando
+\texttt{$\backslash$not} antes da relação, como
+\texttt{\$$\backslash$not$\backslash$in\$} que produz
+$\not\in$.\\
+\begin{center}
+\includegraphics[width=2.69in,height=0.7in]{relation.gif}
+\end{center}
+\newpage
+\textbf{Arrow} para setas, como\\
+$\leftarrow,\quad\rightarrow,\quad\Leftarrow,\quad\Rightarrow,
+\quad\longleftarrow,\quad\longrightarrow,\quad\Longleftrightarrow$,\\
+que foram produzidas com\\
+\texttt{\$$\backslash$leftarrow,$\backslash$quad
+$\backslash$rightarrow,$\backslash$quad
+$\backslash$Leftarrow,$\backslash$quad
+$\backslash$Rightarrow,$\backslash$quad
+$\backslash$longleftarrow,$\backslash$quad
+$\backslash$longrightarrow,$\backslash$quad
+$\backslash$Longleftrightarrow\$}.
+\begin{center}
+\includegraphics[width=2.32in,height=0.7in]{arrow.gif}
+\end{center}
+\textbf{Greek Letter} para as letras gregas, como\\
+$\alpha,\quad\beta,\quad\gamma,\quad\delta,\quad\theta,\quad\Omega$\\
+que foram produzidas com\\
+\texttt{\$$\backslash$alpha,$\backslash$quad$\backslash
+$beta,$\backslash$quad$\backslash$gamma,
+$\backslash$quad$\backslash$delta,$\backslash$quad
+$\backslash$theta,$\backslash$quad$\backslash$Omega\$}.
+\begin{center}
+\includegraphics[width=2.92in,height=0.7in]{greek.gif}
+\end{center}
+\textbf{Symbol} para outros símbolos, como\\
+$\forall,\quad\exists,\quad\infty,\quad\sum,\quad\prod,\quad\int$,
+que foram produzidas com\\
+\texttt{\$$\backslash$forall,$\backslash$quad
+$\backslash$exists,$\backslash$quad$\backslash$infty,
+$\backslash$quad$\backslash$sum,$\backslash$quad
+$\backslash$prod,$\backslash$quad$\backslash$int\$}.
+\begin{center}
+\includegraphics[width=2.14in,height=0.7in]{symbol.gif}
+\end{center}
+
+\subsection{Fun\c c\~oes Matem\'aticas}
+São usadas tipos de letras diferentes para variáveis e para
+nomes de funções. Por exemplo,
+\texttt{\$$\backslash$cos x\$} produz \tthdump{$\cos x$,}%%tth:$\cos\ x$.
+enquanto \texttt{\$cos x\$} produz $cosx$. Muitos nomes de
+funções já estão definidos, bastando para chamá-los usar uma
+$\backslash$\ antes do nome (principalmente aquelas em que o
+nome em português é o mesmo que em inglês). Para outros
+nomes é necessário definí-los. Por exemplo,
+\begin{verbatim}
+\newcommand{\sen}{\mathrm{sen}}
+\newcommand{\dist}{\mathrm{dist}}
+\end{verbatim}
+no preâmbulo do arquivo fonte define o nome das funções
+$\mathrm{sen}$ e $\mathrm{dist}$. Depois de definidas, podemos usar como em
+$\mathrm{sen}\,x$ e $\mathrm{sen}(x)$, que foram produzidos com
+\texttt{\$$\backslash$sen$\backslash$,x\$} e \texttt{\$$\backslash$sen(x)\$},
+respectivamente. Alguns nomes de funções prédefinidos são:
+\texttt{$\backslash$arccos, $\backslash$arctan, $\backslash$cos, $\backslash$cosh,
+$\backslash$cot, $\backslash$coth, $\backslash$csc,
+$\backslash$det, $\backslash$exp, $\backslash$lim,
+$\backslash$ln, $\backslash$log, $\backslash$max,
+$\backslash$min, $\backslash$sec, $\backslash$tan,
+$\backslash$tanh}. Por exemplo, para se conseguir
+\tthdump{$\lim_{x\to 0}\frac{\mathrm{sen}(x)}{x}$, deve-se }%%tth:\begin{html}<img src="sx_x.gif" hspace=3 align="absmiddle">\end{html} deve-se
+escrever
+\texttt{\$$\backslash$lim\_\{x$\backslash$to 0\}$\backslash$frac\{$\backslash$sen(x)\}\{x\}\$}.
+
+\newpage
+\subsection{F\'ormulas com Til, Barra, Chap\'eu, etc}
+Os comandos \texttt{$\backslash$overline\{fórmula\}} e
+\texttt{$\backslash$underline\{fórmula\}} servem para colocar barras
+em cima e em baixo de uma letra ou uma fórmula. Por exemplo,
+\tthdump{$\overline{a}^2+\underline{bc}$ foi }%%tth:\begin{html}<img src="olul.gif" hspace=3 align="absmiddle">\end{html} foi
+conseguido com
+\texttt{\$$\backslash$overline\{a\}\^{}2+$\backslash$underline\{bc\}\$}.
+Pode-se colocar também chaves em cima e em baixo de fórmulas
+com os comandos \texttt{$\backslash$overbrace\{fórmula\}} e
+\texttt{$\backslash$underbrace\{fórmula\}}. Por exemplo,
+\tthdump{$\overbrace{x_1+\underbrace{x_2+\ldots+x_{n-1}}_{n-2}+x_n}^n$ foi }%%tth:\begin{html}<img src="obub.gif" hspace=3 align="absmiddle">\end{html} foi
+obtida com
+\texttt{\$$\backslash$overbrace\{x\_1+$\backslash$underbrace\{x\_2+$\backslash$ldots+x\_\{n-1\}\}\_\{n-2\}+x\_n\}\^{}n\$}. Setas em cima de
+letras são conseguidas com o comando
+\texttt{$\backslash$vec\{letra\}}, como em
+\tthdump{$\vec{v}$, que foi}%%tth:\begin{html}<img src="vec.gif" hspace=3 align="absmiddle">\end{html}, que foi
+obtido com
+\texttt{\$$\backslash$vec\{v\}\$}. Chapéu e til em cima de letras
+são conseguidas com os comandos \texttt{$\backslash$hat},
+\texttt{$\backslash$widehat}, \texttt{$\backslash$tilde} e
+\texttt{$\backslash$widetilde}. Por exemplo,
+\tthdump{$\hat{A}$ e $\widehat{ABC}$ foram }%%tth:\begin{html}<img src="hat.gif" hspace=3 align="absmiddle">\end{html} foram
+conseguidos com
+\texttt{\$$\backslash$hat\{A\}\$} e
+\texttt{\$$\backslash$widehat\{ABC\}}.
+
+\subsection{Tamanho autom\'atico de par\^enteses e similares}
+Os comandos \texttt{$\backslash$left(} e
+\texttt{$\backslash$right)} produzem parênteses com
+tamanho ajustado na altura para conter a fórmula que é
+englobada por eles. Observe a diferença entre
+\tthdump{$\displaystyle\cos(\frac{\pi}{2}x^2)$ e $\displaystyle\cos\left(\frac{\pi}{2}x^2\right)$ que foram }%%tth:\begin{html}<img src="cos12.gif" hspace=3 align="absmiddle">\end{html} foram
+obtidos com
+\texttt{\$$\backslash$cos($\backslash$frac\{$\backslash$pi\}\{2\}x\^{}2)\$} e
+\texttt{\$$\backslash$cos$\backslash$left($\backslash$frac\{$\backslash$pi\}\{2\}x\^{}2$\backslash$right)\$}
+respectivamente. O mesmo acontece com colchetes e chaves,
+usando os comandos
+\texttt{$\backslash$left[}, \texttt{$\backslash$right]},
+\texttt{$\backslash$left$\backslash$\{} e \texttt{$\backslash$right$\backslash$\}}.
+Os comandos \texttt{$\backslash$left} e
+\texttt{$\backslash$right} devem aparecer sempre aos
+pares.
+
+\subsection{Matrizes}
+As matrizes são produzidas com o uso do ambiente
+\texttt{array}. Os elementos de uma mesma linha são
+separados pelo caracter \& e as linhas são separadas por
+$\backslash$$\backslash$. É necessário passar para o
+\LaTeX\ como as colunas devem ser alinhadas. Isto é feito em
+seguida ao comando que inicia o ambiente. Por exemplo,
+\texttt{$\backslash$begin\{array\}\{ccrll\}} diz ao \LaTeX\
+que a matriz tem 5 colunas e que as duas primeiras devem ser
+alinhadas ao centro, que a do meio deve ser alinhada à
+direita e que as duas últimas devem ser alinhadas à
+esquerda. Por exemplo, as matrizes
+$$
+A=\left[\begin{array}{rrr}
+1&3&0\\
+2&4&-2
+\end{array}\right],\quad
+B=\left[\begin{array}{ccc}
+1&3&-2
+\end{array}\right],
+\quad \mbox{e}\quad
+C=\left[\begin{array}{r}
+1\\
+4\\
+-3
+\end{array}\right]
+$$
+foram conseguidas com
+\begin{verbatim}
+$$
+A=\left[\begin{array}{rrr}
+1&3&0\\
+2&4&-2
+\end{array}\right],\quad
+B=\left[\begin{array}{ccc}
+1&3&-2
+\end{array}\right],
+\quad \mbox{e}\quad
+C=\left[\begin{array}{r}
+1\\4\\-3
+\end{array}\right]
+$$
+\end{verbatim}
+Um outro exemplo do uso do ambiente array é
+$$|x|=\left\{\begin{array}{rc}
+-x&\mbox{se}\quad x\le 0\\
+x &\mbox{se}\quad x>0
+\end{array}\right.
+$$
+\begin{verbatim}
+$$|x|=\left\{\begin{array}{rc}
+-x&\mbox{se}\quad x\le 0\\
+x &\mbox{se}\quad x>0
+\end{array}\right.
+$$
+\end{verbatim}
+Observe o uso do comando \texttt{$\backslash$right.} para
+fechar o comando \texttt{$\backslash$left\{}.
+
+\subsection{Equa\c c\~oes ou Inequa\c c\~oes Multi-linhas}
+Para a impressão de equações ou inequações em várias linhas
+pode-se usar os seguintes ambientes:\\
+\texttt{$\backslash$begin\{eqnarray\}}
+ \textit{linha 1} \texttt{$\backslash$$\backslash$}
+ \ldots \texttt{$\backslash$$\backslash$}
+ \textit{linha n}
+\texttt{$\backslash$end\{eqnarray\}},\\
+\texttt{$\backslash$begin\{eqnarray*\}}
+ \textit{linha 1} \texttt{$\backslash$$\backslash$}
+ \ldots \texttt{$\backslash$$\backslash$}
+ \textit{linha n}
+\texttt{$\backslash$end\{eqnarray*\}},\\
+As linhas são separadas umas das outras por
+$\backslash$$\backslash$\ e cada linha tem a forma
+$$\texttt{fórm.\ da esq. \& fórm.\ do centro \& fórm.\ da direita}$$
+Normalmente a fórmula do centro é um único caracter, o
+sinal da relação (por exemplo, $=$ ou $\le$).
+A diferença entre \texttt{eqnarray} e \texttt{eqnarray*} é
+que no primeiro são acrescentadas às linhas  números de equações.
+O efeito
+deste ambiente é semelhante ao de se usar
+\texttt{$\backslash$begin\{array\}\{rcl\} \ldots $\backslash$
+end\{array\}}. Exemplo:
+\begin{eqnarray}
+(A+B)(A-B)&=&(A+B)A+(A+B)(-B)\nonumber\\
+&=&AA+BA-AB-BB\nonumber\\
+&=&A^2+BA-AB-B^2
+\end{eqnarray}
+foi obtido com
+\begin{verbatim}
+\begin{eqnarray}
+(A+B)(A-B)&=&(A+B)A+(A+B)(-B)\nonumber\\
+&=&AA+BA-AB-BB\nonumber\\
+&=&A^2+BA-AB-B^2
+\end{eqnarray}
+\end{verbatim}
+Observe o uso de \texttt{$\backslash$nonumber} nas linhas
+que não devem ser numeradas.
+
+\subsection{F\'ormulas dentro de uma Moldura}
+As fórmulas podem ser colocadas dentro de uma moldura com o
+comando \texttt{$\backslash$fbox}. Exemplo:
+\begin{center}
+\eq{
+\fbox{$\displaystyle x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$} }
+\end{center}
+%{<center><img src="pic1b.gif"></center>}
+foi conseguido com
+\begin{verbatim}
+\begin{center}
+\fbox{$\displaystyle x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$}
+\end{center}
+\end{verbatim}
+
+\subsection{Mudan\c ca dos Tipos de Letras no Modo Matem\'atico}
+Uma mudança explícita nos tipos de letras dentro do modo
+matemático pode ser feito usando os comandos:
+\texttt{$\backslash$mathrm}, \texttt{$\backslash$mathcal},
+\texttt{$\backslash$mathbf}, \texttt{$\backslash$mathsf},
+\texttt{$\backslash$mathtt}, \texttt{$\backslash$mathit} e
+\texttt{$\backslash$mathbb}. Por
+exemplo:\\
+\texttt{\$$\backslash$mathrm\{AaBbCc\}\$} produz $\mathrm{AaBbCc}$, %%tth:\\
+\texttt{\$$\backslash$mathcal\{ABC\}\$} produz
+\tthdump{$\mathcal{ABC}$, }%%tth:\begin{html}<img src="calabc.gif" hspace=3 align=absmiddle>\end{html},\\
+\texttt{\$$\backslash$mathbf\{AaBbCc\}\$} produz $\mathbf{AaBbCc}$, %%tth:\\
+\texttt{\$$\backslash$mathsf\{aAbBcC\}\$} produz $\mathsf{aAbBcC}$, %%tth:\\
+\texttt{\$$\backslash$mathtt\{aAbBcC\}\$} produz $\mathtt{aAbBcC}$, %%tth:\\
+\texttt{\$$\backslash$mathit\{aAbBcC\}\$} produz $\mathit{aAbBcC}$ e %%tth:\\
+\texttt{\$$\backslash$mathbb\{ABCNR\}\$} produz
+\tthdump{$\mathbb{ABCNR}$ (este }%%tth:\begin{html}<img src="abcnr.gif" hspace=3 align=absmiddle>\end{html} (este
+ último necessita o comando
+\texttt{$\backslash$usepackage\{amsfonts\}} no preâmbulo).
+\subsection{Espa\c cos no Modo Matem\'atico}
+Além dos comandos \texttt{$\backslash$quad} e
+\texttt{$\backslash$qquad} que produzem espaços no modo
+matemático, existem comandos para produzirem espaços menores
+ou até negativos.\\
+\texttt{$\backslash$,} produz um pequeno espaço, igual a 3/18 de
+um \texttt{quad}.\\
+\texttt{$\backslash$:} produz um espaço médio, igual a 4/18 de um
+\texttt{quad}.\\
+\texttt{$\backslash$;} produz um espaço maior, igual a 5/18 de um
+\texttt{quad}.\\
+\texttt{$\backslash$!} produz um espaço negativo de -3/18 de um
+\texttt{quad}.\\
+Por exemplo,
+\latexhtml{$x^2/2$, $x^2\!/2$, $\int\int_D f(x)dx$
+e $\int\!\!\!\int_D f(x)\,dx$ }
+{<img src="espmat.gif" hspace=3 align=top>}
+foram produzidos com
+\texttt{\$x\^{}2/2\$}, \texttt{\$x\^{}2$\backslash$!/2\$},
+\texttt{\$$\backslash$int$\backslash$int\_D f(x)dx\$} e
+\texttt{\$$\backslash$int$\backslash$!$\backslash$!$\backslash$!$\backslash$int\_D f(x)$\backslash$
+,dx\$} respectivamente.
+
+\subsection{Usando o MATLAB para Gerar F\'ormulas}
+No MATLAB existe um comando \texttt{latex(expr)} que gera
+uma representação em \LaTeX\ da expressão simbólica
+\texttt{expr}. Exemplo:
+\begin{verbatim}
+>> syms x, expr1=sin(x)^2+cos(x)^2;
+>> latex(expr1)
+ans =\left(\sin(x)\right)^{2}+\left(\cos(x)\right)^{2}
+>> A=[1,2;3,4];
+>> A=sym(A);
+>> latex(A)
+ans =\left[\begin{array}{cc}1&2\\\noalign{\medskip}3&4\end{array}\right]
+\end{verbatim}
+Depois, basta marcar e copiar para a área de transferência,
+a representação em \LaTeX\ obtida e finalmente colar no
+arquivo fonte de \LaTeX\ que você está trabalhando.
+
+%\end{enumerate}
+
+
+\section{Figuras}
+Podem ser construidos desenhos simples e diagramas com o
+\LaTeX. Além disso, podem ser inseridas figuras ou imagens
+geradas por outros programas.
+
+%\begin{enumerate}
+\subsection{Ambiente picture}
+As figuras criadas com o \LaTeX\ são construídas dentro do
+ambiente
+\texttt{picture}, cuja sintaxe é a seguinte:
+\begin{verbatim}
+\setlength{\unitlength}{unidade de comprimento}
+\begin{picture}(tam_x,tam_y)
+...
+\end{picture}
+\end{verbatim}
+por exemplo,
+\begin{verbatim}
+\setlength{\unitlength}{1.5 cm}
+\begin{picture}(3,4) ... \end{picture}
+\end{verbatim}
+cria uma figura de 3 x 1.5 cm=4.5 cm de largura por 4 x 1.5
+cm=6 cm de altura.
+Os elementos da figura são posicionados
+usando-se o comando
+\texttt{$\backslash$put(x\_coord,y\_coord)\{elemento\}}. Os
+elementos podem ser
+\begin{enumerate}
+\item
+\texttt{$\backslash$circle\{diâmetro\}} para uma circunferência e
+\texttt{$\backslash$circle*\{diâmetro\}} para um círculo (cheio).
+\item
+\texttt{$\backslash$line($\Delta$x,$\Delta$y)\{comprimento da projeção\}}
+para um segmento de reta, onde \texttt{$\Delta$x} e
+\texttt{$\Delta$y} são números inteiros entre -6 e 6, primos
+entre si (isto é, não possuem divisores comuns) e
+\texttt{comprimento da projeção} é o comprimento da
+projeção do segmento no eixo $x$ se este for diferente de
+zero ou o comprimento da projeção do segmento no eixo $y$,
+caso contrário.
+\item
+\texttt{$\backslash$vector($\Delta$x,$\Delta$y)\{comprimento da
+projeção\}}, para um vetor, onde \texttt{$\Delta$x},
+\texttt{$\Delta$y} e \texttt{comprimento da projeção} são
+como no item anterior.
+\item Texto.
+\end{enumerate}
+Exemplo:
+\begin{center}
+\setlength{\unitlength}{1mm}
+\begin{picture}(50,25)
+\put(0,0){\scriptsize$C$}
+\put(2,2){\circle*{0.7}}
+\put(2,2){\vector(1,0){50}}
+\put(52,2){\circle*{0.7}}
+\put(52,0){\scriptsize$B$}
+\put(2,2){\vector(1,1){20}}
+\put(22,22){\circle*{0.7}}
+\put(22,22.5){\scriptsize$A$}
+\put(2,2){\vector(2,1){28.5}}
+\put(34,16){\scriptsize$X$}
+\put(30.5,16.25){\circle*{0.7}}
+\put(22,22){\line(3,-2){30}}
+\end{picture}
+\end{center}
+foi produzido com
+\begin{verbatim}
+\begin{center}
+\setlength{\unitlength}{1mm}
+\begin{picture}(50,25)
+\put(0,0){\scriptsize$C$}
+\put(2,2){\circle*{0.7}}
+\put(2,2){\vector(1,0){50}} %segmento CB
+\put(52,2){\circle*{0.7}}
+\put(52,0){\scriptsize$B$}
+\put(2,2){\vector(1,1){20}} %segmento CA
+\put(22,22){\circle*{0.7}}
+\put(22,22.5){\scriptsize$A$}
+\put(2,2){\vector(2,1){28.5}} %segmento CX
+\put(34,16){\scriptsize$X$}
+\put(30.5,16.25){\circle*{0.7}}
+\put(22,22){\line(3,-2){30}} %segmento AB
+\end{picture}
+\end{center}
+\end{verbatim}
+A espessura das linhas pode ser especificada com o comando
+\texttt{$\backslash$linethickness\{espessura\}}. Por exemplo, o
+comando \texttt{$\backslash$linethickness\{1.5mm\}} faz com
+que todas as linhas desenhadas depois deste comando tenham a
+espessura de 1.5 mm. Também existem os comandos com
+espessuras pré-definidas:
+\texttt{$\backslash$thicklines} para linhas grossas e
+\texttt{$\backslash$thinlines} para voltar às linhas finas.
+
+\subsection{Figuras Importadas de Outros Programas}
+
+Podem ser importadas figuras de outros programas, desde
+que seja usado o pacote \texttt{graphicx}, com o comando
+\texttt{$\backslash$usepackage\{graphicx\}} no preâmbulo.
+As figuras devem estar nos formatos \texttt{wmf, bmp, pcx}
+ou \texttt{gif}.
+Pode ser necessário acrescentar as linhas seguintes no
+arquivo \texttt{win.ini} que fica na pasta
+\texttt{c:$\backslash$windows}:
+\begin{verbatim}
+[MS Graphic Import Filters]
+PC Paintbrush(.PCX)=C:\dviwin\pcxin2.flt,PCX
+Bitmaps(.BMP)=C:\dviwin\bmpin2.flt,BMP
+Compuserve GIF(.GIF)=C:\dviwin\gifin2.flt,GIF
+\end{verbatim}
+e criar um arquivo com nome \texttt{graphics.cfg} na pasta
+onde estão os arquivos fonte contendo  a linha
+\texttt{$\backslash$ExecuteOptions\{dviwin\}}.\\
+O comando para incluir uma figura que esteja armazenada em
+um arquivo é \texttt{$\backslash$
+includegraphics[opções]\{arquivo\}}. Por exemplo:\\
+\begin{figure}[htb]
+%%tth:\caption{\label{exemgraf}Figura proveniente do arquivo \texttt{exemgraf.bmp}}
+\begin{center}
+\includegraphics[height=5cm,width=7cm]{exemgraf.gif}
+\end{center}
+\tthdump{\caption{\label{exemgraf}Figura proveniente do arquivo
+\texttt{exemgraf.bmp}}}
+\end{figure}
+a Figura \ref{exemgraf} foi produzida com
+\texttt{$\backslash$includegraphics[height=5cm,width=7cm]\{exemgraf.bmp\}}
+No MATLAB foram usados os comandos seguintes para gerar esta
+figura:
+\begin{verbatim}
+>> syms x
+>> f=1/(1+x^2)
+f = 1/(1+x^2)
+>> plotf1(f,[-10,10])
+>> axis([-11 11 -0.2 1.2])
+>> eixos
+>> print -dbmp256 c:\users\regi\topicos\exemgraf.bmp
+\end{verbatim}
+
+\subsection{Ambiente figure}
+Este ambiente oferece a possibilidade da figura, que é
+produzida com o ambiente \texttt{picture} ou importada com o
+comando \texttt{$\backslash$includegraphics}, ter uma
+legenda e além disso, flutuar no texto se colocando num
+local em que a perda de espaço seja mínima. A sintaxe é a
+seguinte:
+\begin{verbatim}
+\begin{figure}[onde]
+figura
+\caption{Texto da figura}
+\end{figure}
+\end{verbatim}
+o argumento \texttt{onde} especifica o local, onde é
+permitido a colocação da figura, ou seja, consiste de zero
+a quatro letras com os seguintes significados:
+\begin{description}
+\item
+\texttt{h} significa aqui.
+\item
+\texttt{t} significa em cima.
+\item
+\texttt{b} significa em baixo.
+\item
+\texttt{p} significa em uma página separada.
+\end{description}
+As letras devem ser colocados na ordem de prioridade. Se
+nenhum argumento for dado,
+\LaTeX\ assume a combinação
+\texttt{tbp}.
+Por exemplo a Figura \ref{exemgraf} foi obtida com
+\begin{verbatim}
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[height=5cm,width=7cm]{exemgraf.bmp}
+\end{center}
+\caption{Figura proveniente do arquivo \texttt{exemgraf.bmp}}
+\end{figure}
+\end{verbatim}
+O \LaTeX\ coloca a figura seguindo certos critérios. O
+comando \texttt{$\backslash$clearpage} força a que todas as
+figuras pendentes (isto é, que não foram impressas até o
+aparecimento do comando) sejam impressas.
+
+
+\section{Partes do Documento}
+
+\subsection{T\'itulo}
+O título do documento é gerado com os comandos:
+\begin{verbatim}
+\title{texto do título}
+\author{autor1\\enderêço1 \and autor2\\enderêço2}
+\maketitle
+\end{verbatim}
+Com estes comandos também a data atual é impressa. O comando
+\texttt{$\backslash$date\{texto\}} coloca o \texttt{texto} no lugar
+da data atual.  O comando \texttt{$\backslash$thanks\{texto
+de rodapé\}} pode ser colocado no texto do título, do autor
+ou da data, produzindo uma marca onde o comando aparece e
+escreve \texttt{texto de rodapé} como texto de rodapé. Se o
+tipo de documento for \texttt{book}, então os comandos dados
+acima geram uma página separada para o título do documento.
+
+
+\subsection{Se\c c\~oes}
+
+O \LaTeX\ disponhe dos comandos seguintes para produzir um
+seccionamento automático e seqüencial:
+\begin{verbatim}
+\part{título} \chapter{título} \section{título}
+\subsection{título} \subsubsection{título}
+\end{verbatim}
+O comando \texttt{$\backslash$part} está disponível apenas
+para o tipo de documento \texttt{book}. O comando
+\texttt{$\backslash$chapter} está disponível apenas para os tipos
+de documento
+\texttt{book} e \texttt{report}. Os outros comandos de
+seccionamento estão disponíveis para todos os tipos de
+documento. Estes comandos formam um hierarquia. Os capítulos
+são produzidos com \texttt{$\backslash$chapter}, que são
+divididos em seções com \texttt{$\backslash$section}, que
+são divididas em subseções com
+\texttt{$\backslash$subsection} e assim por diante. Se o tipo de documento for
+\texttt{book}, então o comando
+\texttt{$\backslash$chapter} sempre começa o capítulo em uma nova
+página e normalmente, nas páginas de números ímpares,
+gerando uma página em branco se necessário. Para se evitar
+que ele gere uma página em branco, inicie o documento com o
+comando
+\texttt{$\backslash$documentclass[...,oneside]\{book\}} ou com
+\texttt{$\backslash$documentclass[...,openany]\{book\}}. No
+primeiro caso o
+\LaTeX\ entende que o documento será impresso em somente um
+lado do papel e no segundo, que os capítulos podem ser
+iniciados em páginas pares também.
+
+\subsection{Conte\'udo}
+O conteúdo do documento é gerado automaticamente com o
+comando \texttt{$\backslash$tableofcontents}. Para que o
+conteúdo seja gerado de forma correta é necessário que o
+documento seja processado pelo \LaTeX\ pelo menos três
+vezes. Se no preâmbulo do seu documento contiver
+\texttt{$\backslash$usepackage[brazil]\{babel\}}, então o título
+do conteúdo será ``Sumário''. Se você quiser mudar este nome
+basta colocar o comando
+\texttt{$\backslash$renewcommand\{$\backslash$contentsname\}\{novo nome\}}
+antes de \texttt{$\backslash$tableofcontents}.
+
+\subsection{Bibliografia}
+
+Para se gerar uma bibliografia em um documento, é necessário
+criar um arquivo na pasta onde está o arquivo fonte com nome
+terminado em \texttt{.bib} (por exemplo,
+\texttt{bibli.bib}) contendo um banco de dados bibliográficos. As
+entradas deste banco de dados devem ter a forma:
+\begin{verbatim}
+@TIPO{apelido,
+        AUTHOR = "Fulano de Tal",
+        TITLE = "O Título Tal",
+        PUBLISHER = "A Editora",
+        ADDRESS = "Cidade Tal",
+        . . .
+        YEAR = "1998" }
+\end{verbatim}
+onde o \texttt{TIPO} pode ser \texttt{BOOK} (para livros),
+\texttt{ARTICLE} (para artigos),
+\texttt{INCOLLECTION} (para partes de um livro),
+\texttt{PROCEEDINGS} (para artigo em atas de congressos) ou
+\texttt{TECHREPORT} (para relatórios técnicos). A publicação
+vai ser citada no documento com o comando
+\texttt{$\backslash$cite\{apelido\}}. Cada \texttt{TIPO} de
+entrada tem um conjunto de campos obrigatório e outro
+conjunto de campos opcional. O \TeX mEx oferece uma
+interface gráfica para se acrescentar entradas no seu banco
+de dados. No menu vá em \textbf{Insert} e depois no submenu
+clique em \textbf{BiBTeX Entry \ldots}. Ele vai pedir o nome
+do seu arquivo de dados bibliográficos e depois vai mostrar
+a seguinte janela:
+$$\includegraphics[width=3.33in, height=2in]{bibtexen.gif}$$
+O campo \textbf{LABEL} é onde deve ser colocado o
+\texttt{apelido} para a entrada.
+
+Além do banco de dados bibliográficos, é necessário colocar
+no preâmbulo do arquivo fonte o comando
+\texttt{$\backslash$bibliographystyle\{plain\}} e no
+local do documento onde a bibliografia deve aparecer deve-se
+colocar o comando
+\texttt{$\backslash$bibliography\{arquivo\}}, onde \texttt{arquivo}
+é o nome do arquivo de banco de dados bibliográficos sem a
+terminação \texttt{.bib}. Nem todas as entradas do banco de
+dados vão aparecer na bibliografia do documento, somente
+aquelas que tenham sido referenciadas no texto com o comando
+\texttt{$\backslash$cite\{apelido\}} e as que não foram, mas que
+você quer que elas apareçam. Neste caso, em qualquer local
+no documento deve aparecer o comando
+\texttt{$\backslash$nocite\{apelido1,apelido2,\ldots\}}.
+Depois de processar com o
+\LaTeX\ o seu arquivo principal, você deve clicar na barra
+de ferramentas no botão
+\latexhtml{
+\includegraphics[width=0.25in,height=0.25in]{bibtexic.gif}.}
+{<img src="bibtexic.gif">.} Com isto um programa chamado
+BiB\TeX\ lê o seu banco de dados, retira as entradas que
+foram referenciadas no texto, cria um arquivo com o mesmo
+nome do arquivo principal, mas com terminação \texttt{.bbl}.
+Este arquivo contem as publicações citadas, porém ordenadas
+e formatadas, para que seja automaticamente incluído no seu
+documento no local, onde estiver o comando
+\texttt{$\backslash$bibliography\{arquivo\}}, através do
+processamento do
+\LaTeX\ sobre o arquivo principal.
+Depois, é preciso que o arquivo principal seja processado
+pelo
+\LaTeX\ pelo menos duas vezes para que a bibliografia
+apareça de forma correta no seu documento.
+
+
+Por exemplo, a entrada
+\begin{verbatim}
+@BOOK{lamp,
+AUTHOR = "Leslie Lamport",
+TITLE = "\LaTeX, A Document Preparation System",
+PUBLISHER = "Addison-Wesley", EDITION="2nd.",
+ADDRESS = "Reading", YEAR = "1994"}
+\end{verbatim}
+no arquivo de banco de dados bibliográficos e a colocação do
+comando \texttt{$\backslash$cite\{lamp\}} produz [1]. E o
+comando
+\texttt{$\backslash$bibliography\{bibli\}} vai gerar algo
+semelhante a\\[12pt]
+
+\noindent{\Large Referências Bibliográficas}
+%\begin{description}
+%\item[][1\hspace{-2mm}]]
+
+\noindent [1] Leslie Lamport.
+\newblock {\em \LaTeX, A Document Preparation System}.
+\newblock Addison-Wesley, Reading, 2nd. edition, 1994.
+%\end{description}
+
+Se você não gostar do título, pode mudar com o comando\\
+\texttt{$\backslash$renewcommand\{$\backslash$bibname\}\{novo nome\}}.
+
+
+\subsection{\'Indice Alfab\'etico}
+A criação de um índice alfabético é semelhante a de criação
+da bibliografia. As palavras que devem aparecer no índice
+devem ser indicadas com o comando \texttt{$\backslash$
+index} que deve ter uma das três formas:
+\begin{verbatim}
+\index{entrada principal}
+\index{entrada principal!subentrada}
+\index{entrada principal!subentrada!subsubentrada}
+\end{verbatim}
+As entradas não podem conter os caracteres !, @ e |. Se uma
+entrada contem um comando \LaTeX, então ela deve aparecer na
+forma
+\texttt{entrada alfabética@entrada impressa}. Exemplo:
+\begin{verbatim}
+\index{Matriz (matrizes)!identidade}
+\index{Matriz (matrizes)!soma de}
+\index{Conjunto R@Conjunto \mathbb{R}}.
+\end{verbatim}
+Para que os comandos \texttt{$\backslash$index} sejam
+considerados é necessário que no preâmbulo do arquivo
+principal, esteja o comando \texttt{$\backslash$makeindex}.
+No local onde o índice vai ser impresso em seu documento
+deve conter o comando
+\texttt{$\backslash$printindex}. Depois de processar o seu
+arquivo principal com o \LaTeX\ você deve clicar na barra de
+ferramentas no botão
+\latexhtml{
+\includegraphics[width=0.25in,height=0.25in]{makeind.gif}.}
+{<img src="makeind.gif">.} Com isto um programa chamado
+MakeIndex vai criar um arquivo com o mesmo nome do arquivo
+principal, mas com terminação
+\texttt{.ind}, que vai ser incluído automaticamente, onde
+for colocado o comando \texttt{$\backslash$printindex},
+através do processamento do \LaTeX\ sobre o arquivo
+principal. É necessário que o arquivo principal seja
+processado pelo menos duas vezes pelo \LaTeX\ para que o
+índice apareça de forma correta no seu documento.
+
+\section{Outros Recursos}
+
+
+\subsection{Refer\^encias Cruzadas}
+
+O comando \texttt{$\backslash$label\{marca\}} coloca uma
+marca naquele ponto do texto, onde ele aparece e pode ser
+usado para se referir a ele em outra parte do texto com o
+comando
+\texttt{$\backslash$ref\{marca\}}.
+
+O identificador da marca \texttt{marca} pode ser qualquer
+conjunto de caracteres, que não inclua os caracteres
+especiais, que o faça lembrar a que ela se refere. O número
+da página do ponto onde a
+\texttt{marca} foi colocada pode ser impresso com o comando
+\texttt{$\backslash$pageref\{marca\}}. Se o comando
+\texttt{$\backslash$label\{marca\}} é colocado dentro de um ambiente como
+\texttt{equation}, \texttt{eqnarray} ou \texttt{newtheorem},
+então o comando \texttt{$\backslash$ref\{marca\}}
+correspondente vai imprimir o número do ambiente em que a
+\texttt{$\backslash$label\{marca\}} foi colocado. Para o ambiente
+\texttt{enumerate}, o comando \texttt{$\backslash$ref\{marca\}}
+imprime o número do \texttt{$\backslash$item}, onde
+\texttt{$\backslash$label\{marca\}} foi colocado. Para o ambiente
+\texttt{figure} o comando \texttt{$\backslash$label\{marca\}} deve
+ser colocado dentro do
+\texttt{$\backslash$caption\{\ldots\}}. Por exemplo, no
+Teorema de Pitágoras escrevemos
+\texttt{$\backslash$begin\{teo\}[Pitágoras]$\backslash$label\{teo.pita\} \ldots $\backslash$end\{teo\}} para nos
+referirmos a ele escrevemos \texttt{\ldots pelo Teorema
+$\backslash$ref\{teo.pita\} na página
+$\backslash$pageref\{teo.pita\}
+\ldots} e obtemos \ldots pelo \hyperref{Teorema}{teo.pita}~
+\latexhtml{}{2.1} na
+\hyperpageref{página}{teo.pita} \ldots. Para se referir à
+Figura \ref{exemgraf} que está na
+\hyperpageref{página}{exemgraf} foi necessário ter escrito dentro do
+ambiente \texttt{figure},
+\texttt{$\backslash$caption\{$\backslash$label\{exemgraf\}Figura
+proveniente do \ldots\}}.
+
+
+
+
+
+
+
+\subsection{Espa\c camento}
+
+\subsubsection{Espa\c camento Horizontal}
+
+Para produzir espaçamento horizontal usamos os comandos
+\begin{verbatim}
+\hspace{tamanho}
+\hspace*{tamanho}
+\end{verbatim}
+onde o \texttt{tamanho} é o comprimento do espaçamento, por
+exemplo \texttt{1.5cm} ou \texttt{3em} (aqui \texttt{em} é a
+unidade que corresponde a largura da letra M do tipo de
+letra atual). A forma sem \texttt{*} suprime o espaço se ele
+ocorre entre duas linhas ou no início de uma linha. O
+\texttt{tamanho} pode ser negativo, neste caso comando
+funciona como retrocesso.
+
+O comando \texttt{$\backslash$hfill} é uma abreviação de
+\texttt{$\backslash$hspace\{$\backslash$fill\}}, que introduz espaço
+suficiente para que o que estiver à esquerda do comando
+fique alinhado à esquerda e o que estiver à direita do
+comando seja alinhado à direita. Por exemplo, com
+\texttt{Esquerda$\backslash$hfill Direita} obtemos\\
+\tthdump{Esquerda \hfill Direita }\special{html:
+<TABLE BORDER=0 WIDTH=100% > <TR> <TD>Esquerda</TD> <TD>
+<DIV ALIGN=right>Direita</DIV> </TD> </TR> </TABLE>}
+
+Várias ocorrencias de \texttt{$\backslash$hfill} dentro de
+uma linha faz com que o mesmo espaçamento seja introduzido
+de forma que a linha fique justificada à esquerda e à
+direita. Por exemplo, com
+\texttt{Esquerda$\backslash$hfill Centro $\backslash$hfill
+Direita} obtemos\\
+\tthdump{Esquerda \hfill Centro \hfill Direita }
+\special{html:<TABLE BORDER=0 WIDTH=100%>
+<TR> <TD>Esquerda</TD>
+<TD><div align=center>Centro</div></TD>
+<TD> <DIV ALIGN=right>Direita</DIV> </TD> </TR>
+</TABLE>}
+
+Se
+\texttt{$\backslash$hfill} ocorre no início da linha, então
+o espaçamento é suprimido em concordância com o
+comportamento de \texttt{$\backslash$hspace}. Neste caso,
+deve ser usado
+\texttt{$\backslash$hspace*\{$\backslash$fill\}}.
+
+Dois comandos que funcionam como \texttt{$\backslash$hfill}
+são
+\texttt{$\backslash$dotfill} e \texttt{$\backslash$hrulefill},
+que preenchem o espaço com pontos e linha respectivamente.
+Por exemplo, com \texttt{Esquerda$\backslash$dotfill Centro
+$\backslash$hrulefill Direita} obtemos\\
+\tthdump{Esquerda \dotfill Centro \hrulefill
+Direita}\special{html:<TABLE BORDER=0 WIDTH=100%>
+<TR>
+<TD>Esquerda...........</TD>
+<TD> <div align=center>.........Centro________</div></TD>
+<TD> <DIV ALIGN=right>_________Direita</DIV> </TD>
+</TR> </TABLE>}
+\subsubsection{Espa\c camento Vertical}
+
+Uma nova linha ou uma quebra de linha com ou sem espaço adicional pode ser
+conseguida com o comando
+\begin{verbatim}
+\\[tamanho]
+\end{verbatim}
+O argumento opcional \texttt{tamanho} é o comprimento que
+especifica qual o espaço adicional que deve ser colocado
+entre as duas linhas. Se for desejado a diminuição do espaço
+o comando pode ser usado com um \texttt{tamanho} negativo.
+Por exemplo, com o comando
+\texttt{$\backslash\backslash$[10cm]},
+a linha atual é terminada e um espaço vertical
+de 10 cm é inserido antes da nova linha.
+Enquanto, \texttt{$\backslash\backslash$[-0.38cm]},
+quebra a linha atual e a nova linha ocorre a -0.38 cm
+de onde ela normalmente começaria.
+
+Comandos para aumentar o espaçamento vertical entre parágrafos
+são:
+\begin{verbatim}
+\bigskip      \medskip      \smallskip
+\end{verbatim}
+que adicionam espaço vertical dependendo do tamanho do tipo
+de letras declarado no comando \texttt{$\backslash$documentclass}.
+
+É possivel, também, adicionar espaço extra entre parágrafos com o
+comando
+\begin{verbatim}
+\vspace{tamanho}
+\end{verbatim}
+
+Se este comando ocorre dentro de um parágrafo, então o
+espaço adicional é introduzido após a linha atual. O
+parâmetro \texttt{tamanho} tem que conter um unidade de
+comprimento e pode ser negativo,
+para mover o texto que vem a seguir para cima.
+
+O comando \texttt{$\backslash$vfill} é uma abreviação de
+\texttt{$\backslash$vspace\{$\backslash$fill\}}. Este é análogo a
+\texttt{$\backslash$hfill} (introduzido acima), para espaçamento
+vertical, introduzindo espaçamento vertical suficiente para
+que a parte superior e a inferior do texto casem com as
+margens superior e inferior da página respectivamente.
+
+
+\subsection{Dividindo o Arquivo Fonte}
+
+Para a produção de textos maiores é essencial, que se divida
+o arquivo fonte em arquivos menores e que possam ser
+processados em separado para diminuir o tempo de
+processamento. Para isso, pode ser empregado o comando
+\begin{verbatim}
+\include{arquivo}
+\end{verbatim}
+junto com o comando
+\begin{verbatim}
+\includeonly{lista de arquivos}
+\end{verbatim}
+no preâmbulo, contendo uma \texttt{lista de arquivos} que
+devem ser lidos pelo \LaTeX. Os nomes dos arquivos na lista
+de arquivos devem ser separados por vírgula a terminação
+\texttt{.tex} deve ser suprimida. Se o comando
+\texttt{$\backslash$includeonly} for suprimido, então todos os
+arquivos são lidos e processados.
+
+Os capítulos foram escritos em arquivos separados com nomes
+\texttt{intwin.tex, intmatl.tex, intlat.tex, ...}. O
+arquivo principal contém o texto
+\begin{verbatim}
+\documentclass[a4paper,12pt]{book}
+. . . . . . .
+\includeonly{. . .}
+. . . . . . .
+\begin{document}
+\maketitle
+\tableofcontents
+\include{intwin}
+\include{intmatl}
+\include{intlat}
+. . . . . . .
+\end{document}
+\end{verbatim}
+Colocando uma entrada apropriada no comando
+\texttt{$\backslash$includeonly} é possivel o
+processamento de alguns capítulos seletivamente. Por
+exemplo, \texttt{$\backslash$includeonly\{intmatl,intlat\}}
+faz com que o \LaTeX processe o título, o conteúdo e os
+capítulos de Introdução ao MATLAB e de Introdução ao \LaTeX.
+
+\subsection{Tabelas}
+
+Para construir tabelas usamos o ambiente
+\texttt{tabular}, cuja sintaxe é
+\begin{verbatim}
+\begin{tabular}{formato das colunas}
+. . . linhas . . . .
+\end{tabular}
+\end{verbatim}
+Aqui, o \texttt{formato das colunas} deve ser uma entrada
+para cada coluna além, opcionalmente, de entradas extras
+para as bordas esquerda e direita e para a separação das
+colunas. Os símbolos possíveis para o \texttt{formato das
+colunas} são:
+\begin{description}
+\item
+\texttt{l} a coluna é alinhada à esquerda;
+\item
+\texttt{r} a coluna é alinhada à direita;
+\item
+\texttt{c} a coluna é centralizada.
+\end{description}
+e para as bordas e a separação das colunas:
+\begin{description}
+\item
+| desenha uma linha vertical;
+\item
+|| desenha duas linhas verticais;
+\item
+\texttt{@\{texto\}} insere o \texttt{texto} em todas as linhas,
+entre as duas colunas onde ele aparece.
+\end{description}
+
+As \texttt{linhas} devem conter as entradas de cada linha da
+tabela separadas por \texttt{\&} e terminadas por
+$\backslash$$\backslash$. Além disso, elas podem conter os
+comandos:
+\begin{description}
+\item
+\texttt{$\backslash$hline} - este comando deve somente aparecer
+antes da primeira linha ou imediatamente depois de
+$\backslash$$\backslash$. Ele faz desenhar uma linha
+horizontal de comprimento igual ao da tabela. Dois comandos
+\texttt{$\backslash$hline} juntos produzem duas linha horizontais
+com um pequeno espaço entre elas.
+\item
+\texttt{$\backslash$multicolumn\{num\}\{formato\}\{texto\}} -
+este comando faz concatenar \texttt{num} colunas em uma só.
+O \texttt{formato} deve conter um dos caracteres \texttt{l,
+r} ou \texttt{c} antecedido e seguido por |, || ou
+\texttt{@\{texto\}}.
+\end{description}
+
+A tabela
+
+\begin{center}
+\begin{tabular}{|l||c|c|c|c|c|}
+\hline
+\multicolumn{6}{|c|}{\textbf{Horário de Tópicos em Matemática - MAT
+037/033}} \\ 
+\hline
+Horário    &Seg  &Ter &Qua &Qui &Sex\\
+\hline\hline
+13:00-14:40&~     &~    &~    &~    &~    \\
+\hline
+14:55-16:35&~     &~    &~    &~    &TURMA N    \\
+\hline
+16:35-18:15&TURMA N     &~    &TURMA N    & ~   &~    \\
+\hline
+18:15-19:00&~     &~    &~    &~    &~   \\
+\hline
+19:00-20:40&~     &~    &TURMA M    &~    &~    \\
+\hline
+20:55-22:35&TURMA M     &~    &~    &~    &~    \\
+\hline
+\end{tabular}
+\end{center}
+foi produzida com
+
+\begin{verbatim}
+\begin{center}
+\begin{tabular}{|l||c|c|c|c|c|}
+\hline
+\multicolumn{6}{|c|}{\textbf{Horário de Tópicos em Matemática - MAT 037/033}}\\
+\hline
+Horário    &Seg  &Ter &Qua &Qui &Sex\\
+\hline\hline
+13:00-14:40&     &    &    &    &    \\
+\hline
+14:55-16:35&     &    &    &    &TURMA N    \\
+\hline
+16:35-18:15&TURMA N     &    &TURMA N    &    &    \\
+\hline
+18:15-19:00&     &    &    &    &    \\
+\hline
+19:00-20:40&     &    &TURMA M    &    &    \\
+\hline
+20:55-22:35&TURMA M     &    &    &    &    \\
+\hline
+\end{tabular}
+\end{center}
+\end{verbatim}
+
+
+

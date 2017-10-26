@@ -1,0 +1,46 @@
+% Este é um pequeno arquivo fonte para o LaTeX (versão de 12 de março de 1998)
+%
+% Use este arquivo como modelo para fazer seus próprios arquivos  LaTeX.
+% Tudo que está à direita de um  %  é um comentário e é ignorado pelo LaTeX.
+
+% CUIDADO!  Os 10 caracteres abaixo têm significado especial:
+%                &   $   #   %   _   {   }   ^   ~   \
+
+\documentclass[a4paper,12pt]{article}% Seu arquivo fonte precisa conter
+\usepackage[brazil]{babel}           % estas quatro linhas
+\usepackage[T1]{fontenc}             % além do comando \end{document}
+\begin{document}                     % no fim.
+
+
+\section{Texto e Comandos} % Este comando faz o título da seção.
+
+Palavras são separadas por um ou mais espaços. Paragrafos
+são separados por uma ou mais linhas em branco. A saída não
+é afetada por espaços extras ou por linhas em branco extras.
+
+%Aspas são digitadas assim:
+``Texto entre aspas''.
+
+%Texto enfatizado deve ser digitado como:
+\textit{Isto está em itálico}.
+
+%Texto em negrito deve ser digitado como:
+\textbf{Isto está em negrito}.
+
+\subsection{Um aviso}  % Este comando faz o título da subseção.
+
+Lembre-se, não escreva os 10 caracteres especiais
+%                &   $   #   %   _   {   }   ^   ~   \
+\& \$ \# \% \_ \{ \} \textasciicircum \ \textasciitilde
+\ \textbackslash \ exceto como um comando! Eles são impressos
+com os comandos
+%Este comando inicia um ambiente ``verbatim''(ao pé da letra)
+\begin{verbatim}
+\& \$ \# \% \_ \{ \} \textasciicircum \textasciitilde \textbackslash.
+\end{verbatim}   %Este comando termina o ambiente ``verbatim''.
+                 %Tudo que estiver dentro do ambiente é impresso
+                 %exatamente como é digitado
+A maioria dos comandos do \LaTeX \ são iniciados com o
+caracter \textbackslash. Uma \textbackslash \ sozinha produz
+um espaço.
+\end{document}   % O arquivo fonte termina com este comando.

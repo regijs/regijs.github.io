@@ -1,0 +1,686 @@
+\tthdump{\chapter{Introdução ao MATLAB}}
+
+%%tth:\def\latexhtml#1#2{\special{html:#2}}
+%%tth:\def\eqc#1{\begin{center}\setlength{\unitlength}{1pt}\begin{picture}(50,12)\put(0,0){$\displaystyle #1$}\end{picture}\end{center}}
+%%tth:\def\eq#1{\setlength{\unitlength}{1pt}\begin{picture}(50,12)\put(0,0){$#1$}\end{picture}}
+%%tth:\def\hyperref#1#2{\special{html:<A href="\##2">#1</A>}}
+%%tth:\def\hyperpageref#1#2{\special{html:<A href="\##2">#1</A>}}
+
+%%tth:\title{Introdução ao MATLAB
+%%tth:        }
+%%tth:\author{Reginaldo J. Santos\\
+%%tth:        Departamento de Matemática\\
+%%tth:        Instituto de Ciências Exatas\\
+%%tth:        Universidade Federal de Minas Gerais\\
+%%tth:        \href{http://www.mat.ufmg.br/~regi}
+%%tth:        {\texttt{http://www.mat.ufmg.br/\~{}regi}}
+%%tth:        }
+%%tth:\date{8 de junho de 1998}
+
+
+
+%%tth:{\LARGE Conteúdo}
+%%tth:
+%%tth:\contentsline {section}{\numberline {1}C\'alculos Cient\'ificos}{6}
+%%tth:\contentsline {section}{\numberline {2}Vari\'aveis e Express\~oes Simb\'olicas}{9}
+%%tth:\contentsline {section}{\numberline {3}Instalando o pacote \texttt{gaal}}{12}
+%%tth:\contentsline {section}{\numberline {4}Matrizes}{15}
+%%tth:\bigskip
+
+O MATLAB é um software destinado a fazer cálculos com
+matrizes (MATLAB = MATrix LABoratory). Os comandos do MATLAB
+são muito próximos da forma como escrevemos expressões
+algébricas, tornando mais simples o seu uso. Podem ser
+incorporados às rotinas pré-definidas, pacotes para cálculos
+específicos.
+Escrevemos
+um pacote chamado
+\texttt{gaal} com funções que são direcionadas para este curso.
+
+O MATLAB pode ser adquirido em uma boa livraria a um preço
+bastente razoável. Por exemplo, a versão estudante pode ser
+adquirida através da internet, na livraria Blackwell's
+(\href{http://bookshop.blackwell.co.uk}
+{\texttt{http://bookshop.blackwell.co.uk}}) na Inglaterra
+por
+\texttt{US\$ 68,00} incluindo a despesa com o transporte.
+
+Uma vez inicializado o MATLAB, aparecerá na janela de
+comandos um prompt \texttt{>>} ou \texttt{EDU>>}. O prompt
+significa que o MATLAB está esperando um comando. Todo
+comando deve ser finalizado teclando-se \textbf{Enter}.
+
+$$\includegraphics[width=3in,height=2in]{matlabcw.gif}$$
+
+
+No MATLAB, pode-se obter ajuda sobre qualquer comando ou
+função. O comando\\ \texttt{>> help}\\ mostra uma listagem
+de todos os pacotes disponíveis. Ajuda sobre um pacote
+específico ou sobre um comando ou função específica é obtida
+com o comando \\
+\texttt{>> help nome},\\ (sem a vírgula!)
+onde
+\texttt{nome} pode ser o nome de um pacote ou o nome de um
+comando ou função.
+
+
+
+\section{C\'alculos Cient\'ificos}
+
+\subsection*{C\'alculos Simples}
+O MATLAB faz cálculos simples e científicos como uma
+calculadora. Por exemplo, suponha que você vai a uma loja e
+compra 3 objetos que custam 25 reais cada e 5 objetos que
+custam 12 reais cada. Quanto custou a sua compra?
+
+No MATLAB você pode resolver este problema de pelo menos
+duas maneiras. A mais simples é
+
+\begin{verbatim}
+EDU>> 3*25 + 5*12
+ans =
+   135
+\end{verbatim}
+Observe que no MATLAB a multiplicação tem precedência sobre
+a adição. Note também que ele chamou o resultado de
+\texttt{ans}.
+
+Alternativamente, você pode usar \textbf{variáveis} para
+armazenar informação.
+\begin{verbatim}
+EDU>> q1=3, p1=25, q2=5, p2=12
+q1 =
+     3
+p1 =
+    25
+q2 =
+     5
+p2 =
+    12
+EDU>> total=q1*p1+q2*p2
+total =
+   135
+\end{verbatim}
+Primeiro, criamos quatro variáveis, \texttt{q1, p1, q2} e
+\texttt{p2}, atribuindo a elas os seus valores respectivos.
+Observe que no MATLAB o sinal de igual tem um sentido
+diferente daquele da Matemática. Aqui, igual significa
+atribuição. O que estiver à direita do sinal de igual é
+``colocado'' na variável que estiver à esquerda. Finalmente,
+criamos uma variável chamada \texttt{total} que recebeu o
+total da compra. Usamos a
+\textbf{vírgula} para separar os comandos que são dados em
+uma mesma linha. Esta separação poderia ser feita com
+\textbf{ponto e vírgula}. Mas, neste caso o MATLAB não
+mostra os resultados dos comandos. No exemplo anterior
+teríamos
+\begin{verbatim}
+EDU>> q1=3; p1=25; q2=5; p2=12;
+EDU>> total=q1*p1+q2*p2;
+\end{verbatim}
+Em qualquer momento, podemos ver o valor que está contido em
+uma variável, simplesmente digitando no prompt o seu
+nome.
+\begin{verbatim}
+EDU>> total
+total =
+   135
+\end{verbatim}
+
+
+O MATLAB oferece as seguintes operações aritméticas:\\[12pt]
+\texttt{>> a+b} soma \texttt{a} e \texttt{b}. Por exemplo,
+\texttt{5+6}.\\ \texttt{>> a-b} subtrai \texttt{a} de
+\texttt{b}. Por exemplo, \texttt{15-12}.\\ \texttt{>> a$*$b}
+multiplica \texttt{a} por \texttt{b}. Por exemplo,
+\texttt{3.14$*$0.15}.\\ \texttt{>> a\^{}b} calcula \texttt{a}
+elevado a \texttt{b}. Por exemplo,
+\texttt{5\^{}(1/2)}.\\
+
+A ordem com que são avaliadas as expressões é dada pela
+seguinte regra: expressões são avaliadas da esquerda para a
+direita, com a potência tendo a mais alta precedência,
+seguida pela multiplicação e divisão que têm igual
+precedência, seguidas pela adição e subtração que têm igual
+precedência. Parêntesis podem ser usados para alterar esta
+ordem. Sendo que neste caso, os parêntesis mais internos são
+avaliados antes dos mais externos.
+
+\subsection*{\'Area de Trabalho}
+
+Comandos que foram dados anteriormente podem ser obtidos
+novamente usando as teclas $\uparrow$ e $\downarrow$. Por
+exemplo, pressionando a tecla $\uparrow$ uma vez você obtem
+o último comando digitado no prompt. Pressionando
+repetidamente a tecla $\uparrow$ se obtem os comandos
+digitados anteriormente, um de cada vez na direção para
+trás. Analogamente, pressionando-se a tecla $\downarrow$,
+mas na direção para frente. Mais ainda, digitando no prompt
+os primeiros caracteres de um comando dado anteriormente e
+então pressionando-se a tecla $\uparrow$, obtem-se o comando
+mais recente tendo aqueles caracteres iniciais. Em qualquer
+momento, as teclas $\leftarrow$, $\rightarrow$ podem ser
+usadas para se mover o cursor dentro de um comando, no
+prompt. Desta forma um comando pode ser corrigido, além das
+teclas \textbf{Delete} e \textbf{Backspace}.
+
+\subsection*{Vari\'aveis}
+
+
+O MATLAB tem certas regras para nomear as variáveis. Os
+nomes de variáveis devem ser nomes iniciados por letras não
+podem conter espaços nem carcteres de pontuação. O MATLAB
+faz diferença entre letras maiúsculas e minúsculas. Alguns
+nomes são usados para variáveis predefinidas. Estas
+são:\\[12pt]
+\texttt{ans} - variável usada para os resultados.\\
+\texttt{pi} - número $\pi$.\\
+\texttt{eps} - menor número tal que, quando adicionado a
+1, cria um número maior que 1 no computador.\\
+\texttt{flops} - armazena o número de operações em ponto
+flutuante realizadas.\\
+\texttt{inf} - significa infinito.\\
+\texttt{NaN} ou \texttt{nan} - significa não é um número,
+por exemplo, $0/0$.\\
+\texttt{i} e \texttt{j} - unidade imaginária $\sqrt{-1}$.\\
+\texttt{nargin} - número de argumentos de entrada de uma função.\\
+\texttt{nargout} - número de argumentos de saída de uma função.\\
+\texttt{realmin} - menor número que o computador pode armazenar.\\
+\texttt{realmax} - maior número que o computador pode armazenar.\\
+
+As variáveis podem ser redefinidas a qualquer momento,
+bastando para isso atribuí-las um novo valor.
+
+
+\subsection*{Fun\c c\~oes Cient\'ificas}
+
+O MATLAB tem uma série de funções científicas pré-definidas.
+A maioria pode ser usada da mesma forma que seria escrita
+matematicamente. Por exemplo:
+\begin{verbatim}
+EDU>> x=sqrt(2)/2
+x =
+    0.7071
+EDU>> y=acos(x)
+y =
+    0.7854
+EDU>> y_graus=y*180/pi
+y_graus =
+   45.0000
+\end{verbatim}
+Estes comandos calculam o arco cujo cosseno é $\sqrt{2}/2$,
+inicialmente em radianos, depois em graus. Abaixo segue uma
+lista de funções científicas disponíveis:\\[12pt]
+\texttt{abs(x)} - valor absoluto de \texttt{x}.\\
+\texttt{acos(x)} - arco cujo cosseno é \texttt{x}.\\
+\texttt{asin(x)} - arco cujo seno é \texttt{x}.\\
+\texttt{atan(x)} - arco cuja tangente é \texttt{x}.\\
+\texttt{cos(x)} - cosseno de \texttt{x}.\\
+\texttt{exp(x)} - exponencial $e^x$.\\
+\texttt{gcd(x,y)} - máximo divisor comum de \texttt{x} e \texttt{y}.\\
+\texttt{lcm(x,y)} - mínimo múltiplo comum de \texttt{x} e \texttt{y}.\\
+\texttt{log(x)} - logaritmo de \texttt{x} na base $e$.\\
+\texttt{log10(x)} - logaritmo de \texttt{x} na base $10$.\\
+\texttt{rem(x,y)} - resto da divisão de \texttt{x} por \texttt{y}.\\
+\texttt{sin(x)} - seno de \texttt{x}.\\
+\texttt{sqrt(x)} - raiz quadrada de \texttt{x}.\\
+\texttt{tan(x)} - tangente de \texttt{x}.\\
+
+\subsection*{Formatos Num\'ericos}
+Quando o MATLAB mostra um resultado numérico ele segue
+certas regras. No caso de nenhum formato estar definido, se
+um resultado é um número inteiro, o MATLAB mostra como um
+inteiro. Este foi o caso no exemplo das compras, que fizemos
+anteriormente. Quando um resultado é um número real, o
+MATLAB mostra uma aproximação com até quatro casas decimais.
+Este foi o caso no exemplo do arco cosseno, que fizemos
+ateririmente. Se os dígitos significativos estiverem fora
+desta faixa, o MATLAB mostra o resultado em notação
+científica. Você pode definir um formato diferente. Abaixo
+seguem algumas possibilidades:\\[12pt]
+\texttt{format short} - exibe 5 dígitos.\\
+\texttt{format long} - exibe 16 dígitos.\\
+\texttt{format rat} - exibe no formato racional.\\
+
+É importante salientar que o MATLAB não muda a sua forma de
+representar os números internamente, quando formatos
+diferentes de exibição de números são escolhidos.
+
+\section{Vari\'aveis e Express\~oes Simb\'olicas}
+
+Agora, vamos ver como podemos manipular com expressões que
+além de números e variáveis numéricas, contém também
+variáveis simbólicas. Por exemplo:
+\begin{verbatim}
+EDU>> syms x
+EDU>> simplify((sin(x))^2+(cos(x))^2)
+ans =
+1
+\end{verbatim}
+Estes comandos mandam o MATLAB simplificar a expressão
+$\mathrm{sen}^2x+\cos^2x$. Primeiro precisamos dizer ao
+MATLAB que
+\texttt{x} é uma variável simbólica, depois pedimos para
+simplificar a expressão que envolve \texttt{x}. Neste caso
+usamos uma \textbf{função} chamda \texttt{simplify}. A
+palavra função no MATLAB tem um significado diferente
+daquele que tem na Matemática. Aqui função é um comando, que
+pode ter alguns argumentos de entrada e alguns de saída.
+Neste caso, a função \texttt{simplify} tem como argumento de
+entrada uma expressão simbólica e de saída também.
+
+Uma vez definido que a variável
+\texttt{x} é uma variável simbólica, podemos definir
+expressões que envolvem esta variável. Por exemplo, dadas
+duas funções
+$$f(x)=2x^2+3x-5 \quad\mbox{e}\quad g(x)=x^2-x+7,$$
+podemos fazer uma série de operações algébricas envolvendo
+estas funções.
+
+\begin{verbatim}
+EDU>> f=2*x^2+3*x-5; g=x^2-x+7;
+EDU>> f+g
+ans =
+3*x^2+2*x+2
+EDU>> f-g
+ans =
+x^2+4*x-12
+EDU>> f*g
+ans =
+(2*x^2+3*x-5)*(x^2-x+7)
+EDU>> expand(ans)
+ans =
+2*x^4+x^3+6*x^2+26*x-35
+EDU>> f/g
+ans =
+(2*x^2+3*x-5)/(x^2-x+7)
+EDU>> expand(ans)
+
+ans =
+
+2/(x^2-x+7)*x^2+3/(x^2-x+7)*x-5/(x^2-x+7)
+
+EDU>> pretty(ans)
+
+                          2
+                         x              x            5
+                   2 ---------- + 3 ---------- - ----------
+                      2              2            2
+                     x  - x + 7     x  - x + 7   x  - x + 7
+EDU>> f^3
+ans =
+(2*x^2+3*x-5)^3
+EDU>> expand(ans)
+ans =
+8*x^6+36*x^5-6*x^4-153*x^3+15*x^2+225*x-125
+\end{verbatim}
+
+Observe que o MATLAB não faz as simplificações ou expansões
+automaticamente.  Para isso, usamos os comandos
+ \texttt{simplify} que simplifica e \texttt{expand} que faz a
+expansão. Além destes, usamos acima também o comando
+ \texttt{pretty}, que mostra a expressão de uma forma mais
+ fácil de enxergar. Além destes, que já vimos, existe o comando
+\texttt{simple}, que tenta encontrar a forma mais simples de
+escrever uma expressão.
+
+O MATLAB pode realizar operações mais avançadas sobre
+expressões simbólicas. A função
+\texttt{compose} calcula a composição das funções $f(x)$ e
+$g(x)$ em $f(g(x))$, a função \texttt{finverse} encontra a
+inversa funcional de uma expressão e a função \texttt{subs}
+substitui uma variável por um número (ou por outra variável)
+em uma expressão. Por exemplo:
+
+\begin{verbatim}
+EDU>> f=1/(1-x^2); g=sin(x);
+EDU>> compose(f,g)
+ans = 1/(1-sin(x)^2)
+EDU>> compose(g,f)
+ans = sin(1/(1-x^2))
+EDU>> finverse(g)
+ans = asin(x)
+EDU>> subs(f,x,2)
+ans = -1/3
+\end{verbatim}
+
+O MATLAB pode resolver equações. Por exemplo, para resolver
+a equação $$ax^2+bx+c=0,$$ algebricamente, podemos usar os
+comandos:
+\begin{verbatim}
+EDU>> syms a b c x
+EDU>> solve(a*x^2+b*x+c)
+ans =
+[1/2/a*(-b+(b^2-4*a*c)^(1/2))]
+[1/2/a*(-b-(b^2-4*a*c)^(1/2))]
+\end{verbatim}
+O MATLAB pode exibir este resultado de uma forma mais fácil
+de enxergar usando a função \texttt{pretty}.
+%\newpage
+\begin{verbatim}
+EDU>> pretty(ans)
+                          [           2         1/2]
+                          [    -b + (b  - 4 a c)   ]
+                          [1/2 --------------------]
+                          [             a          ]
+                          [                        ]
+                          [           2         1/2]
+                          [    -b - (b  - 4 a c)   ]
+                          [1/2 --------------------]
+                          [             a          ]
+\end{verbatim}
+Abaixo segue um resumo das funções para manipulação de
+expressões algébricas:\\[12pt]
+\texttt{diff(f)} - calcula a derivada de \texttt{f}.\\
+\texttt{compose(f,g)} - determina a composta $f(g(x))$.\\
+\texttt{expand(expr)} - expande uma expressão \texttt{expr}.\\
+\texttt{finverse(expr)} - determina a inversa funcional da
+expressão \texttt{expr}.\\
+\texttt{pretty(expr)} - exibe a expressão \texttt{expr} numa
+forma mais bonita.\\
+\texttt{simple} - procura encontrar uma forma mais simples de
+escrever uma expressão \texttt{expr}.\\
+\texttt{simplify(expr)} - simplifica a expressão
+\texttt{expr}.\\
+\texttt{solve(expr)} - acha a(s)
+solução(es) da equação \texttt{expr}$=0$.\\
+\texttt{subs(expr,x,a)} - substitui na expressão
+\texttt{expr} a variável \texttt{x} por \texttt{a}.\\
+\texttt{syms x y z a b} - define as variáveis simbólicas
+\texttt{x, y, z, a} e \texttt{b}.\\
+
+Existem várias outras funções para manipulação de expressões
+algébricas. Você pode obter informações sobre elas digitando
+\texttt{help symbolic}. Uma função interessante que mostra
+as capacidades do MATLAB em tratar com funções matemáticas é
+\texttt{funtool} que é uma calculadora para funções.
+
+
+
+
+\newpage
+\section{Instalando o pacote \texttt{gaal}}
+
+\begin{enumerate}
+\item
+Entre em \textbf{Meu Computador} (clicando duas vezes com o
+botão esquerdo do mouse sobre \textbf{Meu Computador} no
+desktop). Entre em \textbf{drive C:}, \textbf{MATLAB} e
+depois em \textbf{TOOLBOX}. Crie uma pasta chamada
+\texttt{gaal}.
+
+\item \tthdump{Inicialize o \textbf{Netscape}.\\ Escreva na janela
+\textbf{Go to (Ir para)} o endereço
+%\href{http://www.mat.ufmg.br/~regi}
+\texttt{http://www.mat.ufmg.br/\~{}regi} e
+tecle \textbf{Enter}.
+$$\includegraphics[width=4.3in,height=1in] {netscape.gif}$$}
+Siga as instruções que estão nesta página
+%%tth:\href{http://www.mat.ufmg.br/~regi}{\texttt{http://www.mat.ufmg.br/\~{}regi}}~
+para fazer o ``download'' do pacote \texttt{gaal}, ou seja,
+para trazer o pacote para o seu computador.
+
+
+Salve na pasta recém-criada \texttt{gaal}.
+
+\item
+Use \textbf{Alt+Tab} para alternar para a janela com o
+conteúdo de
+\texttt{C:$\backslash$MATLAB$\backslash$TOOLBOX},
+ clique duas vezes com o botão
+esquerdo do mouse sobre o ícone da pasta \texttt{gaal} e
+depois faça o mesmo sobre o ícone do pacote que você fez
+``download'', \texttt{gaal.exe}. O pacote será
+descompactado.
+
+\item
+Inicialize o MATLAB, se já não o tiver feito.
+
+\item
+Na barra de ferramentas
+$$\includegraphics[width=4.37in,height=0.3in]{matlabbt.gif}$$
+clique com o botão esquerdo do mouse no
+botão
+\includegraphics[width=0.3in,height=0.3in]{matlabpb.gif}
+
+\item
+Clique no botão \textbf{Add to Path...}.
+$$\includegraphics[width=3.48in,height=2in]{matlabp.gif}$$
+Clique duas vezes  com o botão esquerdo do mouse em
+\texttt{toolbox} e depois o mesmo em
+\texttt{gaal}. Depois clique em \textbf{Add to Back}
+$$\includegraphics[width=2.56in,height=2in]{matlabap.gif}$$
+\item
+Clique em \textbf{OK}. Depois, em \textbf{Save Settings} e
+por último em \textbf{Close}
+
+
+\item
+Verifique se o MATLAB adicionou o pacote \texttt{gaal} aos
+outros, digitando no prompt \texttt{winhelp}. Ele deve
+aparecer na última linha ou na primeira. Caso contrário
+repita o processo acima, com mais cuidado.
+
+\item Para informações sobre o pacote \texttt{gaal}
+digite no prompt do MATLAB \\
+\texttt{help gaal}
+
+\end{enumerate}
+\subsection*{Desenhando gr\'aficos}
+Para desenhar o gráfico de uma função de uma variável,
+existe no pacote
+\texttt{gaal} a função \texttt{plotf1}
+(use \texttt{help plotf1} para saber seu uso). Para colocar
+os eixos coordenados temos no pacote \texttt{gaal} a função
+\texttt{eixos}. Usando a função $f(x)=1/(1-x^2)$ que
+definimos acima temos:
+\begin{verbatim}
+EDU>> plotf1(f,[-10,10],200)
+\end{verbatim}
+$$\includegraphics[width=3in,height=2in]{fun1_0.gif}$$
+\begin{verbatim}
+EDU>> eixos
+\end{verbatim}
+$$\includegraphics[width=3in,height=2in]{fun1.gif}$$
+Podemos mudar a escala do gráfico com a função
+\texttt{axis}
+\begin{verbatim}
+EDU>> axis([-5,5,-5,5])
+\end{verbatim}
+$$\includegraphics[width=3in,height=2in] {fun1_2.gif}$$
+Neste caso como os eixos já estavam traçados, o resultado
+não foi bom. Então, vamos limpar a figura com o comando
+\texttt{clf} e com a seta para cima $\uparrow$ vamos
+recuperar comandos que haviamos digitado anteriormente.
+\begin{verbatim}
+EDU>> clf
+EDU>> plotf1(f,[-10,10])
+EDU>> axis([-5,5,-5,5])
+EDU>> eixos
+\end{verbatim}
+$$\includegraphics[width=3in,height=2in]{fun1_3.gif}$$
+
+\newpage
+\section{Matrizes}
+
+Para criar uma variável onde é armazenada uma matriz, basta
+escrever os elementos da matriz entre colchetes [ ... ],
+sendo os elementos de uma mesma linha da matriz separados
+por vírgula e as linhas separadas por ponto e vírgula. Por
+exemplo, para armazenar a matriz
+$$\left[
+  \begin{array}{ccc}
+    1 & 2  &  3 \\
+    4 & 5  &  6
+  \end{array}\right]$$
+numa variável de nome \texttt{A} usamos o comando
+\begin{verbatim}
+>> A=[1,2,3;4,5,6]
+\end{verbatim}
+
+Podemos acessar os elementos de uma matriz usando os
+comandos
+\begin{verbatim}
+EDU>> A(2,3)
+ans =
+     6
+EDU>> A(2,:)
+ans =
+     4     5     6
+EDU>> A(:,1)
+ans =
+     1
+     4
+EDU>> A(:,1:2)
+ans =
+     1     2
+     4     5
+\end{verbatim}
+
+O primeiro comando foi para mostrar o elemento (1,2) da
+matriz
+\texttt{A}. O segundo, é para exibir a 2a. linha e o terceiro,
+é para exibir a 1a. coluna. Finalmente, o quarto comando é
+para exibir a submatriz formada pela 1a. e 2a. colunas da
+matriz
+\texttt{A}.
+
+As matrizes podem ser concatenadas
+\begin{verbatim}
+EDU>> B=[A,[7;8]]
+B =
+     1     2     3     7
+     4     5     6     8
+EDU>> [A;[7,8,9]]
+ans =
+     1     2     3
+     4     5     6
+     7     8     9
+\end{verbatim}
+
+As operações matriciais são executadas de forma semelhante a
+que são executadas operações escalares
+\begin{verbatim}
+EDU>> A=[1,2;3,4]; B=[-3;1]; C=[3,5;-5,2];
+EDU>> A+C
+ans =
+     4     7
+    -2     6
+EDU>> 3*A
+ans =
+     3     6
+     9    12
+EDU>> C*A
+ans =
+    18    26
+     1    -2
+EDU>> B*A
+??? Error using ==> *
+Inner matrix dimensions must agree.
+EDU>> A^2
+ans =
+     7    10
+    15    22
+EDU>> (A*C)^2
+ans =
+   -50   144
+  -176   430
+\end{verbatim}
+
+O MATLAB tem funções que geram matrizes especiais
+
+\begin{verbatim}
+EDU>> I=eye(3)
+I =
+     1     0     0
+     0     1     0
+     0     0     1
+EDU>> O=zeros(3,1)
+O =
+     0
+     0
+     0
+\end{verbatim}
+Além destas, o pacote \texttt{gaal} oferece as funções
+\texttt{randi} para gerar uma matriz com elementos
+inteiros aleatórios e \texttt{matvand} que cria a matriz de
+Vandermonde.
+\begin{verbatim}
+EDU>> A=randi(3)
+A =
+     0     3     2
+     2     1     0
+    -2    -1    -1
+EDU>> B=randi(3,1)
+B =
+     4
+     2
+    -3
+EDU>> C=matvand(B,2)
+C =
+    16     4     1
+     4     2     1
+     9    -3     1
+\end{verbatim}
+Abaixo um resumo das operações matriciais
+
+\texttt{>> A=[a11,a12,...,a1n;a21,a22,...; ...,amn]}
+cria uma matriz, $m$ por $n$, usando os elementos
+\texttt{a11, a12, ..., amn} e a armazena numa variável
+de nome \texttt{A}.
+
+\begin{minipage}{5.5cm}
+\texttt{>> A+B} é a soma de \texttt{A} e \texttt{B}, \\
+\texttt{>> A*B} é o produto de \texttt{A} por \texttt{B}, \\
+\texttt{>> A.'} é a transposta de \texttt{A},
+\end{minipage}\hfill
+\begin{minipage}{8cm}
+\texttt{>> A-B} é a diferença \texttt{A} menos \texttt{B},\\
+\texttt{>> num*A} é o produto do escalar \texttt{num}
+por \texttt{A},\\
+\texttt{>> A\^\ $\!\!\!$k} é a potência \texttt{A} elevado a $k$.
+\end{minipage}
+
+\texttt{>> Aj=A(:,j)} é a coluna $j$ da matriz \texttt{A},
+\texttt{>> Ai=A(i,:)} é a linha $i$ da matriz \texttt{A}.
+
+
+\subsection*{Exerc\'icios}
+
+\begin{enumerate}
+
+\item Use o MATLAB para encontrar o menor inteiro
+$k>1$ tal que:
+\begin{enumerate}
+
+\item
+$A^k=I_3$, onde $$A=\left[\begin{array}{ccc} 0&0&1\\1&0&0
+\\0&1&0\end{array}\right];$$
+\item
+$A^k=A$, onde $$A=\left[\begin{array}{rrrr}
+0&1&0&0\\-1&0&0&0
+\\0&0&0&1\\0&0&1&0\end{array}
+\right];$$
+\item
+$A^k=\mathbf{O}$, onde $$A=\left[\begin{array}{cccc}
+0&1&0&0\\0&0&1&0
+\\0&0&0&1\\0&0&0&0\end{array}
+\right].$$
+\end{enumerate}
+\item
+Use o MATLAB para calcular os membros da seqüência
+$A,\,A^2,\,A^3\,\ldots,A^k,\ldots$, para
+\begin{enumerate}
+\begin{minipage}{6cm}
+\item$$A=\left[\begin{array}{rr} 1&1/2\\0&1/3\end{array}
+\right];$$
+\end{minipage}\hfill
+\begin{minipage}{6cm}
+\item$$A=\left[\begin{array}{rr} 1/2&1/3\\0&-1/5
+\end{array}\right].$$
+\end{minipage}
+\end{enumerate}
+A seqüência parece estar convergindo para alguma matriz? Se
+estiver, para qual?
+
+\end{enumerate}

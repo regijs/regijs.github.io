@@ -1,0 +1,41 @@
+<HTML>
+<HEAD>
+<TITLE>HTML editor for LATEX users</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function viewSource() {
+	view = window.open("", "view_source")
+	view.document.open("text/plain")
+	view.document.write(document.forms[0].elements[0].value) // value of text area
+	view.document.close()
+}
+
+
+// -->
+</SCRIPT>
+</HEAD>
+<BODY >
+<FORM  method="get" action="editor.cgi">
+<CENTER>
+<TABLE BORDER=0 CELLPADDING=2>
+<TR><TD BGCOLOR="#ffffcc">
+<CENTER>
+<FONT SIZE=+2>HTML Editor for LATEX users</FONT>
+</CENTER>
+</TD></TR>
+<TR><TD>
+<TEXTAREA COLS=90 ROWS=20 NAME="body"></TEXTAREA>
+</TD></TR>
+<TR><TD BGCOLOR="#ffffcc">
+<CENTER>
+<INPUT TYPE="submit" VALUE="view page" >
+<INPUT TYPE="button" VALUE="view source" onClick="viewSource()">
+<INPUT TYPE="reset" VALUE="reset">
+</CENTER>
+</TD></TR>
+</TABLE>
+</CENTER>
+</FORM>
+</BODY>
+</HTML>

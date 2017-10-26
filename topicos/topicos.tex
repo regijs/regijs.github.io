@@ -1,0 +1,89 @@
+\documentclass[a4paper,oneside,12pt]{book}
+\usepackage[brazil]{babel}
+\usepackage{srcltx}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{amsthm,amsfonts}
+%\usepackage{fancybox}
+\setlength{\textwidth}{6 in}
+\setlength{\textheight}{23 cm}
+\evensidemargin 0 in
+\oddsidemargin 0.25 in
+\sloppy
+
+\newcommand{\binv}{\textbackslash}
+\newcommand{\pot}{\textasciicircum}
+\newcommand{\til}{\textasciitilde}
+\newcommand{\field}[1]{\mathbb{#1}}
+
+\newcommand{\N}{\field{N}}
+\newcommand{\R}{\field{R}}
+\newcommand{\V}{\field{V}}
+\newcommand{\W}{\field{W}}
+\newcommand{\C}{\field{C}}
+\newcommand{\sen}{\mathrm{sen}}
+\newcommand{\dist}{\mathrm{dist}}
+
+\def\href#1#2{\special{html:<a href="#1">}{#2}\special{html:</a>}}
+  % Macro for http reference inclusion, per hypertex.
+\def\tthdump{} % Do nothing.
+
+\tthdump\def\latexhtml#1#2{#1}
+%%tth:\def\latexhtml#1#2{\special{html:#2}}
+\tthdump\def\eqc#1{$$#1$$}
+%%tth:\def\eqc#1{\begin{center}\setlength{\unitlength}{1pt}\begin{picture}(50,12)\put(0,0){$\displaystyle #1$}\end{picture}\end{center}}
+\tthdump\def\eq#1{$#1$}
+%%tth:\def\eq#1{\setlength{\unitlength}{1pt}\begin{picture}(50,12)\put(0,0){$#1$}\end{picture}}
+\def\eqn#1{\begin{equation}#1\end{equation}}
+%%tth:\def\eqn#1{\begin{equation}\begin{center}\eq{\displaystyle #1}\end{center}\end{equation}}
+\tthdump\newcommand{\hyperref}[2]{#1 \ref{#2}}
+%%tth:\def\hyperref#1#2{<A href="\##2">#1</A>}
+\tthdump\newcommand{\hyperpageref}[2]{#1 \pageref{#2}}
+%%tth:\def\hyperpageref#1#2{\special{html:<A href="\##2">#1</A>}}
+
+\renewcommand{\rmdefault}{cmss}
+\bibliographystyle{plain}
+
+\includeonly{matfin}
+
+\begin{document}
+%\fontfamily{cmss}\selectfont
+\title{Tópicos em Matemática:\\
+%        Matemática Financeira e Aplicações de Álgebra Linear
+        Computação no Ensino de Matemática e Matemática Financeira
+        }
+\author{Reginaldo J. Santos\\
+        Departamento de Matemática\\
+        Instituto de Ciências Exatas\\
+        Universidade Federal de Minas Gerais\\
+        \href{http://www.mat.ufmg.br/~regi}
+        {\texttt{http://www.mat.ufmg.br/\~{}regi}}\\
+        \\[1.5in]
+        }
+\date{1o. Semestre de 1998}
+
+\newtheorem{teo}{Teorema}[section]
+\newtheorem{lema}[teo]{Lema}
+\newtheorem{cor}[teo]{Corolário}
+\newtheorem{prop}[teo]{Proposição}
+\frontmatter
+\maketitle
+
+\renewcommand{\contentsname}{Conteúdo}
+\tableofcontents
+
+\mainmatter
+%\chapter{Introdução ao Windows}
+\INCLUDE{intwin}
+
+%\chapter{Introdução ao MATLAB}
+\INCLUDE{intmatl}
+
+%\chapter{Introdução ao \LaTeX}
+\INCLUDE{intlat}
+
+%\chapter{Matemática Financeira}
+\INCLUDE{matfin}
+
+
+\end{document}
