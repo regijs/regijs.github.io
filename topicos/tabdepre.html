@@ -1,5 +1,6 @@
+
 <html>
-<title>Tabelas de DepreciaÁ„o Monet·ria</title>
+<title>Tabelas de Deprecia√ß√£o Monet√°ria</title>
 
 <script>
 
@@ -28,14 +29,14 @@ function tabelafutu( ){
     d0=document.entradas.saldo.value;
     ju=document.entradas.txju.value;
     n=parseInt(document.entradas.prazo.value);
-            view.document.writeln("<center><H1>Tabela de DepreciaÁ„o  Monet·ria</H1>");
+            view.document.writeln("<center><H1>Tabela de Deprecia√ß√£o  Monet√°ria</H1>");
             view.document.writeln("<H2>Reginaldo J. Santos</H2>");
-            view.document.writeln("<H3>Departamento de Matem·tica<br>");
-            view.document.writeln("Instituto de CiÍncias Exatas<br>");
+            view.document.writeln("<H3>Departamento de Matem√°tica<br>");
+            view.document.writeln("Instituto de Ci√™ncias Exatas<br>");
             view.document.writeln("Universidade Federal de Minas Gerais</H3>");
     view.document.writeln("Valor = R$ "+num2str(d0)+"<br>");
     view.document.writeln("Taxa de Juros  = "+ju+" %<br>");
-    view.document.writeln(n+" perÌodos. ");
+    view.document.writeln(n+" per√≠odos. ");
     var xk=trunca(d0);
     var jk=trunca(0);
     ju/=100;
@@ -60,14 +61,14 @@ function tabelaatual( ){
     d0=document.entradas.saldo.value;
     ju=document.entradas.txju.value;
     n=parseInt(document.entradas.prazo.value);
-            view.document.writeln("<center><H1>Tabela de DepreciaÁ„o  Monet·ria</H1>");
+            view.document.writeln("<center><H1>Tabela de Deprecia√ß√£o  Monet√°ria</H1>");
             view.document.writeln("<H2>Reginaldo J. Santos</H2>");
-            view.document.writeln("<H3>Departamento de Matem·tica<br>");
-            view.document.writeln("Instituto de CiÍncias Exatas<br>");
+            view.document.writeln("<H3>Departamento de Matem√°tica<br>");
+            view.document.writeln("Instituto de Ci√™ncias Exatas<br>");
             view.document.writeln("Universidade Federal de Minas Gerais</H3>");
     view.document.writeln("Valor = R$ "+num2str(d0)+"<br>");
     view.document.writeln("Taxa de Juros  = "+ju+" %<br>");
-    view.document.writeln(n+" perÌodos. ");
+    view.document.writeln(n+" per√≠odos. ");
     var xk=trunca(d0);
     var jk=trunca(0);
     ju/=100;
@@ -97,10 +98,10 @@ function viewtabela( ){
 </script>
 
 <center>
-<H1>Tabela de DepreciaÁ„o Monet·ria</H1>
+<H1>Tabela de Deprecia√ß√£o Monet√°ria</H1>
 <H2>Reginaldo J. Santos</H2>
-<H3>Departamento de Matem·tica<br>
-Instituto de CiÍncias Exatas<br>
+<H3>Departamento de Matem√°tica<br>
+Instituto de Ci√™ncias Exatas<br>
 Universidade Federal de Minas Gerais</H3>
 
 <H4>09 de abril de 2009</H4>
@@ -115,7 +116,7 @@ Universidade Federal de Minas Gerais</H3>
 <OPTION value="Futuro">Futuro
 </SELECT>: </td><td>R$ <input type="text" name="saldo" size=10 value="129.00"></input></td></tr><tr>
 <td>Taxa de Juros: </td><td><input type="text" name="txju" size=4 value="4.85"> %</input></td></tr><tr>
-<td>No. de perÌodos: </td><td><input type="text" name="prazo" size=3 value="4"> </input></td></tr>
+<td>No. de per√≠odos: </td><td><input type="text" name="prazo" size=3 value="4"> </input></td></tr>
 </table>
 <input type="button" value="GERAR TABELA" onClick="viewtabela()"></input>
 </center>
