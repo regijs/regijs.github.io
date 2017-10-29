@@ -1,5 +1,6 @@
+
 <html>
-<title>Tabela de AtualizaÁ„o para PerÌodos n„o Inteiros</title>
+<title>Tabela de Atualiza√ß√£o para Per√≠odos n√£o Inteiros</title>
 
 <script> 
 
@@ -28,14 +29,14 @@ function tabelaint( ){
 	d0=document.entradas.saldo.value;
 	ju=document.entradas.txju.value;
 	n=parseInt(document.entradas.prazo.value);
-         	view.document.writeln("<center><H1>Tabela de AtualizaÁ„o para PerÌodos n„o Inteiros</H1>");
+         	view.document.writeln("<center><H1>Tabela de Atualiza√ß√£o para Per√≠odos n√£o Inteiros</H1>");
          	view.document.writeln("<H2>Reginaldo J. Santos</H2>");
-         	view.document.writeln("<H3>Departamento de Matem·tica<br>");
-         	view.document.writeln("Instituto de CiÍncias Exatas<br>");
+         	view.document.writeln("<H3>Departamento de Matem√°tica<br>");
+         	view.document.writeln("Instituto de Ci√™ncias Exatas<br>");
          	view.document.writeln("Universidade Federal de Minas Gerais</H3>");
 	view.document.writeln("Valor = R$ "+num2str(d0)+"<br>");
-	view.document.writeln("Taxa de juros no perÌodo inteiro  = "+ju+" %<br>");
-	view.document.writeln(n+" divisıes do perÌodo.");
+	view.document.writeln("Taxa de juros no per√≠odo inteiro  = "+ju+" %<br>");
+	view.document.writeln(n+" divis√µes do per√≠odo.");
 	var xk=trunca(d0); 
 	var jk=trunca(0); 
 	ju/=100; 
@@ -60,10 +61,10 @@ function viewtabela( ){
 </script>
 
 <center>
-<H1>Tabela de AtualizaÁ„o para PerÌodos n„o Inteiros</H1>
+<H1>Tabela de Atualiza√ß√£o para Per√≠odos n√£o Inteiros</H1>
 <H2>Reginaldo J. Santos</H2>
-<H3>Departamento de Matem·tica<br>
-Instituto de CiÍncias Exatas<br>
+<H3>Departamento de Matem√°tica<br>
+Instituto de Ci√™ncias Exatas<br>
 Universidade Federal de Minas Gerais</H3>
 
 <H4>4 de outubro de 1999</H4>
@@ -73,8 +74,8 @@ Universidade Federal de Minas Gerais</H3>
 <table>
 <tr>
 <td>Valor: </td><td>R$ <input type="text" name="saldo" size=10 value="100.00"></input></td></tr><tr>
-<td>Taxa de Juros no PerÌodo Inteiro: </td><td><input type="text" name="txju" size=4 value="12.0"> %</input></td></tr><tr>
-<td>No. de divisıes do PerÌodo: </td><td><input type="text" name="prazo" size=3 value="12"> </input></td></tr>
+<td>Taxa de Juros no Per√≠odo Inteiro: </td><td><input type="text" name="txju" size=4 value="12.0"> %</input></td></tr><tr>
+<td>No. de divis√µes do Per√≠odo: </td><td><input type="text" name="prazo" size=3 value="12"> </input></td></tr>
 </table>
 <input type="button" value="GERAR TABELA" onClick="viewtabela()"></input>
 </center>
