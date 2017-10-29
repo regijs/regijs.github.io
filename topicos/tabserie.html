@@ -1,5 +1,6 @@
+
 <html>
-<title>Tabela com Saldo após Depósitos Iguais</title>
+<title>Tabela com Saldo apÃ³s DepÃ³sitos Iguais</title>
 
 <script>
 
@@ -30,14 +31,14 @@ view.document.open("text/html");
 d0=document.entradas.saldo.value;
 ju=document.entradas.txju.value;
 n=parseInt(document.entradas.prazo.value);
-view.document.writeln("<center><H1>Tabela com Saldo após Depósitos Iguais</H1>");
-view.document.writeln("<H2>Reginaldo J. Santos e André Chagas Corrêa</H2>");
-view.document.writeln("<H3>Departamento de Matemática<br>");
-view.document.writeln("Instituto de Ciências Exatas<br>");
+view.document.writeln("<center><H1>Tabela com Saldo apÃ³s DepÃ³sitos Iguais</H1>");
+view.document.writeln("<H2>Reginaldo J. Santos e AndrÃ© Chagas CorrÃªa</H2>");
+view.document.writeln("<H3>Departamento de MatemÃ¡tica<br>");
+view.document.writeln("Instituto de CiÃªncias Exatas<br>");
 view.document.writeln("Universidade Federal de Minas Gerais</H3>");
-view.document.writeln("Depósito = R$ "+num2str(d0)+"<br>");
+view.document.writeln("DepÃ³sito = R$ "+num2str(d0)+"<br>");
 view.document.writeln("Taxa de Juros  = "+ju+" %<br>");
-view.document.writeln(n+" períodos. ");
+view.document.writeln(n+" perÃ­odos. ");
 ju/=100;
 var xk=0;
 var k=1;
@@ -67,14 +68,14 @@ var xk=0;
 var k=1;
 xk=(ju*d0)/((1+ju)*(Math.pow(1+ju,n)-1));
 xk=trunca(xk);
-view.document.writeln("<center><H1>Tabela com Saldo após Depósitos Iguais</H1>");
-view.document.writeln("<H2>Reginaldo J. Santos e André Chagas Corrêa</H2>");
-view.document.writeln("<H3>Departamento de Matemática<br>");
-view.document.writeln("Instituto de Ciências Exatas<br>");
+view.document.writeln("<center><H1>Tabela com Saldo apÃ³s DepÃ³sitos Iguais</H1>");
+view.document.writeln("<H2>Reginaldo J. Santos e AndrÃ© Chagas CorrÃªa</H2>");
+view.document.writeln("<H3>Departamento de MatemÃ¡tica<br>");
+view.document.writeln("Instituto de CiÃªncias Exatas<br>");
 view.document.writeln("Universidade Federal de Minas Gerais</H3>");
-view.document.writeln("Valor do Depósito = R$ "+num2str(xk)+"<br>");
+view.document.writeln("Valor do DepÃ³sito = R$ "+num2str(xk)+"<br>");
 view.document.writeln("Taxa de Juros  = "+(ju*100)+" %<br>");
-view.document.writeln(n+" períodos. ");
+view.document.writeln(n+" perÃ­odos. ");
 view.document.writeln("<center><table BORDER CELLPADDING=2><tr>");
 view.document.writeln("<td align=center><b>No.</b></td>");
 view.document.writeln("<td align=center><b>Saldo</b></td></tr>");
@@ -101,10 +102,10 @@ else
 </script>
 
 <center>
-<H1>Tabela com Saldo após Depósitos Iguais</H1>
-<H2>Reginaldo J. Santos e André Chagas Corrêa</H2>
-<H3>Departamento de Matemática<br>
-Instituto de Ciências Exatas<br>
+<H1>Tabela com Saldo apÃ³s DepÃ³sitos Iguais</H1>
+<H2>Reginaldo J. Santos e AndrÃ© Chagas CorrÃªa</H2>
+<H3>Departamento de MatemÃ¡tica<br>
+Instituto de CiÃªncias Exatas<br>
 Universidade Federal de Minas Gerais</H3>
 
 <H4>20 de Maio de 1999/Atualizado em 5 de Setembro de 2005</H4>
@@ -115,7 +116,7 @@ Universidade Federal de Minas Gerais</H3>
 <tr>
 <td>Valor: <SELECT NAME="tab">
 <OPTION value="Futuro">do Saldo Final
-<OPTION value="Atual" >do Depósito
+<OPTION value="Atual" >do DepÃ³sito
 </SELECT></td><td>R$ <input type="text" name="saldo" size=10
 
 value="100.00"></input></td></tr><tr>
@@ -123,7 +124,7 @@ value="100.00"></input></td></tr><tr>
 value="10.0">
 
 %</input></td></tr><tr>
-<td>No. de períodos: </td><td><input type="text" name="prazo" size=3 
+<td>No. de perÃ­odos: </td><td><input type="text" name="prazo" size=3 
 value="4">
 
 </input></td></tr>
