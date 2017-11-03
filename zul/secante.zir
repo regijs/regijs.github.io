@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<CaR>
+<Construction>
+<Window x="-0.09550553784603011" y="0.48946588146090386" w="2.8284271247461943" showgrid="true"/>
+<Objects>
+<Function name="f1" n="0" color="2" type="thick" x="x" y="x^2" var="x" min="-0.96*(windoww-windowcx)" max="0.96*(windoww+windowcx)" d="0.01*windoww">Function ( x , x^2 )</Function>
+<Point name="x" n="8" showname="true" xcoffset="-0.10040160642570228" ycoffset="0.19277108433735002" keepclose="true" x="0.96*(windoww+windowcx)" actx="2.6236047234241577" y="0" acty="0.0" shape="dot" fixed="true">Point at &quot;0.96*(windoww+windowcx)&quot;, &quot;0&quot;</Point>
+<Point name="xn" n="9" hidden="true" x="-0.96*(windoww-windowcx)" actx="-2.806975356088535" y="0" acty="0.0" fixed="true">Point at &quot;-0.96*(windoww-windowcx)&quot;, &quot;0&quot;</Point>
+<Point name="y" n="10" showname="true" xcoffset="-0.25702811244979884" ycoffset="-0.19678714859437818" keepclose="true" x="0" actx="0.0" y="0.96*(windowh+windowcy)" acty="1.8889696183555182" shape="dot" fixed="true">Point at &quot;0&quot;, &quot;0.96*(windowh+windowcy)&quot;</Point>
+<Point name="yn" n="11" hidden="true" x="0" actx="0.0" y="-0.96*(windowh-windowcy)" acty="-0.9491951259505829" fixed="true">Point at &quot;0&quot;, &quot;-0.96*(windowh-windowcy)&quot;</Point>
+<PointOn name="P2" alias="$P_2$" n="2" color="1" type="thick" showname="true" showvalue="true" on="f1" alpha="0.0" x="1.1778791626060123" y="1.3874801973901483" shape="dot">Point on f1</PointOn>
+<Segment name="s1" n="14" from="xn" to="x" arrow="true">Line segment from xn to x</Segment>
+<Segment name="s2" n="17" from="yn" to="y" arrow="true">Line segment from yn to y</Segment>
+<PointOn name="P1" alias="$P_1$" n="1" color="5" type="thick" showname="true" showvalue="true" on="f1" alpha="0.0" x="0.9998161938977268" y="0.999825882987458" shape="dot">Point on f1</PointOn>
+<Text name="Text1" n="7" x="-0.9500000000000001*(windoww-windowcx)" y="0.9500000000000001*(windowh+windowcy)" fixed="true">$f(x)=x^2$
+
+$m=\frac{y(P_2)-y(P_1)}{x(P_2)-x(P_1)}=%(y(P2)-y(P1))/(x(P2)-x(P1))%$
+
+Reginaldo J. Santos
+DMat-ICEx-UFMG</Text>
+<Line name="l2" alias="$m=%(y(P2)-y(P1))/(x(P2)-x(P1))%$" n="5" showname="true" xcoffset="0.339878497172038" ycoffset="0.31852107858410916" keepclose="true" bold="true" large="true" from="P2" to="P1">Line through P2 and P1</Line>
+</Objects>
+</Construction>
+</CaR>

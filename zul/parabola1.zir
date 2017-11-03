@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<CaR>
+<Construction>
+<Window x="0.5676537910189823" y="1.865444766918864" w="11.313708498984784"/>
+<Objects>
+<Point name="O" n="2" hidden="true" x="0.0" y="0.0">Point at 0.0, 0.0</Point>
+<Point name="x" alias="$x$" n="20" hidden="true" showname="true" xcoffset="-0.024057233719007698" ycoffset="0.37447580789016754" keepclose="true" x="0.96*(windoww+windowcx)" actx="11.406107798403616" y="0" acty="0.0" fixed="true">Point at &quot;0.96*(windoww+windowcx)&quot;, &quot;0&quot;</Point>
+<Point name="xn" n="21" hidden="true" x="-0.96*(windoww-windowcx)" actx="-10.31621251964717" y="0" acty="0.0" fixed="true">Point at &quot;-0.96*(windoww-windowcx)&quot;, &quot;0&quot;</Point>
+<Point name="y" alias="$y$" n="25" hidden="true" showname="true" xcoffset="0.3290848008731775" ycoffset="-0.11847052831434457" keepclose="true" x="0" actx="0.0" y="0.96*(windowh+windowcy)" acty="8.149895896387195" fixed="true">Point at &quot;0&quot;, &quot;0.96*(windowh+windowcy)&quot;</Point>
+<Point name="yn" n="26" hidden="true" x="0" actx="0.0" y="-0.96*(windowh-windowcy)" acty="-4.568241943902976" fixed="true">Point at &quot;0&quot;, &quot;-0.96*(windowh-windowcy)&quot;</Point>
+<Segment name="s6" n="24" hidden="true" from="xn" to="x" arrow="true">Line segment from xn to x</Segment>
+<Segment name="s7" n="29" hidden="true" from="yn" to="y" arrow="true">Line segment from yn to y</Segment>
+<PointOn name="F" n="108" color="5" type="thick" showname="true" xcoffset="-0.0710394933263423" ycoffset="0.13954865186330623" keepclose="true" bold="true" large="true" on="s7" alpha="0.43041477195625877" x="0.0" y="0.9058324543337832" shape="dcross">Point on s7</PointOn>
+<Expression name="p" n="109" hidden="true" showname="true" showvalue="true" x="2.22" y="2.66" value="y(F)" prompt="p">Expression &quot;y(F)&quot; at 2.2, 2.7</Expression>
+<Point name="P27" n="110" hidden="true" x="-7" actx="-7.0" y="-y(F)" acty="-0.9058324543337832" fixed="true">Point at &quot;-7&quot;, &quot;-y(F)&quot;</Point>
+<Point name="P28" alias="r" n="111" showname="true" xcoffset="-0.3593814083331228" ycoffset="0.4882923054535304" keepclose="true" bold="true" large="true" x="7" actx="7.0" y="-y(F)" acty="-0.9058324543337832" shape="dot" fixed="true">Point at &quot;7&quot;, &quot;-y(F)&quot;</Point>
+<Text name="Text1" n="0" x="-0.96*(windoww-windowcx)" y="0.96*(windowh+windowcy)" fixed="true">$dist(P,F)=dist(P,r)=%2*p%$
+
+Reginaldo J. Santos
+DMat-ICEx-UFMG</Text>
+<Function name="parabola" n="112" color="2" type="thick" x="x" y="x^2/(4*p)" var="x" min="-5" max="5" d="0.2" shape="dot">Function ( x , x^2/(4*p) )</Function>
+<Segment name="s19" n="115" from="P27" to="P28">Line segment from P27 to P28</Segment>
+</Objects>
+</Construction>
+</CaR>

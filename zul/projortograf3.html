@@ -1,0 +1,97 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+</head>
+
+<body>
+
+
+<title> Projeção Ortográfica 3</title>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+  });
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+ 
+$\DeclareMathOperator{\sen}{sen}$
+
+ <h1 align="center">Projeção Ortográfica 3</h1> 
+Apostila - <a href="http://www.mat.ufmg.br/~regi/gaalt/projortograf.pdf">projortograf.pdf</a> 
+
+
+<br>
+<br>
+
+O vetor $U_1$ é paralelo ao plano
+$\mathrm{xy}$ e é perpendicular ao vetor
+$(\cos\theta,\sen\theta,0)$, ou seja,
+$$U_1=(-\sen\theta,\cos\theta,0).$$
+
+
+<div class="p"><!----></div>
+
+Os vetores $U_2$ e $U_3$ estão no plano definido por $\vec{k}$ e
+$(\cos\theta,\sen\theta,0)$.
+\begin{eqnarray*}
+U_2&=&-\cos\phi(\cos\theta,\sen\theta,0)+\sen\phi\vec{k}
+=(-\cos\phi\cos\theta,-\cos\phi\sen\theta,\sen\phi)\\
+U_3&=&\cos\phi\vec{k}+\sen\phi(\cos\theta,\sen\theta,0)
+=(\sen\phi\cos\theta,\sen\phi\sen\theta,\cos\phi)
+\end{eqnarray*}
+
+Assim, a relação entre as coordenadas de um ponto nos dois sistemas
+$$\mathcal{S}'=\{O,U_1,U_2,U_3\}\quad\mbox{e}\quad
+\mathcal{S}=\{O,\vec{i},\vec{j},\vec{k}\}$$ é dada por
+$$
+\left[\begin{array}{c} x'\\y'\\z'
+         \end{array}\right]=\left[\begin{array}{rrr}
+-\sen\theta&\cos\theta&0\\
+-\cos\phi\cos\theta&-\cos\phi\sen\theta&\sen\phi\\
+\sen\phi\cos\theta&\sen\phi\sen\theta&\cos\phi\end{array}\right]
+\left[\begin{array}{c} x\\y\\z
+         \end{array}\right]
+$$
+e a projeção é dada por
+$$
+\left[\begin{array}{c} x'\\y'
+         \end{array}\right]=\left[\begin{array}{rrr}
+-\sen\theta&\cos\theta&0\\
+-\cos\phi\cos\theta&-\cos\phi\sen\theta&\sen\phi
+\end{array}\right]
+\left[\begin{array}{c} x\\y\\z
+         \end{array}\right].
+$$
+
+
+
+
+
+
+
+
+Clique e arraste os pontos vermelhos nos círculos para modificar a posição de visão.
+<div class="p"><!----></div>
+
+
+
+
+<p align="center" class="NotNarrowed">
+<APPLET ARCHIVE="zirkel.jar"
+CODE="rene.zirkel.ZirkelApplet.class"  CODEBASE="."  WIDTH="800" HEIGHT="600"
+ALIGN="middle"> <PARAM NAME="color" VALUE="244,244,242"> 
+<PARAM NAME="file" VALUE="projortograf3.zir">
+<PARAM NAME="style" VALUE="3D">
+<PARAM NAME="editdigits" VALUE="1">
+<PARAM NAME="displaydigits" VALUE="1">
+<PARAM NAME="grid" VALUE="coordinates">
+</APPLET></p>
+
+
+</body>
+
+</html>

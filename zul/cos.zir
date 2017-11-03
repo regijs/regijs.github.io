@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<CaR>
+<Construction>
+<Window x="0.0" y="0.0" w="9.513656920021768"/>
+<Objects>
+<Point name="X0" n="2" color="5" x="1.0008873114463186" y="-1.0008873114463177" shape="cross">Point at 1.0, -1.0</Point>
+<Expression name="Lx" n="27" hidden="true" showname="true" showvalue="true" x="2.56" y="1.61" value="0.9*(windoww+windowcx)" prompt="Lx">Expression &quot;0.9*(windoww+windowcx)&quot; at 2.6, 1.6</Expression>
+<Expression name="Lxn" n="28" hidden="true" showname="true" showvalue="true" x="2.59" y="1.24" value="-0.9*(windoww-windowcx)" prompt="Lxn">Expression &quot;-0.9*(windoww-windowcx)&quot; at 2.6, 1.2</Expression>
+<Point name="x" n="45" showname="true" xcoffset="0.03606033717835011" ycoffset="0.13487133984028343" keepclose="true" x="0.96*(windoww+windowcx)" actx="9.133110643220897" y="0" acty="0.0" shape="dot" fixed="true">Point at &quot;0.96*(windoww+windowcx)&quot;, &quot;0&quot;</Point>
+<Point name="P17" n="46" hidden="true" x="-0.96*(windoww-windowcx)" actx="-9.133110643220897" y="0" acty="0.0" fixed="true">Point at &quot;-0.96*(windoww-windowcx)&quot;, &quot;0&quot;</Point>
+<Point name="y" n="50" showname="true" xcoffset="0.22005323868677884" ycoffset="-0.07410825199645021" keepclose="true" x="0" actx="0.0" y="0.96*(windowh+windowcy)" acty="5.0082186135851945" shape="dot" fixed="true">Point at &quot;0&quot;, &quot;0.96*(windowh+windowcy)&quot;</Point>
+<Point name="P19" n="51" hidden="true" x="0" actx="0.0" y="-0.96*(windowh-windowcy)" acty="-5.0082186135851945" fixed="true">Point at &quot;0&quot;, &quot;-0.96*(windowh-windowcy)&quot;</Point>
+<Point name="P2" alias="$x_0=%x(X0)%$" n="3" showname="true" xcoffset="0.02617568766637035" ycoffset="-0.191659272404614" keepclose="true" x="x(X0)" actx="1.0008873114463186" y="0" acty="0.0" shape="cross" fixed="true">Point at &quot;x(X0)&quot;, &quot;0&quot;</Point>
+<Point name="P3" alias="$y_0=%y(X0)%$" n="4" showname="true" x="0" actx="0.0" y="y(X0)" acty="-1.0008873114463177" shape="cross" fixed="true">Point at &quot;0&quot;, &quot;y(X0)&quot;</Point>
+<Point name="P4" n="5" hidden="true" x="x(X0)+1" actx="2.0008873114463186" y="0" acty="0.0" fixed="true">Point at &quot;x(X0)+1&quot;, &quot;0&quot;</Point>
+<Point name="P6" n="11" hidden="true" x="x(X0)" actx="1.0008873114463186" y="y(X0)+1" acty="-8.873114463177068E-4" fixed="true">Point at &quot;x(X0)&quot;, &quot;y(X0)+1&quot;</Point>
+<Point name="P12" n="35" hidden="true" x="Lx" actx="8.56229122801959" y="y(X0)" acty="-1.0008873114463177" fixed="true">Point at &quot;Lx&quot;, &quot;y(X0)&quot;</Point>
+<Point name="P13" n="36" hidden="true" x="Lxn" actx="-8.56229122801959" y="y(X0)" acty="-1.0008873114463177" fixed="true">Point at &quot;Lxn&quot;, &quot;y(X0)&quot;</Point>
+<Segment name="s4" n="49" from="P17" to="x" arrow="true">Line segment from P17 to x</Segment>
+<Segment name="s5" n="56" from="P19" to="y" arrow="true">Line segment from P19 to y</Segment>
+<Line name="l1" n="8" hidden="true" from="P2" to="P4">Line through P2 and P4</Line>
+<Line name="l4" n="22" hidden="true" from="X0" to="P6">Line through X0 and P6</Line>
+<Segment name="s2" n="39" color="2" type="thin" from="P13" to="P12">Line segment from P13 to P12</Segment>
+<PointOn name="X1" alias="$x_0+%x(@X1)-x(X0)%=%x(@X1)%$" n="9" color="5" showname="true" xcoffset="0.04259094942324815" ycoffset="-0.22005323868677928" keepclose="true" on="l1" alpha="3.137533274179237" x="4.138420585625555" y="0.0" shape="cross">Point on l1</PointOn>
+<PointOn name="X2" n="23" color="5" type="thick" on="l4" alpha="2.9955634427684124" x="1.0008873114463186" y="1.9946761313220946" shape="dot">Point on l4</PointOn>
+<Expression name="omega" n="10" hidden="true" showname="true" showvalue="true" x="2.5" y="2.5" value="2*pi/(x(X1)-x(X0))" prompt="$\omega$">Expression &quot;2*pi/(x(X1)-x(X0))&quot; at 2.5, 2.5</Expression>
+<Expression name="b" n="24" hidden="true" showname="true" showvalue="true" x="2.5" y="2.0" value="y(X2)-y(X0)" prompt="b">Expression &quot;y(X2)-y(X0)&quot; at 2.5, 2.0</Expression>
+<Point name="P10" n="30" hidden="true" x="Lx" actx="8.56229122801959" y="y(X2)" acty="1.9946761313220946" fixed="true">Point at &quot;Lx&quot;, &quot;y(X2)&quot;</Point>
+<Point name="P11" n="31" hidden="true" x="Lxn" actx="-8.56229122801959" y="y(X2)" acty="1.9946761313220946" fixed="true">Point at &quot;Lxn&quot;, &quot;y(X2)&quot;</Point>
+<Point name="P23" alias="$%y(X2)%$" n="63" showname="true" xcoffset="-0.17746228926353158" ycoffset="0.0709849157054121" keepclose="true" x="0" actx="0.0" y="y(X2)" acty="1.9946761313220946" shape="cross" fixed="true">Point at &quot;0&quot;, &quot;y(X2)&quot;</Point>
+<Text name="Text1" n="0" x="-0.96*(windoww-windowcx)" y="0.96*(windowh+windowcy)" fixed="true">$f(x)=y_0+b\cos(\omega(x-x_0))$
+$f(x)=%y(X0)% %+-(-b)%\cos(%omega%(x %+-x(X0)%))$
+
+Reginaldo J. Santos
+DMat-ICEx-UFMG</Text>
+<Function name="f" n="25" color="2" type="thick" x="x" y="y(X0)+b*cos(deg(omega*(x-x(X0))))" var="x" min="-0.9*(windoww-windowcx)" max="0.9*(windoww+windowcx)" d="0.01*windoww">Function ( x , y(X0)+b*cos(deg(omega*(x-x(X0)))) )</Function>
+<Segment name="s1" n="34" color="2" type="thin" from="P11" to="P10">Line segment from P11 to P10</Segment>
+<Point name="P14" n="40" hidden="true" x="Lx" actx="8.56229122801959" y="y(X0)-b" acty="-3.99645075421473" fixed="true">Point at &quot;Lx&quot;, &quot;y(X0)-b&quot;</Point>
+<Point name="P15" n="41" hidden="true" x="Lxn" actx="-8.56229122801959" y="y(X0)-b" acty="-3.99645075421473" fixed="true">Point at &quot;Lxn&quot;, &quot;y(X0)-b&quot;</Point>
+<Point name="P24" alias="$%y(X0)-b%$" n="64" showname="true" xcoffset="-0.19415626367391248" ycoffset="-0.14836339638925278" keepclose="true" x="0" actx="0.0" y="y(X0)-b" acty="-3.99645075421473" shape="cross" fixed="true">Point at &quot;0&quot;, &quot;y(X0)-b&quot;</Point>
+<Point name="P25" n="65" hidden="true" x="x(X0)" actx="1.0008873114463186" y="y(X0)-b" acty="-3.99645075421473" fixed="true">Point at &quot;x(X0)&quot;, &quot;y(X0)-b&quot;</Point>
+<Segment name="s3" n="44" color="2" type="thin" from="P15" to="P14">Line segment from P15 to P14</Segment>
+<Segment name="s7" n="68" color="2" type="thin" from="P25" to="X2">Line segment from P25 to X2</Segment>
+</Objects>
+</Construction>
+</CaR>

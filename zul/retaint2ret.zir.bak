@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CaR version="12.0">
+<Construction>
+<Window x="0.7755377658948532" y="1.9328172285690113" w="15.944762619180676"/>
+<Animate animate="C12" via0="circ2"/>
+<Objects>
+<Point name="C10" n="33" type="thick" hidden="true" x="-15.001152558266229" y="3.777271652922133" shape="dot">Point at -15.0, 3.78</Point>
+<Point name="C20" n="43" type="thick" hidden="true" x="-15.034802292345665" y="-1.169239256754146" shape="dot">Point at -15.03, -1.17</Point>
+<Point name="O" n="51" hidden="true" showname="true" xcoffset="-0.12353400434663442" ycoffset="0.28146091588056343" keepclose="true" x="0.0" y="0.0">Point at 0.0, 0.0</Point>
+<Point name="C11" n="37" hidden="true" x="x(C10)+0.1*windoww" actx="-13.406676296348161" y="y(C10)" acty="3.777271652922133" fixed="true">Point at &quot;x(C10)+0.1*windoww&quot;, &quot;y(C10)&quot;</Point>
+<Point name="C21" n="44" hidden="true" x="x(C20)" actx="-15.034802292345665" y="y(C20)+0.1*windoww" acty="0.4252370051639216" fixed="true">Point at &quot;x(C20)&quot;, &quot;y(C20)+0.1*windoww&quot;</Point>
+<Circle name="circ2" n="40" hidden="true" through="C11" midpoint="C10" acute="true">Circle around C10 through C11</Circle>
+<Circle name="circ3" n="47" hidden="true" through="C21" midpoint="C20" acute="true">Circle around C20 through C21</Circle>
+<PointOn name="C12" n="41" color="5" type="thick" hidden="true" on="circ2" alpha="-1.0743037133317586" x="-14.241632441307626" y="2.3753145416824895" shape="dot">Point on circ2</PointOn>
+<PointOn name="C22" n="48" color="5" type="thick" hidden="true" on="circ3" alpha="0.6225385805180776" x="-13.739448451780842" y="-0.2395011336494871" shape="dot">Point on circ3</PointOn>
+<Expression name="th" n="42" hidden="true" showname="true" showvalue="true" x="4.0" y="-0.5" value="a(C11,C10,C12)" prompt="th">Expression &quot;a(C11,C10,C12)&quot; at 4.0, 0.0</Expression>
+<Expression name="ph" n="49" hidden="true" showname="true" showvalue="true" x="4.03" y="-1.42" value="a(C22,C20,C21)" prompt="ph">Expression &quot;a(C22,C20,C21)&quot; at 4.0, -1.0</Expression>
+<Angle name="an1" alias="$\phi=%if(x(C22)&lt;x(C20),-@an1,@an1)%^o$" n="272" hidden="true" showname="true" background="true" xcoffset="2.4564305877984243" ycoffset="1.6151872358126615" keepclose="true" unit="�" first="C21" root="C20" second="C22" display="large" filled="true" acute="true">Angle C21 - C20 - C22</Angle>
+<Angle name="an2" alias="$\theta=%if(y(C12)&lt;y(C10),-@an2,@an2)%^o$" n="279" hidden="true" showname="true" background="true" xcoffset="2.8938771308310223" ycoffset="0.6898195486283256" keepclose="true" unit="�" first="C11" root="C10" second="C12" display="large" filled="true" acute="true">Angle C11 - C10 - C12</Angle>
+<Point name="z" n="142" showname="true" xcoffset="-0.22924474506076464" ycoffset="-0.004202820326114853" keepclose="true" x="0" actx="0.0" y="1.1*(windowh+windowcy)*sin(ph)" acty="9.47490266544219" shape="dot" fixed="true">Point at &quot;0&quot;, &quot;1.1*(windowh+windowcy)*sin(ph)&quot;</Point>
+<Point name="E1" alias="1" n="52" showname="true" xcoffset="-0.3248817235447241" ycoffset="0.265606031243413" keepclose="true" x="-2*sin(th)" actx="1.7585173824452747" y="-2*cos(th)*cos(ph)" acty="-0.5555124544302908" shape="dcross" fixed="true">Point at &quot;-2*sin(th)&quot;, &quot;-2*cos(th)*cos(ph)&quot;</Point>
+<Point name="E2" n="53" hidden="true" showname="true" x="2*cos(th)" actx="0.9526891495329523" y="-2*cos(ph)*sin(th)" acty="1.0253903991237974" fixed="true">Point at &quot;2*cos(th)&quot;, &quot;-2*cos(ph)*sin(th)&quot;</Point>
+<Point name="E3" n="54" hidden="true" showname="true" x="0" actx="0.0" y="2*sin(ph)" acty="1.6248016624676298" fixed="true">Point at &quot;0&quot;, &quot;2*sin(ph)&quot;</Point>
+<Point name="zn*" n="282" hidden="true" x="0" actx="0.0" y="-0.96*(windowh+windowcy)*sin(ph)" acty="-8.269005962567729" fixed="true">Point at &quot;0&quot;, &quot;-0.96*(windowh+windowcy)*sin(ph)&quot;</Point>
+<Point name="x" n="149" showname="true" xcoffset="-0.38664144838983106" ycoffset="0.4257733214441135" keepclose="true" x="y(z)*x(E1)/y(E3)" actx="10.254655333656212" y="y(z)*y(E1)/y(E3)" acty="-3.239427037004744" shape="dot" fixed="true">Point at &quot;y(z)*x(E1)/y(E3)&quot;, &quot;y(z)*y(E1)/y(E3)&quot;</Point>
+<Point name="y" n="154" showname="true" xcoffset="-0.3324871937486851" ycoffset="-0.4823392233361945" keepclose="true" x="1.2000000000000004*y(z)*x(E2)/y(E3)" actx="6.66663790720546" y="1.2000000000000004*y(z)*y(E2)/y(E3)" acty="7.175379826499008" shape="dot" fixed="true">Point at &quot;1.2000000000000004*y(z)*x(E2)/y(E3)&quot;, &quot;1.2000000000000004*y(z)*y(E2)/y(E3)&quot;</Point>
+<Point name="xn*" n="280" hidden="true" x="-y(z)*x(E1)/y(E3)" actx="-10.254655333656212" y="-y(z)*y(E1)/y(E3)" acty="3.239427037004744" fixed="true">Point at &quot;-y(z)*x(E1)/y(E3)&quot;, &quot;-y(z)*y(E1)/y(E3)&quot;</Point>
+<Point name="yn*" n="281" hidden="true" x="-y(z)*x(E2)/y(E3)" actx="-5.555531589337881" y="-y(z)*y(E2)/y(E3)" acty="-5.979483188749173" fixed="true">Point at &quot;-y(z)*x(E2)/y(E3)&quot;, &quot;-y(z)*y(E2)/y(E3)&quot;</Point>
+<Segment name="s9" n="291" hidden="true" from="zn*" to="z">Line segment from zn* to z</Segment>
+<Point name="P32" alias="%1.5%" n="383" showname="true" xcoffset="0.2593752407628358" ycoffset="0.7391721825105997" keepclose="true" x="1.5*x(E2)" actx="1.4290337242994284" y="1.5*y(E2)" acty="1.538085598685696" shape="dcross" fixed="true">Point at &quot;1.5*x(E2)&quot;, &quot;1.5*y(E2)&quot;</Point>
+<Point name="Pxy" n="296" color="2" hidden="true" x="x(E1)+2*x(E2)" actx="3.663895681511179" y="y(E1)+2*y(E2)" acty="1.4952683438173038" fixed="true">Point at &quot;x(E1)+2*x(E2)&quot;, &quot;y(E1)+2*y(E2)&quot;</Point>
+<Point name="W" n="368" color="2" hidden="true" x="x(E1)+2*x(E2)+3*x(E3)" actx="3.663895681511179" y="y(E1)+2*y(E2)+3*y(E3)" acty="6.369673331220193" fixed="true">Point at &quot;x(E1)+2*x(E2)+3*x(E3)&quot;, &quot;y(E1)+2*y(E2)+3*y(E3)&quot;</Point>
+<Point name="P34" n="391" color="2" hidden="true" x="3*x(E1)+6*x(E2)+3*x(E3)" actx="10.991687044533538" y="3*y(E1)+6*y(E2)+3*y(E3)" acty="9.3602100188548" fixed="true">Point at &quot;3*x(E1)+6*x(E2)+3*x(E3)&quot;, &quot;3*y(E1)+6*y(E2)+3*y(E3)&quot;</Point>
+<Point name="P37" n="397" color="2" hidden="true" showname="true" x="3*x(E1)+6*x(E2)" actx="10.991687044533538" y="3*y(E1)+6*y(E2)" acty="4.485805031451912" fixed="true">Point at &quot;3*x(E1)+6*x(E2)&quot;, &quot;3*y(E1)+6*y(E2)&quot;</Point>
+<Point name="P39" n="408" color="2" hidden="true" x="3*x(E1)" actx="5.275552147335824" y="3*y(E1)+3*y(E3)" acty="3.207867624112017" fixed="true">Point at &quot;3*x(E1)&quot;, &quot;3*y(E1)+3*y(E3)&quot;</Point>
+<Point name="P40" n="409" color="2" hidden="true" x="6*x(E2)" actx="5.716134897197714" y="6*y(E2)+3*y(E3)" acty="11.026747382145674" fixed="true">Point at &quot;6*x(E2)&quot;, &quot;6*y(E2)+3*y(E3)&quot;</Point>
+<Point name="P36" alias="6" n="396" showname="true" xcoffset="0.12948455751114096" ycoffset="0.3483536214754932" keepclose="true" x="6*x(E2)" actx="5.716134897197714" y="6*y(E2)" acty="6.152342394742784" shape="dcross" fixed="true">Point at &quot;6*x(E2)&quot;, &quot;6*y(E2)&quot;</Point>
+<Point name="A2B2" n="350" color="2" hidden="true" x="3*x(E1)+3*x(E2)" actx="8.13361959593468" y="3*y(E1)+3*y(E2)" acty="1.4096338340805197" fixed="true">Point at &quot;3*x(E1)+3*x(E2)&quot;, &quot;3*y(E1)+3*y(E2)&quot;</Point>
+<Segment name="s7" n="285" hidden="true" from="xn*" to="x">Line segment from xn* to x</Segment>
+<Segment name="s8" n="288" hidden="true" from="yn*" to="y">Line segment from yn* to y</Segment>
+<PointOn name="C2" alias="%@c2%" n="343" color="5" hidden="true" showname="true" on="s9" alpha="0.16130633805138087" x="0.0" y="-5.406801039065147" shape="dcross">Point on s9</PointOn>
+<Segment name="s32" n="415" type="thin" from="P39" to="P34">Line segment from P39 to P34</Segment>
+<Segment name="s33" n="418" type="thin" from="P34" to="P40">Line segment from P34 to P40</Segment>
+<Line name="l1" n="424" hidden="true" from="W" to="Pxy">Line through W and Pxy</Line>
+<Segment name="s29" n="403" type="thin" from="P37" to="P36">Line segment from P37 to P36</Segment>
+<Segment name="s22" n="386" color="2" type="thick" from="P32" to="A2B2">Line segment from P32 to A2B2</Segment>
+<Segment name="s28" n="400" type="thin" from="A2B2" to="P37">Line segment from A2B2 to P37</Segment>
+<PointOn name="A" alias="1" n="292" hidden="true" showname="true" xcoffset="-0.5072971444418055" ycoffset="0.3145607460504296" keepclose="true" on="s7" alpha="0.6213801030102264" x="2.4894222414671177" y="-0.7864039748914973" shape="dcross">Point on s7</PointOn>
+<PointOn name="B" alias="2" n="293" hidden="true" showname="true" xcoffset="0.3400058547418219" ycoffset="0.49947478813824464" keepclose="true" on="s8" alpha="0.6597284096239404" x="2.5077808547708935" y="2.699153667121303" shape="dcross">Point on s8</PointOn>
+<PointOn name="A2" alias="3" n="341" hidden="true" showname="true" xcoffset="-0.4756553528917884" ycoffset="0.29159471764538836" keepclose="true" on="s7" alpha="0.7488978244093384" x="5.104722805229297" y="-1.6125726836865404" shape="dcross">Point on s7</PointOn>
+<PointOn name="B2" alias="3" n="342" hidden="true" showname="true" xcoffset="0.047874301711816614" ycoffset="0.6862814616515251" keepclose="true" on="s8" alpha="0.756487327208289" x="3.6903847457888697" y="3.972003973447098" shape="dcross">Point on s8</PointOn>
+<Expression name="c2" n="346" hidden="true" showname="true" showvalue="true" x="9.84" y="1.0" value="if(sin(ph)==0,0,y(C2)/(2*sin(ph)))" prompt="c2">Expression &quot;if(sin(ph)==0,0,y(C2)/(2*sin(ph)))&quot; at 10.0, 1.0</Expression>
+<PointOn name="P35" n="425" color="2" hidden="true" on="l1" alpha="-1.9628594781074291" x="3.663895681511179" y="8.332532809327622">Point on l1</PointOn>
+<PointOn name="OP37" n="426" color="2" hidden="true" on="l1" alpha="6.110438050591643" x="3.663895681511179" y="0.25923528062855006">Point on l1</PointOn>
+<Expression name="b" n="233" hidden="true" showname="true" showvalue="true" x="6.43" y="1.17" value="if(cos(th)==0,if(sin(th)==1,-y(B)/(2*cos(ph)),y(B)/(2*cos(ph))),x(B)/(2*cos(th)))" prompt="b">Expression &quot;if(cos(th)==0,if(sin(th)==1,-y(B)/(2*cos(ph)),y(B)/(2*cos(ph))),x(B)/(2*cos(th)))&quot; at 6.0, 1.0</Expression>
+<Expression name="a" n="232" hidden="true" showname="true" showvalue="true" x="6.37" y="1.81" value="if(sin(th)==0,if(cos(th)==1,-y(A)/(2*cos(ph)),y(A)/(2*cos(ph))),-x(A)/(2*sin(th)))" prompt="a">Expression &quot;if(sin(th)==0,if(cos(th)==1,-y(A)/(2*cos(ph)),y(A)/(2*cos(ph))),-x(A)/(2*sin(th)))&quot; at 6.0, 2.0</Expression>
+<Expression name="a2" n="344" hidden="true" showname="true" showvalue="true" x="9.65" y="2.17" value="if(sin(th)==0,if(cos(th)==1,-y(A2)/(2*cos(ph)),y(A2)/(2*cos(ph))),-x(A2)/(2*sin(th)))" prompt="a2">Expression &quot;if(sin(th)==0,if(cos(th)==1,-y(A2)/(2*cos(ph)),y(A2)/(2*cos(ph))),-x(A2)/(2*sin(th)))&quot; at 10.0, 2.0</Expression>
+<Expression name="b2" n="345" hidden="true" showname="true" showvalue="true" x="9.77" y="1.49" value="if(cos(th)==0,if(sin(th)==1,-y(B2)/(2*cos(ph)),y(B2)/(2*cos(ph))),x(B2)/(2*cos(th)))" prompt="b2">Expression &quot;if(cos(th)==0,if(sin(th)==1,-y(B2)/(2*cos(ph)),y(B2)/(2*cos(ph))),x(B2)/(2*cos(th)))&quot; at 10.0, 1.0</Expression>
+<Segment name="s21" n="429" color="2" type="thick" from="P35" to="OP37">Line segment from P35 to OP37</Segment>
+<Expression name="minb" n="347" hidden="true" showname="true" showvalue="true" x="13.05" y="2.29" value="if(b&lt;b2,b,b2)" prompt="minb">Expression &quot;if(b&lt;b2,b,b2)&quot; at 13.0, 2.0</Expression>
+<Expression name="mina" n="348" hidden="true" showname="true" showvalue="true" x="12.74" y="1.68" value="if(a&lt;a2,a,a2)" prompt="mina">Expression &quot;if(a&lt;a2,a,a2)&quot; at 13.0, 2.0</Expression>
+<Point name="xn" n="256" hidden="true" x="if(mina&gt;0,0,(mina-1)*x(E1))" actx="0.0" y="if(mina&gt;0,0,(mina-1)*y(E1))" acty="0.0" fixed="true">Point at &quot;if(mina&gt;0,0,(mina-1)*x(E1))&quot;, &quot;if(mina&gt;0,0,(mina-1)*y(E1))&quot;</Point>
+<Point name="yn" n="260" hidden="true" x="if(minb&gt;0,0,(minb-1)*x(E2))" actx="0.0" y="if(minb&gt;0,0,(minb-1)*y(E2))" acty="0.0" fixed="true">Point at &quot;if(minb&gt;0,0,(minb-1)*x(E2))&quot;, &quot;if(minb&gt;0,0,(minb-1)*y(E2))&quot;</Point>
+<Segment name="s25" n="259" from="xn" to="x" arrow="true">Line segment from xn to x</Segment>
+<Segment name="s26" n="263" from="yn" to="y" arrow="true">Line segment from yn to y</Segment>
+<Point name="P38" alias="3" n="430" showname="true" xcoffset="-0.34371484603842717" ycoffset="0.030853604005324442" keepclose="true" x="0" actx="0.0" y="3*y(E3)" acty="4.874404987402889" shape="dcross" fixed="true">Point at &quot;0&quot;, &quot;3*y(E3)&quot;</Point>
+<Segment name="s23" n="433" type="thin" from="P38" to="P39">Line segment from P38 to P39</Segment>
+<Segment name="s24" n="436" type="thin" from="P38" to="P40">Line segment from P38 to P40</Segment>
+<Segment name="s34" n="445" from="O" to="z" arrow="true">Line segment from O to z</Segment>
+<Segment name="s35" n="448" color="2" type="thick" from="P38" to="P34">Line segment from P38 to P34</Segment>
+<Point name="P41" alias="2" n="449" showname="true" xcoffset="0.2529505068740159" ycoffset="0.3437999702372154" keepclose="true" x="2*x(E2)" actx="1.9053782990659045" y="2*y(E2)" acty="2.0507807982475947" shape="dcross" fixed="true">Point at &quot;2*x(E2)&quot;, &quot;2*y(E2)&quot;</Point>
+<Point name="P42" alias="3" n="450" showname="true" xcoffset="0.4600970792886794" ycoffset="0.2856725348421607" keepclose="true" x="3*x(E2)" actx="2.858067448598857" y="3*y(E2)" acty="3.076171197371392" shape="dcross" fixed="true">Point at &quot;3*x(E2)&quot;, &quot;3*y(E2)&quot;</Point>
+<Point name="P44" alias="3" n="452" showname="true" xcoffset="-0.3606090924545846" ycoffset="0.30728987586637424" keepclose="true" x="3*x(E1)" actx="5.275552147335824" y="3*y(E1)" acty="-1.6665373632908724" shape="dcross" fixed="true">Point at &quot;3*x(E1)&quot;, &quot;3*y(E1)&quot;</Point>
+<Segment name="s36" n="455" type="thin" from="P44" to="A2B2">Line segment from P44 to A2B2</Segment>
+<Segment name="s37" n="458" type="thin" from="A2B2" to="P42">Line segment from A2B2 to P42</Segment>
+<Segment name="s39" n="465" type="thin" from="E1" to="Pxy">Line segment from E1 to Pxy</Segment>
+<Segment name="s40" n="468" type="thin" from="Pxy" to="P41">Line segment from Pxy to P41</Segment>
+</Objects>
+</Construction>
+</CaR>

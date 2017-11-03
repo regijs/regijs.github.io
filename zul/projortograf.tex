@@ -1,0 +1,63 @@
+a=sin(ph2)*cos(th2)
+b=sin(ph2)*sin(th2)
+c=cos(ph2)
+
+
+PO
+x=d*(a*x(E1)+b*x(E2)+c*x(E3))
+y=d*(a*y(E1)+b*y(E2)+c*y(E3))
+
+U1
+x=x(PO)-sin(th2)*x(E1)+cos(th2)*x(E2)
+y=y(PO)-sin(th2)*y(E1)+cos(th2)*y(E2)
+
+U2
+x=x(PO)-cos(ph2)*cos(th2)*x(E1)-cos(ph2)*sin(th2)*x(E2)
+y=y(PO)-cos(ph2)*cos(th2)*y(E1)-cos(ph2)*sin(th2)*y(E2)+sin(ph2)*y(E3)
+
+
+PE1
+x=x(PO)-sin(th2)*x(U1)-cos(ph2)*cos(th2)*x(U2)
+y=y(PO)-sin(th2)*y(U1)-cos(ph2)*cos(th2)*y(U2)
+
+PE2
+x=x(PO)+cos(th2)*x(U1)-cos(ph2)*sin(th2)*x(U2)
+y=y(PO)+cos(th2)*y(U1)-cos(ph2)*sin(th2)*y(U2)
+
+PE3
+x=x(PO)+sin(ph2)*x(U2)
+y=y(PO)+sin(ph2)*y(U2)
+
+
+$U_3=\cos\phi\vec{k}+\sin\phi(\cos\theta,\sin\theta,0)=(\sin\phi\cos\theta,\sin\phi\sin\theta,\cos\phi)$
+
+$U_2=-\cos\phi(\cos\theta,\sin\theta,0)+\sin\phi\vec{k}=(-\cos\phi\cos\theta,\cos\phi\sin\theta,\sin\theta)$
+
+
+\title{Projeção Ortográfica}
+Apostila - \href{../gaalt/projortograf.pdf}{../gaalt/projortograf.pdf}
+$$
+\left[\begin{array}{c} x'\\y'
+         \end{array}\right]=\left[\begin{array}{ccc}
+-\mathrm{sen}\,\theta&\cos\,\theta&0\\
+-\cos\,\phi\cos\,\theta&-\cos\,\phi\mathrm{sen}\,\theta&\mathrm{sen}\,\phi
+\end{array}\right]
+\left[\begin{array}{c} x\\y\\z
+         \end{array}\right].
+$$
+\begin{itemize}
+\item
+Clique e arraste os pontos vermelhos no segmento para modificar o valor de $\delta$, 
+que é a distância entre a origem e o plano de projeção.
+\item
+Clique e arraste os pontos vermelhos nos círculos para modificar a posição de visão.
+\end{itemize}
+
+\begin{eqnarray*}
+U_1&=&(-\mathrm{sen}\theta,\cos\theta,0)\\
+U_2&=&-\cos\phi(\cos\theta,\mathrm{sen}\theta,0)\,+\,\mathrm{sen}\phi\vec{k}
+=(-\cos\phi\cos\theta,-\cos\phi\mathrm{sen}\theta,\mathrm{sen}\phi)\\
+U_3&=&\cos\phi\vec{k}\,+\,\mathrm{sen}\phi(\cos\theta,\mathrm{sen}\theta,0)
+=(\mathrm{sen}\phi\cos\theta,\mathrm{sen}\phi\mathrm{sen}\theta,\cos\phi)
+\end{eqnarray*}
+

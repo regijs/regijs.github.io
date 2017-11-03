@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<CaR>
+<Construction>
+<Window x="0.0" y="0.0" w="2.8284271247461916"/>
+<Objects>
+<Point name="O" n="1" hidden="true" showname="true" x="1.5" y="0.0">Point at 1.5, 0.0</Point>
+<Point name="O2" n="24" hidden="true" x="-1.5" y="0.0">Point at -1.5, 0.0</Point>
+<Text name="Text1" n="48" x="-0.96*(windoww-windowcx)" y="0.96*(windowh+windowcy)" fixed="true">Reginaldo J. Santos
+DMat-ICex-UFMG</Text>
+<Point name="P1" alias="$(\cos\theta,\sin\theta,0)$" n="0" showname="true" xcoffset="-0.21281510282869665" ycoffset="-0.06692780233452922" keepclose="true" x="x(O)+1" actx="2.5" y="0" acty="0.0" shape="dot" fixed="true">Point at &quot;x(O)+1&quot;, &quot;0&quot;</Point>
+<Point name="OE3" alias="$\vec{k}$" n="2" showname="true" xcoffset="0.0033077619547201564" ycoffset="0.04905282887658191" keepclose="true" x="x(O)" actx="1.5" y="1" acty="1.0" shape="dot" fixed="true">Point at &quot;x(O)&quot;, &quot;1&quot;</Point>
+<Point name="O2E2" alias="$\vec{j}$" n="25" color="2" showname="true" xcoffset="0.0017116295710057905" ycoffset="0.05909161192803292" keepclose="true" x="x(O2)" actx="-1.5" y="1" acty="1.0" shape="dot" fixed="true">Point at &quot;x(O2)&quot;, &quot;1&quot;</Point>
+<Point name="O2E1" alias="$\vec{i}$" n="26" color="2" showname="true" xcoffset="0.05578384997331298" ycoffset="-0.005019391525725281" keepclose="true" x="x(O2)+1" actx="-0.5" y="0" acty="0.0" shape="dot" fixed="true">Point at &quot;x(O2)+1&quot;, &quot;0&quot;</Point>
+<Circle name="c1" n="5" color="2" type="thin" through="OE3" midpoint="O" acute="true">Circle around O through OE3</Circle>
+<Segment name="s1" n="9" from="O" to="P1" arrow="true">Line segment from O to P1</Segment>
+<Segment name="s3" n="15" from="O" to="OE3" arrow="true">Line segment from O to OE3</Segment>
+<Segment name="s5" n="29" from="O2" to="O2E1" arrow="true">Line segment from O2 to O2E1</Segment>
+<Segment name="s6" n="32" from="O2" to="O2E2" arrow="true">Line segment from O2 to O2E2</Segment>
+<Circle name="c2" n="35" color="2" type="thin" through="O2E1" midpoint="O2" acute="true">Circle around O2 through O2E1</Circle>
+<PointOn name="U3" alias="$U_3$" n="6" color="2" showname="true" xcoffset="0.12419232067364372" ycoffset="0.07543058270746" keepclose="true" on="c1" alpha="0.5172214952517923" x="2.3691964119052296" y="0.494466983256794" shape="dot">Point on c1</PointOn>
+<PointOn name="P9" alias="$(\cos\theta,\sin\theta,0)$" n="36" color="2" showname="true" xcoffset="0.11241710697944485" ycoffset="0.057269868506677146" keepclose="true" on="c2" alpha="1.0488917166142049" x="-1.0014679071369508" y="0.8668712432567989" shape="dot">Point on c2</PointOn>
+<Segment name="s2" n="12" color="2" from="O" to="U3" arrow="true">Line segment from O to U3</Segment>
+<Angle name="ph" alias="$\phi$" n="18" color="2" showname="true" xcoffset="0.24012286069775968" ycoffset="0.4626748074430498" keepclose="true" unit="°" first="OE3" root="O" second="U3" acute="true">Angle OE3 - O - U3</Angle>
+<Segment name="s7" n="39" color="2" from="O2" to="P9" arrow="true">Line segment from O2 to P9</Segment>
+<Angle name="th" alias="$\theta$" n="43" color="2" showname="true" xcoffset="0.45243439824215126" ycoffset="0.24152206929417064" keepclose="true" unit="°" first="O2E1" root="O2" second="P9" acute="true">Angle O2E1 - O2 - P9</Angle>
+<Point name="U2" alias="$U_2$" n="19" color="2" showname="true" xcoffset="-0.06439710566971657" ycoffset="0.06942980340539684" keepclose="true" x="x(O)-cos(ph)" actx="1.0055330167432057" y="y(O)+sin(ph)" acty="0.8691964119052293" shape="dot" fixed="true">Point at &quot;x(O)-cos(ph)&quot;, &quot;y(O)+sin(ph)&quot;</Point>
+<Expression name="E1" n="23" hidden="true" showname="true" showvalue="true" x="1.31" y="0.49" value="ph" prompt="$\phi$">Expression &quot;ph&quot; at 1.3, 0.5</Expression>
+<Point name="O2U1" alias="$U_1$" n="40" color="2" showname="true" xcoffset="-0.04050006435849518" ycoffset="0.03541460452256051" keepclose="true" x="x(O2)-sin(th)" actx="-2.366871243256799" y="y(O2)+cos(th)" acty="0.49853209286304917" shape="dot" fixed="true">Point at &quot;x(O2)-sin(th)&quot;, &quot;y(O2)+cos(th)&quot;</Point>
+<Expression name="E2" n="44" hidden="true" showname="true" showvalue="true" x="-0.5" y="0.8" value="th" prompt="th">Expression &quot;th&quot; at -0.5, 0.8</Expression>
+<Segment name="s4" n="22" color="2" from="O" to="U2" arrow="true">Line segment from O to U2</Segment>
+<Segment name="s8" n="47" color="2" from="O2" to="O2U1" arrow="true">Line segment from O2 to O2U1</Segment>
+</Objects>
+</Construction>
+</CaR>

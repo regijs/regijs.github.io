@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<CaR>
+<Construction>
+<Window x="0.0" y="0.0" w="22.627416997969522"/>
+<Objects>
+<Text name="Text1" n="0" x="-0.9500000000000001*(windoww-windowcx)" y="0.9500000000000001*(windowh+windowcy)" fixed="true">Reginaldo J. Santos
+DMat-ICEx-UFMG</Text>
+<Point name="V" alias="$V=(%x(@V)%,%y(@V)%)$" n="1" color="5" type="thick" showname="true" xcoffset="1.2081743609392068" ycoffset="0.24287067829191056" keepclose="true" x="1.0009478672985745" y="4.003791469194312" shape="dot">Point at 1.0, 4.0</Point>
+<Point name="O" n="2" hidden="true" x="0.0" y="0.0">Point at 0.0, 0.0</Point>
+<Point name="E1" n="10" hidden="true" x="1.0" y="0.0">Point at 1.0, 0.0</Point>
+<Point name="x" alias="$x$" n="38" showname="true" xcoffset="-0.19493206772580862" ycoffset="0.4543658031720792" keepclose="true" x="0.96*(windoww+windowcx)" actx="21.72232031805074" y="0" acty="0.0" shape="dot" fixed="true">Point at &quot;0.96*(windoww+windowcx)&quot;, &quot;0&quot;</Point>
+<Point name="xn" n="39" hidden="true" x="-0.96*(windoww-windowcx)" actx="-21.72232031805074" y="0" acty="0.0" fixed="true">Point at &quot;-0.96*(windoww-windowcx)&quot;, &quot;0&quot;</Point>
+<Point name="y" alias="$y$" n="43" showname="true" xcoffset="0.9541681866613629" ycoffset="-0.24990119174464098" keepclose="true" x="0" actx="0.0" y="0.9500000000000001*windowh" acty="11.234402112878303" shape="dot" fixed="true">Point at &quot;0&quot;, &quot;0.9500000000000001*windowh&quot;</Point>
+<Point name="yn" n="44" hidden="true" x="0" actx="0.0" y="-0.96*(windowh-windowcy)" acty="-11.35265897722439" fixed="true">Point at &quot;0&quot;, &quot;-0.96*(windowh-windowcy)&quot;</Point>
+<Segment name="s1" n="5" from="O" to="V" arrow="true">Line segment from O to V</Segment>
+<Line name="l1" n="8" hidden="true" from="O" to="V">Line through O and V</Line>
+<Angle name="th" alias="$\theta=%if(y(V)&lt;0,-@th,@th)%^o$" n="13" showname="true" xcoffset="2.5951824234638003" ycoffset="1.329762894667402" keepclose="true" unit="°" first="E1" root="O" second="V" acute="true">Angle E1 - O - V</Angle>
+<Segment name="s2" n="42" from="xn" to="x" arrow="true">Line segment from xn to x</Segment>
+<Segment name="s3" n="47" from="yn" to="y" arrow="true">Line segment from yn to y</Segment>
+<PointOn name="a1" alias="$b=%@a%,b^2=%@a^2%$" n="9" color="5" type="thick" showname="true" xcoffset="-0.8335474936981985" ycoffset="-0.8033509171999893" keepclose="true" on="l1" alpha="-2.5020912061739278" x="-0.6068462545873038" y="-2.427385018349224" shape="dot">Point on l1</PointOn>
+<Expression name="tht" n="15" hidden="true" showname="true" showvalue="true" x="3.54" y="1.62" value="if(y(V)&lt;0,-th,th)" prompt="$\theta$">Expression &quot;if(y(V)&lt;0,-th,th)&quot; at 3.5, 1.6</Expression>
+<Expression name="a" n="14" hidden="true" showname="true" showvalue="true" x="3.5" y="2.0" value="d(a1,O)" prompt="$a$">Expression &quot;d(a1,O)&quot; at 3.5, 2.0</Expression>
+<Point name="W" n="16" hidden="true" x="cos(tht+90)" actx="-0.970142500145332" y="sin(tht+90)" acty="0.24253562503633272" fixed="true">Point at &quot;cos(tht+90)&quot;, &quot;sin(tht+90)&quot;</Point>
+<Line name="l2" n="19" hidden="true" from="O" to="W">Line through O and W</Line>
+<Point name="x1" alias="$x&apos;$" n="48" showname="true" xcoffset="0.12585375538894894" ycoffset="0.2604774034260693" keepclose="true" x="a*(exp(2)+exp(-2))/2*x(V)/sqrt(x(V)^2+y(V)^2)" actx="2.2830743641585944" y="a*(exp(2)+exp(-2))/2*y(V)/sqrt(x(V)^2+y(V)^2)" acty="9.132297456634412" shape="dot" fixed="true">Point at &quot;a*(exp(2)+exp(-2))/2*x(V)/sqrt(x(V)^2+y(V)^2)&quot;, &quot;a*(exp(2)+exp(-2))/2*y(V)/sqrt(x(V)^2+y(V)^2)&quot;</Point>
+<Point name="x1n" n="50" hidden="true" x="-a*(exp(2)+exp(-2))/2*x(V)/sqrt(x(V)^2+y(V)^2)" actx="-2.2830743641585944" y="-a*(exp(2)+exp(-2))/2*y(V)/sqrt(x(V)^2+y(V)^2)" acty="-9.132297456634412" fixed="true">Point at &quot;-a*(exp(2)+exp(-2))/2*x(V)/sqrt(x(V)^2+y(V)^2)&quot;, &quot;-a*(exp(2)+exp(-2))/2*y(V)/sqrt(x(V)^2+y(V)^2)&quot;</Point>
+<PointOn name="b1" alias="$a=%@b%,a^2=%@b^2%$" n="20" color="5" type="thick" showname="true" xcoffset="-0.553889563494379" ycoffset="0.4119316958253598" keepclose="true" on="l2" alpha="4.4944008360379915" x="-4.360209263729168" y="1.0900523159322906" shape="dot">Point on l2</PointOn>
+<Segment name="s4" n="53" from="x1n" to="x1" arrow="true">Line segment from x1n to x1</Segment>
+<Expression name="b" n="21" hidden="true" showname="true" showvalue="true" x="3.56" y="1.3800000000000001" value="d(b1,O)" prompt="$b$">Expression &quot;d(b1,O)&quot; at 3.6, 1.4</Expression>
+<Function name="hiperboley11" n="22" color="2" type="thick" x="cos(tht)*(a*(exp(t)-exp(-t))/2)-sin(tht)*(b*(exp(t)+exp(-t))/2)" y="sin(tht)*(a*(exp(t)-exp(-t))/2)+cos(tht)*(b*(exp(t)+exp(-t))/2)" var="t" min="-2" max="2" d="0.1">Function ( cos(tht)*(a*(exp(t)-exp(-t))/2)-sin(tht)*(b*(exp(t)+exp(-t))/2) , sin(tht)*(a*(exp(t)-exp(-t))/2)+cos(tht)*(b*(exp(t)+exp(-t))/2) )</Function>
+<Function name="hiperboley12" n="24" color="2" type="thick" x="cos(tht)*(-a*(exp(t)-exp(-t))/2)-sin(tht)*(-b*(exp(t)+exp(-t))/2)" y="sin(tht)*(-a*(exp(t)-exp(-t))/2)+cos(tht)*(-b*(exp(t)+exp(-t))/2)" var="t" min="-2" max="2" d="0.1">Function ( cos(tht)*(-a*(exp(t)-exp(-t))/2)-sin(tht)*(-b*(exp(t)+exp(-t))/2) , sin(tht)*(-a*(exp(t)-exp(-t))/2)+cos(tht)*(-b*(exp(t)+exp(-t))/2) )</Function>
+<Point name="ass1" n="25" hidden="true" x="(cos(tht)*a-sin(tht)*b)*exp(2)/2" actx="-13.866904917100197" y="(sin(tht)*a+cos(tht)*b)*exp(2)/2" acty="12.99527089373959" fixed="true">Point at &quot;(cos(tht)*a-sin(tht)*b)*exp(2)/2&quot;, &quot;(sin(tht)*a+cos(tht)*b)*exp(2)/2&quot;</Point>
+<Point name="ass2" n="26" hidden="true" x="(-cos(tht)*a-sin(tht)*b)*exp(2)/2" actx="-18.350925935671736" y="(-sin(tht)*a+cos(tht)*b)*exp(2)/2" acty="-4.940813180546633" fixed="true">Point at &quot;(-cos(tht)*a-sin(tht)*b)*exp(2)/2&quot;, &quot;(-sin(tht)*a+cos(tht)*b)*exp(2)/2&quot;</Point>
+<Point name="y1" alias="$y&apos;$" n="54" showname="true" xcoffset="-0.01857951154333115" ycoffset="0.17869699248080817" keepclose="true" x="b*(exp(2)-exp(-2))/2*cos(tht+90)" actx="-15.813870348547121" y="b*(exp(2)-exp(-2))/2*sin(tht+90)" acty="3.953467587136776" shape="dot" fixed="true">Point at &quot;b*(exp(2)-exp(-2))/2*cos(tht+90)&quot;, &quot;b*(exp(2)-exp(-2))/2*sin(tht+90)&quot;</Point>
+<Point name="y1n" n="55" hidden="true" x="-b*(exp(2)-exp(-2))/2*cos(tht+90)" actx="15.813870348547121" y="-b*(exp(2)-exp(-2))/2*sin(tht+90)" acty="-3.953467587136776" fixed="true">Point at &quot;-b*(exp(2)-exp(-2))/2*cos(tht+90)&quot;, &quot;-b*(exp(2)-exp(-2))/2*sin(tht+90)&quot;</Point>
+<Point name="ass3" n="59" hidden="true" x="-(cos(tht)*a-sin(tht)*b)*exp(2)/2" actx="13.866904917100197" y="-(sin(tht)*a+cos(tht)*b)*exp(2)/2" acty="-12.99527089373959" fixed="true">Point at &quot;-(cos(tht)*a-sin(tht)*b)*exp(2)/2&quot;, &quot;-(sin(tht)*a+cos(tht)*b)*exp(2)/2&quot;</Point>
+<Point name="ass4" n="63" hidden="true" x="-(-cos(tht)*a-sin(tht)*b)*exp(2)/2" actx="18.350925935671736" y="-(-sin(tht)*a+cos(tht)*b)*exp(2)/2" acty="4.940813180546633" fixed="true">Point at &quot;-(-cos(tht)*a-sin(tht)*b)*exp(2)/2&quot;, &quot;-(-sin(tht)*a+cos(tht)*b)*exp(2)/2&quot;</Point>
+<Point name="F1" n="67" color="2" type="thick" x="cos(tht+90)*sqrt(a^2+b^2)" actx="-4.990352978579363" y="sin(tht+90)*sqrt(a^2+b^2)" acty="1.2475882446448392" shape="dot" fixed="true">Point at &quot;cos(tht+90)*sqrt(a^2+b^2)&quot;, &quot;sin(tht+90)*sqrt(a^2+b^2)&quot;</Point>
+<Point name="F2" n="68" color="2" type="thick" x="-cos(tht+90)*sqrt(a^2+b^2)" actx="4.990352978579363" y="-sin(tht+90)*sqrt(a^2+b^2)" acty="-1.2475882446448392" shape="dot" fixed="true">Point at &quot;-cos(tht+90)*sqrt(a^2+b^2)&quot;, &quot;-sin(tht+90)*sqrt(a^2+b^2)&quot;</Point>
+<Segment name="s5" n="58" from="y1n" to="y1" arrow="true">Line segment from y1n to y1</Segment>
+<Segment name="s6" n="62" color="2" type="thin" from="ass1" to="ass3">Line segment from ass1 to ass3</Segment>
+<Segment name="s7" n="66" color="2" type="thin" from="ass2" to="ass4">Line segment from ass2 to ass4</Segment>
+</Objects>
+</Construction>
+</CaR>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<CaR>
+<Construction>
+<Window x="3.112022745949668" y="0.6023269830870328" w="11.313708498984761"/>
+<Animate animate="X2" via0="s2"/>
+<Objects>
+<Point name="O" n="1" hidden="true" x="0.0" y="0.0">Point at 0.0, 0.0</Point>
+<Point name="E1" n="2" hidden="true" x="1.0" y="0.0">Point at 1.0, 0.0</Point>
+<Point name="E2" n="14" hidden="true" x="0.0" y="1.0">Point at 0.0, 1.0</Point>
+<Line name="l1" n="5" hidden="true" from="O" to="E1">Line through O and E1</Line>
+<Line name="l3" n="17" hidden="true" from="O" to="E2">Line through O and E2</Line>
+<PointOn name="X0" alias="$x_0=%x(@X0)%$" n="6" color="5" showname="true" xcoffset="0.05795052554736202" ycoffset="-0.3312798406978672" keepclose="true" on="l1" alpha="1.9977178272386578" x="1.9977178272386578" y="0.0" shape="cross">Point on l1</PointOn>
+<PointOn name="X2" alias="$%y(@X2)%$" n="18" color="5" showname="true" xcoffset="-0.21081444408046046" ycoffset="-0.0022821727613422382" keepclose="true" on="l3" alpha="-1.6831871256189697" x="0.0" y="-1.6831871256189697" shape="cross">Point on l3</PointOn>
+<Point name="P5" n="8" hidden="true" x="x(X0)+1" actx="2.9977178272386578" y="0" acty="0.0" fixed="true">Point at &quot;x(X0)+1&quot;, &quot;0&quot;</Point>
+<Point name="P15" n="34" hidden="true" x="x(X0)" actx="1.9977178272386578" y="y(X2)" acty="-1.6311102165327336" fixed="true">Point at &quot;x(X0)&quot;, &quot;y(X2)&quot;</Point>
+<Point name="P16" n="35" hidden="true" x="x(X0)" actx="1.9977178272386578" y="y(X2)+1" acty="-0.6311102165327336" fixed="true">Point at &quot;x(X0)&quot;, &quot;y(X2)+1&quot;</Point>
+<Line name="l2" n="11" hidden="true" from="X0" to="P5">Line through X0 and P5</Line>
+<Line name="l8" n="38" hidden="true" from="P15" to="P16">Line through P15 and P16</Line>
+<PointOn name="X1" alias="$x_0 %+-(-x(@X1)+x(X0))%=%x(@X1)%$" n="12" color="5" showname="true" xcoffset="0.015513220580217535" ycoffset="-0.39151253900657146" keepclose="true" on="l2" alpha="3.13210031205257" x="5.129818139291228" y="0.0" shape="cross">Point on l2</PointOn>
+<PointOn name="X4" n="39" color="5" type="thick" on="l8" alpha="-0.4216288881609227" x="1.9977178272386578" y="-2.0527391046936563" shape="dot">Point on l8</PointOn>
+<Expression name="omega" n="25" hidden="true" showname="true" showvalue="true" x="2.84" y="3.44" value="2*pi/(x(X1)-x(X0))" prompt="$\omega$">Expression &quot;2*pi/(x(X1)-x(X0))&quot; at 2.8, 3.4</Expression>
+<Expression name="gamma" n="26" hidden="true" showname="true" showvalue="true" x="3.0" y="3.0" value="log(y(X4)/y(X2))/x(X0)" prompt="$\gamma$">Expression &quot;log(y(X4)/y(X2))/x(X0)&quot; at 3.0, 3.0</Expression>
+<Point name="P18" alias="$%y(X4)%$" n="40" showname="true" xcoffset="-0.19073687797756023" keepclose="true" x="0" actx="0.0" y="y(X4)" acty="-2.0527391046936563" shape="cross" fixed="true">Point at &quot;0&quot;, &quot;y(X4)&quot;</Point>
+<Text name="Text1" n="0" x="-0.96*(windoww-windowcx)" y="0.96*(windowh+windowcy)" fixed="true">$f(x)=ae^{\gamma x}\cos(\omega(x-x_0))$
+$f(x)=%y(X2)%e^{%gamma%x}\cos(%omega%(x %+-x(X0)%))$
+
+Reginaldo J. Santos
+DMat-ICEx-UFMG</Text>
+<Function name="f" n="27" color="2" type="thick" x="x" y="y(X2)*exp(gamma*x)*cos(deg(omega*(x-x(X0))))" var="x" min="-0.9*(windoww-windowcx)" max="0.9*(windoww+windowcx)" d="0.01*windoww">Function ( x , y(X2)*exp(gamma*x)*cos(deg(omega*(x-x(X0)))) )</Function>
+<Function name="f1" n="28" color="2" type="thin" x="x" y="y(X2)*exp(gamma*x)" var="x" min="-0.9*(windoww-windowcx)" max="0.9*(windoww+windowcx)" d="0.02*windoww">Function ( x , y(X2)*exp(gamma*x) )</Function>
+<Function name="f2" n="41" color="2" type="thin" x="x" y="-y(X2)*exp(gamma*x)" var="x" min="-0.9*(windoww-windowcx)" max="0.9*(windoww+windowcx)" d="0.02*windoww">Function ( x , -y(X2)*exp(gamma*x) )</Function>
+<Point name="P19" alias="$%-y(X2)%$" n="42" showname="true" xcoffset="-0.4316676712123737" ycoffset="-0.02007756610290201" keepclose="true" x="0" actx="0.0" y="-y(X2)" acty="1.6311102165327336" shape="cross" fixed="true">Point at &quot;0&quot;, &quot;-y(X2)&quot;</Point>
+<Point name="x" n="43" showname="true" xcoffset="0.07107458400427014" ycoffset="0.21081444408046135" keepclose="true" x="0.96*(windoww+windowcx)" actx="13.848701995137052" y="0" acty="0.0" shape="dot" fixed="true">Point at &quot;0.96*(windoww+windowcx)&quot;, &quot;0&quot;</Point>
+<Point name="xn" n="44" hidden="true" x="-0.96*(windoww-windowcx)" actx="-7.873618322913689" y="0" acty="0.0" fixed="true">Point at &quot;-0.96*(windoww-windowcx)&quot;, &quot;0&quot;</Point>
+<Segment name="s1" n="47" from="xn" to="x" arrow="true">Line segment from xn to x</Segment>
+<Point name="y" n="48" showname="true" x="0" actx="0.0" y="0.96*(windowh+windowcy)" acty="7.227413655894157" shape="dot" fixed="true">Point at &quot;0&quot;, &quot;0.96*(windowh+windowcy)&quot;</Point>
+<Point name="P23" n="49" hidden="true" x="0" actx="0.0" y="-0.96*(windowh-windowcy)" acty="-6.070945848367055" fixed="true">Point at &quot;0&quot;, &quot;-0.96*(windowh-windowcy)&quot;</Point>
+<Segment name="s2" n="52" from="P23" to="y" arrow="true">Line segment from P23 to y</Segment>
+</Objects>
+</Construction>
+</CaR>

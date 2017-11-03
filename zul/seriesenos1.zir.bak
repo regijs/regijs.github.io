@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<CaR>
+<Construction>
+<Window x="3.112022745949668" y="0.6023269830870328" w="11.313708498984761"/>
+<Objects>
+<Point name="O" n="1" hidden="true" x="0.0" y="0.0">Point at 0.0, 0.0</Point>
+<Point name="E1" n="2" hidden="true" x="1.0" y="0.0">Point at 1.0, 0.0</Point>
+<Point name="E2" n="14" hidden="true" x="0.0" y="1.0">Point at 0.0, 1.0</Point>
+<Point name="x" n="43" showname="true" xcoffset="0.07107458400427014" ycoffset="0.21081444408046135" keepclose="true" x="0.96*(windoww+windowcx)" actx="13.848701995137052" y="0" acty="0.0" shape="dot" fixed="true">Point at &quot;0.96*(windoww+windowcx)&quot;, &quot;0&quot;</Point>
+<Point name="xn" n="44" hidden="true" x="-0.06*(windoww-windowcx)" actx="-0.49210114518210557" y="0" acty="0.0" fixed="true">Point at &quot;-0.06*(windoww-windowcx)&quot;, &quot;0&quot;</Point>
+<Point name="y" alias="$y$" n="48" showname="true" x="0" actx="0.0" y="0.96*(windowh+windowcy)" acty="6.865651971882699" shape="dot" fixed="true">Point at &quot;0&quot;, &quot;0.96*(windowh+windowcy)&quot;</Point>
+<Point name="P23" n="49" hidden="true" x="0" actx="0.0" y="-0.96*(windowh-windowcy)" acty="-5.709184164355596" fixed="true">Point at &quot;0&quot;, &quot;-0.96*(windowh-windowcy)&quot;</Point>
+<Expression name="L" n="73" hidden="true" showname="true" showvalue="true" x="5.18" y="5.810000000000001" value="0.9*(windoww+windowcx)" prompt="L">Expression &quot;0.9*(windoww+windowcx)&quot; at 5.2, 5.8</Expression>
+<Expression name="pi" n="74" hidden="true" showname="true" showvalue="true" x="5.47" y="4.92" value="3.141590000000001" prompt="pi">Expression &quot;3.141590000000001&quot; at 5.5, 4.9</Expression>
+<Function name="g1" n="78" color="5" type="thick" background="true" x="x" y="x" var="x" min="0" max="0.9*(windoww+windowcx)/2" d="0.01*windoww">Function ( x , x )</Function>
+<Point name="P10" n="80" x="-8.0" y="1.0" shape="cross">Point at -8.0, 1.0</Point>
+<Point name="P11" n="83" x="-2.0" y="1.0" shape="cross">Point at -2.0, 1.0</Point>
+<Line name="l1" n="5" hidden="true" from="O" to="E1">Line through O and E1</Line>
+<Line name="l3" n="17" hidden="true" from="O" to="E2">Line through O and E2</Line>
+<Segment name="s1" n="47" from="xn" to="x" arrow="true">Line segment from xn to x</Segment>
+<Segment name="s2" n="52" from="P23" to="y" arrow="true">Line segment from P23 to y</Segment>
+<Function name="g2" n="79" color="5" type="thick" background="true" x="x" y="L-x" var="x" min="0.9*(windoww+windowcx)/2" max="0.9*(windoww+windowcx)" d="0.01*windoww">Function ( x , L-x )</Function>
+<Expression name="n" n="77" hidden="true" showname="true" showvalue="true" x="7.92" y="6.38" value="1+round((x(@nn)-x(P10))/(x(P11)-x(P10))*13)" prompt="n">Expression &quot;1+round((x(@nn)-x(P10))/(x(P11)-x(P10))*13)&quot; at 7.9, 6.4</Expression>
+<Segment name="s3" n="84" from="P10" to="P11">Line segment from P10 to P11</Segment>
+<Text name="Text1" n="0" x="-0.96*(windoww-windowcx)" y="0.96*(windowh+windowcy)" fixed="true">$f(x)=\frac{4L}{\pi^2}\sum_{n=1}^{%n%}\frac{\sin(n\pi/2)}{n^2}\sin(n\pi x/L)$
+
+
+Reginaldo J. Santos
+DMat-ICEx-UFMG</Text>
+<Function name="f" n="27" color="2" type="thick" x="x" y="4*L*(if(n&gt;=1,1,0)*sin(deg(pi*x/L))+if(n&gt;=3,-1/9,0)*sin(deg(3*pi*x/L))+if(n&gt;=5,1/25,0)*sin(deg(5*pi*x/L))+if(n&gt;=7,-1/49,0)*sin(deg(7*pi*x/L))+if(n&gt;=9,1/81,0)*sin(deg(9*pi*x/L))+if(n&gt;=11,-1/121,0)*sin(deg(11*pi*x/L))+if(n&gt;=13,1/169,0)*sin(deg(13*pi*x/L)))/pi^2" var="x" min="0" max="0.9*(windoww+windowcx)" d="0.01*windoww">Function ( x , 4*L*(if(n&gt;=1,1,0)*sin(deg(pi*x/L))+if(n&gt;=3,-1/9,0)*sin(deg(3*pi*x/L))+if(n&gt;=5,1/25,0)*sin(deg(5*pi*x/L))+if(n&gt;=7,-1/49,0)*sin(deg(7*pi*x/L))+if(n&gt;=9,1/81,0)*sin(deg(9*pi*x/L))+if(n&gt;=11,-1/121,0)*sin(deg(11*pi*x/L))+if(n&gt;=13,1/169,0)*sin(deg(13*pi*x/L)))/pi^2 )</Function>
+<PointOn name="nn" alias="$N=%1+round((x(@nn)-x(P10))/(x(P11)-x(P10))*13)%$" n="85" color="5" type="thick" showname="true" on="s3" alpha="0.12642728615915141" x="-7.241436283045092" y="1.0" shape="circle">Point on s3</PointOn>
+<Point name="P12" alias="$L$" n="86" showname="true" xcoffset="-0.010111971132456432" ycoffset="-0.3825442681847635" keepclose="true" x="L" actx="12.983158120440986" y="0" acty="0.0" shape="cross" fixed="true">Point at &quot;L&quot;, &quot;0&quot;</Point>
+</Objects>
+</Construction>
+</CaR>

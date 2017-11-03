@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<CaR>
+<Construction>
+<Window x="0.3919253675974539" y="0.1405429627203052" w="11.31370849898476" showgrid="true"/>
+<Objects>
+<Text name="Text1" n="0" x="-0.96*(windoww-windowcx)" y="0.96*(windowh+windowcy)" fixed="true">Reginaldo J. Santos
+DMat-ICEx-UFMG</Text>
+<Point name="V" n="1" showname="true" showvalue="true" xcoffset="0.15886852455946432" ycoffset="0.22695503508494852" keepclose="true" bold="true" large="true" x="2.5" y="4.0" shape="dot">Point at 2.5, 4.0</Point>
+<Point name="O" n="2" hidden="true" x="0.0" y="0.0">Point at 0.0, 0.0</Point>
+<Point name="W" n="6" showname="true" showvalue="true" bold="true" large="true" x="4.5" y="-1.5" shape="dot">Point at 4.5, -1.5</Point>
+<Point name="x" alias="$x$" n="20" showname="true" xcoffset="-0.024057233719007698" ycoffset="0.37447580789016754" keepclose="true" x="0.96*(windoww+windowcx)" actx="11.237408511918924" y="0" acty="0.0" shape="dot" fixed="true">Point at &quot;0.96*(windoww+windowcx)&quot;, &quot;0&quot;</Point>
+<Point name="xn" n="21" hidden="true" x="-0.96*(windoww-windowcx)" actx="-10.484911806131814" y="0" acty="0.0" fixed="true">Point at &quot;-0.96*(windoww-windowcx)&quot;, &quot;0&quot;</Point>
+<Point name="y" alias="$y$" n="25" showname="true" xcoffset="0.3290848008731775" ycoffset="-0.11847052831434457" keepclose="true" x="0" actx="0.0" y="0.96*(windowh+windowcy)" acty="5.811250732823686" shape="dot" fixed="true">Point at &quot;0&quot;, &quot;0.96*(windowh+windowcy)&quot;</Point>
+<Point name="yn" n="26" hidden="true" x="0" actx="0.0" y="-0.96*(windowh-windowcy)" acty="-5.541408244400701" fixed="true">Point at &quot;0&quot;, &quot;-0.96*(windowh-windowcy)&quot;</Point>
+<Segment name="s1" n="5" type="thick" from="O" to="V" arrow="true">Line segment from O to V</Segment>
+<Segment name="s2" n="9" type="thick" from="O" to="W" arrow="true">Line segment from O to W</Segment>
+<Point name="V+W" n="10" color="2" showname="true" showvalue="true" bold="true" large="true" x="x(V)+x(W)" actx="7.0" y="y(V)+y(W)" acty="2.5" shape="dot" fixed="true">Point at &quot;x(V)+x(W)&quot;, &quot;y(V)+y(W)&quot;</Point>
+<Segment name="s6" n="24" from="xn" to="x" arrow="true">Line segment from xn to x</Segment>
+<Segment name="s7" n="29" from="yn" to="y" arrow="true">Line segment from yn to y</Segment>
+<Segment name="s3" n="13" color="2" type="thick" from="O" to="V+W" arrow="true">Line segment from O to V+W</Segment>
+<Segment name="s4" alias="$W$" n="16" showname="true" from="V" to="V+W" arrow="true">Line segment from V to V+W</Segment>
+<Segment name="s5" alias="$V$" n="19" showname="true" xcoffset="0.5249438163477613" ycoffset="0.030342285502880456" keepclose="true" from="W" to="V+W" arrow="true">Line segment from W to V+W</Segment>
+</Objects>
+</Construction>
+</CaR>

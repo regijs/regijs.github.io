@@ -1,0 +1,44 @@
+P1  M1 P2    <-  P3  a
+P4  M2 P5    <-  P6  b
+P7  M3 P8    <-  P9  c
+P10 M4 P11   <-  P12 x0
+
+
+eixox'
+x=cos(deg((x(P9)-x(M3))))*x
+y=sin(deg((x(P9)-x(M3))))*x
+
+eixoy'
+x=-sin(deg((x(P9)-x(M3))))*y
+y=cos(deg((x(P9)-x(M3))))*y
+
+
+eixox''
+x=cos(deg(x(P9)-x(M3)))*x-sin(deg(x(P9)-x(M3)))*(x(P21)-x(M5))
+y=sin(deg(x(P9)-x(M3)))*x+cos(deg(x(P9)-x(M3)))*(x(P21)-x(M5))
+
+
+eixoy''
+x=cos(deg(x(P9)-x(M3)))*(x(P12)-x(M4))-sin(deg(x(P9)-x(M3)))*y
+y=sin(deg(x(P9)-x(M3)))*(x(P12)-x(M4))+cos(deg(x(P9)-x(M3)))*y
+
+
+assintota1
+x=cos(deg(x(P9)-x(M3)))*((x(P12)-x(M4))+(x(P3)-x(P1))*t)-sin(deg(x(P9)-x(M3)))*((x(P21)-x(M5))+(x(P6)-x(P4))*t)
+y=sin(deg(x(P9)-x(M3)))*((x(P12)-x(M4))+(x(P3)-x(P1))*t)+cos(deg(x(P9)-x(M3)))*((x(P21)-x(M5))+(x(P6)-x(M2))*t)
+
+
+assintota2
+x=cos(deg(x(P9)-x(M3)))*((x(P12)-x(M4))-(x(P3)-x(P1))*t)-sin(deg(x(P9)-x(M3)))*((x(P21)-x(M5))+(x(P6)-x(P4))*t)
+y=sin(deg(x(P9)-x(M3)))*((x(P12)-x(M4))-(x(P3)-x(P1))*t)+cos(deg(x(P9)-x(M3)))*((x(P21)-x(M5))+(x(P6)-x(P4))*t)
+
+
+hiperboley1
+x=cos(deg(x(P9)-x(M3)))*((x(P12)-x(M4))+(x(P3)-x(P1))*(exp(t)-exp(-t))/2)-sin(deg(x(P9)-x(M3)))*((x(P21)-x(M5))+(x(P6)-x(P4))*(exp(t)+exp(-t))/2)
+y=sin(deg(x(P9)-x(M3)))*((x(P12)-x(M4))+(x(P3)-x(P1))*(exp(t)-exp(-t))/2)+cos(deg(x(P9)-x(M3)))*((x(P21)-x(M5))+(x(P6)-x(P4))*(exp(t)+exp(-t))/2)
+
+hiperboley2
+x=cos(deg(x(P9)-x(M3)))*((x(P12)-x(M4))+(x(P3)-x(P1))*(exp(t)-exp(-t))/2)-sin(deg(x(P9)-x(M3)))*((x(P21)-x(M5))-(x(P6)-x(P4))*(exp(t)+exp(-t))/2)
+y=sin(deg(x(P9)-x(M3)))*((x(P12)-x(M4))+(x(P3)-x(P1))*(exp(t)-exp(-t))/2)+cos(deg(x(P9)-x(M3)))*((x(P21)-x(M5))-(x(P6)-x(P4))*(exp(t)+exp(-t))/2)
+
+t=-2:2

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CaR version="9.3">
+<Construction>
+<Window x="0.2805933596451635" y="0.29958868836642694" w="11.313708498984763" showgrid="true"/>
+<Grid axesonly="true" color="0" thickness="2"/>
+<Objects>
+<Point name="O" n="2" hidden="true" x="0.0" y="0.0">Point at 0.0, 0.0</Point>
+<Point name="x" alias="$x$" n="20" showname="true" xcoffset="-0.024057233719007698" ycoffset="0.37447580789016754" keepclose="true" x="0.96*(windoww+windowcx)" actx="11.130529784284729" y="0" acty="0.0" shape="dot" fixed="true">Point at &quot;0.96*(windoww+windowcx)&quot;, &quot;0&quot;</Point>
+<Point name="xn" n="21" hidden="true" x="-0.96*(windoww-windowcx)" actx="-10.591790533766016" y="0" acty="0.0" fixed="true">Point at &quot;-0.96*(windoww-windowcx)&quot;, &quot;0&quot;</Point>
+<Point name="y" alias="$y$" n="25" showname="true" xcoffset="0.3290848008731775" ycoffset="-0.11847052831434457" keepclose="true" x="0" actx="0.0" y="0.96*(windowh+windowcy)" acty="7.303509839829525" shape="dot" fixed="true">Point at &quot;0&quot;, &quot;0.96*(windowh+windowcy)&quot;</Point>
+<Point name="yn" n="26" hidden="true" x="0" actx="0.0" y="-0.96*(windowh-windowcy)" acty="-6.728299558165985" fixed="true">Point at &quot;0&quot;, &quot;-0.96*(windowh-windowcy)&quot;</Point>
+<Point name="V" alias="$A_1={%x(@V)%\choose%y(@V)%}$" n="1" usercolor="0,0,0" type="thick" showname="true" xcoffset="0.46530198273677015" ycoffset="-0.40311660905625324" keepclose="true" bold="true" x="1.0" y="-4.0" shape="dot">Point at 1.0, -4.0</Point>
+<Point name="W" alias="$A_2={%x(@W)%\choose%y(@W)%}$" n="6" type="thick" showname="true" xcoffset="-0.38831252734782584" ycoffset="0.06753261345179684" keepclose="true" bold="true" x="-1.0" y="1.0" shape="dot">Point at -1.0, 1.0</Point>
+<Point name="X" alias="$V={%x(@X)%\choose%y(@X)%}$" n="30" color="2" showname="true" xcoffset="0.07296648271237771" ycoffset="-0.5375299392556476" keepclose="true" bold="true" x="-2.0" y="-4.0" shape="dot" large="true">Point at -2.0, -4.0</Point>
+<Segment name="s6" n="24" from="xn" to="x" arrow="true">Line segment from xn to x</Segment>
+<Segment name="s7" n="29" from="yn" to="y" arrow="true">Line segment from yn to y</Segment>
+<Segment name="s1" n="5" type="thick" hidden="true" from="O" to="V" arrow="true">Line segment from O to V</Segment>
+<Segment name="s2" n="9" type="thick" hidden="true" from="O" to="W" arrow="true">Line segment from O to W</Segment>
+<Segment name="s8" n="33" color="2" type="thick" from="O" to="X" arrow="true">Line segment from O to X</Segment>
+<Point name="AX" alias="$AV={%x(@AX)%\choose%y(@AX)%}$" n="34" color="1" showname="true" xcoffset="0.26698500156712823" ycoffset="0.27503841577967236" keepclose="true" bold="true" x="x(V)*x(X)+x(W)*y(X)" actx="2.0" y="y(V)*x(X)+y(W)*y(X)" acty="4.0" shape="dot" fixed="true" large="true">Point at &quot;x(V)*x(X)+x(W)*y(X)&quot;, &quot;y(V)*x(X)+y(W)*y(X)&quot;</Point>
+<Text name="Text1" n="0" x="-0.96*(windoww-windowcx)" y="0.96*(windowh+windowcy)" fixed="true">$AV=\left[\begin{array}{rr}%x(V)%&amp;%x(W)%\\%y(V)%&amp;%y(W)% \end{array}\right]\left[\begin{array}{r}%x(X)%\\%y(X)% \end{array}\right]=\left[\begin{array}{r}%x(AX)%\\%y(AX)%\end{array}\right]$
+
+Reginaldo J. Santos
+DMat-ICEx-UFMG</Text>
+<Segment name="s9" n="37" color="1" type="thick" from="O" to="AX" arrow="true">Line segment from O to AX</Segment>
+</Objects>
+</Construction>
+</CaR>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<CaR>
+<Construction>
+<Window x="0.0" y="0.0" w="9.51365692002177" showgrid="true"/>
+<Objects>
+<Text name="Text1" n="0" x="-0.96*(windoww-windowcx)" y="0.96*(windowh+windowcy)" fixed="true">Reginaldo J. Santos
+DMat-ICEx-UFMG</Text>
+<Point name="V" alias="$V=(%x(V)%,%y(V)%)$" n="1" color="5" type="thick" showname="true" x="1.578574839435733" y="1.527925379346886" shape="dot">Point at 1.58, 1.53</Point>
+<Point name="E1" n="2" hidden="true" x="1.0" y="0.0">Point at 1.0, 0.0</Point>
+<Point name="O" n="3" hidden="true" x="0.0" y="0.0">Point at 0.0, 0.0</Point>
+<Segment name="s1" n="6" from="O" to="V" arrow="true">Line segment from O to V</Segment>
+<Angle name="th" alias="$\theta=%@tht%^o$" n="9" showname="true" xcoffset="1.1428571428571423" ycoffset="0.23425022182786126" keepclose="true" unit="°" first="E1" root="O" second="V" acute="true">Angle E1 - O - V</Angle>
+<Expression name="tht" n="10" hidden="true" showname="true" showvalue="true" x="2.97" y="2.62" value="if(y(V)&lt;0,-th,th)" prompt="$\theta$">Expression &quot;if(y(V)&lt;0,-th,th)&quot; at 3.0, 2.6</Expression>
+<Point name="O2" n="11" color="5" type="thick" showname="true" x="4.02663207706334" y="1.4097433058062432" shape="dot">Point at 4.03, 1.41</Point>
+<Point name="P5" n="12" hidden="true" x="x(O2)+cos(tht)" actx="4.745172274104887" y="y(O2)+sin(tht)" acty="2.1052287371673133" fixed="true">Point at &quot;x(O2)+cos(tht)&quot;, &quot;y(O2)+sin(tht)&quot;</Point>
+<Point name="P6" n="13" hidden="true" x="x(O2)-sin(tht)" actx="3.33114664570227" y="y(O2)+cos(tht)" acty="2.1282835028477907" fixed="true">Point at &quot;x(O2)-sin(tht)&quot;, &quot;y(O2)+cos(tht)&quot;</Point>
+<Line name="l1" n="16" hidden="true" from="O2" to="P6">Line through O2 and P6</Line>
+<Line name="l2" n="19" hidden="true" from="O2" to="P5">Line through O2 and P5</Line>
+<PointOn name="A" n="20" color="5" type="thick" showname="true" on="l2" alpha="1.787300503770409" x="5.310879333214987" y="2.6527847676428644" shape="dot">Point on l2</PointOn>
+<PointOn name="B" n="21" color="5" type="thick" showname="true" on="l1" alpha="1.411108869352358" x="3.0452264163643834" y="2.423681750837762" shape="dot">Point on l1</PointOn>
+<Expression name="a" n="22" hidden="true" showname="true" showvalue="true" x="3.0" y="3.29" value="d(A,O2)" prompt="a">Expression &quot;d(A,O2)&quot; at 3.0, 3.3</Expression>
+<Expression name="b" n="23" hidden="true" showname="true" showvalue="true" x="4.01" y="3.37" value="d(B,O2)" prompt="b">Expression &quot;d(B,O2)&quot; at 4.0, 3.4</Expression>
+<Expression name="x0" n="24" hidden="true" showname="true" showvalue="true" x="1.43" y="3.36" value="cos(tht)*x(O2)+sin(tht)*y(O2)" prompt="$x_0$">Expression &quot;cos(tht)*x(O2)+sin(tht)*y(O2)&quot; at 1.4, 3.4</Expression>
+<Expression name="y0" n="25" hidden="true" showname="true" showvalue="true" x="1.5" y="2.5" value="-sin(tht)*x(O2)+cos(tht)*y(O2)" prompt="$y_0$">Expression &quot;-sin(tht)*x(O2)+cos(tht)*y(O2)&quot; at 1.5, 2.5</Expression>
+</Objects>
+</Construction>
+</CaR>

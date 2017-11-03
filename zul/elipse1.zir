@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<CaR>
+<Construction>
+<Window x="0.03213198303400189" y="-0.033310062029457355" w="6.72717132202973" showgrid="true"/>
+<Objects>
+<Point name="O" n="2" hidden="true" x="0.0" y="0.0">Point at 0.0, 0.0</Point>
+<Point name="x" alias="$x$" n="20" hidden="true" showname="true" xcoffset="-0.024057233719007698" ycoffset="0.37447580789016754" keepclose="true" x="0.96*(windoww+windowcx)" actx="6.488931172861182" y="0" acty="0.0" fixed="true">Point at &quot;0.96*(windoww+windowcx)&quot;, &quot;0&quot;</Point>
+<Point name="xn" n="21" hidden="true" x="-0.96*(windoww-windowcx)" actx="-6.427237765435899" y="0" acty="0.0" fixed="true">Point at &quot;-0.96*(windoww-windowcx)&quot;, &quot;0&quot;</Point>
+<Point name="y" alias="$y$" n="25" hidden="true" showname="true" xcoffset="0.3290848008731775" ycoffset="-0.11847052831434457" keepclose="true" x="0" actx="0.0" y="0.96*(windowh+windowcy)" acty="3.5093676837825094" fixed="true">Point at &quot;0&quot;, &quot;0.96*(windowh+windowcy)&quot;</Point>
+<Point name="yn" n="26" hidden="true" x="0" actx="0.0" y="-0.96*(windowh-windowcy)" acty="-3.573323002879067" fixed="true">Point at &quot;0&quot;, &quot;-0.96*(windowh-windowcy)&quot;</Point>
+<Segment name="s6" n="24" hidden="true" from="xn" to="x" arrow="true">Line segment from xn to x</Segment>
+<Segment name="s7" n="29" hidden="true" from="yn" to="y" arrow="true">Line segment from yn to y</Segment>
+<PointOn name="F1" alias="$F_2$" n="30" color="5" type="thick" showname="true" bold="true" large="true" on="s6" alpha="0.7473451467157097" x="3.2255984047606265" y="0.0" shape="dcross">Point on s6</PointOn>
+<PointOn name="A" n="32" color="5" type="thick" showname="true" bold="true" large="true" on="s6" alpha="0.8073011289375925" x="4.0" y="0.0" shape="dot">Point on s6</PointOn>
+<Expression name="a" n="34" hidden="true" showname="true" showvalue="true" x="3.67" y="3.45" value="x(A)" prompt="a">Expression &quot;x(A)&quot; at 3.7, 3.5</Expression>
+<Expression name="c" n="35" hidden="true" showname="true" showvalue="true" x="3.5" y="3.0" value="x(F1)" prompt="c">Expression &quot;x(F1)&quot; at 3.5, 3.0</Expression>
+<Point name="F2" alias="$F_1$" n="38" color="2" type="thick" showname="true" xcoffset="-0.05940704112693851" ycoffset="-0.200775661029013" keepclose="true" bold="true" large="true" x="-x(F1)" actx="-3.2255984047606265" y="0" acty="0.0" shape="dcross" fixed="true">Point at &quot;-x(F1)&quot;, &quot;0&quot;</Point>
+<Text name="Text1" n="0" x="-0.96*(windoww-windowcx)" y="0.96*(windowh+windowcy)" fixed="true">$dist(P,F1)+dist(P,F_2)=%2*a%$
+$dist(F_1,F_2)=%2*c%$
+
+Reginaldo J. Santos
+DMat-ICEx-UFMG</Text>
+<Expression name="b" n="36" hidden="true" showname="true" showvalue="true" x="3.5" y="2.5" value="sqrt(a^2-c^2)" prompt="b">Expression &quot;sqrt(a^2-c^2)&quot; at 3.5, 2.5</Expression>
+<Function name="elipse" n="33" color="2" type="thick" x="a*cos(t)" y="b*sin(t)" var="t" min="-180" max="180" d="2" shape="dot">Function ( a*cos(t) , b*sin(t) )</Function>
+</Objects>
+</Construction>
+</CaR>

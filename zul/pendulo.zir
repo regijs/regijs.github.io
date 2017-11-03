@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<CaR>
+<Construction>
+<Window x="3.563508765862206" y="0.5757689819157088" w="11.313708498984766"/>
+<Animate animate="P18" via0="c1"/>
+<Draw color="0">
+<Point x="-3.2087815328258555" y="-1.9870781311172259"/>
+</Draw>
+<Draw color="0">
+<Point x="-3.1822235316545306" y="-1.9605201299459"/>
+</Draw>
+<Objects>
+<Point name="a0" n="53" hidden="true" x="-7" actx="-7.0" y="3" acty="3.0" shape="cross" fixed="true">Point at &quot;-7&quot;, &quot;3&quot;</Point>
+<Point name="a1" n="56" hidden="true" x="-2" actx="-2.0" y="3" acty="3.0" shape="cross" fixed="true">Point at &quot;-2&quot;, &quot;3&quot;</Point>
+<Point name="P17" n="63" x="-4.920840480602228" y="-2.2358645621128272" shape="dot">Point at -4.92, -2.24</Point>
+<Expression name="L" n="73" hidden="true" showname="true" showvalue="true" x="6.640690064422916" y="5.385071981258792" value="0.9*(windoww+windowcx)" prompt="L">Expression &quot;0.9*(windoww+windowcx)&quot; at 6.6, 5.4</Expression>
+<Expression name="pi" n="74" hidden="true" showname="true" showvalue="true" x="7.036922069108219" y="4.893441998828678" value="3.141590000000001" prompt="pi">Expression &quot;3.141590000000001&quot; at 7.0, 4.9</Expression>
+<Point name="P20" n="88" hidden="true" x="4.0" y="7.0">Point at 4.0, 7.0</Point>
+<Point name="P22" n="91" hidden="true" x="6.0" y="7.0">Point at 6.0, 7.0</Point>
+<Text name="Text1" n="148" x="-0.96*(windoww-windowcx)" y="0.96*(windowh+windowcy)" fixed="true">Pêndulo Simples
+
+Reginaldo J. Santos
+DMat-ICEx-UFMG</Text>
+<Segment name="s3" n="57" hidden="true" from="a0" to="a1">Line segment from a0 to a1</Segment>
+<Circle name="c1" n="66" hidden="true" fixed="1.6974995548525453" dragable="true" midpoint="P17" acute="true">Circle around P17 with radius 1.6974995548525453</Circle>
+<Segment name="s5" n="92" type="thick" from="P20" to="P22">Line segment from P20 to P22</Segment>
+<PointOn name="ll" alias="$l=%@l%$" n="62" color="5" type="thick" hidden="true" showname="true" on="s3" alpha="0.6042072866411388" x="-3.978963566794306" y="3.0" shape="circle">Point on s3</PointOn>
+<PointOn name="P18" n="67" color="5" type="thick" hidden="true" on="c1" alpha="-2.7784536588890383" x="-6.507640025532087" y="-2.838833834078642" shape="circle">Point on c1 </PointOn>
+<PointOn name="OP20" n="68" hidden="true" on="c1" alpha="0.0" x="-3.223340925749683" y="-2.2358645621128272" shape="dot">Point on c1</PointOn>
+<PointOn name="P25" n="94" hidden="true" on="s5" alpha="0.5" x="5.0" y="7.0">Point on s5</PointOn>
+<Angle name="t" alias="$t=%@tt%$" n="71" hidden="true" showname="true" unit="°" first="P18" root="P17" second="OP20" display="large" acute="true">Angle P18 - P17 - OP20</Angle>
+<Expression name="l" n="76" hidden="true" showname="true" showvalue="true" x="8.199242115961251" y="4.405906008199281" value="x(ll)-x(a0)+5" prompt="l">Expression &quot;x(ll)-x(a0)+5&quot; at 8.2, 4.4</Expression>
+<Expression name="tt" n="72" hidden="true" showname="true" showvalue="true" x="6.723154073793523" y="6.114093991800721" value="if(y(P18)&lt;y(OP20),360-t,t)" prompt="tt">Expression &quot;if(y(P18)&lt;y(OP20),360-t,t)&quot; at 6.7, 6.1</Expression>
+<Function name="f4" n="104" type="thin" x="5+l*cos(-90+t)" y="7+l*sin(-90+t)" var="t" min="-30" max="30" d="2">Function ( 5+l*cos(-90+t) , 7+l*sin(-90+t) )</Function>
+<Point name="P16" n="131" hidden="true" x="5" actx="5.0" y="7-l" acty="-1.021036433205694" fixed="true">Point at &quot;5&quot;, &quot;7-l&quot;</Point>
+<Expression name="theta" n="109" hidden="true" showname="true" showvalue="true" x="8.685292086678103" y="3.536883997657349" value="0.30000000000000004*sin(tt)" prompt="theta">Expression &quot;0.30000000000000004*sin(tt)&quot; at 8.7, 3.5</Expression>
+<Segment name="s13" n="132" type="thin" from="P25" to="P16">Line segment from P25 to P16</Segment>
+<Point name="Pt" n="93" color="2" type="thick" x="5+l*cos(-90+deg(theta))" actx="4.146870436974721" y="7+l*sin(-90+deg(theta))" acty="-0.9755373117743869" shape="circle" fixed="true">Point at &quot;5+l*cos(-90+deg(theta))&quot;, &quot;7+l*sin(-90+deg(theta))&quot;</Point>
+<PointOn name="P19" n="138" hidden="true" on="s13" alpha="0.20990152868932507" x="5.0" y="5.316372190997353">Point on s13</PointOn>
+<Segment name="s6" n="97" from="P25" to="Pt">Line segment from P25 to Pt</Segment>
+<Point name="P26" alias="$-mg\sin\theta$" n="107" showname="true" xcoffset="-0.0038911089874389404" ycoffset="0.43295979294905274" keepclose="true" x="x(Pt)-5*sin(deg(theta))*cos(deg(theta))" actx="4.675661332476931" y="y(Pt)-5*sin(deg(theta))*sin(deg(theta))" acty="-1.0321011679732088" shape="dot" fixed="true">Point at &quot;x(Pt)-5*sin(deg(theta))*cos(deg(theta))&quot;, &quot;y(Pt)-5*sin(deg(theta))*sin(deg(theta))&quot;</Point>
+<Point name="P27" n="112" hidden="true" x="x(Pt)" actx="4.146870436974721" y="y(Pt)-5" acty="-5.975537311774387" fixed="true">Point at &quot;x(Pt)&quot;, &quot;y(Pt)-5&quot;</Point>
+<Point name="P15" n="124" hidden="true" x="x(Pt)+5*cos(deg(theta))*sin(deg(theta))" actx="3.618079541472511" y="y(Pt)-5*cos(deg(theta))*cos(deg(theta))" acty="-5.918973455575564" fixed="true">Point at &quot;x(Pt)+5*cos(deg(theta))*sin(deg(theta))&quot;, &quot;y(Pt)-5*cos(deg(theta))*cos(deg(theta))&quot;</Point>
+<Point name="P28" n="151" hidden="true" x="x(Pt)-5*cos(deg(theta))*sin(deg(theta))" actx="4.675661332476931" y="y(Pt)+5*cos(deg(theta))*cos(deg(theta))" acty="3.9678988320267905" fixed="true">Point at &quot;x(Pt)-5*cos(deg(theta))*sin(deg(theta))&quot;, &quot;y(Pt)+5*cos(deg(theta))*cos(deg(theta))&quot;</Point>
+<Segment name="s7" n="108" color="5" from="Pt" to="P26" arrow="true">Line segment from Pt to P26</Segment>
+<Segment name="s8" n="113" color="1" from="Pt" to="P27" arrow="true">Line segment from Pt to P27</Segment>
+<Segment name="s9" n="116" type="thin" from="P26" to="P27">Line segment from P26 to P27</Segment>
+<Segment name="s11" n="125" from="Pt" to="P15" arrow="true">Line segment from Pt to P15</Segment>
+<Segment name="s12" n="128" type="thin" from="P15" to="P27">Line segment from P15 to P27</Segment>
+<PointOn name="OP21" n="141" hidden="true" on="s6" alpha="0.20136061163686303" x="4.82821330938374" y="5.394040928768487">Point on s6</PointOn>
+<Segment name="s10" n="152" from="Pt" to="P28" arrow="true">Line segment from Pt to P28</Segment>
+<Angle name="a3" alias="$\theta$" n="142" showname="true" xcoffset="0.342894844341032" ycoffset="-2.1882298312578365" keepclose="true" unit="°" first="P19" root="P25" second="OP21" display="large" acute="true">Angle P19 - P25 - OP21</Angle>
+<PointOn name="OP23" n="143" hidden="true" on="s11" alpha="0.3766985842680313" x="3.947675655265214" y="-2.8377227085637067">Point on s11</PointOn>
+<PointOn name="P24" n="146" hidden="true" on="s8" alpha="0.3492968837560559" x="4.146870436974721" y="-2.7220217305546663">Point on s8</PointOn>
+<Angle name="a4" alias="$\theta$" n="147" showname="true" xcoffset="0.291915580474992" ycoffset="-2.2776444422067943" keepclose="true" unit="°" first="OP23" root="Pt" second="P24" display="large" acute="true">Angle OP23 - Pt - P24</Angle>
+</Objects>
+</Construction>
+</CaR>
