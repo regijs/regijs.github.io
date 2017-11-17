@@ -1,0 +1,147 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.05 [en] (X11; I; SunOS 5.5.1 sun4u) [Netscape]">
+   <TITLE>Um Applet para &Aacute;lgebra Linear</TITLE>
+</HEAD>
+<BODY>
+
+<HR>
+<CENTER>
+<H3>
+<FONT COLOR="#3333FF">LABMAT - Laborat&oacute;rio de Matrizes</FONT></H3></CENTER>
+
+<CENTER>
+<H3>
+<FONT COLOR="#3333FF">Um Applet para &Aacute;lgebra Linear</FONT></H3></CENTER>
+
+<CENTER><B><FONT COLOR="#0000FF">Reginaldo J. Santos</FONT></B></CENTER>
+
+<CENTER><B><FONT COLOR="#0000FF">Departamento de Matem&aacute;tica</FONT></B></CENTER>
+
+<CENTER><B><FONT COLOR="#0000FF">Instituto de Ci&ecirc;ncias Exatas</FONT></B></CENTER>
+
+<CENTER><B><FONT COLOR="#0000FF">Universidade Federal de Minas Gerais</FONT></B></CENTER>
+
+<CENTER><A NAME="tex2html1" HREF="http://www.mat.ufmg.br/~regi"></A><B><FONT COLOR="#0000FF"><A HREF="http://www.mat.ufmg.br/~regi" NAME="tex2html1">http://www.mat.ufmg.br/~regi</A></FONT></B></CENTER>
+
+<CENTER></CENTER>
+
+<CENTER><B><FONT COLOR="#0000FF">Abril 1998</FONT></B></CENTER>
+&nbsp;
+<CENTER><FONT COLOR="#FF0000"></FONT>&nbsp;</CENTER>
+
+<CENTER><FONT COLOR="#FF0000"></FONT>&nbsp;</CENTER>
+
+<CENTER><FONT COLOR="#FF0000"></FONT></CENTER>
+<B><FONT COLOR="#009900">Objetivo:</FONT></B>
+
+<P>Este&nbsp; <A HREF="#applet">applet</A>&nbsp; oferece uma interface
+simples estilo MATLAB e um conjunto de opera&ccedil;&otilde;es matriciais
+e com vetores al&eacute;m de algumas <A HREF="#Funções:">fun&ccedil;&otilde;es</A>
+como por exemplo opera&ccedil;&otilde;es elementares sobre linhas de matrizes.
+<BR>Os escalares, as entradas das matrizes e as componentes dos vetores
+podem ser somente n&uacute;meros racionais, pelo menos por enquanto. As
+express&otilde;es devem ser simples na medida do poss&iacute;vel. A interface
+n&atilde;o trata, ainda, de forma correta express&otilde;es mais complexas.
+A diferen&ccedil;a entre duas matrizes ou dois vetores, por exemplo, deve
+ser escrita como a adi&ccedil;&atilde;o da primeira matriz ou vetor com
+<FONT FACE="Symbol">(-1)*</FONT> a matriz ou o vetor.
+<H4>
+<FONT COLOR="#009900">Descri&ccedil;&atilde;o da Interface:</FONT></H4>
+Abaixo voc&ecirc; deve encontrar duas &aacute;reas de texto com uma linha
+de bot&otilde;es acima delas. A <B>&aacute;rea superior</B> &eacute; onde
+voc&ecirc; deve escrever as express&otilde;es para serem calculadas. A
+<B>&aacute;rea inferior </B>&eacute; onde aprecem os resultados dos c&aacute;lculos.
+Os bot&otilde;es: "clear output" limpa a &aacute;rea de sa&iacute;da, "clear
+vars" apaga todas as vari&aacute;veis e "evaluate" calcula a express&atilde;o
+atual na janela de entrada.
+
+<P><B><FONT COLOR="#009900">Sintaxe:</FONT></B>
+<UL>
+<LI>
+Vetores devem ser escritos entre colchetes, com as componentes separadas
+por v&iacute;rgula, como [1, 2, 3].</LI>
+
+<LI>
+Matrizes devem ser escritas entre colchetes, sendo os elementos de uma
+mesma linha separados por v&iacute;rgula e as linhas separadas por ponto
+e v&iacute;rgula como [1, 2, 3;4, 5, 6;7, 8, 9].</LI>
+
+<LI>
+Vetores ou matrizes podem ser transpostos usando ', por ex., [1, 2, 3]'.</LI>
+
+<LI>
+Nome de fun&ccedil;&otilde;es tem que ser precedidos por dois pontos, como
+:eye(3) . A lista de fun&ccedil;&otilde;es aparece abaixo.</LI>
+
+<LI>
+Vari&aacute;veis t&ecirc;m que ser definidas como: NOME = EXPRESS&Atilde;O,
+onde NOME &eacute; a vari&aacute;vel e EXPRESS&Atilde;O &eacute; uma express&atilde;o
+que resulta em uma matriz. EXPRESS&Atilde;O pode incluir outras vari&aacute;veis
+que tenham sido definidas anteriormente. Mai&uacute;sculas e min&uacute;sculas
+fazem diferen&ccedil;a.</LI>
+
+<LI>
+A soma de matrizes ou vetores &eacute; obtida com o sinal + entre eles(as).
+A multiplica&ccedil;&atilde;o entre matrizes, a multiplica&ccedil;&atilde;o
+de escalar (racional) por matriz ou vetor &eacute; obtida com sinal * entre
+eles(as). A diferen&ccedil;a com <FONT FACE="Symbol">+(-1)*</FONT></LI>
+
+<LI>
+Duas matrizes podem ser concatenadas uma do lado da outra com o sinal |
+entre elas,&nbsp; como por exemplo A|B</LI>
+
+<LI>
+Podem ser definidas vari&aacute;veis e estas podem ser referidas mais tarde,
+por exemplo:</LI>
+
+<BR>A=[7 ,-3, -9 ;10, 1 ,-1 ;0, 9, 7 ]
+<BR>B=[-6 ,-2, 10;3, -6, 9;-3 ,2, -3]
+<BR>C=A+B
+<BR>D=A*B
+<BR>&nbsp;</UL>
+
+<H4>
+<A NAME="Funções:"></A><FONT COLOR="#009900">Fun&ccedil;&otilde;es:</FONT></H4>
+
+<UL>
+<LI>
+:rand(n) devolve uma matriz n x n com elementos inteiros de umadistribui&ccedil;&atilde;o
+uniforme em [-10,10].</LI>
+
+<LI>
+:rand([m, n]) devolve uma matriz m x n com elementos como no caso anterior.</LI>
+
+<LI>
+:eye(n) devolve a matriz identidade n x n.</LI>
+
+<LI>
+:one(n) devolve a matriz&nbsp; n x n com todas as entradas iguais a 1.
+:one([m,n]) devolve a matriz&nbsp; m x n com todas as entradas iguais a
+1.</LI>
+
+<LI>
+:zero(n) devolve a matriz&nbsp; n x n com todas as entradas iguais a 0.
+:zero([m,n]) devolve a matriz&nbsp; m x n com todas as entradas iguais
+a 0.</LI>
+
+<LI>
+:rs(i,j,A) ou :swap(i,j,A) ou :rsw(i,j,A) ou :sw(i,j,A) devolve a matriz
+A com as linhas i e j permutadas.</LI>
+
+<LI>
+:ro(r,i,A) ou :elop(r,i,A) ou :eo(r,i,A) ou :eop(r,i,A) devolve a matriz
+A com a linha i multiplicada pelo n&uacute;mero racional r.</LI>
+
+<LI>
+:ro(r,i,j,A) ou :elop(r,i,j,A) ou :eo(r,i,j,A) ou :eop(r,i,j,A) devolve
+a matriz A com a linha j somada &agrave; linha i multiplicada pelo n&uacute;mero
+racional r.</LI>
+</UL>
+<A NAME="applet"></A>
+<CENTER><APPLET code="matrixExample.class" width=600 height=400></APPLET>
+<HR></CENTER>
+
+</BODY>
+</HTML>
