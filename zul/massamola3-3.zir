@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<CaR>
+<Construction>
+<Window x="3.112022745949668" y="0.6023269830870328" w="11.313708498984772"/>
+<Animate animate="OP41" via0="s17"/>
+<Objects>
+<Point name="O" n="1" hidden="true" x="0.0" y="0.0">Point at 0.0, 0.0</Point>
+<Point name="a0" n="53" hidden="true" x="-7" actx="-7.0" y="3" acty="3.0" shape="cross" fixed="true">Point at &quot;-7&quot;, &quot;3&quot;</Point>
+<Point name="a1" n="56" hidden="true" x="-2" actx="-2.0" y="3" acty="3.0" shape="cross" fixed="true">Point at &quot;-2&quot;, &quot;3&quot;</Point>
+<Expression name="L" n="73" hidden="true" showname="true" showvalue="true" x="5.18" y="5.810000000000001" value="0.9*(windoww+windowcx)" prompt="L">Expression &quot;0.9*(windoww+windowcx)&quot; at 5.2, 5.8</Expression>
+<Expression name="pi" n="74" hidden="true" showname="true" showvalue="true" x="5.47" y="4.92" value="3.141590000000001" prompt="pi">Expression &quot;3.141590000000001&quot; at 5.5, 4.9</Expression>
+<Point name="P16" n="78" hidden="true" x="-7.0" y="1.0" shape="cross">Point at -7.0, 1.0</Point>
+<Point name="P19" n="81" hidden="true" x="-2.0" y="1.0" shape="cross">Point at -2.0, 1.0</Point>
+<Text name="Text1" n="0" x="-0.96*(windoww-windowcx)" y="0.96*(windowh+windowcy)" fixed="true">Massa-mola com Força Externa
+$F_{ext}=F_0\cos(\omega t),\;\omega=2\omega_0
+com Super Amortecimento 
+$\gamma&gt;2\sqrt{km}$
+
+Reginaldo J. Santos
+DMat-ICEx-UFMG</Text>
+<Point name="P36" n="166" x="-7.033133701496761" y="-5.014690264648358" shape="cross">Point at -7.03, -5.01</Point>
+<Point name="P37" n="169" x="12.965041180511513" y="-4.988132263477033" shape="cross">Point at 12.97, -4.99</Point>
+<Expression name="gamma" n="76" hidden="true" showname="true" showvalue="true" x="5.5" y="4.0" value="3" prompt="gamma">Expression &quot;3&quot; at 5.5, 4.0</Expression>
+<Expression name="w" n="181" hidden="true" showname="true" showvalue="true" x="8.64" y="4.23" value="2" prompt="w">Expression &quot;2&quot; at 8.6, 4.2</Expression>
+<Segment name="s3" n="57" hidden="true" from="a0" to="a1">Line segment from a0 to a1</Segment>
+<Segment name="s4" n="82" hidden="true" from="P16" to="P19">Line segment from P16 to P19</Segment>
+<Point name="P31" n="107" hidden="true" x="0" actx="0.0" y="L/8" acty="1.6228947650551244" fixed="true">Point at &quot;0&quot;, &quot;L/8&quot;</Point>
+<Point name="P32" n="110" hidden="true" x="0" actx="0.0" y="-L/8" acty="-1.6228947650551244" fixed="true">Point at &quot;0&quot;, &quot;-L/8&quot;</Point>
+<Point name="P33" n="116" hidden="true" x="L" actx="12.983158120440995" y="-L/8" acty="-1.6228947650551244" fixed="true">Point at &quot;L&quot;, &quot;-L/8&quot;</Point>
+<Point name="P34" n="118" hidden="true" x="0" actx="0.0" y="-L/5" acty="-2.5966316240881993" fixed="true">Point at &quot;0&quot;, &quot;-L/5&quot;</Point>
+<Point name="P35" alias="x" n="121" showname="true" xcoffset="-0.23058094930007655" ycoffset="-0.39965055153940554" keepclose="true" x="L" actx="12.983158120440995" y="-L/5" acty="-2.5966316240881993" shape="dot" fixed="true">Point at &quot;L&quot;, &quot;-L/5&quot;</Point>
+<Point name="P38" alias="0" n="128" showname="true" xcoffset="-0.006690165512457824" ycoffset="-0.2196613926445634" keepclose="true" x="L/2" actx="6.491579060220498" y="-1.1*L/5" acty="-2.856294786497019" shape="dot" fixed="true">Point at &quot;L/2&quot;, &quot;-1.1*L/5&quot;</Point>
+<Point name="P39" n="131" hidden="true" x="L/2" actx="6.491579060220498" y="-0.9*L/5" acty="-2.336968461679379" fixed="true">Point at &quot;L/2&quot;, &quot;-0.9*L/5&quot;</Point>
+<Point name="P44" n="143" hidden="true" x="3*L/4" actx="9.737368590330746" y="L/8" acty="1.6228947650551244" fixed="true">Point at &quot;3*L/4&quot;, &quot;L/8&quot;</Point>
+<Point name="P45" n="146" hidden="true" x="L" actx="12.983158120440995" y="L/8" acty="1.6228947650551244" fixed="true">Point at &quot;L&quot;, &quot;L/8&quot;</Point>
+<Segment name="s17" n="170" from="P36" to="P37">Line segment from P36 to P37</Segment>
+<Expression name="r2" n="180" hidden="true" showname="true" showvalue="true" x="8.18" y="4.57" value="(-gamma+sqrt(gamma^2-4))/2" prompt="r2">Expression &quot;(-gamma+sqrt(gamma^2-4))/2&quot; at 8.2, 4.6</Expression>
+<Expression name="Delta" n="182" hidden="true" showname="true" showvalue="true" x="7.3100000000000005" y="3.17" value="(1-w^2)^2+gamma^2*w^2" prompt="Delta">Expression &quot;(1-w^2)^2+gamma^2*w^2&quot; at 7.3, 3.2</Expression>
+<PointOn name="a" alias="$\gamma=%@gamma%$" n="62" color="5" type="thick" hidden="true" showname="true" on="s3" alpha="0.5351564835956927" x="-4.324217582021537" y="3.0" shape="circle">Point on s3</PointOn>
+<PointOn name="nn" alias="$n=%1+round((x(@nn)-x(P16))/(x(P19)-x(P16))*9)%$" n="83" color="5" type="thick" hidden="true" showname="true" on="s4" alpha="0.9866425035082301" x="-2.0667874824588495" y="1.0" shape="circle">Point on s4</PointOn>
+<Segment name="s7" n="111" type="thick" from="P31" to="P32">Line segment from P31 to P32</Segment>
+<Segment name="s8" n="117" type="thick" from="P32" to="P33">Line segment from P32 to P33</Segment>
+<Segment name="s9" n="122" from="P34" to="P35" arrow="true">Line segment from P34 to P35</Segment>
+<Segment name="s11" n="132" from="P38" to="P39">Line segment from P38 to P39</Segment>
+<Segment name="s14" n="147" type="thick" from="P44" to="P45">Line segment from P44 to P45</Segment>
+<Segment name="s15" n="150" type="thick" from="P45" to="P33">Line segment from P45 to P33</Segment>
+<PointOn name="OP41" alias="$t=%@tt%$" n="172" color="5" type="thick" showname="true" on="s17" alpha="0.41015578235864003" x="1.1692333629782459" y="-5.003797346900051" shape="circle">Point on s17</PointOn>
+<Expression name="A0" n="183" hidden="true" showname="true" showvalue="true" x="9.540000000000001" y="2.98" value="(1-w^2)/Delta" prompt="A0">Expression &quot;(1-w^2)/Delta&quot; at 9.5, 3.0</Expression>
+<Expression name="B0" n="184" hidden="true" showname="true" showvalue="true" x="9.57" y="2.5500000000000003" value="gamma*w/Delta" prompt="B0">Expression &quot;gamma*w/Delta&quot; at 9.6, 2.6</Expression>
+<Expression name="n" n="77" hidden="true" showname="true" showvalue="true" x="7.92" y="6.38" value="1+round((x(nn)-x(P16))/(x(P19)-x(P16))*9)" prompt="n">Expression &quot;1+round((x(nn)-x(P16))/(x(P19)-x(P16))*9)&quot; at 7.9, 6.4</Expression>
+<Expression name="tt" n="72" hidden="true" showname="true" showvalue="true" x="5.05" y="6.300000000000001" value="(x(OP41)-x(P36))" prompt="tt">Expression &quot;(x(OP41)-x(P36))&quot; at 5.1, 6.3</Expression>
+<Expression name="L1" n="86" hidden="true" showname="true" showvalue="true" x="8.22" y="5.01" value="L/2-L/8+exp(r2*tt)+A0*cos(deg(w*tt))+B0*sin(deg(w*tt))" prompt="$L1$">Expression &quot;L/2-L/8+exp(r2*tt)+A0*cos(deg(w*tt))+B0*sin(deg(w*tt))&quot; at 8.2, 5.0</Expression>
+<Expression name="v" n="175" hidden="true" showname="true" showvalue="true" x="8.75" y="3.67" value="B0*w*cos(deg(w*tt))-A0*w*sin(deg(w*tt))+r2*exp(r2*tt)" prompt="v">Expression &quot;B0*w*cos(deg(w*tt))-A0*w*sin(deg(w*tt))+r2*exp(r2*tt)&quot; at 8.8, 3.7</Expression>
+<Function name="f" n="27" x="x" y="L/12*sin(deg(n*pi*x/L1))" var="x" min="0" max="L1" d="0.01*L1">Function ( x , L/12*sin(deg(n*pi*x/L1)) )</Function>
+<Point name="P21" n="87" color="2" type="thick" hidden="true" x="L1" actx="4.877831984633778" y="0" acty="0.0" shape="circle" fixed="true">Point at &quot;L1&quot;, &quot;0&quot;</Point>
+<Point name="P27" n="102" hidden="true" x="L1" actx="4.877831984633778" y="-L/8" acty="-1.6228947650551244" shape="circle" fixed="true">Point at &quot;L1&quot;, &quot;-L/8&quot;</Point>
+<Point name="P28" n="103" color="2" hidden="true" x="L1" actx="4.877831984633778" y="L/8" acty="1.6228947650551244" fixed="true">Point at &quot;L1&quot;, &quot;L/8&quot;</Point>
+<Point name="P29" n="104" hidden="true" x="L1+L/4" actx="8.123621514744027" y="L/8" acty="1.6228947650551244" fixed="true">Point at &quot;L1+L/4&quot;, &quot;L/8&quot;</Point>
+<Point name="P30" n="105" hidden="true" x="L1+L/4" actx="8.123621514744027" y="-L/8" acty="-1.6228947650551244" fixed="true">Point at &quot;L1+L/4&quot;, &quot;-L/8&quot;</Point>
+<Point name="P40" n="133" type="thick" x="L1+L/8" actx="6.500726749688902" y="L/5" acty="2.5966316240881993" shape="dot" fixed="true">Point at &quot;L1+L/8&quot;, &quot;L/5&quot;</Point>
+<Point name="P41" alias="$F_e=-k\; x$" n="136" showname="true" xcoffset="0.007571218286381409" ycoffset="0.284248377754007" keepclose="true" x="L1+L/8-3*(L1+L/8-L/2)" actx="6.4732836812836885" y="L/5" acty="2.5966316240881993" shape="dot" fixed="true">Point at &quot;L1+L/8-3*(L1+L/8-L/2)&quot;, &quot;L/5&quot;</Point>
+<Point name="P42" n="138" hidden="true" x="L1+L/8" actx="6.500726749688902" y="-0.9*L/5" acty="-2.336968461679379" fixed="true">Point at &quot;L1+L/8&quot;, &quot;-0.9*L/5&quot;</Point>
+<Point name="P43" alias="%L1+L/8-L/2%" n="141" hidden="true" showname="true" xcoffset="0.017903069232513502" ycoffset="-0.3524513985011919" keepclose="true" x="L1+L/8" actx="6.500726749688902" y="-1.1*L/5" acty="-2.856294786497019" shape="dot" fixed="true">Point at &quot;L1+L/8&quot;, &quot;-1.1*L/5&quot;</Point>
+<Point name="P46" n="151" hidden="true" x="L1+L/2" actx="11.369411044854274" y="L/8" acty="1.6228947650551244" fixed="true">Point at &quot;L1+L/2&quot;, &quot;L/8&quot;</Point>
+<Point name="P47" n="154" hidden="true" x="L1+L/2" actx="11.369411044854274" y="-L/8" acty="-1.6228947650551244" fixed="true">Point at &quot;L1+L/2&quot;, &quot;-L/8&quot;</Point>
+<Point name="P51" n="164" hidden="true" x="L1+L/4" actx="8.123621514744027" y="0" acty="0.0" fixed="true">Point at &quot;L1+L/4&quot;, &quot;0&quot;</Point>
+<Point name="P49" alias="$F_a=-\gamma\; v$" n="178" showname="true" xcoffset="0.048589195932311036" ycoffset="-0.20163956193667776" keepclose="true" x="L1+L/8-3*gamma*v" actx="9.261258939466092" y="L/5" acty="2.5966316240881993" shape="dot" fixed="true">Point at &quot;L1+L/8-3*gamma*v&quot;, &quot;L/5&quot;</Point>
+<Polygon name="poly4" n="106" color="4" background="true" point1="P27" point2="P28" point3="P29" point4="P30">Polygon P27, P28, P29, P30</Polygon>
+<Segment name="s12" n="137" color="2" from="P40" to="P41" arrow="true">Line segment from P40 to P41</Segment>
+<Segment name="s13" n="142" hidden="true" from="P42" to="P43">Line segment from P42 to P43</Segment>
+<Segment name="s16" n="155" type="thick" from="P46" to="P47">Line segment from P46 to P47</Segment>
+<Segment name="s19" n="179" color="4" from="P40" to="P49" arrow="true">Line segment from P40 to P49</Segment>
+<PointOn name="P50" n="161" hidden="true" on="s16" alpha="0.5" x="11.369411044854274" y="0.0">Point on s16</PointOn>
+<Segment name="s18" n="165" type="thick" from="P50" to="P51">Line segment from P50 to P51</Segment>
+<Point name="P48" alias="$F_{ext}=F_0\cos(\omega t)$" n="187" showname="true" x="L1+L/8+3*cos(deg(w*tt))" actx="4.199971356200626" y="L/5" acty="2.5966316240881993" shape="dot" fixed="true">Point at &quot;L1+L/8+3*cos(deg(w*tt))&quot;, &quot;L/5&quot;</Point>
+<Segment name="s20" n="188" color="5" from="P40" to="P48" arrow="true">Line segment from P40 to P48</Segment>
+</Objects>
+</Construction>
+</CaR>

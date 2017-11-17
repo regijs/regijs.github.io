@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<CaR>
+<Construction>
+<Window x="1.8596068628963671" y="0.40300184467979294" w="6.727171322029719"/>
+<Objects>
+<Point name="E1" n="2" hidden="true" x="1.0" y="0.0">Point at 1.0, 0.0</Point>
+<Point name="O" n="3" hidden="true" x="0.0" y="0.0">Point at 0.0, 0.0</Point>
+<Point name="O2" n="11" color="5" type="thick" x="4.246113070781679" y="-0.008441576681475382" shape="dot">Point at 4.25, -0.01</Point>
+<Point name="x" n="49" showname="true" xcoffset="-0.007090924412437971" ycoffset="0.09285734349621855" keepclose="true" x="0.96*(windoww+windowcx)" actx="8.243307057529043" y="0" acty="0.0" shape="dot" fixed="true">Point at &quot;0.96*(windoww+windowcx)&quot;, &quot;0&quot;</Point>
+<Point name="xn" n="50" hidden="true" x="-0.96*(windoww-windowcx)" actx="-4.672861880768017" y="0" acty="0.0" fixed="true">Point at &quot;-0.96*(windoww-windowcx)&quot;, &quot;0&quot;</Point>
+<Point name="y" n="54" showname="true" xcoffset="0.16038995694801628" ycoffset="-0.022623425506351325" keepclose="true" x="0" actx="0.0" y="0.96*(windowh+windowcy)" acty="3.7620474783712914" shape="dot" fixed="true">Point at &quot;0&quot;, &quot;0.96*(windowh+windowcy)&quot;</Point>
+<Point name="yn" n="61" hidden="true" x="0" actx="0.0" y="-0.96*(windowh-windowcy)" acty="-2.988283936586089" fixed="true">Point at &quot;0&quot;, &quot;-0.96*(windowh-windowcy)&quot;</Point>
+<Point name="V" alias="$V=(%x(@V)%,%y(@V)%)$" n="1" color="5" type="thick" showname="true" x="1.0045476250954677" y="1.0045476250954657" shape="dot">Point at 1.0, 1.0</Point>
+<Segment name="s6" n="53" from="xn" to="x" arrow="true">Line segment from xn to x</Segment>
+<Segment name="s8" n="64" from="yn" to="y" arrow="true">Line segment from yn to y</Segment>
+<Segment name="s1" n="6" from="O" to="V" arrow="true">Line segment from O to V</Segment>
+<Angle name="th" alias="$\theta=%@tht%^o$" n="9" showname="true" xcoffset="1.1428571428571423" ycoffset="0.23425022182786126" keepclose="true" unit="°" first="E1" root="O" second="V" acute="true">Angle E1 - O - V</Angle>
+<Expression name="tht" n="10" hidden="true" showname="true" showvalue="true" x="2.97" y="2.62" value="if(y(V)&lt;0,-th,th)" prompt="$\theta$">Expression &quot;if(y(V)&lt;0,-th,th)&quot; at 3.0, 2.6</Expression>
+<Point name="P5" n="12" hidden="true" x="x(O2)+cos(tht)" actx="4.953219851968227" y="y(O2)+sin(tht)" acty="0.6986652045050714" fixed="true">Point at &quot;x(O2)+cos(tht)&quot;, &quot;y(O2)+sin(tht)&quot;</Point>
+<Point name="P6" n="13" hidden="true" x="x(O2)-sin(tht)" actx="3.5390062895951324" y="y(O2)+cos(tht)" acty="0.6986652045050729" fixed="true">Point at &quot;x(O2)-sin(tht)&quot;, &quot;y(O2)+cos(tht)&quot;</Point>
+<Expression name="x0" n="24" hidden="true" showname="true" showvalue="true" x="1.43" y="3.36" value="cos(tht)*x(O2)+sin(tht)*y(O2)" prompt="$x_0$">Expression &quot;cos(tht)*x(O2)+sin(tht)*y(O2)&quot; at 1.4, 3.4</Expression>
+<Expression name="y0" n="25" hidden="true" showname="true" showvalue="true" x="1.5" y="2.5" value="-sin(tht)*x(O2)+cos(tht)*y(O2)" prompt="$y_0$">Expression &quot;-sin(tht)*x(O2)+cos(tht)*y(O2)&quot; at 1.5, 2.5</Expression>
+<Line name="l1" n="16" hidden="true" from="O2" to="P6">Line through O2 and P6</Line>
+<Line name="l2" n="19" hidden="true" from="O2" to="P5">Line through O2 and P5</Line>
+<Point name="P17" alias="$y_0=%y0%$" n="47" color="2" showname="true" xcoffset="-0.6360976488419872" ycoffset="-0.16003889005643135" keepclose="true" x="-sin(tht)*y0" actx="2.127277323731573" y="cos(tht)*y0" acty="-2.1272773237315774" shape="cross" fixed="true">Point at &quot;-sin(tht)*y0&quot;, &quot;cos(tht)*y0&quot;</Point>
+<Point name="P18" alias="$x_0=%x0%$" n="48" color="2" showname="true" xcoffset="-0.14896898253514146" ycoffset="-0.017234220254532584" keepclose="true" x="cos(tht)*x0" actx="2.1188357470501065" y="sin(tht)*x0" acty="2.118835747050102" shape="cross" fixed="true">Point at &quot;cos(tht)*x0&quot;, &quot;sin(tht)*x0&quot;</Point>
+<PointOn name="A" alias="$a=%@a%$" n="20" color="5" type="thick" showname="true" xcoffset="0.16949692598197075" ycoffset="0.018713074232383997" keepclose="true" on="l2" alpha="1.0028081473833108" x="4.955205512025538" y="0.7006508645623819" shape="dot">Point on l2</PointOn>
+<PointOn name="B" alias="$b=%@b%$" n="21" color="5" type="thick" showname="true" xcoffset="0.10014687925486143" ycoffset="0.24079962698731294" keepclose="true" on="l1" alpha="2.0056162947666234" x="2.8279281882939635" y="1.409743305806243" shape="dot">Point on l1</PointOn>
+<Expression name="a" n="22" hidden="true" showname="true" showvalue="true" x="3.0" y="3.29" value="d(A,O2)" prompt="a">Expression &quot;d(A,O2)&quot; at 3.0, 3.3</Expression>
+<Expression name="b" n="23" hidden="true" showname="true" showvalue="true" x="4.01" y="3.37" value="d(B,O2)" prompt="b">Expression &quot;d(B,O2)&quot; at 4.0, 3.4</Expression>
+<Text name="Text1" n="0" x="-0.96*(windoww-windowcx)" y="0.96*(windowh+windowcy)" fixed="true">$\frac{x&apos;&apos;^2}{%a^2%}+\frac{y&apos;&apos;^2}{%b^2%}=1$
+
+Reginaldo J. Santos
+DMat-ICEx-UFMG</Text>
+<Function name="elipse" n="26" color="2" type="thick" x="cos(tht)*(x0+a*cos(t))-sin(tht)*(y0+b*sin(t))" y="sin(tht)*(x0+a*cos(t))+cos(tht)*(y0+b*sin(t))" var="t" min="-180" max="180" d="1">Function ( cos(tht)*(x0+a*cos(t))-sin(tht)*(y0+b*sin(t)) , sin(tht)*(x0+a*cos(t))+cos(tht)*(y0+b*sin(t)) )</Function>
+<Point name="x1" alias="$x&apos;$" n="27" showname="true" xcoffset="0.11027205731803402" ycoffset="0.18422576397759638" keepclose="true" x="if(a+x0&gt;0,(a+x0+1)*x(V)/sqrt(x(V)^2+y(V)^2),x(V)/sqrt(x(V)^2+y(V)^2))" actx="3.5350349694805137" y="if(a+x0&gt;0,(a+x0+1)*y(V)/sqrt(x(V)^2+y(V)^2),y(V)/sqrt(x(V)^2+y(V)^2))" acty="3.5350349694805066" shape="dot" fixed="true">Point at &quot;if(a+x0&gt;0,(a+x0+1)*x(V)/sqrt(x(V)^2+y(V)^2),x(V)/sqrt(x(V)^2+y(V)^2))&quot;, &quot;if(a+x0&gt;0,(a+x0+1)*y(V)/sqrt(x(V)^2+y(V)^2),y(V)/sqrt(x(V)^2+y(V)^2))&quot;</Point>
+<Point name="x1n" n="28" hidden="true" x="if(x0&lt;a+1,(-a-1+x0)*x(V)/sqrt(x(V)^2+y(V)^2),0)" actx="0.0" y="if(x0&lt;a+1,(-a-1+x0)*y(V)/sqrt(x(V)^2+y(V)^2),0)" acty="0.0" fixed="true">Point at &quot;if(x0&lt;a+1,(-a-1+x0)*x(V)/sqrt(x(V)^2+y(V)^2),0)&quot;, &quot;if(x0&lt;a+1,(-a-1+x0)*y(V)/sqrt(x(V)^2+y(V)^2),0)&quot;</Point>
+<Point name="y1" alias="$y&apos;$" n="32" showname="true" xcoffset="-0.038931739927209996" ycoffset="0.03276012760968228" keepclose="true" x="if(b+y0&gt;0,(b+y0+1)*cos(tht+90),cos(tht+90))" actx="-0.7071067811865468" y="if(b+y0&gt;0,(b+y0+1)*sin(tht+90),sin(tht+90))" acty="0.7071067811865482" shape="dot" fixed="true">Point at &quot;if(b+y0&gt;0,(b+y0+1)*cos(tht+90),cos(tht+90))&quot;, &quot;if(b+y0&gt;0,(b+y0+1)*sin(tht+90),sin(tht+90))&quot;</Point>
+<Point name="y1n" n="33" hidden="true" x="if(y0&lt;b+1,-sin(tht)*(-b+y0-1),0)" actx="4.252568987405835" y="if(y0&lt;b+1,cos(tht)*(-b+y0-1),0)" acty="-4.252568987405844" fixed="true">Point at &quot;if(y0&lt;b+1,-sin(tht)*(-b+y0-1),0)&quot;, &quot;if(y0&lt;b+1,cos(tht)*(-b+y0-1),0)&quot;</Point>
+<Point name="x2" alias="$x&apos;&apos;$" n="37" showname="true" xcoffset="0.0835530040913337" ycoffset="0.13574960382188372" keepclose="true" x="if(a+x0&gt;0,cos(tht)*(a+1+x0)-sin(tht)*y0,cos(tht)-sin(tht)*y0)" actx="5.662312293212087" y="if(a+x0&gt;0,sin(tht)*(a+1+x0)+cos(tht)*y0,sin(tht)+cos(tht)*y0)" acty="1.4077576457489291" shape="dot" fixed="true">Point at &quot;if(a+x0&gt;0,cos(tht)*(a+1+x0)-sin(tht)*y0,cos(tht)-sin(tht)*y0)&quot;, &quot;if(a+x0&gt;0,sin(tht)*(a+1+x0)+cos(tht)*y0,sin(tht)+cos(tht)*y0)&quot;</Point>
+<Point name="x2n" n="38" hidden="true" x="if(x0&lt;a+1,cos(tht)*(-a-1+x0)-sin(tht)*y0,-sin(tht)*y0)" actx="2.127277323731573" y="if(x0&lt;a+1,sin(tht)*(-a-1+x0)+cos(tht)*y0,cos(tht)*y0)" acty="-2.1272773237315774" fixed="true">Point at &quot;if(x0&lt;a+1,cos(tht)*(-a-1+x0)-sin(tht)*y0,-sin(tht)*y0)&quot;, &quot;if(x0&lt;a+1,sin(tht)*(-a-1+x0)+cos(tht)*y0,cos(tht)*y0)&quot;</Point>
+<Point name="y2" alias="$y&apos;&apos;$" n="42" showname="true" xcoffset="-0.04417385583995187" ycoffset="0.05230072161337018" keepclose="true" x="if(b+y0&gt;0,cos(tht)*x0-sin(tht)*(b+y0+1),cos(tht)*x0-sin(tht))" actx="1.4117289658635597" y="if(b+y0&gt;0,sin(tht)*x0+cos(tht)*(b+y0+1),sin(tht)*x0+cos(tht))" acty="2.8259425282366504" shape="dot" fixed="true">Point at &quot;if(b+y0&gt;0,cos(tht)*x0-sin(tht)*(b+y0+1),cos(tht)*x0-sin(tht))&quot;, &quot;if(b+y0&gt;0,sin(tht)*x0+cos(tht)*(b+y0+1),sin(tht)*x0+cos(tht))&quot;</Point>
+<Point name="y2n" n="43" hidden="true" x="if(y0&lt;b+1,cos(tht)*x0-sin(tht)*(-b+y0-1),cos(tht)*x0)" actx="6.3714047344559415" y="if(y0&lt;b+1,sin(tht)*x0+cos(tht)*(-b+y0-1),sin(tht)*x0)" acty="-2.1337332403557423" fixed="true">Point at &quot;if(y0&lt;b+1,cos(tht)*x0-sin(tht)*(-b+y0-1),cos(tht)*x0)&quot;, &quot;if(y0&lt;b+1,sin(tht)*x0+cos(tht)*(-b+y0-1),sin(tht)*x0)&quot;</Point>
+<Point name="F1" n="65" color="2" type="thick" x="if(a&gt;b,cos(tht)*(x0+sqrt(a^2-b^2))-sin(tht)*y0,cos(tht)*x0-sin(tht)*(y0+sqrt(b^2-a^2)))" actx="3.017928935284268" y="if(a&gt;b,sin(tht)*(x0+sqrt(a^2-b^2))+cos(tht)*y0,sin(tht)*x0+cos(tht)*(y0+sqrt(b^2-a^2)))" acty="1.2197425588159385" shape="dot" fixed="true">Point at &quot;if(a&gt;b,cos(tht)*(x0+sqrt(a^2-b^2))-sin(tht)*y0,cos(tht)*x0-sin(tht)*(y0+sqrt(b^2-a^2)))&quot;, &quot;if(a&gt;b,sin(tht)*(x0+sqrt(a^2-b^2))+cos(tht)*y0,sin(tht)*x0+cos(tht)*(y0+sqrt(b^2-a^2)))&quot;</Point>
+<Point name="F2" n="67" color="2" type="thick" x="if(a&gt;b,cos(tht)*(x0-sqrt(a^2-b^2))-sin(tht)*y0,cos(tht)*x0-sin(tht)*(y0-sqrt(b^2-a^2)))" actx="5.474297206279091" y="if(a&gt;b,sin(tht)*(x0-sqrt(a^2-b^2))+cos(tht)*y0,sin(tht)*x0+cos(tht)*(y0-sqrt(b^2-a^2)))" acty="-1.2366257121788888" shape="dot" fixed="true">Point at &quot;if(a&gt;b,cos(tht)*(x0-sqrt(a^2-b^2))-sin(tht)*y0,cos(tht)*x0-sin(tht)*(y0-sqrt(b^2-a^2)))&quot;, &quot;if(a&gt;b,sin(tht)*(x0-sqrt(a^2-b^2))+cos(tht)*y0,sin(tht)*x0+cos(tht)*(y0-sqrt(b^2-a^2)))&quot;</Point>
+<Segment name="s2" n="31" from="x1n" to="x1" arrow="true">Line segment from x1n to x1</Segment>
+<Segment name="s3" n="36" from="y1n" to="y1" arrow="true">Line segment from y1n to y1</Segment>
+<Segment name="s4" n="41" from="x2n" to="x2" arrow="true">Line segment from x2n to x2</Segment>
+<Segment name="s5" n="46" from="y2n" to="y2" arrow="true">Line segment from y2n to y2</Segment>
+</Objects>
+</Construction>
+</CaR>

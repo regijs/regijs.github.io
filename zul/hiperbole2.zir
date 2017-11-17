@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<CaR>
+<Construction>
+<Window x="0.03213198303400189" y="-0.033310062029457355" w="6.727171322029732"/>
+<Animate animate="P" via0="c3"/>
+<Objects>
+<Text name="Text1" n="0" x="-0.96*(windoww-windowcx)" y="0.96*(windowh+windowcy)" fixed="true">Reginaldo J. Santos
+DMat-ICEx-UFMG</Text>
+<Point name="O" n="2" hidden="true" x="0.0" y="0.0">Point at 0.0, 0.0</Point>
+<Point name="x" alias="$x$" n="20" hidden="true" showname="true" xcoffset="-0.024057233719007698" ycoffset="0.37447580789016754" keepclose="true" x="0.96*(windoww+windowcx)" actx="6.488931172861184" y="0" acty="0.0" fixed="true">Point at &quot;0.96*(windoww+windowcx)&quot;, &quot;0&quot;</Point>
+<Point name="xn" n="21" hidden="true" x="-0.96*(windoww-windowcx)" actx="-6.427237765435901" y="0" acty="0.0" fixed="true">Point at &quot;-0.96*(windoww-windowcx)&quot;, &quot;0&quot;</Point>
+<Point name="y" alias="$y$" n="25" hidden="true" showname="true" xcoffset="0.3290848008731775" ycoffset="-0.11847052831434457" keepclose="true" x="0" actx="0.0" y="0.96*(windowh+windowcy)" acty="3.749147342766325" fixed="true">Point at &quot;0&quot;, &quot;0.96*(windowh+windowcy)&quot;</Point>
+<Point name="yn" n="26" hidden="true" x="0" actx="0.0" y="-0.96*(windowh-windowcy)" acty="-3.813102661862883" fixed="true">Point at &quot;0&quot;, &quot;-0.96*(windowh-windowcy)&quot;</Point>
+<Point name="P22" n="89" hidden="true" x="-3.7821204346918194" y="1.7096660036605889">Point at -3.78, 1.71</Point>
+<Segment name="s6" n="24" hidden="true" from="xn" to="x" arrow="true">Line segment from xn to x</Segment>
+<Segment name="s7" n="29" hidden="true" from="yn" to="y" arrow="true">Line segment from yn to y</Segment>
+<Circle name="c3" n="90" hidden="true" through="P22" midpoint="O" acute="true">Circle around O through P22</Circle>
+<PointOn name="F1" alias="$F_2$" n="30" color="2" type="thick" showname="true" bold="true" large="true" on="s6" alpha="0.5837659266741975" x="1.1127815639095822" y="0.0" shape="dcross">Point on s6</PointOn>
+<PointOn name="A" n="32" color="2" type="thick" hidden="true" on="s6" alpha="0.5431955048464598" x="0.5887671416845475" y="0.0" shape="dot">Point on s6</PointOn>
+<Expression name="a" n="34" hidden="true" showname="true" showvalue="true" x="3.67" y="3.45" value="x(A)" prompt="a">Expression &quot;x(A)&quot; at 3.7, 3.5</Expression>
+<Expression name="c" n="35" hidden="true" showname="true" showvalue="true" x="3.5" y="3.0" value="x(F1)" prompt="c">Expression &quot;x(F1)&quot; at 3.5, 3.0</Expression>
+<Point name="F2" alias="$F_1$" n="85" color="2" type="thick" showname="true" xcoffset="-0.0777058653428222" ycoffset="-0.21787084286353053" keepclose="true" bold="true" large="true" x="-x(F1)" actx="-1.1127815639095822" y="0" acty="0.0" shape="dcross" fixed="true">Point at &quot;-x(F1)&quot;, &quot;0&quot;</Point>
+<Expression name="b" n="83" hidden="true" showname="true" showvalue="true" x="3.52" y="2.64" value="sqrt(c^2-a^2)" prompt="b">Expression &quot;sqrt(c^2-a^2)&quot; at 3.5, 2.6</Expression>
+<Function name="hiperbole" n="84" color="2" type="thick" x="-a*(exp(t)+exp(-t))/2" y="b*(exp(t)-exp(-t))/2" var="t" min="-2" max="2" d="0.2" shape="dot">Function ( -a*(exp(t)+exp(-t))/2 , b*(exp(t)-exp(-t))/2 )</Function>
+<PointOn name="P" n="86" color="2" type="thick" showname="true" xcoffset="-0.21572997066087662" ycoffset="-0.10400064019404676" keepclose="true" bold="true" large="true" on="hiperbole" alpha="0.0" x="-0.6364998903214613" y="0.38785897350306586" shape="dot">Point on hiperbole</PointOn>
+<Ray name="r3" n="93" hidden="true" from="F1" to="P">Ray from F1 pointing to P</Ray>
+<Segment name="s17" n="100" from="F2" to="P">Line segment from F2 to P</Segment>
+<Point name="P23" n="101" hidden="true" x="x(P)+0.2" actx="-0.43649989032146125" y="y(P)+0.5" acty="0.8878589735030659" fixed="true">Point at &quot;x(P)+0.2&quot;, &quot;y(P)+0.5&quot;</Point>
+<Intersection name="Q" n="94" type="thick" first="r3" second="c3" shape="dot" which="first">Intersection between r3 and c3</Intersection>
+<Segment name="s18" n="104" type="thick" from="P" to="P23">Line segment from P to P23</Segment>
+<Segment name="s16" n="97" color="4" from="F1" to="Q">Line segment from F1 to Q</Segment>
+<Point name="PR1" n="105" hidden="true" showname="true" x="0.05*(y(Q)-y(F1))+x(F1)" actx="1.1693877446204686" y="0.05*(x(F1)-x(Q))" acty="0.2552993455793329" fixed="true">Point at &quot;0.05*(y(Q)-y(F1))+x(F1)&quot;, &quot;0.05*(x(F1)-x(Q))&quot;</Point>
+<Point name="PR2" n="106" hidden="true" showname="true" x="0.05*(y(Q)-y(F1))+x(Q)" actx="-3.9365991669661895" y="0.05*(x(F1)-x(Q))+y(Q)" acty="1.3874229597970602" fixed="true">Point at &quot;0.05*(y(Q)-y(F1))+x(Q)&quot;, &quot;0.05*(x(F1)-x(Q))+y(Q)&quot;</Point>
+<Segment name="s8" n="110" from="Q" to="P">Line segment from Q to P</Segment>
+<Polygon name="poly3" n="107" color="4" background="true" point1="F1" point2="PR1" point3="PR2" point4="Q">Polygon F1, PR1, PR2, Q</Polygon>
+<Function name="f3" n="111" color="2" type="thick" x="a*(exp(t)+exp(-t))/2" y="b*(exp(t)-exp(-t))/2" var="t" min="-2" max="2" d="0.2">Function ( a*(exp(t)+exp(-t))/2 , b*(exp(t)-exp(-t))/2 )</Function>
+</Objects>
+</Construction>
+</CaR>

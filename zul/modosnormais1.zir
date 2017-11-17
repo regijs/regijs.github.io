@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CaR version="9.3">
+<Construction>
+<Window x="3.112022745949668" y="0.6023269830870328" w="11.313708498984761"/>
+<Objects>
+<Point name="O" n="1" hidden="true" x="0.0" y="0.0">Point at 0.0, 0.0</Point>
+<Point name="E1" n="2" hidden="true" x="1.0" y="0.0">Point at 1.0, 0.0</Point>
+<Point name="E2" n="14" hidden="true" x="0.0" y="1.0">Point at 0.0, 1.0</Point>
+<Point name="x" n="43" showname="true" xcoffset="0.07107458400427014" ycoffset="0.21081444408046135" keepclose="true" x="0.96*(windoww+windowcx)" actx="13.848701995137052" y="0" acty="0.0" shape="dot" fixed="true">Point at &quot;0.96*(windoww+windowcx)&quot;, &quot;0&quot;</Point>
+<Point name="xn" n="44" hidden="true" x="-0.06*(windoww-windowcx)" actx="-0.49210114518210557" y="0" acty="0.0" fixed="true">Point at &quot;-0.06*(windoww-windowcx)&quot;, &quot;0&quot;</Point>
+<Point name="y" alias="$u$" n="48" showname="true" x="0" actx="0.0" y="0.96*(windowh+windowcy)" acty="7.594138602761306" shape="dot" fixed="true">Point at &quot;0&quot;, &quot;0.96*(windowh+windowcy)&quot;</Point>
+<Point name="P23" n="49" hidden="true" x="0" actx="0.0" y="-0.96*(windowh-windowcy)" acty="-6.437670795234203" fixed="true">Point at &quot;0&quot;, &quot;-0.96*(windowh-windowcy)&quot;</Point>
+<Point name="a0" n="53" x="-7" actx="-7.0" y="3" acty="3.0" shape="cross" fixed="true">Point at &quot;-7&quot;, &quot;3&quot;</Point>
+<Point name="a1" n="56" x="-2" actx="-2.0" y="3" acty="3.0" shape="cross" fixed="true">Point at &quot;-2&quot;, &quot;3&quot;</Point>
+<Point name="P17" n="63" x="-4.920840480602228" y="-2.2358645621128272" shape="dot">Point at -4.92, -2.24</Point>
+<Expression name="L" n="73" hidden="true" showname="true" showvalue="true" x="5.18" y="5.810000000000001" value="0.9*(windoww+windowcx)" prompt="L">Expression &quot;0.9*(windoww+windowcx)&quot; at 5.18, 5.81</Expression>
+<Expression name="pi" n="74" hidden="true" showname="true" showvalue="true" x="5.47" y="4.92" value="3.141590000000001" prompt="pi">Expression &quot;3.141590000000001&quot; at 5.47, 4.92</Expression>
+<Point name="P16" n="78" x="-7.0" y="1.0" shape="cross">Point at -7.0, 1.0</Point>
+<Point name="P19" n="81" x="-2.0" y="1.0" shape="cross">Point at -2.0, 1.0</Point>
+<Line name="l1" n="5" hidden="true" from="O" to="E1">Line through O and E1</Line>
+<Line name="l3" n="17" hidden="true" from="O" to="E2">Line through O and E2</Line>
+<Segment name="s1" n="47" from="xn" to="x" arrow="true">Line segment from xn to x</Segment>
+<Segment name="s2" n="52" from="P23" to="y" arrow="true">Line segment from P23 to y</Segment>
+<Segment name="s3" n="57" from="a0" to="a1">Line segment from a0 to a1</Segment>
+<Circle name="c1" n="66" fixed="1.6974995548525453" dragable="true" midpoint="P17" acute="true">Circle around P17 with radius 1.6974995548525453</Circle>
+<Segment name="s4" n="82" from="P16" to="P19">Line segment from P16 to P19</Segment>
+<PointOn name="a" alias="$a=%x(@a)-x(a0)%$" n="62" color="5" type="thick" showname="true" on="s3" alpha="0.04087815845865546" x="-6.795609207706723" y="3.0" shape="circle">Point on s3</PointOn>
+<PointOn name="P18" n="67" color="5" type="thick" on="c1" alpha="2.795922841385655E-16" x="-3.223340925749683" y="-2.235864562112827" shape="circle">Point on c1</PointOn>
+<PointOn name="OP20" n="68" hidden="true" on="c1" alpha="0.0" x="-3.223340925749683" y="-2.2358645621128272" shape="dot">Point on c1</PointOn>
+<PointOn name="nn" alias="$n=%1+round((x(@nn)-x(P16))/(x(P19)-x(P16))*9)%$" n="83" color="5" type="thick" showname="true" on="s4" alpha="0.2914933250797514" x="-5.542533374601243" y="1.0" shape="circle">Point on s4</PointOn>
+<Angle name="t" alias="$t=%@tt%$" n="71" showname="true" unit="°" first="P18" root="P17" second="OP20" display="large" acute="true">Angle P18 - P17 - OP20</Angle>
+<Expression name="aa" n="76" hidden="true" showname="true" showvalue="true" x="5.57" y="4.22" value="x(a)-x(a0)" prompt="aa">Expression &quot;x(a)-x(a0)&quot; at 5.57, 4.22</Expression>
+<Expression name="n" n="77" hidden="true" showname="true" showvalue="true" x="7.92" y="6.38" value="1+round((x(nn)-x(P16))/(x(P19)-x(P16))*9)" prompt="n">Expression &quot;1+round((x(nn)-x(P16))/(x(P19)-x(P16))*9)&quot; at 7.92, 6.38</Expression>
+<Text name="Text1" n="0" x="-0.96*(windoww-windowcx)" y="0.96*(windowh+windowcy)" fixed="true">$u(x,t)=\cos(an\pi t/L)\sin(n\pi x/L)$
+$u(x,t)=\cos(%(x(a)-x(a0))*n%\pi t/L)\sin(%n%\pi x/L)$
+
+Reginaldo J. Santos
+DMat-ICEx-UFMG</Text>
+<Expression name="tt" n="72" hidden="true" showname="true" showvalue="true" x="5.05" y="6.300000000000003" value="if(y(P18)&lt;y(OP20),360-t,t)*6*L/(360*n*aa)" prompt="tt">Expression &quot;if(y(P18)&lt;y(OP20),360-t,t)*6*L/(360*n*aa)&quot; at 5.05, 6.3</Expression>
+<Function name="f" n="27" color="2" type="thick" x="x" y="5*cos(deg(aa*n*pi/L)*tt)*sin(deg(n*pi*x/L))" var="x" min="0" max="0.9*(windoww+windowcx)" d="0.01*windoww">Function ( x , 5*cos(deg(aa*n*pi/L)*tt)*sin(deg(n*pi*x/L)) )</Function>
+<Point name="P20" alias="$L$" n="84" showname="true" xcoffset="0.11299693527651655" ycoffset="-0.3333007056211743" keepclose="true" x="L" actx="12.983158120440986" y="0" acty="0.0" shape="cross" fixed="true">Point at &quot;L&quot;, &quot;0&quot;</Point>
+</Objects>
+</Construction>
+</CaR>

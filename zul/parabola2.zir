@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<CaR>
+<Construction>
+<Window x="0.5676537910189823" y="1.865444766918864" w="6.727171322029732"/>
+<Animate animate="P" via0="s19"/>
+<Objects>
+<Text name="Text1" n="0" x="-0.96*(windoww-windowcx)" y="0.96*(windowh+windowcy)" fixed="true">Reginaldo J. Santos
+DMat-ICEx-UFMG</Text>
+<Point name="O" n="2" hidden="true" x="0.0" y="0.0">Point at 0.0, 0.0</Point>
+<Point name="x" alias="$x$" n="20" hidden="true" showname="true" xcoffset="-0.024057233719007698" ycoffset="0.37447580789016754" keepclose="true" x="0.96*(windoww+windowcx)" actx="7.0030321085267655" y="0" acty="0.0" fixed="true">Point at &quot;0.96*(windoww+windowcx)&quot;, &quot;0&quot;</Point>
+<Point name="xn" n="21" hidden="true" x="-0.96*(windoww-windowcx)" actx="-5.913136829770319" y="0" acty="0.0" fixed="true">Point at &quot;-0.96*(windoww-windowcx)&quot;, &quot;0&quot;</Point>
+<Point name="y" alias="$y$" n="25" hidden="true" showname="true" xcoffset="0.3290848008731775" ycoffset="-0.11847052831434457" keepclose="true" x="0" actx="0.0" y="0.96*(windowh+windowcy)" acty="5.571951978556713" fixed="true">Point at &quot;0&quot;, &quot;0.96*(windowh+windowcy)&quot;</Point>
+<Point name="yn" n="26" hidden="true" x="0" actx="0.0" y="-0.96*(windowh-windowcy)" acty="-1.9902980260724945" fixed="true">Point at &quot;0&quot;, &quot;-0.96*(windowh-windowcy)&quot;</Point>
+<Segment name="s6" n="24" hidden="true" from="xn" to="x" arrow="true">Line segment from xn to x</Segment>
+<Segment name="s7" n="29" hidden="true" from="yn" to="y" arrow="true">Line segment from yn to y</Segment>
+<PointOn name="F" n="108" color="2" type="thick" showname="true" xcoffset="-0.0710394933263423" ycoffset="0.13954865186330623" keepclose="true" bold="true" large="true" on="s7" alpha="0.4402661154035825" x="0.0" y="1.3391044071763307" shape="dcross">Point on s7</PointOn>
+<Expression name="p" n="109" hidden="true" showname="true" showvalue="true" x="2.22" y="2.66" value="y(F)" prompt="p">Expression &quot;y(F)&quot; at 2.2, 2.7</Expression>
+<Point name="P27" n="110" hidden="true" x="-5" actx="-5.0" y="-y(F)" acty="-1.3391044071763307" fixed="true">Point at &quot;-5&quot;, &quot;-y(F)&quot;</Point>
+<Point name="P28" alias="r" n="111" showname="true" xcoffset="-0.21339061306883877" ycoffset="0.24218645475208223" keepclose="true" bold="true" large="true" x="7" actx="7.0" y="-y(F)" acty="-1.3391044071763307" shape="dot" fixed="true">Point at &quot;7&quot;, &quot;-y(F)&quot;</Point>
+<Function name="parabola" n="112" color="2" type="thick" x="x" y="x^2/(4*p)" var="x" min="-5" max="5" d="0.2" shape="dot">Function ( x , x^2/(4*p) )</Function>
+<Segment name="s19" n="115" from="P27" to="P28">Line segment from P27 to P28</Segment>
+<PointOn name="P" n="116" color="2" type="thick" showname="true" xcoffset="-0.18856118848549386" ycoffset="0.16395124119878401" keepclose="true" bold="true" large="true" on="parabola" alpha="0.0" x="2.358059715684347" y="1.0393279759057157" shape="dot">Point on parabola</PointOn>
+<Point name="P30" n="117" type="thick" x="x(P)" actx="2.358059715684347" y="5" acty="5.0" shape="dot" fixed="true">Point at &quot;x(P)&quot;, &quot;5&quot;</Point>
+<Segment name="s21" n="123" from="P" to="F">Line segment from P to F</Segment>
+<Point name="P31" n="124" hidden="true" x="x(P)" actx="2.358059715684347" y="-y(F)" acty="-1.3391044071763307" fixed="true">Point at &quot;x(P)&quot;, &quot;-y(F)&quot;</Point>
+<Point name="P32" n="125" hidden="true" x="x(P)+2" actx="4.358059715684346" y="-y(F)" acty="-1.3391044071763307" fixed="true">Point at &quot;x(P)+2&quot;, &quot;-y(F)&quot;</Point>
+<Point name="P33" n="127" hidden="true" x="x(P)+0.2" actx="2.558059715684347" y="y(P)+0.5" acty="1.5393279759057157" fixed="true">Point at &quot;x(P)+0.2&quot;, &quot;y(P)+0.5&quot;</Point>
+<Segment name="s20" n="120" from="P30" to="P">Line segment from P30 to P</Segment>
+<Polygon name="poly5" n="126" color="4" background="true" point1="P30" point2="P31" point3="P32">Polygon P30, P31, P32</Polygon>
+<Segment name="s22" n="130" type="thick" from="P" to="P33">Line segment from P to P33</Segment>
+</Objects>
+</Construction>
+</CaR>

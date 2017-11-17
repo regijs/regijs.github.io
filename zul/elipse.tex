@@ -1,0 +1,107 @@
+\title{Animação do Traçado de uma Elipse com Lápis e Barbante}
+A elipse é o conjunto dos pontos $P$ tais que 
+$$\mathrm{dist}(P,F_1)+\mathrm{dist}(P,F_2)=2a$$
+sendo $\mathrm{dist}(F_1,F_2)=2c$, com $c<a$. Clique sobre o gráfico para parar ou recomeçar a animação.
+
+
+
+$$\frac{x''^2}{a^2}+\frac{y''^2}{b^2}=1,\quad
+x''=x'-x_0,\quad y''=y'-y_0,\quad
+\left[\begin{array}{r}x'\\y'\end{array}\right] = \left[ \begin{array}{rr} \cos\,\theta&\sin \,\theta\\-\sin\, \theta&\cos\, \theta \end{array} \right] \left[\begin{array}{r}x\\y\end{array}\right]$$
+\begin{itemize}
+\item Clique e arraste o ponto vermelho na extremidade do vetor $V$ para alterar o valor de $\theta$.
+\item Clique e arraste o ponto vermelho no centro da elipse para alterar os valores de $x_0$ e $y_0$.
+\item Clique e arraste os pontos vermelhos nos vértices da elipse para alterar os valores de $a$ e $b$.
+\end{itemize}
+
+
+Reginaldo J. Santos
+DMat-ICEx-UFMG
+x=-0.96*(windoww-windowcx)
+y=0.96*(windowh/2+windowcy)
+
+Pontos V,O2,a2,b2
+
+a=d(a2,O2)
+b=d(b2,O2)
+
+
+eixo x'
+x1
+x=if(a+x0>0,(a+x0+1)*x(V)/sqrt(x(V)^2+y(V)^2),x(V)/sqrt(x(V)^2+y(V)^2))
+y=if(a+x0>0,(a+x0+1)*y(V)/sqrt(x(V)^2+y(V)^2),y(V)/sqrt(x(V)^2+y(V)^2))
+x1n
+x=if(x0<a+1,(-a-1+x0)*x(V)/sqrt(x(V)^2+y(V)^2),0)
+y=if(x0<a+1,(-a-1+x0)*y(V)/sqrt(x(V)^2+y(V)^2),0)
+
+
+theta
+th=a(x,O,V)
+tht=if(y(V)<0,-th,th)
+
+eixo y'
+y1
+x=if(b+y0>0,(b+y0+1)*cos(tht+90),cos(tht+90))
+y=if(b+y0>0,(b+y0+1)*sin(tht+90),sin(tht+90))
+y1n
+x=if(y0<b+1,-sin(tht)*(-b+y0-1),0)
+y=if(y0<b+1,cos(tht)*(-b+y0-1),0)
+
+
+O2=$(%cos(tht)*x(O2)+sin(tht)*y(O2)%,%-sin(tht)*x(O2)+cos(tht)*y(O2)%)$
+
+x0=cos(tht)*x(O2)+sin(tht)*y(O2)
+y0=-sin(tht)*x(O2)+cos(tht)*y(O2)
+
+eixo x''
+x2
+x=if(a+x0>0,cos(tht)*(a+1+x0)-sin(tht)*y0,cos(tht)-sin(tht)*y0)
+y=if(a+x0>0,sin(tht)*(a+1+x0)+cos(tht)*y0,sin(tht)+cos(tht)*y0)
+x2n
+x=if(x0<a+1,cos(tht)*(-a-1+x0)-sin(tht)*y0,-sin(tht)*y0)
+y=if(x0<a+1,sin(tht)*(-a-1+x0)+cos(tht)*y0,cos(tht)*y0)
+
+eixo y''
+y2
+x=if(b+y0>0,cos(tht)*x0-sin(tht)*(b+y0+1),cos(tht)*x0-sin(tht))
+y=if(b+y0>0,sin(tht)*x0+cos(tht)*(b+y0+1),sin(tht)*x0+cos(tht))
+y2n
+x=if(y0<b+1,cos(tht)*x0-sin(tht)*(b+y0+1),cos(tht)*x0)
+y=if(y0<b+1,sin(tht)*x0+cos(tht)*(b+y0+1),sin(tht)*x0)
+
+
+elipse
+x=cos(tht)*(x0+a*cos(t))-sin(tht)*(y0+b*sin(t))
+y=sin(tht)*(x0+a*cos(t))+cos(tht)*(y0+b*sin(t))
+
+
+
+F1
+x=if(a>b,cos(tht)*(x0+sqrt(a^2-b^2))-sin(tht)*y0,cos(tht)*x0-sin(tht)*(y0+sqrt(b^2-a^2)))
+y=if(a>b,sin(tht)*(x0+sqrt(a^2-b^2))+cos(tht)*y0,sin(tht)*x0+cos(tht)*(y0+sqrt(b^2-a^2)))
+
+F2
+x=if(a>b,cos(tht)*(x0-sqrt(a^2-b^2))-sin(tht)*y0,cos(tht)*x0-sin(tht)*(y0-sqrt(b^2-a^2)))
+y=if(a>b,sin(tht)*(x0-sqrt(a^2-b^2))+cos(tht)*y0,sin(tht)*x0+cos(tht)*(y0-sqrt(b^2-a^2)))
+
+eixo x
+x
+x=0.96*windoww
+y=0
+xn
+x=-0.96*windoww
+y=0
+
+eixo y
+y
+x=0
+y=0.96*windowh/2
+
+yn
+x=0
+y=-0.9500000000000001*windowh/2
+
+
+Texto
+x=-0.96*(windoww-windowcx)
+y=0.96*(windowh/2+windowcy)

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CaR version="9.3">
+<Construction>
+<Window x="2.6502786752273257" y="0.8714880328450221" w="6.7271713220297205"/>
+<Objects>
+<Point name="O" n="0" hidden="true" x="0.0" y="0.0">Point at 0.0, 0.0</Point>
+<Point name="x" n="23" showname="true" xcoffset="-0.02469540630656919" ycoffset="0.17567870340038416" keepclose="true" x="0.96*(windoww+windowcx)" actx="9.002351997366763" y="0" acty="0.0" shape="dot" fixed="true">Point at &quot;0.96*(windoww+windowcx)&quot;, &quot;0&quot;</Point>
+<Point name="xn" n="24" hidden="true" x="-0.96*(windoww-windowcx)" actx="-3.9138169409302987" y="0" acty="0.0" fixed="true">Point at &quot;-0.96*(windoww-windowcx)&quot;, &quot;0&quot;</Point>
+<Point name="y" n="28" showname="true" xcoffset="0.2984548057688432" ycoffset="-0.07688195796605335" keepclose="true" x="0" actx="0.0" y="0.96*(windowh+windowcy)" acty="5.0083104046458" shape="dot" fixed="true">Point at &quot;0&quot;, &quot;0.96*(windowh+windowcy)&quot;</Point>
+<Point name="yn" n="29" hidden="true" x="0" actx="0.0" y="-0.96*(windowh-windowcy)" acty="-3.3350533815833576" fixed="true">Point at &quot;0&quot;, &quot;-0.96*(windowh-windowcy)&quot;</Point>
+<Point name="V" n="41" color="5" type="thick" x="2.7307997683092924" y="-1.0170976048956397" shape="dot">Point at 2.73, -1.02</Point>
+<Point name="P" n="42" color="5" type="thick" x="-0.005969096115376439" y="1.9996471986512485" shape="dot">Point at -0.01, 2.0</Point>
+<Segment name="s1" n="27" from="xn" to="x" arrow="true">Line segment from xn to x</Segment>
+<Segment name="s2" n="34" from="yn" to="y" arrow="true">Line segment from yn to y</Segment>
+<Expression name="a" n="20" hidden="true" showname="true" showvalue="true" x="2.5" y="1.5" value="(y(P)-y(V))/(x(P)-x(V))^2" prompt="a">Expression &quot;(y(P)-y(V))/(x(P)-x(V))^2&quot; at 2.5, 1.5</Expression>
+<Point name="P15" alias="$%x(V)%$" n="43" showname="true" xcoffset="0.009673996418476882" ycoffset="-0.185041979576682" keepclose="true" x="x(V)" actx="2.7307997683092924" y="0" acty="0.0" shape="cross" fixed="true">Point at &quot;x(V)&quot;, &quot;0&quot;</Point>
+<Point name="P16" alias="$%y(V)%$" n="44" showname="true" xcoffset="-0.2924857096534659" ycoffset="0.011558593114772309" keepclose="true" x="0" actx="0.0" y="y(V)" acty="-1.0170976048956397" shape="cross" fixed="true">Point at &quot;0&quot;, &quot;y(V)&quot;</Point>
+<Point name="P17" alias="$%x(P)%$" n="45" showname="true" xcoffset="0.010181317190346206" ycoffset="-0.185041979576682" keepclose="true" x="x(P)" actx="-0.005969096115376439" y="0" acty="0.0" shape="cross" fixed="true">Point at &quot;x(P)&quot;, &quot;0&quot;</Point>
+<Point name="P18" alias="$%y(P)%$" n="46" showname="true" xcoffset="-0.16116559511517492" ycoffset="0.008327084112957683" keepclose="true" x="0" actx="0.0" y="y(P)" acty="1.9996471986512485" shape="cross" fixed="true">Point at &quot;0&quot;, &quot;y(P)&quot;</Point>
+<Expression name="c" n="18" hidden="true" showname="true" showvalue="true" x="2.69" y="2.42" value="y(V)+a*(x(V))^2" prompt="c">Expression &quot;y(V)+a*(x(V))^2&quot; at 2.69, 2.42</Expression>
+<Expression name="b" n="19" hidden="true" showname="true" showvalue="true" x="2.5" y="2.0" value="-2*a*x(V)" prompt="b">Expression &quot;-2*a*x(V)&quot; at 2.5, 2.0</Expression>
+<Function name="f" n="21" color="2" type="thick" x="x" y="a*x^2+b*x+c" var="x" min="-0.9*(windoww-windowcx)" max="0.9*(windoww+windowcx)" d="0.02*windoww">Function ( x , a*x^2+b*x+c )</Function>
+<Expression name="Delta" n="48" hidden="true" showname="true" showvalue="true" x="2.66" y="2.99" value="b^2-4*a*c" prompt="$\Delta$">Expression &quot;b^2-4*a*c&quot; at 2.66, 2.99</Expression>
+<Expression name="x1" n="49" hidden="true" showname="true" showvalue="true" x="3.62" y="2.58" value="(-b-sqrt(Delta))/(2*a)" prompt="x1">Expression &quot;(-b-sqrt(Delta))/(2*a)&quot; at 3.62, 2.58</Expression>
+<Expression name="x2" n="50" hidden="true" showname="true" showvalue="true" x="3.6" y="2.24" value="(-b+sqrt(Delta))/(2*a)" prompt="x2">Expression &quot;(-b+sqrt(Delta))/(2*a)&quot; at 3.6, 2.24</Expression>
+<Text name="Text1" n="22" x="-0.96*(windoww-windowcx)" y="0.96*(windowh+windowcy)" fixed="true">$f(x)=y_v+a(x-x_v)^2$
+$f(x)=%y(V)% %+-(-a)%(x %+-x(V)%)^2$
+$f(x)=ax^2+bx+c$
+$f(x)=%a%x^2 %+-(-b)%x %+-(-c)%$
+$f(x)=a(x-x&apos;)(x-x&apos;&apos;)$
+$f(x)=%a%(x%+-if(Delta&gt;0,x1,-b/(2*a))% %+-(-if(Delta&lt;0,sqrt(-Delta),0))%i)(x%+-if(Delta&gt;0,x2,-b/(2*a))% %+-(-if(Delta&lt;0,-sqrt(-Delta),0))%i)$
+$\Delta=%Delta%$
+Raízes:
+$x_1=%if(Delta&gt;0,x1,-b/(2*a))% %+-(if(Delta&lt;0,sqrt(-Delta),0))%i$
+$x_2=%if(Delta&gt;0,x2,-b/(2*a))% %+-(if(Delta&lt;0,-sqrt(-Delta),0))%i$
+
+Reginaldo J. Santos
+DMat-ICEx-UFMG</Text>
+<Point name="P19" alias="$%x1%$" n="51" showname="true" xcoffset="0.003590869238715211" ycoffset="-0.1372892106536674" keepclose="true" x="x1" actx="1.141703713353879" y="0" acty="0.0" shape="cross" fixed="true">Point at &quot;x1&quot;, &quot;0&quot;</Point>
+<Point name="P20" alias="$%x2%$" n="52" showname="true" xcoffset="-0.0035908692387174312" ycoffset="-0.17310378734592824" keepclose="true" x="x2" actx="4.319895823264705" y="0" acty="0.0" shape="cross" fixed="true">Point at &quot;x2&quot;, &quot;0&quot;</Point>
+</Objects>
+</Construction>
+</CaR>
