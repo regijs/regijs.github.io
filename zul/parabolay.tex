@@ -1,0 +1,27 @@
+p=-sin(tht)*x(F)+cos(tht)*y(F)
+
+pp=if(abs(p)<1,abs(p),p^2)
+
+parabolay
+t=-sqrt(pp):0.1*sqrt(pp):sqrt(pp)
+x=cos(tht)*2*t-sin(tht)*t^2/p
+y=sin(tht)*2*t+cos(tht)*t^2/p
+
+
+diretriz
+D2
+x=cos(tht)*(-2*sqrt(pp))-sin(tht)*(-pp)
+y=sin(tht)*(-2*sqrt(pp))+cos(tht)*(-pp)
+D1
+x=cos(tht)*2*sqrt(pp)-sin(tht)*(-pp)
+y=sin(tht)*2*sqrt(pp)+cos(tht)*(-pp)
+
+
+
+eixo y'
+x=if(p>0,if(p<0.5,-sin(tht),-(p+0.5)*sin(tht)),-0.5*sin(tht))
+y=if(p>0,if(p<0.5,cos(tht),(p+0.5)*cos(tht)),0.5*cos(tht))
+
+y1n
+x=if(p<0,sin(tht),(p+0.5)*sin(tht))
+y=if(p<0,-cos(tht),-(p+0.5)*cos(tht))

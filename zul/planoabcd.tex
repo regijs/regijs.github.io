@@ -1,0 +1,42 @@
+\title{Plano}
+$$ax + by + cz +d = 0,\;\mbox{com  }a,b,c,d \neq 0$$
+\begin{itemize}
+\item
+Clique e arraste os pontos vermelhos nos eixos coordenados para modificar os valores de $a$, $b$, $c$ e $d$.
+\item
+Clique e arraste os pontos vermelhos nos círculos para modificar a posição de visão.
+\end{itemize}
+
+
+
+E1
+x=-2*sin(th)
+y=-2*cos(th)*cos(ph)
+
+E2
+x=2*cos(th)
+y=-2*cos(ph)*sin(th)
+
+E3
+x=0
+y=2*sin(ph)
+
+z
+x=0
+y=0.96*(windowh/2+windowcy)*sin(ph)
+
+x
+x=y(z)*x(E1)/y(E3)
+y=y(z)*y(E1)/y(E3)
+
+y
+x=y(z)*x(E2)/y(E3)
+y=y(z)*y(E2)/y(E3)
+
+
+
+a=if(sin(th)==0,if(cos(th)==1,-y(A)/(2*cos(ph)),y(A)/(2*cos(ph))),-x(A)/(2*sin(th)))
+
+b=if(cos(th)==0,if(sin(th)==1,-y(B)/(2*cos(ph)),y(B)/(2*cos(ph))),x(B)/(2*cos(th)))
+
+c=if(sin(ph)=0,0,y(C)/(2*sin(ph)))
