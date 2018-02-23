@@ -30,7 +30,11 @@ loadScript("https://regijs.github.io/second.js", function(){
 funções $f,g:[0,\infty)\rightarrow\mathbb{R}$ é uma função
 definida por
 $$(f*g)(t)=\int_0^tf(t-\tau)g(\tau)d\tau,\quad \mbox{para }t\ge 0. $$
-Considere
+
+           <div class="p"><!----></div>
+
+           
+           <b>Exemplo 1. (2016)</b>           Considere
 $$f(t)=g(t)=\begin{cases}1,&\text{ se } 0< t< 1,\\0,&\text{caso contrário}
 \end{cases}$$
 $$(f*g)(t)=\int_0^tf(t-\tau)g(\tau)d\tau =\begin{cases}
@@ -41,7 +45,9 @@ $$(f*g)(t)=\int_0^tf(t-\tau)g(\tau)d\tau =\begin{cases}
 
 Clique e arraste o ponto vermelho.<br>                                               
 <iframe scrolling="no" title="Convolução-a" src="https://www.geogebra.org/material/iframe/id/qPKvazYM/width/600/height/620/border/888888/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="600px" height="620px" style="border:0px;"> </iframe></li>
-<li> A convolução de duas funções $f:\mathbb{R}\to\mathbb{R}$ e
+           </li>
+           
+           <li> A convolução de duas funções $f:\mathbb{R}\to\mathbb{R}$ e
 $g:\mathbb{R}\to\mathbb{R}$ seccionalmente contínuas, limitadas e tais que
 $\int_{-\infty}^\infty |f(x)|dx<\infty$ e $\int_{-\infty}^\infty
     |g(x)|dx<\infty$, é
@@ -50,7 +56,13 @@ $$
 (f*g)(x)=\int_{-\infty}^\infty
 f(y)g(x-y)dy,\quad\mbox{para }x\in\mathbb{R}.
 $$
-Seja $f:\mathbb{R}\to\mathbb{R}$ definida por $f(x)=\chi_{[0,1]}(x)=\begin{cases}1,\;\mbox{se }0\le x\le 1,\\0,\;\mbox{caso contrário.}\end{cases}$
+
+           <div class="p"><!----></div>
+
+           
+           <b>Exemplo 2. (2016)</b>                         
+                      
+                      Seja $f:\mathbb{R}\to\mathbb{R}$ definida por $f(x)=\chi_{[0,1]}(x)=\begin{cases}1,\;\mbox{se }0\le x\le 1,\\0,\;\mbox{caso contrário.}\end{cases}$
 \begin{eqnarray*}
   (f*f)(x) &=& \int_{-\infty}^\infty
 \chi_{[0,1]}(y)\chi_{[0,1]}(x-y)dy=\int_0^1
