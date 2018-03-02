@@ -4,7 +4,7 @@
 
 <HEAD>
 
-<TITLE>Teste 1-1-01</TITLE>
+<TITLE>Teste 1-1-02</TITLE>
 	
 <script type="text/javascript" src="https://regijs.github.io/first.js"></script>
 <script type="text/javascript">
@@ -18,16 +18,16 @@ loadScript("https://regijs.github.io/second.js", function(){
 <SCRIPT LANGUAGE="JavaScript">
 function feedback( ){
 	if (document.entradas.entr[0].checked=="1"){
-    window.open("teste11-01-r1.html","feedback",
+    window.open("teste11-02-r1.html","feedback",
 		"top=400,left=400,width=600,height=400")
 	}else if (document.entradas.entr[1].checked=="1"){
-    window.open("teste11-01-r2.html","feedback",
+    window.open("teste11-02-r2.html","feedback",
 		"top=400,left=400,width=600,height=400")
   	}else if (document.entradas.entr[2].checked=="1"){
-    window.open("teste11-01-r3.html","feedback",
+    window.open("teste11-02-r3.html","feedback",
 		"top=400,left=400,width=600,height=400")
 	}else if (document.entradas.entr[3].checked=="1"){
-    window.open("teste11-01-r4.html","feedback",
+    window.open("teste11-02-r4.html","feedback",
 		"top=400,left=400,width=600,height=400")
 	}
 }
@@ -35,7 +35,7 @@ function feedback( ){
 
 <form action="" name="entradas" method="GET" onsubmit="return verifica()">
 <center>
-<H1>Teste sobre Soma de Matrizes</H1>
+<H1>Teste sobre Produto de Matrizes</H1>
 <H2>Reginaldo J. Santos</H2>
 <H3>Departamento de Matemática<br>
 Instituto de Ciências Exatas<br>
@@ -44,10 +44,10 @@ Universidade Federal de Minas Gerais</H3>
 <H4>2 de março de 2018</H4>
 	</center>
 Considere duas matrizes $A$ e $B$ de tamanhos $m\times n$ e $p\times q$, respectivamente. Podemos afirmar que <br>
-<INPUT TYPE="radio" NAME="entr" ></INPUT> Se $m=p$, então a soma, $A+B$, está definida. <br>
-<INPUT TYPE="radio" NAME="entr" ></INPUT> Se $m=p$ e $n=q$, então a soma, $A+B$, está definida. <br>
-<INPUT TYPE="radio" NAME="entr" ></INPUT> Se $n=p$, então a soma, $A+B$, está definida. <br>
-<INPUT TYPE="radio" NAME="entr" ></INPUT> Se $n=q$, então a soma, $A+B$, está definida. <br>
+<INPUT TYPE="radio" NAME="entr" ></INPUT> Se $m=p$, então o produto, $AB$, está definido. <br>
+<INPUT TYPE="radio" NAME="entr" ></INPUT> Se $m=p$ e $n=q$, então o produto, $AB$, está definido. <br>
+<INPUT TYPE="radio" NAME="entr" ></INPUT> Se $n=p$, então o produto, $AB$, está definido. <br>
+<INPUT TYPE="radio" NAME="entr" ></INPUT> Se $n=q$, então o produto, $AB$, está definido. <br>
 <br>
 	
 <input type="button" value="Submeter Resposta" onClick="feedback()"></input>
