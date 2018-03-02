@@ -18,7 +18,7 @@ loadScript("https://regijs.github.io/second.js", function(){
 <SCRIPT LANGUAGE="JavaScript">
 
 function feedback( ){
-	view = window.open("", "feedback","menubar,resizable,scrollbars");
+	view = window.open("", "feedback","resizable,scrollbars");
 	view.document.open("text/html");
          	view.document.writeln("<center><H1>Teste</H1>");
          	view.document.writeln("<H2>Reginaldo J. Santos</H2>");
@@ -54,10 +54,10 @@ Universidade Federal de Minas Gerais</H3>
 <H4>2 de março de 2018</H4>
 	</center>
 Considere duas matrizes $A$ e $B$ de tamanhos $m\times n$ e $p\times q$, respectivamente. Podemos afirmar que <br>
-<INPUT TYPE="radio" NAME="entr" CHECKED></INPUT> A soma, $A+B$, está definida somente se $m=p$. <br>
-<INPUT TYPE="radio" NAME="entr" ></INPUT> A soma, $A+B$, está definida somente se $m=p$ e $n=q$. <br>
-<INPUT TYPE="radio" NAME="entr" ></INPUT> A soma, $A+B$, está sempre definida. <br>
-<INPUT TYPE="radio" NAME="entr" ></INPUT> A soma, $A+B$, está definida somente se $n=q$. <br>
+<INPUT TYPE="radio" NAME="entr" CHECKED></INPUT> Se $m=p$, então a soma, $A+B$, está definida. <br>
+<INPUT TYPE="radio" NAME="entr" ></INPUT> Se $m=p$ e $n=q$, então a soma, $A+B$, está definida. <br>
+<INPUT TYPE="radio" NAME="entr" ></INPUT> Se $n=p$, então a soma, $A+B$, está definida. <br>
+<INPUT TYPE="radio" NAME="entr" ></INPUT> Se $n=q$, então a soma, $A+B$, está definida. <br>
 <br>
 	
 <input type="button" value="Submeter Resposta" onClick="feedback()"></input>
