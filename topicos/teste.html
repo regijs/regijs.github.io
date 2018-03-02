@@ -3,7 +3,16 @@
 <HTML>
 
 <HEAD>
+
 <TITLE>Teste</TITLE>
+	
+<script type="text/javascript" src="https://regijs.github.io/first.js"></script>
+<script type="text/javascript">
+loadScript("https://regijs.github.io/second.js", function(){
+    //initialization code
+});
+</script>
+
 </HEAD>
 
 <SCRIPT LANGUAGE="JavaScript">
@@ -11,21 +20,24 @@
 function feedback( ){
 	view = window.open("", "feedback","menubar,resizable,scrollbars");
 	view.document.open("text/html");
-         	view.document.writeln("<center><H1>Cálculo da Taxa de Juros Usando o Método de Newton</H1>");
+         	view.document.writeln("<center><H1>Teste</H1>");
          	view.document.writeln("<H2>Reginaldo J. Santos</H2>");
          	view.document.writeln("<H3>Departamento de Matemática<br>");
          	view.document.writeln("Instituto de Ciências Exatas<br>");
          	view.document.writeln("Universidade Federal de Minas Gerais</H3>");
 	if (document.entradas.entr[0].checked=="1"){
-		view.document.writeln("Você marcou a Resposta 1. <br>")
+		view.document.writeln("Você marcou que a soma, $A+B$, está definida somente se $m=p$. <br>")
+		view.document.writeln("Feche esta janela e tente novamente. <br>")
 	}else if (document.entradas.entr[1].checked=="1"){
-		view.document.writeln("Você marcou a Resposta 2. <br>")
+		view.document.writeln("Você marcou que a soma, $A+B$, está definida somente se $m=p$ e $n=q$. <br>")
+		view.document.writeln("Parabéns. Sua resposta está correta. <br>")
 	}else if (document.entradas.entr[2].checked=="1"){
-		view.document.writeln("Você marcou a Resposta 3. <br>")
+		view.document.writeln("Você marcou que a soma, $A+B$, está sempre definida. <br>")
+		view.document.writeln("Feche esta janela e tente novamente. <br>")
 	}else{
-		view.document.writeln("Você marcou a Resposta 4. <br>")
+		view.document.writeln("Você marcou que a soma, $A+B$, está definida somente se $n=q$.")
+		view.document.writeln("Feche esta janela e tente novamente. <br>")
 	}
-	view.document.writeln("Feedback geral");
 	view.document.close;
 }
 
@@ -40,15 +52,16 @@ Instituto de Ciências Exatas<br>
 Universidade Federal de Minas Gerais</H3>
 
 <H4>2 de março de 2018</H4>
-
-<INPUT TYPE="radio" NAME="entr" CHECKED></INPUT> Resposta 1 
-<INPUT TYPE="radio" NAME="entr" ></INPUT> Resposta 2 
-<INPUT TYPE="radio" NAME="entr" ></INPUT> Resposta 3 
-<INPUT TYPE="radio" NAME="entr" ></INPUT> Resposta 4 
+	</center>
+Considere duas matrizes $A$ e $B$ de tamanhos $m\times n$ e $p\times q$, respectivamente. Podemos afirmar que
+<INPUT TYPE="radio" NAME="entr" CHECKED></INPUT> A soma, $A+B$, está definida somente se $m=p$. <br>
+<INPUT TYPE="radio" NAME="entr" ></INPUT> A soma, $A+B$, está definida somente se $m=p$ e $n=q$. <br>
+<INPUT TYPE="radio" NAME="entr" ></INPUT> A soma, $A+B$, está sempre definida. <br>
+<INPUT TYPE="radio" NAME="entr" ></INPUT> A soma, $A+B$, está definida somente se $n=q$. <br>
 <br>
-
+	
 <input type="button" value="Submeter Resposta" onClick="feedback()"></input>
-</center>
+
 </form>
 
 
