@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+
+<HEAD>
+<TITLE>Teste</TITLE>
+</HEAD>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+function feedback( ){
+	view = window.open("", "feedback","menubar,resizable,scrollbars");
+	view.document.open("text/html");
+         	view.document.writeln("<center><H1>Cálculo da Taxa de Juros Usando o Método de Newton</H1>");
+         	view.document.writeln("<H2>Reginaldo J. Santos</H2>");
+         	view.document.writeln("<H3>Departamento de Matemática<br>");
+         	view.document.writeln("Instituto de Ciências Exatas<br>");
+         	view.document.writeln("Universidade Federal de Minas Gerais</H3>");
+	if (document.entradas.entr[0].checked=="1"){
+		view.document.writeln("Você marcou a Resposta 1. <br>")
+	}else if (document.entradas.entr[1].checked=="1"){
+		view.document.writeln("Você marcou a Resposta 2. <br>")
+	}else if (document.entradas.entr[2].checked=="1"){
+		view.document.writeln("Você marcou a Resposta 3. <br>")
+	}else{
+		view.document.writeln("Você marcou a Resposta 4. <br>")
+	}
+	view.document.writeln("Feedback geral");
+	view.document.close;
+}
+
+</SCRIPT>
+
+<form action="" name="entradas" method="GET" onsubmit="return verifica()">
+<center>
+<H1>Teste</H1>
+<H2>Reginaldo J. Santos</H2>
+<H3>Departamento de Matemática<br>
+Instituto de Ciências Exatas<br>
+Universidade Federal de Minas Gerais</H3>
+
+<H4>2 de março de 2018</H4>
+
+<INPUT TYPE="radio" NAME="entr" CHECKED></INPUT> Resposta 1 
+<INPUT TYPE="radio" NAME="entr" ></INPUT> Resposta 2 
+<INPUT TYPE="radio" NAME="entr" ></INPUT> Resposta 3 
+<INPUT TYPE="radio" NAME="entr" ></INPUT> Resposta 4 
+<br>
+
+<input type="button" value="Submeter Resposta" onClick="feedback()"></input>
+</center>
+</form>
+
+
+</HTML>
