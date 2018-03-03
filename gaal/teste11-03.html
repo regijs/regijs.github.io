@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+
+<HEAD>
+
+<TITLE>Teste 1-1-03</TITLE>
+	
+<script type="text/javascript" src="https://regijs.github.io/first.js"></script>
+<script type="text/javascript">
+loadScript("https://regijs.github.io/second.js", function(){
+    //initialization code
+});
+</script>
+
+</HEAD>
+
+<SCRIPT LANGUAGE="JavaScript">
+function feedback( ){
+	if (document.entradas.entr[0].checked=="1"){
+    window.open("teste11-03-r1.html","feedback",
+		"top=400,left=400,width=600,height=400")
+	}else if (document.entradas.entr[1].checked=="1"){
+    window.open("teste11-03-r2.html","feedback",
+		"top=400,left=400,width=600,height=400")
+  	}else if (document.entradas.entr[2].checked=="1"){
+    window.open("teste11-03-r3.html","feedback",
+		"top=400,left=400,width=600,height=400")
+	}else if (document.entradas.entr[3].checked=="1"){
+    window.open("teste11-03-r4.html","feedback",
+		"top=400,left=400,width=600,height=400")
+	}
+}
+</SCRIPT>
+
+<form action="" name="entradas" method="GET" onsubmit="return verifica()">
+<center>
+<H1>Teste sobre Propriedades das Operações com Matrizes</H1>
+<H2>Reginaldo J. Santos</H2>
+<H3>Departamento de Matemática<br>
+Instituto de Ciências Exatas<br>
+Universidade Federal de Minas Gerais</H3>
+
+<H4>2 de março de 2018</H4>
+	</center>
+Considere duas matrizes $A$ e $B$ de tamanho $n\times n$. Podemos afirmar que <br>
+<INPUT TYPE="radio" NAME="entr" ></INPUT> $(A+B)^2=A^2+2AB+B^2$. <br>
+<INPUT TYPE="radio" NAME="entr" ></INPUT> $(A+B)(A-B)=A^2+2AB+B^2$. <br>
+<INPUT TYPE="radio" NAME="entr" ></INPUT> Se $AB=\bar{0}$, então $A=\bar{0}$ ou $B=\bar{0}$. <br>
+<INPUT TYPE="radio" NAME="entr" ></INPUT> Se $B=I_n-2A$, então $AB=BA$. <br>
+<br>
+	
+<input type="button" value="Submeter Resposta" onClick="feedback()"></input>
+
+</form>
+
+
+</HTML>
