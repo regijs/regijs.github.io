@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+
+<HEAD>
+
+<TITLE>Teste 2-1 - 01 - Resp 3</TITLE>
+	
+<script type="text/javascript" src="https://regijs.github.io/first.js"></script>
+<script type="text/javascript">
+loadScript("https://regijs.github.io/second.js", function(){
+    //initialization code
+});
+</script>
+
+</HEAD>
+
+Estamos considerando duas matrizes $n\times n$, $A$ e $B$, sendo $A$ invertível.
+Você marcou que se $A+B$ é invertível, então
+$I_n+BA^{-1}$ também é invertível. E que se $I_n+BA^{-1}$ é invertível, 
+	então nada se pode afirmar sobre a invertibilidade de $A+B$.
+<br>
+Multiplicando-se $A+B$ por $A^{-1}$ obtemos
+\[(A+B)A^{-1}=AA^{-1}+BA^{-1}=I_n +BA^{-1}. \]
+Usando a equação acima temos
+\[ A+B= (A+B)I_n=(A+B)(A^{-1}A) =[(A+B)A^{-1}]A =(I_n +BA^{-1})A. \]
+Se $I_n+BA^{-1}$ é invertível, então
+$A+B$ é invertível como produto de duas matrizes invertíveis. Logo é invertível.
+<br>
+
+Feche esta janela e tente novamente.
+
+</HTML>
