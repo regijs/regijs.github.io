@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+
+<HEAD>
+
+<TITLE>Teste 22-02</TITLE>
+	
+<script type="text/javascript" src="https://regijs.github.io/first.js"></script>
+<script type="text/javascript">
+loadScript("https://regijs.github.io/second.js", function(){
+    //initialization code
+});
+</script>
+
+</HEAD>
+
+<SCRIPT LANGUAGE="JavaScript">
+function feedback( ){
+	if (document.entradas.entr[0].checked=="1"){
+    window.open("teste22-01-r1.html","feedback",
+		"top=400,left=400,width=600,height=400")
+	}else if (document.entradas.entr[1].checked=="1"){
+    window.open("teste22-01-r2.html","feedback",
+		"top=400,left=400,width=600,height=400")
+  	}else if (document.entradas.entr[2].checked=="1"){
+    window.open("teste22-01-r3.html","feedback",
+		"top=400,left=400,width=600,height=400")
+	}else if (document.entradas.entr[3].checked=="1"){
+    window.open("teste22-01-r4.html","feedback",
+		"top=400,left=400,width=600,height=400")
+	}
+}
+</SCRIPT>
+
+<form action="" name="entradas" method="GET" onsubmit="return verifica()">
+<center>
+<H1>Teste sobre Operações Elementares e o Determinante</H1>
+<H2>Reginaldo J. Santos</H2>
+<H3>Departamento de Matemática<br>
+Instituto de Ciências Exatas<br>
+Universidade Federal de Minas Gerais</H3>
+
+<H4>22 de março de 2018</H4>
+	</center>
+Considere a matriz \[A=\begin{bmatrix}1 & -2 & 3\cr 0 & 3 & 12\cr -2 & 6 & -3\end{bmatrix}\]. 
+Aplicando-se as operações elementares, $L_3 \to L3+2L_1$ sobre as linhas de $A$, obtemos
+Podemos afirmar que <br>
+<INPUT TYPE="radio" NAME="entr" ></INPUT> $\det(A)=-1$. <br>
+<INPUT TYPE="radio" NAME="entr" ></INPUT> $\det(A)=+1$. <br>
+<INPUT TYPE="radio" NAME="entr" ></INPUT> $\det(A)=-1$ se $n$ é par. <br>
+<INPUT TYPE="radio" NAME="entr" ></INPUT> $\det(A)=+1$ se $n$ é par. <br>
+<br>
+	
+<input type="button" value="Submeter Resposta" onClick="feedback()"></input>
+
+</form>
+
+
+</HTML>
