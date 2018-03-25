@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+
+<HEAD>
+
+<TITLE>Teste 2-1 - 02 - Resp 4</TITLE>
+	
+<script type="text/javascript" src="https://regijs.github.io/first.js"></script>
+<script type="text/javascript">
+loadScript("https://regijs.github.io/second.js", function(){
+    //initialization code
+});
+</script>
+
+</HEAD>
+
+Estamos considerando a matriz
+\[A=\begin{bmatrix}1 & 0 & -2\\
+1 & -2 & -1\\
+1 & -2 & a\end{bmatrix}.\]
+Você marcou que para qualquer valor de $a$, então
+a matriz $A$ não tem inversa.<br>
+Escalonando a matriz aumentada
+\[[A|I_3]=\begin{bmatrix}1 & 0 & -2 & 1 & 0 & 0\\
+1 & -2 & -1 & 0 & 1 & 0\\
+1 & -2 & a & 0 & 0 & 1\end{bmatrix}\]
+chegamos na matriz
+\[\begin{bmatrix}1 & 0 & -2 & 1 & 0 & 0\\
+0 & 1 & -\frac{1}{2} & \frac{1}{2} & -\frac{1}{2} & 0\\
+0 & 0 & a+1 & 0 & -1 & 1\end{bmatrix}.\]
+Se $a=-1$, então a matriz $A$ não tem inversa.
+<br>
+Feche esta janela e tente novamente.
+
+</HTML>
