@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+
+<HEAD>
+
+<TITLE>Teste 42-02</TITLE>
+	
+<script type="text/javascript" src="https://regijs.github.io/first.js"></script>
+<script type="text/javascript">
+loadScript("https://regijs.github.io/second.js", function(){
+    //initialization code
+});
+</script>
+
+</HEAD>
+
+<SCRIPT LANGUAGE="JavaScript">
+function feedback( ){
+	if (document.entradas.entr[0].checked=="1"){
+    window.open("teste42-02-r1.html","feedback",
+		"top=400,left=400,width=600,height=400")
+	}else if (document.entradas.entr[1].checked=="1"){
+    window.open("teste42-02-r2.html","feedback",
+		"top=400,left=400,width=600,height=400")
+  	}else if (document.entradas.entr[2].checked=="1"){
+    window.open("teste42-02-r3.html","feedback",
+		"top=400,left=400,width=600,height=400")
+	}else if (document.entradas.entr[3].checked=="1"){
+    window.open("teste42-02-r4.html","feedback",
+		"top=400,left=400,width=600,height=400")
+	}
+}
+</SCRIPT>
+
+<form action="" name="entradas" method="GET" onsubmit="return verifica()">
+<center>
+<H1>Teste sobre Equações da Reta </H1>
+<H2>Reginaldo J. Santos</H2>
+<H3>Departamento de Matemática<br>
+Instituto de Ciências Exatas<br>
+Universidade Federal de Minas Gerais</H3>
+
+<H4>02 de maio de 2018</H4>
+	</center>
+Qual equação representa o plano que contem o ponto $A=(1,0-1)$ e é perpendicular à reta dada a seguir?
+\[ \begin{cases}
+x-y=0\\y-z=1
+\end{cases}
+\]
+
+<br>
+<INPUT TYPE="radio" NAME="entr" ></INPUT> $x+z=1$. <br>
+<INPUT TYPE="radio" NAME="entr" ></INPUT> $x+z=0$. <br>
+<INPUT TYPE="radio" NAME="entr" ></INPUT> $x+y+z=0$. <br>
+<INPUT TYPE="radio" NAME="entr" ></INPUT> $x+y+z=1$. <br>
+<br>
+	
+<input type="button" value="Submeter Resposta" onClick="feedback()"></input>
+
+</form>
+
+
+</HTML>
