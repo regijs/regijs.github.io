@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+
+<HEAD>
+
+<TITLE>Teste 53-01</TITLE>
+	
+<script type="text/javascript" src="https://regijs.github.io/first.js"></script>
+<script type="text/javascript">
+loadScript("https://regijs.github.io/second.js", function(){
+    //initialization code
+});
+</script>
+
+</HEAD>
+
+<SCRIPT LANGUAGE="JavaScript">
+function feedback( ){
+	if (document.entradas.entr[0].checked=="1"){
+    window.open("teste53-01-r1.html","feedback",
+		"top=400,left=400,width=600,height=400")
+	}else if (document.entradas.entr[1].checked=="1"){
+    window.open("teste53-01-r2.html","feedback",
+		"top=400,left=400,width=600,height=400")
+  	}else if (document.entradas.entr[2].checked=="1"){
+    window.open("teste53-01-r3.html","feedback",
+		"top=400,left=400,width=600,height=400")
+	}else if (document.entradas.entr[3].checked=="1"){
+    window.open("teste53-01-r4.html","feedback",
+		"top=400,left=400,width=600,height=400")
+	}
+}
+</SCRIPT>
+
+<form action="" name="entradas" method="GET" onsubmit="return verifica()">
+<center>
+<H1>Teste sobre Produto Escalar em $\mathbb{R}^n$ </H1>
+<H2>Reginaldo J. Santos</H2>
+<H3>Departamento de Matemática<br>
+Instituto de Ciências Exatas<br>
+Universidade Federal de Minas Gerais</H3>
+
+<H4>24 de maio de 2018</H4>
+	</center>
+
+Considere a matriz 
+\[A=\begin{bmatrix}2 & 1 & -1\\
+1 & 2 & 1\\
+-1 & 1 & 2\end{bmatrix}\]
+Qual das alternativas representa uma base ortonormal para o subespaço definido por $(A-3I_3)X=\bar{0}$?
+<br>
+<INPUT TYPE="radio" NAME="entr" ></INPUT> $\left\{(-\frac{1}{\sqrt{2}},0,\frac{1}{\sqrt{2}}),
+(\frac{1}{\sqrt{6}},\frac{\sqrt{6}}{3},\frac{1}{\sqrt{6}})\right\}$. <br>
+<INPUT TYPE="radio" NAME="entr" ></INPUT> $\left\{(\frac{1}{\sqrt{3}},-\frac{1}{\sqrt{3}},\frac{1}{\sqrt{3}})\right\}$. <br>
+<INPUT TYPE="radio" NAME="entr" ></INPUT> $2x+y-z+2=0$. <br>
+<INPUT TYPE="radio" NAME="entr" ></INPUT> $2x+y-z-1=0$ <br>
+<br>
+	
+<input type="button" value="Submeter Resposta" onClick="feedback()"></input>
+
+</form>
+
+
+</HTML>
