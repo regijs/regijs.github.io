@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+
+<HEAD>
+
+<TITLE>Teste 5-1 - 01 - Resp 1</TITLE>
+	
+<script type="text/javascript" src="https://regijs.github.io/first.js"></script>
+<script type="text/javascript">
+loadScript("https://regijs.github.io/second.js", function(){
+    //initialization code
+});
+</script>
+
+
+
+</HEAD>
+Você marcou que 
+se o parâmetro $a=2$ os vetores 
+$(-2,    2,  -2,4),(-3,    -3, -3,6),(2, -3, 2,a)$ são LD.<br>
+\[ x(-2,    2,  -2,4)+y(-3,    -3, -3,6)+z(2, -3, 2,a)=\bar{0}.  \]
+É equivalente ao sistema linear $AX=\bar{0}$, em que 
+\[A=\begin{bmatrix}
+-2 & -3 & 2\\
+2 & -3 & -3\\
+-2 & -3 & 2\\
+4 & 6 & a\end{bmatrix}\]
+Escalonando a matriz $A$ obtemos  uma matriz 
+\[\begin{bmatrix}
+1 & \frac{3}{2} & -1\\
+0 & -6 & -1\\
+0 & 0 & 0\\
+0 & 0 & f(a)\end{bmatrix}.\]
+Se $f(a)\ne 0$, então a solução é $z=y=x=0$. Se $f(a)=0$, então
+os vetores dados são LD.
+<br>
+A sua resposta está incorreta. 
+Feche esta janela e tente novamente.
+ 
+</HTML>
