@@ -37,6 +37,8 @@ $[A+B]_{ij}=a_{ij}+b_{ij}$.
 
 <br>
 <br>
+<br>
+<br>
 	A <b> multiplicação de uma matriz</b>
 	$A=(a_{ij})_{m\times n}$ <b>por um escalar</b> (número) $\alpha$ é
 definida pela matriz $m\times n$
@@ -49,6 +51,8 @@ A]_{ij}=\alpha\;a_{ij}$. Dizemos que a matriz $B$ é um
 	<b>múltiplo escalar</b> da matriz
 $A$.	
 	
+<br>
+<br>
 <br>
 <br>
 
@@ -66,9 +70,76 @@ $[AB]_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\ldots+ a_{ip}b_{pj}$.
 	
 <br>
 <br>
+<br>
+<br>
 
+A
+<b> transposta<b>. de uma matriz $A=(a_{ij})_{m\times n}$ é definida
+pela matriz $n\times m$
+$$B=A^t$$
+obtida trocando-se as linhas com as colunas, ou seja,
+$$b_{ij}=a_{ji}\,,$$
+para $i=1,\ldots,n$ e $j=1,\ldots,m$. Escrevemos também
+$[A^t]_{ij}=a_{ji}$.	
 	
-	
-	
+<br>
+<br>
+<br>
+<br>
+<p>
+Sejam $A$, $B$ e $C$
+matrizes com tamanhos apropriados, $\alpha$ e $\beta$ escalares.
+São válidas as seguintes propriedades para as operações
+matriciais:
+<ol>
+<li> (comutatividade) $A+B=B+A$;
+	</li>
+<li> (associatividade) $A+(B+C)=(A+B)+C$;
 
+	</li>
+<li> (elemento neutro) A matriz $\bar{0}$, $m\times n$, definida
+por $[\bar{0}]_{ij}=0$, para $i=1,\ldots,m$, $j=1,\ldots,n$ é tal
+que
+$$A+\bar{0}=A,$$ para toda matriz $A$, $m\times n$.
+A matriz $\bar{0}$ é chamada
+	<b>matriz nula $m\times n$</b>.
+	</li>
+<li> (elemento simétrico) Para cada matriz $A$, existe uma única
+matriz $-A$, definida por $[-A]_{ij}=-a_{ij}$ tal que
+$$A+(-A)=\bar{0}.$$
+	</li>
+<li> (associatividade) $\alpha(\beta A)=(\alpha\beta)A$;
+	</li>
+<li> (distributividade) $(\alpha+\beta)A=\alpha A+\beta A$; \item
+(distributividade) $\alpha (A+B)=\alpha A + \alpha B$;
+	</li>
+	
+<li> (associatividade) $A(BC)=(AB)C$;
+	</li>
+<li> (elemento neutro) Para cada inteiro positivo $p$
+a\index{Matriz (matrizes)!identidade} matriz, $p\times p$,
+$$I_p= \left[\begin{array}{ccccc}
+1&0&\ldots&&0\\ 0&1&\ldots&&0\\
+\vdots&&\ddots&&\vdots\\
+0&0&\ldots&&1
+\end{array}\right],$$ chamada \textbf{matriz identidade} é
+tal que $$\;A\,I_n=I_mA=A,\quad \mbox{para toda matriz }
+A=(a_{ij})_{m\times n}.$$
+	</li>
+<li> (distributividade) $A(B+C)=AB+AC$ e $(B+C)A=BA+CA$;
+	</li>
+	
+<li> $\alpha(AB)=(\alpha A)B=A(\alpha B)$; \item $(A^t)^t=A$;
+	</li>
+	
+<li> $(A+B)^t=A^t+B^t$;
+	</li>
+<li> $(\alpha A)^t=\alpha\,A^t$;
+	</li>
+	
+<li> $(AB)^t=B^tA^t$;
+	</li>
+
+	</ol>
+	</p>
 </HTML>
