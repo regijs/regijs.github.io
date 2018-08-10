@@ -13,6 +13,25 @@ loadScript("https://regijs.github.io/second.js", function(){
 });
 </script>
 
+hr {
+    border: none;
+    border-top: 3px double #333;
+    color: #333;
+    overflow: visible;
+    text-align: center;
+    height: 5px;
+}
+
+hr:after {
+    background: #fff;
+    content: '§';
+    padding: 0 4px;
+    position: relative;
+    top: -13px;
+}
+	
+	
+	
 </HEAD>
 <BODY BACKGROUND="../fundo.gif">
 
@@ -58,7 +77,7 @@ A]_{ij}=\alpha\;a_{ij}$. Dizemos que a matriz $B$ é um
 $A$.	
 	</p>
 	
-<br>
+<hr>
 
 <p>
 	O <b>produto</b> de duas matrizes, tais que <b>o número de
@@ -74,7 +93,7 @@ para $i=1,\ldots,m$ e $j=1,\ldots,n$. Escrevemos também
 $[AB]_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\ldots+ a_{ip}b_{pj}$.
 	</p>
 	
-<br>
+<hr>
 
 
 
@@ -86,7 +105,7 @@ $$b_{ij}=a_{ji}\,,$$
 para $i=1,\ldots,n$ e $j=1,\ldots,m$. Escrevemos também
 $[A^t]_{ij}=a_{ji}$.	
 	</p>	
-<br>
+
 
 
 <H2>
