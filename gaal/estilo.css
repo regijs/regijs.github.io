@@ -26,7 +26,8 @@ body {
     color: red;
     font-style: italic;
     font-size: 1.875em;
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 
