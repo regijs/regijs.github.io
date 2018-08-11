@@ -3,6 +3,7 @@
 }
 
 body {
+  font-size: 100%;
   margin: 0;
 }
 
@@ -63,7 +64,7 @@ hr {
 
 hr:after {
     background: #fff;
-    content: '§';
+    content: '';
     padding: 0 4px;
     position: relative;
     top: -13px;
