@@ -21,6 +21,13 @@ body {
     text-align: center;
 }
 
+.subsection {
+    color: red;
+    font-style: italic;
+    font-size: 1.875em;
+    padding: 20px;
+}
+
 
 /* Style the top navigation bar */
 .topnav {
