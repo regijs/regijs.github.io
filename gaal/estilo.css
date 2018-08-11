@@ -7,11 +7,20 @@ body {
 }
 
 /* Style the header */
-.header {
-    background-color: #f1f1f1;
-    padding: 20px;
+.header1 {
+    color: red;
+    font-style: italic;
+    padding-top: 20px;
+    /*background-color: #f1f1f1;*/
+    /*padding: 20px;*/
     text-align: center;
 }
+
+.header2 {
+    padding-bottom: 20px;
+    text-align: center;
+}
+
 
 /* Style the top navigation bar */
 .topnav {
