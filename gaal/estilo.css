@@ -22,10 +22,18 @@ body {
     text-align: center;
 }
 
-.subsection {
+.section {
     color: red;
     font-style: italic;
     font-size: 1.875em;
+    padding: 20px 0px;
+}
+
+
+.subsection {
+    color: red;
+    font-style: italic;
+    font-size: 0.875em;
     padding: 20px 0px;
 }
 
