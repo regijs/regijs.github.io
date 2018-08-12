@@ -96,7 +96,7 @@ li a:hover {
     background-color: #111;
 }
 
-li a.active {
+.active {
     background-color: #4CAF50;
 }
 
