@@ -103,6 +103,36 @@ li.h a.active {
 }
 
 
+ul.b {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+li.b {
+    float: left;
+}
+
+li.b a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li.b a:hover:not(.active) {
+    background-color: #111;
+}
+
+li.b a.active {
+    background-color: #4CAF50;
+}
 
 
 
