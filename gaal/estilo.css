@@ -38,7 +38,9 @@ body {
 } 
 
 
-
+ol.alpha {
+    list-style-type: lower-alpha;
+}
 
 ul.v {
     list-style-type: none;
@@ -103,9 +105,7 @@ li.h a.active {
 
 
 
-ol.alpha {
-    list-style-type: lower-alpha;
-}
+
 
 
 hr {
