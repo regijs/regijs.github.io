@@ -68,7 +68,7 @@ li a:hover:not(.active) {
     color: white;
 }
 
-/* 
+
 ul.h {
     list-style-type: none;
     margin: 0;
@@ -80,11 +80,11 @@ ul.h {
     top: 0;
 }
 
-li.h {
+li {
     float: left;
 }
 
-li.h a {
+li a {
     display: block;
     color: white;
     text-align: center;
@@ -92,15 +92,15 @@ li.h a {
     text-decoration: none;
 }
 
-li.h a:hover {
+li a:hover {
     background-color: #111;
 }
 
-li.h a.active {
+li a.active {
     background-color: #4CAF50;
 }
 
- */
+
 
 
 
