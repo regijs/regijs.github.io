@@ -133,7 +133,10 @@ li.b a.active {
     background-color: #4CAF50;
 }
 
-
+.fcolorbox {
+     padding: 20px;
+     border: 3px solid red;
+ }
 
 
 
