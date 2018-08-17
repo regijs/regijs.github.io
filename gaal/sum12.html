@@ -87,6 +87,55 @@ Universidade Federal de Minas Gerais</H3>
 	<div class="section">
 1.2 Sistemas de Equações Lineares
 </div>
+	
+<p>
+	Um <b>sistema de equações lineares</b> ou simplesmente
+<b>sistema linear</b> é um conjunto de equações lineares, ou
+seja, é um conjunto de equações da forma
+$$
+\left\{
+\begin{array}{ccccccccccc}
+a_{11}x_1  &+&  a_{12}x_2  &+& &\ldots& &+&  a_{1n}x_n   &=&b_1\\
+a_{21}x_1  &+&  a_{22}x_2   &+& &\ldots& &+&  a_{2n}x_n  &=& b_2\\
+\vdots   &&               & & & & &&    \vdots&=& \vdots\\
+a_{m1}x_1  &+&  a_{m2}x_2    &+& &\ldots&     &+& a_{mn}x_n  &=& b_m
+\end{array}
+\right.
+$$
+em que $a_{ij}$ e $b_k$ são constantes reais, para
+$i,k=1,\ldots,m$ e $j=1,\ldots,n$.
+
+	</p>
+	<p>
+
+Usando o produto de matrizes que definimos na seção anterior, o
+sistema linear acima pode ser escrito como uma equação matricial
+$$\mbox{\fcolorbox{cor1}{white}{$A\,X=B$,}}$$
+em que $$ A= \left[\begin{array}{ccccc}
+a_{11}&a_{12}&\ldots&&a_{1n}\\
+a_{21}&a_{22}&\ldots&&a_{2n}\\
+\vdots&&\ldots&&\vdots\\
+a_{m1}&a_{m2}&\ldots&&a_{mn}
+\end{array}\right],
+\quad
+X=
+\left[\begin{array}{c}
+x_1\\ x_2\\
+\vdots\\
+x_n\end{array}\right]
+\quad\mbox{e}
+\quad
+B=
+\left[\begin{array}{c}
+b_1\\ b_2\\
+\vdots\\
+b_m\end{array}\right]\,.
+$$
+	</p>	
+	
+<hr>
+	
+	<p>	
 Uma <b>operação elementar sobre as
 linhas</b> de uma matriz é uma das seguintes operações:
 <ol  class="alpha">
@@ -99,6 +148,10 @@ escalar diferente de zero;
 de outra linha.
 </li>
 </ol>
+	</p>	
+	
+	<hr>
+	
 	
 	<div class="subsection">
 1.2.1 Método de Gauss-Jordan
