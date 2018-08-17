@@ -44,7 +44,8 @@ ol.alpha {
 ol.alpha li {
     list-style: none;
     position: relative;
-
+}
+    
 ol.alpha > li:before {
     counter-increment: alpha;
     content:"(" counter(alpha, lower-alpha)") "
