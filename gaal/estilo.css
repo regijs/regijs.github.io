@@ -41,7 +41,7 @@ ol.alpha {
     counter-reset: alpha;
     /* list-style-type: lower-alpha; */
 }
-ol li {
+ol.alpha li {
     list-style: none;
     position: relative;
 
