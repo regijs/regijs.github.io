@@ -219,6 +219,7 @@ a pivôs podem ser consideradas <b>variáveis livres</b>, isto é,
 podem assumir valores arbitrários. As variáveis associadas aos
 pivôs terão os seus valores dependentes das variáveis livres.
 	</p>
+<hr>
 	
 <p>
 	 Para
@@ -238,11 +239,6 @@ conhecido como <b>método de Gauss</b>.
 	
 <hr>
 
-<p>
-
-</p>
-	
-<hr>
 
 
 	<div class="subsection">
@@ -277,8 +273,71 @@ então $R$ tem uma linha nula.
 	</div>
 	
 	<p>
+Um sistema linear
+da forma
+\begin{equation}\label{sisthomo}
+\left\{
+       \begin{array}{ccccccccccc}
+                   a_{11}x_1  &+&  a_{12}x_2  &+& &\ldots& &+&  a_{1n}x_n   &=&0\\
+                  a_{21}x_1  &+&  a_{22}x_2   &+& &\ldots& &+&  a_{2n}x_n  &=& 0\\
+                    \vdots   &&               & & && &&    \vdots&=& \vdots\\
+                 a_{m1}x_1  &+&  a_{m2}x_2    &+& &\ldots&     &+& a_{mn}x_n  &=& 0
+       \end{array}
+\right.
+\end{equation}
+é chamado \index{Sistema homogêneo}
+\index{Sistema(s) linear(es)!homogêneo}
+<b>sistema homogêneo</b>. O sistema
+(\ref{sisthomo}) pode ser escrito como
+<center>
+	<div class="fcolorbox">	
+		$A\,X=\bar{0}.$</div></center>
+Todo sistema homogêneo admite pelo menos a solução $X=
+\left[\begin{array}{c}
+x_1\\ x_2\\
+\vdots\\
+x_n\end{array}\right]=
+\left[\begin{array}{c}
+0\\ 0\\
+\vdots\\
+0\end{array}\right] $ chamada de 
+<b>solução trivial</b>. Portanto, todo sistema homogêneo tem
+solução. Além disso ou tem somente a solução trivial ou tem
+infinitas soluções.
 
 </p>
+<p>
+Para resolver um sistema linear homogêneo
+$A\,X=\bar{0}$, basta escalonarmos a matriz $A$ do sistema,
+já que sob a ação de uma operação elementar a coluna de
+zeros não é alterada. Mas, é preciso ficar atento quando se
+escreve o sistema linear associado à matriz resultante das
+operações elementares, para se levar em consideração esta
+coluna de zeros que não vimos escrevendo.
+</p>
+	
+<hr>
+<p>
+Se $A=(a_{ij})_{m\times
+n}$, é tal que $m<n$, então o sistema homogêneo $AX=\bar{0}$ tem
+solução diferente da solução trivial, ou seja, todo sistema
+homogêneo com menos equações do que incógnitas tem infinitas
+soluções.	
+	
+	</p>
+<hr>
+	<p>
+Seja
+$A=(a_{ij})_{m\times n}$.
+<ol  class="alpha">
+    <li> Se $X$ e $Y$ são soluções do sistema homogêneo, $AX=\bar{0}$,
+então $X+Y$ também o é.
+    <li> Se $X$ é solução do sistema homogêneo, $AX=\bar{0}$,
+então $\alpha X$ também o é.
+</ol>
+		
+	</p>
+	
 	
 	</div>
 	</div>
