@@ -36,9 +36,14 @@ body {
     padding: 20px 0px;
 } 
 
-
+/*
 ol.alpha {
     list-style-type: lower-alpha;
+}
+*/
+ol.alpha > li:before {
+    counter-increment: alpha;
+    content:"(" counter(alpha, lower-alpha)") "
 }
 
 ul.v {
