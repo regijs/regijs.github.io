@@ -181,7 +181,7 @@ quando satisfaz as seguintes condições:
 <li> Todas as linhas nulas (formadas inteiramente por zeros)
 ocorrem abaixo das linhas não nulas;</li>
 
-<li> O <b>pivô</b> (1<sup> o</sup>  elemento não nulo
+<li> O <b>pivô</b> (1<sup>o</sup>  elemento não nulo
 de uma linha) de cada linha não nula é igual à $1$;</li>
 
 <li> O pivô de cada linha não nula ocorre à direita do pivô da
@@ -190,12 +190,51 @@ linha anterior.</li>
 <li> Se uma coluna contém um pivô, então todos os seus outros
 elementos são iguais a zero.</li>
 </ol>
+	</p>
+<p>	Se uma matriz satisfaz as propriedades (a) e (c), mas não
+necessariamente (b) e (d), dizemos que ela está na forma
+<b>escalonada</b>.
+	</p>
 
+<p>	Este método de resolução de sistemas, que consiste em aplicar
+operações elementares às linhas da matriz aumentada até que a
+matriz do sistema esteja na forma escalonada reduzida, é conhecido
+como <b>método de Gauss-Jordan</b>.
+
+	
 	</p>
 <hr>
 	<p>
+Um sistema linear não tem solução
+se, e somente se, a última linha não nula da forma escalonada
+reduzida da sua matriz aumentada for da forma
+$[\,0\,\ldots\,0\,|\,b_m'\,]$, com $b_m'\ne 0$.
 
 </p>
+	<p>
+Se o sistema linear tiver
+solução  e a forma escalonada reduzida da matriz aumentada possuir
+colunas sem pivôs, as variáveis que <b>não</b> estão associadas
+a pivôs podem ser consideradas <b>variáveis livres</b>, isto é,
+podem assumir valores arbitrários. As variáveis associadas aos
+pivôs terão os seus valores dependentes das variáveis livres.
+	</p>
+	
+<p>
+	<b>Observação.</b> Para
+se encontrar a solução de um sistema linear não é necessário
+transformar a matriz aumentada do sistema na sua forma escalonada
+reduzida, mas se a matriz está nesta forma, o sistema associado é
+o mais simples possível. Um outro método de resolver sistemas
+lineares consiste em, através da aplicação de operações
+elementares à matriz aumentada do sistema, se chegar a uma matriz
+que é somente <b>escalonada</b> (isto é, uma matriz que satisfaz
+as condições \textcolor{cor1}{(a)} e \textcolor{cor1}{(c)}, mas
+não necessariamente \textcolor{cor1}{(b)} e \textcolor{cor1}{(d)}
+da Definição de Matriz Escalonada Reduzida). Este método é
+conhecido como <b>método de Gauss</b>.
+	</p>
+	
 	
 <hr>
 
@@ -214,7 +253,7 @@ elementos são iguais a zero.</li>
 
 
 	<div class="subsection">
-1.2.3 Método para Inversão de Matrizes
+1.2.3 Sistema Lineares Homogêneos
 	</div>
 	
 	<p>
