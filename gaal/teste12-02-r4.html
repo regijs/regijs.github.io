@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+
+<HEAD>
+
+<TITLE>Teste 1-2 - 02 - Resp 4</TITLE>
+	
+<script type="text/javascript" src="https://regijs.github.io/first.js"></script>
+<script type="text/javascript">
+loadScript("https://regijs.github.io/second.js", function(){
+    //initialization code
+});
+</script>
+
+</HEAD>
+
+Estamos considerando o sistema linear
+\[ 
+\left\{
+       \begin{array}{rrrrrrr}
+                       x &+&  y   &+&  z &=&2\\
+                       x &+& y &+& 2z &=& 4\\
+                         &&   && (a^2-9)z &=& a-3.\\
+       \end{array}
+\right.
+\]
+Você marcou que se $a=-5/2$, então o sistema não tem solução.  <br>
+Escalonando a matriz aumentada deste sistema,
+\[\begin{bmatrix}1 & 1 & 1 & 2\cr 1 & 1 & 2 & 4\cr 0 & 0 & {{a}^{2}}-9 & a-3\end{bmatrix}\]
+obtemos a matriz
+\[\begin{bmatrix}1 & 1 & 0 & 0\cr 0 & 0 & 1 & 2\cr 0 & 0 & 0 & -2{{a}^{2}}+a+15\end{bmatrix}\]
+Se $-2{{a}^{2}}+a+15\ne 0$, ou equivalentemente $a\neq 3$ e $a\neq -5/2$, então o sistema não tem solução.
+<br>
+Portanto, a sua resposta está incorreta.
+<br>
+Feche esta janela e tente novamente.
+
+	
+</html>
