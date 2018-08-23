@@ -95,7 +95,7 @@ n}$ tal que
 A\;B=B\;A=I_n\,,
 \end{equation}
 em que $I_n$ é a matriz identidade. A matriz $B$ é chamada de
-\index{Matriz (matrizes)!inversa de} <b>inversa</b> de $A$. Se $A$
+<b>inversa</b> de $A$. Se $A$
 não tem inversa, dizemos que $A$ é <b>não invertível</b> ou
 <b>singular</b>.
 </p>
@@ -141,7 +141,44 @@ ${n\times n}$.
 
 </p>
 
+	<div class="subsection">
+2.1.3 Método para Inversão de Matrizes
+</div>
 
+	<p>
+Uma matriz $A$, $n\times
+n$, é invertível se, e somente se, $A$ é equivalente por linhas à
+matriz identidade $I_n$.
+</p>
+
+<hr>
+
+<p>
+Temos uma forma de descobrir se uma matriz $A$ tem inversa
+e também, como encontrar a inversa, no caso em que ela exista.
+Escalonamos a matriz $[A\;|\;I_n]$ e encontramos a sua
+forma escalonada reduzida $[R\;|\;S]$. Se $R=I_n$, então a matriz
+$A$ é invertível e a inversa $A^{-1}=S$. Caso contrário, a matriz
+$A$ não é invertível. 
+</p>
+
+<hr>
+
+<p>
+Seja $A$ uma matriz
+$n\times n$.
+<ol  class="alpha">
+<li> O sistema associado
+$AX=B$ tem solução única se, e somente se, $A$ é invertível.
+Neste caso a solução é $X=A^{-1}B$;</li>
+<li> O sistema homogêneo $A\,X=\bar{0}$ tem solução não trivial
+se, e somente se, $A$ é singular (não invertível).</li>
+</ol>
+</p>
+
+	<p>
+		<br>
+	</p>
 
 </div>
 </div>
