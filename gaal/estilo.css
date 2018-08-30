@@ -222,3 +222,27 @@ hr:after {
      padding: 3px;
      border: 2px solid red;
  }
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+
+b:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.previous {
+    float: left;
+    background-color: #f1f1f1;
+    color: black;
+}
+
+.next {
+    float: right;
+    background-color: #4CAF50;
+    color: white;
+}
+
