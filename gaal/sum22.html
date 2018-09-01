@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+
+		
+<HEAD>
+
+<TITLE>Resumo 2-2</TITLE>
+	
+<script type="text/javascript" src="https://regijs.github.io/first.js"></script>
+<script type="text/javascript">
+loadScript("https://regijs.github.io/second.js", function(){
+    //initialization code
+});
+</script>
+
+<link rel="stylesheet" href="estilo.css">
+	
+	
+	
+</HEAD>
+<BODY BACKGROUND="../fundo.gif">
+<ul class="sidenav">
+  <li><a href="https://regijs.github.io/gaal/sum11.html">1.1 Matrizes</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum12.html">1.2 Sistemas de Equações Lineares</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum21.html">2.1 Matriz Inversa</a></li>
+  <li><a class="active" href="https://regijs.github.io/gaal/sum22.html">2.2 Determinantes</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum31.html">3.1 Soma de Vetores e Multiplicação por Escalar</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum32.html">3.2 Produto Escalar e Projeção Ortogonal</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum33.html">3.3 Produtos Vetorial e Misto</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum41.html">4.1 Equações do Plano</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum42.html">4.2 Equações da Reta</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum43.html">4.3 Ângulos e Distâncias</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum51.html">5.1 Independência Linear</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum52.html">5.2 Subespaços, Base e Dimensão</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum53.html">5.3 Produto Escalar em $\mathbb{R}^n$</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum54.html">5.4 Mudança de Coordenadas</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum61.html">6.1 Diagonalização de Matrizes</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum62.html">6.2 Diagonalização de Matrizes Simétricas</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum63.html">6.3 Aplicação: Identificação de Cônicas</a></li>
+
+  <li><a href="https://regijs.github.io">Página Inicial</a></li>
+</ul>
+	
+<div class="content"><!-- lembrar de fechar -->
+
+		
+	
+<div class="header1">
+<h1>
+	  	  Um Curso de Geometria Analítica e Álgebra Linear: Resumos
+	</h1>
+</div>
+
+<div class="header2">
+	  
+<H2>Reginaldo J. Santos</H2>
+<H3>Departamento de Matemática<br>
+Instituto de Ciências Exatas<br>
+Universidade Federal de Minas Gerais</H3>
+<H4>11 de agosto de 2018</H4>
+	
+</div>
+	
+
+
+
+	
+
+
+	<div class="section">
+2.2 Determinantes
+</div>
+
+<p>
+Para cada matriz $A~=~[a]$ definimos o <b>determinante</b> de $A$,
+indicado por $\det(A)$, por $\det(A)=a$. 
+</p>
+
+<p>
+A cada matriz $A$, $2 \times 2$, associamos
+um número real, denominado 
+<b>determinante</b> de $A$,  por:
+$$ \det(A)=\det\left[ \begin{array}{cc}a_{11}&a_{12}\\
+a_{21}&a_{22}
+\end{array}\right]=
+a_{11}a_{22}-a_{12}a_{21}. $$
+</p>
+
+
+<p>
+Dada
+uma matriz $A=(a_{ij})_{n\times n}$, o <b>menor</b> do
+elemento $a_{ij}$, denotado por $\tilde{A}_{ij}$, é a
+submatriz $(n-1)\times (n-1)$ de $A$ obtida eliminando-se a
+$i$-ésima linha e a $j$-ésima coluna de $A$, que tem o
+seguinte aspecto:
+$$\tilde{A}_{ij}=\begin{array}{cl}
+\textcolor{cor1}{j}&\\ \left[
+\begin{array}{ccccc}
+a_{11}&\ldots&\textcolor{cor1}{\Big|}&\ldots& a_{1n} \\[-1pt]
+\vdots&      &\textcolor{cor1}{\Bigg|}&      & \vdots\\[-1pt]
+&      &\hspace{-0.3mm}a_{ij}\hspace{-3.3mm}
+\textcolor{cor1}{\Bigg|}&&\\[-24pt]%[-28pt]
+\multicolumn{5}{c}{\mbox{\textcolor{cor1}{\rule{3.6cm}{0.1mm}}}}\\[10pt]
+\vdots&      &\textcolor{cor1}{\Bigg|}&      & \vdots\\[-1pt]
+a_{n1}&\ldots&\textcolor{cor1}{\Big|}&\ldots& a_{nn}
+\end{array}\right]&
+\textcolor{cor1}{i}\\&\end{array}$$
+	
+</p>
+
+
+<p>
+Podemos definir o 
+determinante de matrizes $n\times n$ supondo que sabemos como calcular o determinante de matrizes $(n\!-\!1)\times (n\!-\!1)$.
+ Para isso, vamos estender a definição de cofatores
+para matrizes quadradas $A=(a_{ij})_{n\times n}$. O \textbf{
+cofator} do elemento $a_{ij}$, denotado por $\tilde{a}_{ij}$, é
+definido por
+$$ \tilde{a}_{ij}=(-1)^{i+j}\det(\tilde{A}_{ij}), $$
+ou seja, o cofator $\tilde{a}_{ij}$, do elemento $a_{ij}$ é igual à mais ou menos o determinante do menor $\tilde{A}_{ij}$, sendo o
+mais e o menos determinados pela seguinte disposição:
+$$\left[
+\begin{array}{ccccc}
++ & - & + & - & \ldots\\
+- & + & - & + & \ldots\\
++ & - & + & - & \ldots\\
+\vdots&\vdots&\vdots&\ddots&\ddots
+\end{array}
+\right]$$
+	
+</p>
+
+
+<p>
+Seja $A=(a_{ij})_{n\times
+n}$. O <b>determinante</b> de $A$, denotado por $\det(A)$, é
+definido por
+\begin{equation}\label{descofat0}
+\det(A)=a_{11}\tilde{a}_{11}+a_{12}\tilde{a}_{12} + \ldots
++a_{1n}\tilde{a}_{1n}=\sum_{j=1}^n a_{1j}\tilde{a}_{1j},
+\end{equation}
+em que $\tilde{a}_{1j}=(-1)^{1+j}\det(\tilde{A}_{1j})$ é o cofator
+do elemento $a_{1j}$. A expressão (\ref{descofat}) é chamada
+
+
+<b>desenvolvimento ou expansão em cofatores do determinante de $A$</b> em
+termos da 1\textsuperscript{\d a} linha.	
+</p>	
+
+
+
+<p>
+<a href="sum21.html" class="previous">&#10094; 2.1 Matriz Inversa</a>
+<a href="sum31.html" class="next">3.1 Soma de Vetores e Multiplicação por Escalar &#10095;</a>
+</p>
+
+
+
+	</div>
+</HTML>
