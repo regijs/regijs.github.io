@@ -129,6 +129,112 @@ do elemento $a_{1j}$. A expressão acima é chamada
 </p>	
 
 
+	<div class="subsection">
+2.2.1 Propriedades do Determinante
+</div>
+
+<p>
+Seja $A=(a_{ij})_{n\times
+n}$ escrita em termos das suas linhas, denotadas por $A_i$, ou seja,
+$A_i=[\,a_{i1}\,a_{i2}\ldots a_{in}\,]$. Se para algum $k$, a linha
+$A_k=\alpha X+\beta Y$, em que $X=[\,x_1\ldots x_n\,]$,
+\linebreak$Y=[\,y_1\ldots y_n\,]$ e $\alpha$ e $\beta$ são
+escalares, então:
+$$\det \left[\begin{array}{c}
+A_1\\\vdots\\A_{k-1}\\\alpha X+\beta Y\\A_{k+1}\\
+\vdots\\A_n\end{array}\right]=\alpha\det\left[\begin{array}{c}
+A_1\\\vdots\\A_{k-1}\\X\\A_{k+1}\\
+\vdots\\A_n\end{array}\right]+\beta\det\left[\begin{array}{c}
+A_1\\\vdots\\A_{k-1}\\Y\\A_{k+1}\\
+\vdots\\A_n\end{array}\right].$$
+Aqui, $A_k=\alpha X + \beta Y=[\,\alpha x_1+\beta
+y_1\,\ldots\,\alpha x_n+\beta y_n\,]$.	
+	</p>
+
+
+<p>
+Seja $A$ uma matriz
+$n\times n$. O determinante de $A$ pode ser calculado fazendo-se o
+desenvolvimento em cofatores segundo <b>qualquer linha</b> ou
+<b>qualquer coluna</b>. %Ou seja, para $i=1,\ldots,n$,
+\begin{eqnarray}\label{descofat}
+\det(A)&=&a_{i1}\tilde{a}_{i1}+a_{i2}\tilde{a}_{i2} + \ldots
++a_{in}\tilde{a}_{in}=\sum_{j=1}^na_{ij}\tilde{a}_{ij},\quad\mbox{para $i=1,\ldots,n$,}\\
+&=&a_{1j}\tilde{a}_{1j}+a_{2j}\tilde{a}_{2j} + \ldots
++a_{nj}\tilde{a}_{nj}=\sum_{i=1}^na_{ij}\tilde{a}_{ij},\quad\mbox{para
+$j=1,\ldots,n$,}\label{descofat2}
+\end{eqnarray}
+em que $\tilde{a}_{ij}=(-1)^{i+j}\det(\tilde{A}_{ij})$ é o cofator
+do elemento $a_{ij}$. A expressão (\ref{descofat}) é chamada
+\textbf{desenvolvimento em cofatores do determinante de $A$ em
+termos da $i$-ésima linha} e (\ref{descofat2}) é chamada
+\textbf{desenvolvimento em cofatores do determinante de $A$ em
+termos da $j$-ésima coluna}.	
+	</p>
+
+
+<p>
+Seja $A$ uma matriz $n\times
+n$. Se $A$ possui duas linhas iguais, então $\det(A)=0$.	
+	</p>	
+
+
+<p>
+Sejam $A$ e $B$ matrizes $n
+\times n$.
+<ol  class="alpha">
+<li> Se $B$ é obtida de $A$
+multiplicando-se uma linha por um escalar $\alpha$, então
+$$\det(B)=\alpha\det(A)\,;$$
+</li><li> Se $B$ resulta de $A$ pela troca da posição de duas linhas
+$k\ne l$, então
+$$\det(B)=-\det(A)\,;$$
+</li><li> Se $B$ é obtida de $A$ substituindo-se a linha $l$ por ela
+somada a um múltiplo escalar de uma linha $k$, $k\ne l$, então
+$$\det(B)=\det(A)\,.$$
+%</li><li> Se $B$ é obtida de $A$ aplicando-se operações elementares,
+%então
+%$$
+%\det(B)\neq 0\quad\mbox{se, e somente se,}\quad \det(A)\neq 0.
+%$$
+</ol>
+</p>	
+
+
+
+<p>
+Sejam $A$ e $B$ matrizes $n
+\times n$.
+<ol  class="alpha">
+<li> O determinante do produto de $A$ por $B$ é igual ao produto
+dos seus determinantes,
+$$\det(AB)=\det(A)\det(B)\,.$$
+</li><li> Os determinantes de $A$ e de sua transposta $A^t$ são
+iguais,
+$$\det(A)=\det(A^t)\,;$$
+</ol>	
+</p>
+
+
+<p>
+	Como
+	o determinante de uma matriz é igual ao determinante da sua
+	transposta, segue-se
+	que todas as propriedades que se referem a linhas são válidas com
+	relação às colunas.
+</p>
+
+<p>
+	Seja $A$ uma matriz $n\times n$.
+	<ol  class="alpha">
+	<li>
+	A matriz $A$ é invertível se, e somente se, $\det(A)\ne 0$.
+	</li><li> O sistema homogêneo $AX=\bar{0}$ tem solução
+	não trivial se, e somente se, $\det(A)=0$.
+	</ol>
+	
+</p>			
+	
 
 <p>
 <a href="sum21.html" class="previous">&#10094; 2.1 Matriz Inversa</a>
