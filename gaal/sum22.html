@@ -73,8 +73,8 @@ Universidade Federal de Minas Gerais</H3>
 </div>
 
 <p>
-Para cada matriz $A~=~[a]$ definimos o <b>determinante</b> de $A$,
-indicado por $\det(A)$, por $\det(A)=a$. 
+Para cada matriz $1\times 1$, $A~=~[a]$, definimos o <b>determinante</b> de $A$,
+por $\det(A)=a$. 
 </p>
 
 <p>
@@ -93,29 +93,12 @@ Dada
 uma matriz $A=(a_{ij})_{n\times n}$, o <b>menor</b> do
 elemento $a_{ij}$, denotado por $\tilde{A}_{ij}$, é a
 submatriz $(n-1)\times (n-1)$ de $A$ obtida eliminando-se a
-$i$-ésima linha e a $j$-ésima coluna de $A$, que tem o
-seguinte aspecto:
-$$\tilde{A}_{ij}=\begin{array}{cl}
-\textcolor{cor1}{j}&\\ \left[
-\begin{array}{ccccc}
-a_{11}&\ldots&\textcolor{cor1}{\Big|}&\ldots& a_{1n} \\[-1pt]
-\vdots&      &\textcolor{cor1}{\Bigg|}&      & \vdots\\[-1pt]
-&      &\hspace{-0.3mm}a_{ij}\hspace{-3.3mm}
-\textcolor{cor1}{\Bigg|}&&\\[-24pt]%[-28pt]
-\multicolumn{5}{c}{\mbox{\textcolor{cor1}{\rule{3.6cm}{0.1mm}}}}\\[10pt]
-\vdots&      &\textcolor{cor1}{\Bigg|}&      & \vdots\\[-1pt]
-a_{n1}&\ldots&\textcolor{cor1}{\Big|}&\ldots& a_{nn}
-\end{array}\right]&
-\textcolor{cor1}{i}\\&\end{array}$$
-	
+$i$-ésima linha e a $j$-ésima coluna de $A$.
 </p>
 
 
 <p>
-Podemos definir o 
-determinante de matrizes $n\times n$ supondo que sabemos como calcular o determinante de matrizes $(n\!-\!1)\times (n\!-\!1)$.
- Para isso, vamos estender a definição de cofatores
-para matrizes quadradas $A=(a_{ij})_{n\times n}$. O \textbf{
+O \textbf{
 cofator} do elemento $a_{ij}$, denotado por $\tilde{a}_{ij}$, é
 definido por
 $$ \tilde{a}_{ij}=(-1)^{i+j}\det(\tilde{A}_{ij}), $$
@@ -142,9 +125,7 @@ definido por
 +a_{1n}\tilde{a}_{1n}=\sum_{j=1}^n a_{1j}\tilde{a}_{1j},
 \end{equation}
 em que $\tilde{a}_{1j}=(-1)^{1+j}\det(\tilde{A}_{1j})$ é o cofator
-do elemento $a_{1j}$. A expressão (\ref{descofat}) é chamada
-
-
+do elemento $a_{1j}$. A expressão acima é chamada
 <b>desenvolvimento ou expansão em cofatores do determinante de $A$</b> em
 termos da 1\textsuperscript{\d a} linha.	
 </p>	
