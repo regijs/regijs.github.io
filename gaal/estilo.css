@@ -51,6 +51,20 @@ ol.alpha > li:before {
     content:"(" counter(alpha, lower-alpha)") "
 }
 
+ol.roman {
+    counter-reset: roman;
+}
+ol.roman li {
+    list-style: none;
+    position: relative;
+}
+    
+ol.roman > li:before {
+    counter-increment: roman;
+    content:"(" counter(roman, lower-roman)") "
+}
+
+
 ul.v {
     list-style-type: none;
     margin: 0;
