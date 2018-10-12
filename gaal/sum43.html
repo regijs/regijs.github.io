@@ -1,0 +1,235 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+
+
+<HEAD>
+
+<TITLE>Resumo 4-3</TITLE>
+	
+<script type="text/javascript" src="https://regijs.github.io/first.js"></script>
+<script type="text/javascript">
+loadScript("https://regijs.github.io/second.js", function(){
+    //initialization code
+});
+</script>
+
+<link rel="stylesheet" href="estilo.css">
+	
+		
+</HEAD>
+<BODY BACKGROUND="../fundo.gif">
+
+<ul class="sidenav">
+  <li><a href="https://regijs.github.io/gaal/sum11.html">1.1 Matrizes</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum12.html">1.2 Sistemas de Equações Lineares</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum21.html">2.1 Matriz Inversa</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum22.html">2.2 Determinantes</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum31.html">3.1 Soma de Vetores e Multiplicação por Escalar</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum32.html">3.2 Produto Escalar e Projeção Ortogonal</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum33.html">3.3 Produtos Vetorial e Misto</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum41.html">4.1 Equações do Plano</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum42.html">4.2 Equações da Reta</a></li>
+  <li><a class="active" href="https://regijs.github.io/gaal/sum43.html">4.3 Ângulos e Distâncias</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum51.html">5.1 Independência Linear</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum52.html">5.2 Subespaços, Base e Dimensão</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum53.html">5.3 Produto Escalar em $\mathbb{R}^n$</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum54.html">5.4 Mudança de Coordenadas</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum61.html">6.1 Diagonalização de Matrizes</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum62.html">6.2 Diagonalização de Matrizes Simétricas</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum63.html">6.3 Aplicação: Identificação de Cônicas</a></li>
+
+  <li><a href="https://regijs.github.io">Página Inicial</a></li>
+</ul>
+
+	
+
+<div class="content">
+ 		
+	
+<div class="header1">
+<h1>
+	  	  Um Curso de Geometria Analítica e Álgebra Linear: Resumos
+	</h1>
+</div>
+
+<div class="header2">
+	  
+<H2>Reginaldo J. Santos</H2>
+<H3>Departamento de Matemática<br>
+Instituto de Ciências Exatas<br>
+Universidade Federal de Minas Gerais</H3>
+<H4>12 de outubro de 2018</H4>
+	
+</div>
+	
+
+
+
+	
+	
+	<div class="section">
+4.3 Ângulos e Distâncias
+</div>
+
+	<div class="subsection">
+4.3.1 Ângulos
+</div>
+
+<p>
+Com duas retas no espaço pode ocorrer um dos seguintes casos:
+<ol  class="alpha">
+<li> As retas se interceptam em um ponto, ou seja, são <b>concorrentes</b>;
+</li><li> As retas são paralelas (ou coincidentes);
+</li><li> As retas são <b>reversas</b>, isto é, não são paralelas
+mas também não se interceptam.</li>
+</ol>
+</p>
+
+<p>
+Se as retas se interceptam, então
+elas determinam quatro ângulos, dois a dois opostos
+pelo vértice. O ângulo entre elas é definido como
+sendo o menor destes ângulos.
+</p>
+
+<p>
+Se as retas $r_1$ e $r_2$ são reversas, então por um ponto
+$P$ de $r_1$ passa um reta $r_2'$ que é paralela a $r_2$. O
+ângulo entre $r_1$ e $r_2$ é definido como sendo o ângulo
+entre $r_1$ e $r_2'$.
+</p>
+
+<p>
+Se as retas são paralelas o ângulo entre elas é igual à zero.
+</p>
+
+<p>
+Sejam duas retas
+$$r_1\;:\;\left\{\begin{array}{lll}
+x&=&x_1+t\,a_1\\ y&=&y_1+t\,b_1\\
+z&=&z_1+t\,c_1\end{array}\right.\quad
+r_2\;:\;\left\{\begin{array}{lll} x&=&x_2+t\,a_2\\
+y&=&y_2+t\,b_2\\
+z&=&z_2+t\,c_2\end{array}\right.\,\mbox{para todo
+$t\in\mathbb{R}$.}
+$$
+O cosseno do ângulo entre $r_1$ e $r_2$ é
+$$\cos(r_1,r_2)=|\cos\theta|=\frac{|V_1\cdot V_2|}{||V_1||\,||V_2||}\,,$$
+em que $V_1=(a_1,b_1,c_1)$ e $V_2=(a_2,b_2,c_2)$.
+</p>
+<hr>
+<p>
+Sejam $\pi_1$ e $\pi_2$ dois planos com vetores
+normais $N_1=(a_1,b_1,c_1)$ e $N_2=(a_2,b_2,c_2)$,
+respectivamente.
+O ângulo entre $\pi_1$ e $\pi_2$ é definido como o ângulo
+entre duas retas perpendiculares a eles.
+Como toda reta perpendicular a $\pi_1$ tem
+$N_1$ como vetor diretor e toda reta perpendicular
+a $\pi_2$ tem $N_2$ como vetor diretor, então
+o cosseno do ângulo entre eles é dado por
+$$\cos(\pi_1,\pi_2)=|\cos\theta|\,,$$
+em que $\theta$ é o ângulo entre os vetores normais
+$N_1$ e $N_2$ de $\pi_1$ e
+$\pi_2$, respectivamente.
+</p>
+
+<p>
+Portanto, o cosseno do ângulo entre $\pi_1$ e $\pi_2$ é
+$$\cos(\pi_1,\pi_2)=
+\frac{|N_1\cdot N_2|}{||N_1||\,||N_2||}.$$
+</p>
+
+
+
+	<div class="subsection">
+4.3.2 Distâncias
+</div>
+
+
+<p>
+Sejam $P_0=(x_0,y_0,z_0)$ um ponto
+qualquer e $\pi:\; ax+by+cz+d=0$ um plano. A distância de $P_0$ a
+$\pi$ é dada por
+$$\mathrm{dist}(P_0,\pi)=||\mathrm{proj}_N\stackrel{\longrightarrow}{P_1P_0}||=
+\frac{|\stackrel{\longrightarrow}{P_1P_0}\cdot N|}{||N||}\,,$$
+em que $N=(a,b,c)$ e $P_1=(x_1,y_1,z_1)$ é um
+ponto de $\pi$ (isto é, um ponto que satisfaz a
+equação de $\pi$).
+</p>
+<hr>
+<p>
+Sejam $P_0=(x_0,y_0,z_0)$ um ponto qualquer e
+$$r\,:\;
+\left\{\begin{array}{lll}
+x&=&x_1+t\,a\\ y&=&y_1+t\,b\\
+z&=&z_1+t\,c\end{array}\right.\,\mbox{para todo
+$t\in\mathbb{R}$}
+$$
+uma reta. A distância de $P_0$ a $r$ é dada por
+$$
+\mathrm{dist}(P_0,r)=\frac{||\stackrel{\longrightarrow}{P_1P_0}\times V||}{||V||}\,.
+$$
+em que $V=(a,b,c)$ é um vetor diretor e
+$P_1=(x_1,y_1,z_1)$ é um ponto da reta
+$r$.
+</p>
+
+<p>
+Sejam dois planos $\pi_1$ e $\pi_2$ quaisquer. A distância entre
+$\pi_1$ e $\pi_2$ é definida como a menor distância entre dois
+pontos, um de $\pi_1$ e outro de $\pi_2$.
+</p>
+
+<p>
+Se os seus vetores normais <b>não</b> são paralelos, então os
+planos são concorrentes e neste caso a distância entre eles é
+igual à zero. Se os seus vetores normais são paralelos, então os
+planos são paralelos (ou coincidentes) e a distância entre $\pi_1$
+e $\pi_2$ é igual à distância entre um ponto de um deles, por
+exemplo $P_2$ de $\pi_2$, e o ponto de $\pi_1$, mais próximo de
+$P_2$. Mas, esta
+distância é igual à distância de $P_2$ a $\pi_1$.
+</p>
+<hr>
+<p>
+Para calcular a distância entre duas retas, vamos dividir em dois
+casos:
+</p>
+
+<p>
+<ol  class="alpha">
+
+<li> Se os <b>vetores diretores são paralelos</b>, então
+as retas $r_1$ e $r_2$ são paralelas (ou coincidentes).
+Neste caso, a distância entre elas é igual à distância entre
+um ponto de $r_2$ e a reta $r_1$, ou vice-versa, entre um
+ponto de $r_1$ e a reta $r_2$.
+
+</li><li>
+Se <b>os vetores diretores não são paralelos</b>, então
+elas são reversas ou concorrentes. Os dois casos podem ser
+resolvidos da mesma forma. Estas retas definem dois planos
+paralelos (que podem ser coincidentes, no caso em que elas
+são concorrentes). Um é o plano que contém $r_1$ e é
+paralelo a $r_2$, vamos chamá-lo de $\pi_1$. O outro, contém
+$r_2$ e é paralelo a $r_1$, $\pi_2$. O vetor $N=V_1\times
+V_2$, é normal (ou perpendicular)
+a ambos os planos, em que $V_1$ e $V_2$ são
+os vetores diretores de $r_1$ e $r_2$ respectivamente.
+Assim, a distância entre as retas é igual à distância entre
+estes dois planos.</li>
+</ol>
+</p>
+
+
+
+<p>
+<a href="sum42.html" class="previous">&#10094; 4.2 Equações da Reta</a>
+<a href="sum51.html" class="next"> 5.1 Independência Linear &#10095;</a>
+</p>
+
+</div>
+</body>	
+</HTML>
