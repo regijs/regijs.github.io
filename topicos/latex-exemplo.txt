@@ -1,0 +1,39 @@
+% Este é um pequeno arquivo fonte para o LaTeX
+% Use este arquivo como modelo para fazer seus próprios arquivos  LaTeX.
+% Tudo que está à direita de um  %  é um comentário e é ignorado pelo LaTeX.
+%
+\documentclass[a4paper,12pt]{article}% Seu arquivo fonte precisa conter
+\usepackage[brazil]{babel}           % estas quatro linhas
+\usepackage[utf8]{inputenc}          % além do comando \end{document}
+\begin{document}                     % no fim.
+
+\section{Texto, Comandos e Ambientes} % Este comando faz o título da seção.
+
+Um arquivo fonte do \LaTeX\ contém além do texto a ser processado,
+comandos que indicam como o texto deve ser processado. Palavras
+são separadas por um ou mais espaços. Parágrafos são separados por
+uma ou mais linhas em branco. A saída não é afetada por espaços
+extras ou por linhas em branco extras. A maioria dos comandos do
+\LaTeX \ são iniciados com o caracter $\backslash$. Uma
+$\backslash$ sozinha produz um espaço. Um ambiente é uma região do
+texto
+que tem um tratamento especial. Um ambiente é iniciado com\\
+\texttt{$\backslash$begin\{nome do ambiente\}} e terminado por
+\texttt{$\backslash$end\{nome do ambiente\}}.
+
+%Aspas são digitadas assim:
+``Texto entre aspas''.
+
+%Texto em itálico deve ser digitado como:
+\textit{Isto está em itálico}.
+
+%Texto em negrito deve ser digitado como:
+\textbf{Isto está em negrito}.
+
+\subsection{Um aviso}  % Este comando faz o título da subseção.
+
+Lembre-se de não digitar nenhum dos 10 caracteres especiais
+%                &   $   #   %   _   {   }   ^   ~   \
+\& \$ \# \% \_ \{ \} \^{} \ \~{}\ $\backslash$ exceto como um
+comando!
+\end{document}   % O arquivo fonte termina com este comando.
