@@ -1,0 +1,219 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+
+
+<HEAD>
+
+<TITLE>Resumo 4-3</TITLE>
+	
+<script type="text/javascript" src="https://regijs.github.io/first.js"></script>
+<script type="text/javascript">
+loadScript("https://regijs.github.io/second.js", function(){
+    //initialization code
+});
+</script>
+
+<link rel="stylesheet" href="estilo.css">
+	
+		
+</HEAD>
+<BODY BACKGROUND="../fundo.gif">
+
+<ul class="sidenav">
+  <li><a href="https://regijs.github.io/gaal/sum11.html">1.1 Matrizes</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum12.html">1.2 Sistemas de Equações Lineares</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum21.html">2.1 Matriz Inversa</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum22.html">2.2 Determinantes</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum31.html">3.1 Soma de Vetores e Multiplicação por Escalar</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum32.html">3.2 Produto Escalar e Projeção Ortogonal</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum33.html">3.3 Produtos Vetorial e Misto</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum41.html">4.1 Equações do Plano</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum42.html">4.2 Equações da Reta</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum43.html">4.3 Ângulos e Distâncias</a></li>
+  <li><a class="active" href="https://regijs.github.io/gaal/sum51.html">5.1 Independência Linear</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum52.html">5.2 Subespaços, Base e Dimensão</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum53.html">5.3 Produto Escalar em $\mathbb{R}^n$</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum54.html">5.4 Mudança de Coordenadas</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum61.html">6.1 Diagonalização de Matrizes</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum62.html">6.2 Diagonalização de Matrizes Simétricas</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum63.html">6.3 Aplicação: Identificação de Cônicas</a></li>
+
+  <li><a href="https://regijs.github.io">Página Inicial</a></li>
+</ul>
+
+	
+
+<div class="content">
+ 		
+	
+<div class="header1">
+<h1>
+	  	  Um Curso de Geometria Analítica e Álgebra Linear: Resumos
+	</h1>
+</div>
+
+<div class="header2">
+	  
+<H2>Reginaldo J. Santos</H2>
+<H3>Departamento de Matemática<br>
+Instituto de Ciências Exatas<br>
+Universidade Federal de Minas Gerais</H3>
+<H4>28 de outubro de 2018</H4>
+	
+</div>
+	
+
+
+
+	
+	
+	<div class="section">
+5.1 Independência Linear
+</div>
+
+	<div class="subsection">
+5.1.1 Os Espaços $\mathbb{R}^n$
+</div>
+
+<hr>
+<p>	
+Para cada inteiro positivo $n$, o <b>espaço (vetorial) $\mathbb{R}^n$</b> é definido pelo conjunto de todas as $n$-uplas
+ordenadas $X=(x_1,\ldots,x_n)$ de números reais.
+</p>	
+<hr>	
+	
+<p>
+<ol  class="alpha">
+<li> A <b>soma</b> de dois vetores $V=(v_1,\ldots,v_n)$ e $W=(w_1,\ldots,w_n)$  de 
+$\mathbb{R}^n$ é definida por
+\begin{equation}\label{defsomarn}
+V+W=(v_1+w_1,\ldots,v_n+w_n);
+\end{equation}
+</li><li> A <b>multiplicação</b> de um vetor $V=(v_1,\ldots,v_n)$
+do $\mathbb{R}^n$ por um escalar $\alpha$ é definida por
+\begin{equation}\label{defmulpern}
+\alpha\;V=(\alpha\, v_1,\ldots,\alpha\, v_n).
+\end{equation}
+</li>
+</ol>
+</p>
+
+<hr>
+<p>	
+ O <b>vetor nulo</b> de 
+ $\mathbb{R}^n$
+é denotado por $\bar{0}$ e é definido por $ \bar{0}=(0,\ldots,0)$.
+ Se $V~=~(v_1,\ldots,v_n)$ é um
+vetor do $\mathbb{R}^n$, então o <b>simétrico de $V$</b> é
+denotado por $-V$ e é definido por $-V=(-v_1,\ldots,-v_n)$.
+ A <b>diferença</b> de dois
+vetores no $\mathbb{R}^n$ é definida por $V-W=V+(-W)$. Se $V$ e $W$
+são vetores do $\mathbb{R}^n$ tais que $W=\alpha V$, para algum
+escalar $\alpha$, então dizemos que $W$ é um  <b>múltiplo escalar</b> de $V$.
+</p>
+
+<hr>
+<p>	
+	Sejam $U=(u_1,\ldots,u_n)$,
+	$V=(v_1,\ldots,v_n)$ e $W=(w_1,\ldots,w_n)$ vetores de
+	$\mathbb{R}^n$ e $\alpha$ e $\beta$ escalares. São válidas as
+	seguintes propriedades:
+	<ol  class="alpha">
+	<li> $U+V=V+U$;
+	</li><li> $(U+V)+W=U+(V+W)$;
+	</li><li> $U+\bar{0}=U$;
+	</li><li> $U+(-U)=\bar{0}$;
+	</li><li> $\alpha(\beta U)=(\alpha\beta)U$;
+	</li><li> $\alpha(U+V)=\alpha U+\alpha V$;
+	</li><li> $(\alpha+\beta)U=\alpha U+\beta U$;
+	</li><li> $1U=U$.</li>
+	</ol>
+	</p>
+<hr>
+
+	<div class="subsection">
+5.1.2 Combinação Linear
+</div>
+
+<hr>	
+<p>
+	Um vetor $V\in\mathbb{R}^n$ é uma <b>combinação linear</b>
+	dos vetores $V_1, \ldots, V_k\in\mathbb{R}^n$, se existem escalares
+	$x_1,\ldots,x_k$ que satisfazem a equação
+	\begin{equation} \label{eqvcomlin}
+	x_1V_1+ x_2V_2 + \ldots + x_kV_k = V
+	\end{equation}
+	ou seja, se a equação vetorial (\ref{eqvcomlin}) possui solução.
+	Neste caso, dizemos também que $V$ pode ser escrito como uma
+	combinação linear de $V_1, \ldots, V_k$.
+	</p>
+<hr>
+	
+	<p>
+Sejam $A$ uma matriz $m\times n$ e $B$ uma matriz $m\times
+1$. O vetor $B$ é combinação linear das colunas de $A$ se, e
+somente se, o sistema $AX=B$ tem solução.
+</p>
+<hr>
+
+
+
+	<div class="subsection">
+5.1.3 Independência Linear
+</div>
+
+<hr>
+	<p>
+		Dizemos que um conjunto
+		$\mathcal{S}=\{V_1,\ldots,V_k\}$ de vetores de $\mathbb{R}^n$ é
+		<b>linearmente independente (LI)</b> se a equação vetorial
+		\begin{equation} \label{ld.indlin}
+		x_1V_1+ x_2V_2 + \ldots + x_kV_k = \bar{0}
+		\end{equation}
+		só possui a solução trivial, ou seja, se a única forma de
+		escrever o vetor nulo como combinação linear dos vetores
+		$V_1,\ldots,V_k$ é aquela em que todos os escalares são
+		iguais a zero. Caso contrário, isto é, se
+		(\ref{ld.indlin}) possui solução <b>não</b> trivial,
+		dizemos que o conjunto $\mathcal{S}$ é
+		<b>linearmente dependente (LD).</b>
+		</p>
+	<hr>
+	
+<p>
+	Seja $A$ uma matriz $m\times
+	n$.
+	<ol  class="alpha">
+	<li> As colunas de $A$ são LI se, e
+	somente se, o sistema $AX=\bar{0}$ tem somente a solução trivial.
+	</li><li> Se $m=n$, então as colunas de $A$ são LI se, e somente se, $$\det(A)\ne 0.$$</li>
+	</ol>
+	</p>
+<hr>
+	
+<p>
+	Em $\mathbb{R}^n$ um conjunto
+	com mais de $n$ vetores é LD.
+	</p>
+
+<hr>
+	<p>
+		Um conjunto
+		$\mathcal{S}\!=\!\{V_1,\ldots,V_k\}$ ($k>1$) de vetores é
+		LD se, e somente se, pelo menos um dos
+		vetores, $V_j$, for combinação linear dos outros vetores de
+		$\mathcal{S}$.
+		</p>
+	<hr>
+		
+
+
+<p>
+<a href="sum43.html" class="previous">&#10094; 4.3 Ângulos e Distâncias</a>
+<a href="sum52.html" class="next"> 5.2 Subespaços, Base e Dimensão &#10095;</a>
+</p>
+
+</div>
+</body>	
+</HTML>
