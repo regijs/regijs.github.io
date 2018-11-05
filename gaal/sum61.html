@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+
+
+<HEAD>
+
+<TITLE>Resumo 6-1</TITLE>
+	
+<script type="text/javascript" src="https://regijs.github.io/first.js"></script>
+<script type="text/javascript">
+loadScript("https://regijs.github.io/second.js", function(){
+    //initialization code
+});
+</script>
+
+<link rel="stylesheet" href="estilo.css">
+	
+		
+</HEAD>
+<BODY BACKGROUND="../fundo.gif">
+
+<ul class="sidenav">
+  <li><a href="https://regijs.github.io/gaal/sum11.html">1.1 Matrizes</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum12.html">1.2 Sistemas de Equações Lineares</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum21.html">2.1 Matriz Inversa</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum22.html">2.2 Determinantes</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum31.html">3.1 Soma de Vetores e Multiplicação por Escalar</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum32.html">3.2 Produto Escalar e Projeção Ortogonal</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum33.html">3.3 Produtos Vetorial e Misto</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum41.html">4.1 Equações do Plano</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum42.html">4.2 Equações da Reta</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum43.html">4.3 Ângulos e Distâncias</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum51.html">5.1 Independência Linear</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum52.html">5.2 Subespaços, Base e Dimensão</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum53.html">5.3 Produto Escalar em $\mathbb{R}^n$</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum54.html">5.4 Mudança de Coordenadas</a></li>
+  <li><a class="active" href="https://regijs.github.io/gaal/sum61.html">6.1 Diagonalização de Matrizes</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum62.html">6.2 Diagonalização de Matrizes Simétricas</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum63.html">6.3 Aplicação: Identificação de Cônicas</a></li>
+
+  <li><a href="https://regijs.github.io">Página Inicial</a></li>
+</ul>
+
+	
+
+<div class="content">
+ 		
+	
+<div class="header1">
+<h1>
+	  	  Um Curso de Geometria Analítica e Álgebra Linear: Resumos
+	</h1>
+</div>
+
+<div class="header2">
+	  
+<H2>Reginaldo J. Santos</H2>
+<H3>Departamento de Matemática<br>
+Instituto de Ciências Exatas<br>
+Universidade Federal de Minas Gerais</H3>
+<H4>28 de outubro de 2018</H4>
+	
+</div>
+	
+
+
+
+	
+	
+	<div class="section">
+6.1 Diagonalização de Matrizes
+</div>
+
+
+<p>
+Dizemos que uma matriz $A$, $n\times n$, é <b>diagonalizável</b>,
+se existem matrizes $P$ e $D$ tais que $A=PDP^{-1}$, ou
+equivalentemente, $D=P^{-1}AP$, em que $D$ é uma matriz diagonal.
+</p>
+
+<p>
+	Seja $A$ uma matriz $n\times n$. Um número
+	real $\lambda$ é chamado <b>autovalor</b> (real) de $A$, se existe
+	um vetor \textit{não nulo} $V=\left[\begin{array}{c}
+	v_1\\\vdots \\v_n
+	\end{array}\right]$ de $\mathbb{R}^n$, tal que
+	\begin{equation}\label{eav}
+	AV=\lambda V\,.
+	\end{equation}
+	Um vetor \textit{não nulo} que satisfaça (\ref{eav}), é chamado de
+	<b>autovetor</b> de $A$.
+</p>
+
+<p>
+Seja $A$ uma matriz $n\times n$.
+<ol  class="alpha">
+<li>
+Os autovalores (reais) de $A$ são as raízes <b>reais</b> do
+<b>polinômio característico</b>
+\begin{equation}
+p(t)=\det(A-t\, I_n)
+\end{equation}
+</li><li>
+Para cada autovalor $\lambda$, os autovetores associados a
+$\lambda$ são os vetores não nulos da solução do sistema
+\begin{equation}\label{sav2}
+(A - \lambda I_n)X=\bar{0}\,.
+\end{equation}
+</li><ol>
+</p>
+
+<p>
+Se $a_0,a_1,\ldots,a_{n-1}$ são inteiros,
+então as raízes racionais (se existirem) de
+$$
+p(t)=(-1)^nt^n+a_{n-1}t^{n-1}+\ldots+a_1t+a_0.
+$$
+são números inteiros e divisores do coeficiente do termo de grau
+zero $a_0$.
+</p>
+
+<p>
+Seja $A$ uma matriz $n \times n$
+que tem $n$ autovetores LI, $V_1,\ldots,V_n$ associados
+a $\lambda_1,\ldots,\lambda_n$, respectivamente.
+Então
+as matrizes
+$$P=\left[\begin{array}{rrrr} V_1&V_2&\ldots&V_n\end
+{array}\right] \quad \mbox{e}\quad
+D=\left[\begin{array}{cccc}
+\lambda_1&0&\ldots&0\\
+0&\lambda_2&\ldots&0\\
+\vdots&&\ddots&\vdots\\
+0&\ldots&0&\lambda_n\end{array}\right].$$
+são tais que
+$$A=PDP^{-1},$$ ou seja, $A$ é diagonalizável.
+Reciprocamente, se $A$ é diagonalizável, então
+ela possui $n$ autovetores linearmente independentes.
+</p>
+
+<p>
+Se uma matriz $A$ é diagonalizável e $A=PDP^{-1}$, então os
+autovalores de $A$ formam a diagonal de $D$ e $n$ autovetores
+linearmente independentes associados aos autovalores formam as
+colunas de $P$.
+</p>
+
+<p>
+Depois de obtermos
+para cada autovalor, autovetores LI, ao juntarmos
+todos os autovetores obtidos, eles continuarão sendo LI.
+</p>						
+
+
+
+
+<p>
+<a href="sum53.html" class="previous">&#10094; 5.3 Produto Escalar em $\mathbb{R}^n$</a>
+<a href="sum62.html" class="next"> 6.2 Diagonalização de Matrizes Simétricas &#10095;</a>
+</p>
+
+</div>
+</body>	
+</HTML>
