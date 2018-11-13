@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+
+<HTML>
+
+
+<HEAD>
+
+<TITLE>Resumo 6-3</TITLE>
+	
+<script type="text/javascript" src="https://regijs.github.io/first.js"></script>
+<script type="text/javascript">
+loadScript("https://regijs.github.io/second.js", function(){
+    //initialization code
+});
+</script>
+
+<link rel="stylesheet" href="estilo.css">
+	
+		
+</HEAD>
+<BODY BACKGROUND="../fundo.gif">
+
+<ul class="sidenav">
+  <li><a href="https://regijs.github.io/gaal/sum11.html">1.1 Matrizes</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum12.html">1.2 Sistemas de Equações Lineares</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum21.html">2.1 Matriz Inversa</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum22.html">2.2 Determinantes</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum31.html">3.1 Soma de Vetores e Multiplicação por Escalar</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum32.html">3.2 Produto Escalar e Projeção Ortogonal</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum33.html">3.3 Produtos Vetorial e Misto</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum41.html">4.1 Equações do Plano</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum42.html">4.2 Equações da Reta</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum43.html">4.3 Ângulos e Distâncias</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum51.html">5.1 Independência Linear</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum52.html">5.2 Subespaços, Base e Dimensão</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum53.html">5.3 Produto Escalar em $\mathbb{R}^n$</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum54.html">5.4 Mudança de Coordenadas</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum61.html">6.1 Diagonalização de Matrizes</a></li>
+  <li><a href="https://regijs.github.io/gaal/sum62.html">6.2 Diagonalização de Matrizes Simétricas</a></li>
+  <li><a class="active" href="https://regijs.github.io/gaal/sum63.html">6.3 Aplicação: Identificação de Cônicas</a></li>
+
+  <li><a href="https://regijs.github.io">Página Inicial</a></li>
+</ul>
+
+	
+
+<div class="content">
+ 		
+	
+<div class="header1">
+<h1>
+	  	  Um Curso de Geometria Analítica e Álgebra Linear: Resumos
+	</h1>
+</div>
+
+<div class="header2">
+	  
+<H2>Reginaldo J. Santos</H2>
+<H3>Departamento de Matemática<br>
+Instituto de Ciências Exatas<br>
+Universidade Federal de Minas Gerais</H3>
+<H4>13 de novembro de 2018</H4>
+	
+</div>
+	
+
+
+
+	
+	<div class="section">
+6.3 Aplicação: Identificação de Cônicas
+</div>
+
+
+
+
+<p>
+Uma <b>cônica</b> no plano é definida
+como o conjunto dos pontos $P=(x,y)$ que satisfazem a equação
+$$
+ax^2+bxy+cy^2+dx+ey+f=0,
+$$
+em que $a,b,c,d,e$ e $f$ são números reais, com $a,b$ e $c$ não
+simultaneamente nulos.
+</p>
+
+
+
+<p>
+A <b>elipse</b> é o conjunto dos pontos
+$P$ no plano tais que a soma das distâncias de $P$ a dois pontos
+fixos $F_1$ e $F_2$ (<b>focos</b>) é
+constante, ou seja, se $\dist(F_1,F_2)=2c$, então a elipse é o
+conjunto dos pontos $P$ tais que
+$$
+\dist(P,F_1)+\dist(P,F_2)=2a,
+$$
+em que $a>c$.
+<p>	
+	
+<p>
+<ol  class="alpha">
+<li> A equação da <b>elipse</b> cujos focos são $F_1=(-c,0)$ e
+$F_2=(c,0)$ é
+\begin{equation}\label{eelc}
+\frac{x^2}{a^2}+\frac{y^2}{b^2}=1,
+\end{equation}
+</li><li> A equação da <b>elipse</b> cujos focos são $F_1=(0,-c)$ e
+$F_2=(0,c)$ é
+\begin{equation}\label{eelc2}
+\frac{x^2}{b^2}+\frac{y^2}{a^2}=1. \end{equation}
+</li></ol>
+Em ambos os casos $b=\sqrt{a^2-c^2}$.
+</p>
+
+
+
+
+<p>
+A <b>hipérbole</b> é o conjunto dos
+pontos $P$ no plano tais que o módulo da diferença entre as
+distâncias de $P$ a dois pontos fixos $F_1$ e $F_2$ (<b>focos</b>)
+é \index{Foco(s)!da Hipérbole}constante, ou seja, se
+$\dist(F_1,F_2)=2c$, então a hipérbole é o conjunto dos pontos $P$
+tais que
+$$
+|\dist(P,F_1)-\dist(P,F_2)|=2a,
+$$
+em que $a<c$.
+</p>
+
+<p>
+<ol  class="alpha">	
+<li>	
+A equação da <b>hipérbole</b> cujos focos
+são $F_1=(-c,0)$ e $F_2=(c,0)$ é
+\begin{equation}\label{ehic}
+\frac{x^2}{a^2}-\frac{y^2}{b^2}=1
+\end{equation}
+e das <b>assíntotas</b> (retas para onde a curva se aproxima, quando
+$x\to\pm\infty$) são
+$$y=\pm \frac{b}{a}x,$$
+
+</li><li> A equação da <b>hipérbole</b> cujos focos são $F_1=(0,-c)$
+e $F_2=(0,c)$ é
+\begin{equation}\label{ehic2}
+\frac{y^2}{a^2}-\frac{x^2}{b^2}=1
+\end{equation}
+e das assíntotas são
+$$x=\pm \frac{a}{b}y.$$
+</li></ol>
+Em ambos os casos $b=\sqrt{c^2-a^2}$.
+</p>
+
+
+
+<p>
+Uma <b>parábola</b> é o conjunto dos
+pontos $P$ no plano equidistantes de uma reta $r$
+(<b>diretriz</b>) e de um
+ponto $F$ (<b>foco</b>),  não
+pertencente a $r$, ou seja, a parábola é o conjunto dos pontos $P$
+tais que
+$$
+\dist(P,F)=\dist(P,r).
+$$
+</p>
+
+
+<p>
+<ol  class="alpha">
+<li> A equação da <b>parábola</b> com foco  $F=(p,0)$ e reta
+diretriz $r:\; x=-p$ é
+\begin{equation}\label{epac}
+y^2=4px,
+\end{equation}
+</li><li> A equação da <b>parábola</b> com foco  $F=(0,p)$ e reta
+diretriz $r:\; y=-p$ é
+\begin{equation}\label{epac2}
+x^2=4py.
+\end{equation}
+</li></ol>
+</p>
+
+
+<p>
+Considere a equação
+\begin{equation}\label{eqgecon}
+ax^2+bxy+cy^2+dx+ey+f=0,
+\end{equation}
+com  $a,b,c,d,e,f\in\mathbb{R}$, sendo $a,b$ e $c$ não
+simultaneamente nulos. Então existe um sistema de coordenadas
+ortogonal $\mathrm{x'y'}$, em que a equação anterior tem a
+forma
+$$\lambda_1x'^2+\lambda_2y'^2+d'x'+e'y'+f=0\,,$$
+em que $\lambda_1,\lambda_2$ são os autovalores de
+$$A=\left[\begin{array}{cc}
+a&b/2\\
+b/2&c
+\end{array}\right]\,.$$
+Mais ainda,
+$$X=PX'\,,$$
+em que
+$X'=\left[\begin{array}{c}
+x'\\y'
+\end{array}\right],
+X=\left[\begin{array}{c}
+x\\y
+\end{array}\right]$
+e $P$ é uma matriz ortogonal ($P^{-1}=P^t$).
+</p>					
+		
+
+
+<p>
+<a href="sum62.html" class="previous">&#10094; 6.2 Diagonalização de Matrizes Simétricas</a>
+</p>
+
+</div>
+</body>	
+</HTML>
