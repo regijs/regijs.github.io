@@ -1,202 +1,175 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HTML Presentation</title>
-  <style>
-    /* Reset and Base Styles */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #111;
-      color: #fff;
-      overflow: hidden; /* Prevents scrollbars */
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação HTML Interativa</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #111;
+            color: #fff;
+            overflow: hidden;
+        }
+        .slide-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            pointer-events: none;
+        }
+        .slide.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
 
-    /* Presentation Container */
-    .presentation {
-      width: 100vw;
-      height: 100vh;
-      position: relative;
-    }
+        /* 🎬 CONFIGURAÇÃO DA ANIMAÇÃO DE APARECIMENTO */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    /* Slide Styles */
-    .slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.4s ease, visibility 0.4s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 40px;
-      text-align: center;
-    }
+        /* Esconde os elementos inicialmente e aplica a animação quando o slide ativa */
+        .slide h1, .slide p, .slide li {
+            opacity: 0;
+        }
 
-    /* Active Slide State */
-    .slide.active {
-      opacity: 1;
-      visibility: visible;
-    }
+        .slide.active h1, 
+        .slide.active p, 
+        .slide.active li {
+            animation: fadeUp 0.8s ease forwards;
+        }
 
-    /* Slide Themes */
-    .theme-blue { background: linear-gradient(135deg, #1e3c72, #2a5298); }
-    .theme-purple { background: linear-gradient(135deg, #4b6cb7, #182848); }
-    .theme-dark { background: linear-gradient(135deg, #232526, #414345); }
+        /* ⏱️ ATRASOS CONFIGURADOS POR ELEMENTO (EFEITO CASCATA) */
+        .slide.active .delay-1 { animation-delay: 0.2s; }
+        .slide.active .delay-2 { animation-delay: 1.0s; }
+        .slide.active .delay-3 { animation-delay: 1.8s; }
+        .slide.active .delay-4 { animation-delay: 2.6s; }
 
-    /* Typography */
-    h1 {
-      font-size: 4rem;
-      margin-bottom: 20px;
-      text-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-    p {
-      font-size: 1.8rem;
-      color: #e0e0e0;
-      max-width: 800px;
-      line-height: 1.6;
-    }
-    ul {
-      text-align: left;
-      font-size: 1.8rem;
-      margin-top: 20px;
-      line-height: 2;
-    }
-
-    /* Progress Bar */
-    .progress-container {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 6px;
-      background: rgba(255,255,255,0.1);
-      z-index: 10;
-    }
-    .progress-bar {
-      height: 100%;
-      width: 0%;
-      background: #00dfa2;
-      transition: width 0.3s ease;
-    }
-
-    /* Navigation Controls Overlay */
-    .controls {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-      z-index: 10;
-      display: flex;
-      gap: 10px;
-    }
-    .btn {
-      background: rgba(255, 255, 255, 0.2);
-      border: none;
-      color: white;
-      padding: 10px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: background 0.2s;
-    }
-    .btn:hover {
-      background: rgba(255, 255, 255, 0.4);
-    }
-  </style>
+        /* Estilização Visual Básica */
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            color: #00adb5;
+        }
+        p {
+            font-size: 1.8rem;
+            color: #eeeeee;
+            max-width: 800px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        ul {
+            list-style: none;
+            font-size: 1.8rem;
+            color: #eee;
+            text-align: left;
+        }
+        li {
+            margin: 15px 0;
+        }
+        li::before {
+            content: "• ";
+            color: #00adb5;
+        }
+        .controls {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            z-index: 10;
+        }
+        .btn {
+            background-color: #00adb5;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+        .btn:hover {
+            background-color: #007a80;
+        }
+    </style>
 </head>
 <body>
 
-  <div class="presentation">
-    
-    <!-- Slide 1: Title -->
-    <div class="slide active theme-blue">
-      <h1>My HTML Presentation</h1>
-      <p>Built with pure web tech. Use your arrow keys or the buttons to navigate.</p>
+    <div class="slide-container">
+        <!-- Slide 1: Aparecimento em parágrafos -->
+        <div class="slide active">
+            <h1 class="delay-1">Efeito Cascata</h1>
+            <p class="delay-2">Este primeiro bloco de texto aparece logo em seguida.</p>
+            <p class="delay-3">E este terceiro bloco surge um pouco mais tarde automaticamente.</p>
+        </div>
+
+        <!-- Slide 2: Exemplo com lista de tópicos -->
+        <div class="slide">
+            <h1 class="delay-1">Vantagens do HTML</h1>
+            <ul>
+                <li class="delay-2">Sem travamentos de softwares externos.</li>
+                <li class="delay-3">Animações fluidas direto no navegador.</li>
+                <li class="delay-4">Fácil de compartilhar com qualquer pessoa.</li>
+            </ul>
+        </div>
     </div>
 
-    <!-- Slide 2: Points -->
-    <div class="slide theme-purple">
-      <h1>Key Advantages</h1>
-      <ul>
-        <li>Works on any web browser</li>
-        <li>Fully responsive layout</li>
-        <li>No external software required</li>
-      </ul>
-    </div>
-
-    <!-- Slide 3: Conclusion -->
-    <div class="slide theme-dark">
-      <h1>Thank You!</h1>
-      <p>Start customizing this HTML template to create your own custom decks.</p>
-    </div>
-
-    <!-- Interactive UI Overlays -->
     <div class="controls">
-      <button class="btn" id="prevBtn">&larr; Prev</button>
-      <button class="btn" id="nextBtn">Next &rarr;</button>
-    </div>
-    <div class="progress-container">
-      <div class="progress-bar" id="progressBar"></div>
+        <button class="btn" onclick="changeSlide(-1)">◀ Voltar</button>
+        <button class="btn" onclick="changeSlide(1)">Avançar ▶</button>
     </div>
 
-  </div>
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
 
-  <script>
-    // Navigation State
-    const slides = document.querySelectorAll('.slide');
-    const progressBar = document.getElementById('progressBar');
-    let currentSlide = 0;
-
-    // Update Layout View
-    function updateSlides() {
-      slides.forEach((slide, index) => {
-        if (index === currentSlide) {
-          slide.classList.add('active');
-        } else {
-          slide.classList.remove('active');
+        function showSlide(index) {
+            // Remove o estado ativo do slide anterior
+            slides[currentSlide].classList.remove('active');
+            
+            // Atualiza o índice do slide atual
+            currentSlide = (index + slides.length) % slides.length;
+            
+            // Ativa o novo slide (reiniciando as animações de delay internas)
+            slides[currentSlide].classList.add('active');
         }
-      });
-      // Update Progress Bar percentage
-      const progressPercent = ((currentSlide + 1) / slides.length) * 100;
-      progressBar.style.width = `${progressPercent}%`;
-    }
 
-    // Direction Functions
-    function nextSlide() {
-      if (currentSlide < slides.length - 1) {
-        currentSlide++;
-        updateSlides();
-      }
-    }
-    function prevSlide() {
-      if (currentSlide > 0) {
-        currentSlide--;
-        updateSlides();
-      }
-    }
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
 
-    // Event Listeners for Keyboard
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
-      if (e.key === 'ArrowLeft') prevSlide();
-    });
-
-    // Event Listeners for Click UI Buttons
-    document.getElementById('nextBtn').addEventListener('click', nextSlide);
-    document.getElementById('prevBtn').addEventListener('click', prevSlide);
-
-    // Initial load progress setup
-    updateSlides();
-  </script>
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                changeSlide(1);
+            } else if (e.key === 'ArrowLeft') {
+                changeSlide(-1);
+            }
+        });
+    </script>
 </body>
 </html>
