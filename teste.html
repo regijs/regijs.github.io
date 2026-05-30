@@ -1,15 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <script type="text/javascript" src="https://regijs.github.io/first.js"></script>
-<script type="text/javascript">
-loadScript("https://regijs.github.io/second.js", function(){
-    //initialization code
-});
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apresentação Controle Manual</title>
+    <title>Apresentação Manual no Mesmo Parágrafo</title>
     <style>
         * {
             box-sizing: border-box;
@@ -36,9 +30,9 @@ loadScript("https://regijs.github.io/second.js", function(){
             height: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: left;
-            align-items: left;
-            text-align: left;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
             padding: 40px;
             opacity: 0;
             transition: opacity 0.4s ease-in-out;
@@ -49,44 +43,33 @@ loadScript("https://regijs.github.io/second.js", function(){
             pointer-events: auto;
         }
 
-        /* 👁️ ELEMENTOS ESCONDIDOS POR PADRÃO */
+        /* 👁️ CONTROLE DE REVELAÇÃO INTERNA (SPAN) */
         .step {
             opacity: 0;
-            transform: translateY(15px);
-            transition: opacity 0.4s ease, transform 0.4s ease;
+            display: inline-block;
+            transform: translateX(5px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
         }
 
-        /* VISÍVEL QUANDO GANHA A CLASSE .show */
+        /* Fica visível mantendo o fluxo natural do texto */
         .step.show {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateX(0);
         }
 
         /* Estilos Visuais */
         h1 {
             font-size: 3.5rem;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             color: #00adb5;
         }
         p {
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             color: #eeeeee;
-            max-width: 800px;
+            max-width: 900px;
             line-height: 1.6;
-            margin-bottom: 15px;
-        }
-        ul {
-            list-style: none;
-            font-size: 1.8rem;
-            color: #eee;
-            text-align: left;
-        }
-        li {
-            margin: 15px 0;
-        }
-        li::before {
-            content: "• ";
-            color: #00adb5;
+            margin-bottom: 20px;
+            text-align: center;
         }
         .controls {
             position: absolute;
@@ -114,17 +97,28 @@ loadScript("https://regijs.github.io/second.js", function(){
     <div class="slide-container" onclick="handleAdvance()">
         <!-- Slide 1 -->
         <div class="slide active">
+            <h1>Texto Sequencial</h1>
+            <p>
+                Este parágrafo começa aqui. 
+                <span class="step">Dê um clique para revelar esta frase.</span> 
+                <span class="step">Mais um clique para esta próxima parte.</span> 
+                <span class="step">E o último clique finaliza o pensamento.</span>
+            </p>
+        </div>
+<!-- Slide 1 -->
+        <div class="slide active">
             <h1>1.2 Sistemas de Equações Lineares</h1>
 
-<p class="step">            	Um <b>sistema de equações lineares</b> ou simplesmente
+<p>            	Um <b>sistema de equações lineares</b> ou simplesmente
 <b>sistema linear</b> 
-</p>
-            <p class="step">    é um conjunto de equações lineares, 
+</span> 
+                <span class="step">    é um conjunto de equações lineares, 
     
     ou
 seja, é um conjunto de equações da forma
-</p>
-            <p class="step">$$
+</span> 
+                <span class="step">
+                    $$
 \left\{
 \begin{array}{ccccccccccc}
 a_{11}x_1  &+&  a_{12}x_2  &+& &\ldots& &+&  a_{1n}x_n   &=&b_1\\
@@ -134,26 +128,20 @@ a_{m1}x_1  &+&  a_{m2}x_2    &+& &\ldots&     &+& a_{mn}x_n  &=& b_m
 \end{array}
 \right.
 $$
-</p>
-            <p class="step">em que $a_{ij}$ e $b_k$ são constantes reais, para
+</span> 
+                <span class="step">em que $a_{ij}$ e $b_k$ são constantes reais, para
 $i,k=1,\ldots,m$ e $j=1,\ldots,n$.
 </p>
         </div>
-
+        
         <!-- Slide 2 -->
         <div class="slide">
-            <h1>Lista de Tópicos</h1>
-            <ul>
-                <li class="step">Primeiro ponto importante.</li>
-                <li class="step">Segundo argumento da sua apresentação.</li>
-                <li class="step">Fim deste slide, próximo clique muda de slide.</li>
-            </ul>
-        </div>
-        
-        <!-- Slide 3 -->
-        <div class="slide">
-            <h1>Slide Final</h1>
-            <p class="step">Pronto! Você tem controle total do ritmo da sua fala.</p>
+            <h1>Destaque de Palavras</h1>
+            <p>
+                Você pode revelar apenas <span class="step" style="color: #00adb5; font-weight: bold;">palavras-chave</span> 
+                ou dados numéricos como <span class="step" style="color: #ffde22; font-weight: bold;">+45% de lucro</span> 
+                no momento exato em que falar sobre eles.
+            </p>
         </div>
     </div>
 
@@ -166,7 +154,6 @@ $i,k=1,\ldots,m$ e $j=1,\ldots,n$.
         let currentSlideIdx = 0;
         const slides = document.querySelectorAll('.slide');
 
-        // Retorna todos os passos ocultos (elementos .step) do slide atual
         function getSteps(slide) {
             return slide.querySelectorAll('.step');
         }
@@ -175,15 +162,13 @@ $i,k=1,\ldots,m$ e $j=1,\ldots,n$.
             const currentSlide = slides[currentSlideIdx];
             const steps = getSteps(currentSlide);
             
-            // Encontra o próximo passo oculto e exibe-o
             for (let step of steps) {
                 if (!step.classList.contains('show')) {
                     step.classList.add('show');
-                    return; // Interrompe para não avançar de slide
+                    return; 
                 }
             }
 
-            // Se todos os passos já estão visíveis, avança para o próximo slide
             if (currentSlideIdx < slides.length - 1) {
                 changeSlide(currentSlideIdx + 1);
             }
@@ -193,22 +178,19 @@ $i,k=1,\ldots,m$ e $j=1,\ldots,n$.
             const currentSlide = slides[currentSlideIdx];
             const steps = getSteps(currentSlide);
             
-            // Remove o último passo exibido (efeito inverso)
             for (let i = steps.length - 1; i >= 0; i--) {
                 if (steps[i].classList.contains('show')) {
                     steps[i].classList.remove('show');
-                    return; // Interrompe para não voltar o slide completo
+                    return; 
                 }
             }
 
-            // Se não há mais passos acesos, volta para o slide anterior
             if (currentSlideIdx > 0) {
                 changeSlide(currentSlideIdx - 1, true);
             }
         }
 
         function changeSlide(nextIdx, comingFromBack = false) {
-            // Limpa o estado do slide antigo se estiver avançando
             if (!comingFromBack) {
                 const currentSlide = slides[currentSlideIdx];
                 getSteps(currentSlide).forEach(s => s.classList.remove('show'));
@@ -217,7 +199,6 @@ $i,k=1,\ldots,m$ e $j=1,\ldots,n$.
             slides[currentSlideIdx].classList.remove('active');
             currentSlideIdx = nextIdx;
             
-            // Se estiver voltando para um slide anterior, exibe todos os seus passos imediatamente
             if (comingFromBack) {
                 getSteps(slides[currentSlideIdx]).forEach(s => s.classList.add('show'));
             }
@@ -225,7 +206,6 @@ $i,k=1,\ldots,m$ e $j=1,\ldots,n$.
             slides[currentSlideIdx].classList.add('active');
         }
 
-        // Atalhos de teclado (Seta Direita / Espaço / Seta Esquerda)
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowRight' || e.key === ' ') {
                 e.preventDefault();
@@ -238,3 +218,4 @@ $i,k=1,\ldots,m$ e $j=1,\ldots,n$.
     </script>
 </body>
 </html>
+
