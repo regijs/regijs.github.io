@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apresentação HTML Interativa</title>
+    <title>Apresentação Controle Manual</title>
     <style>
         * {
             box-sizing: border-box;
@@ -15,6 +15,7 @@
             background-color: #111;
             color: #fff;
             overflow: hidden;
+            user-select: none;
         }
         .slide-container {
             width: 100vw;
@@ -34,7 +35,7 @@
             text-align: center;
             padding: 40px;
             opacity: 0;
-            transition: opacity 0.5s ease-in-out;
+            transition: opacity 0.4s ease-in-out;
             pointer-events: none;
         }
         .slide.active {
@@ -42,36 +43,20 @@
             pointer-events: auto;
         }
 
-        /* 🎬 CONFIGURAÇÃO DA ANIMAÇÃO DE APARECIMENTO */
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Esconde os elementos inicialmente e aplica a animação quando o slide ativa */
-        .slide h1, .slide p, .slide li {
+        /* 👁️ ELEMENTOS ESCONDIDOS POR PADRÃO */
+        .step {
             opacity: 0;
+            transform: translateY(15px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
         }
 
-        .slide.active h1, 
-        .slide.active p, 
-        .slide.active li {
-            animation: fadeUp 0.8s ease forwards;
+        /* VISÍVEL QUANDO GANHA A CLASSE .show */
+        .step.show {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        /* ⏱️ ATRASOS CONFIGURADOS POR ELEMENTO (EFEITO CASCATA) */
-        .slide.active .delay-1 { animation-delay: 0.2s; }
-        .slide.active .delay-2 { animation-delay: 1.0s; }
-        .slide.active .delay-3 { animation-delay: 1.8s; }
-        .slide.active .delay-4 { animation-delay: 2.6s; }
-
-        /* Estilização Visual Básica */
+        /* Estilos Visuais */
         h1 {
             font-size: 3.5rem;
             margin-bottom: 25px;
@@ -120,54 +105,108 @@
 </head>
 <body>
 
-    <div class="slide-container">
-        <!-- Slide 1: Aparecimento em parágrafos -->
+    <div class="slide-container" onclick="handleAdvance()">
+        <!-- Slide 1 -->
         <div class="slide active">
-            <h1 class="delay-1">Efeito Cascata</h1>
-            <p class="delay-2">Este primeiro bloco de texto aparece logo em seguida.</p>
-            <p class="delay-3">E este terceiro bloco surge um pouco mais tarde automaticamente.</p>
+            <h1>Controle Manual</h1>
+            <p class="step">Dê um clique na tela ou use a Seta Direita.</p>
+            <p class="step">Este segundo parágrafo só aparece após o comando.</p>
+            <p class="step">Mais um clique para ver este último texto.</p>
         </div>
 
-        <!-- Slide 2: Exemplo com lista de tópicos -->
+        <!-- Slide 2 -->
         <div class="slide">
-            <h1 class="delay-1">Vantagens do HTML</h1>
+            <h1>Lista de Tópicos</h1>
             <ul>
-                <li class="delay-2">Sem travamentos de softwares externos.</li>
-                <li class="delay-3">Animações fluidas direto no navegador.</li>
-                <li class="delay-4">Fácil de compartilhar com qualquer pessoa.</li>
+                <li class="step">Primeiro ponto importante.</li>
+                <li class="step">Segundo argumento da sua apresentação.</li>
+                <li class="step">Fim deste slide, próximo clique muda de slide.</li>
             </ul>
+        </div>
+        
+        <!-- Slide 3 -->
+        <div class="slide">
+            <h1>Slide Final</h1>
+            <p class="step">Pronto! Você tem controle total do ritmo da sua fala.</p>
         </div>
     </div>
 
     <div class="controls">
-        <button class="btn" onclick="changeSlide(-1)">◀ Voltar</button>
-        <button class="btn" onclick="changeSlide(1)">Avançar ▶</button>
+        <button class="btn" onclick="event.stopPropagation(); handleBack()">◀ Voltar</button>
+        <button class="btn" onclick="event.stopPropagation(); handleAdvance()">Avançar ▶</button>
     </div>
 
     <script>
-        let currentSlide = 0;
+        let currentSlideIdx = 0;
         const slides = document.querySelectorAll('.slide');
 
-        function showSlide(index) {
-            // Remove o estado ativo do slide anterior
-            slides[currentSlide].classList.remove('active');
-            
-            // Atualiza o índice do slide atual
-            currentSlide = (index + slides.length) % slides.length;
-            
-            // Ativa o novo slide (reiniciando as animações de delay internas)
-            slides[currentSlide].classList.add('active');
+        // Retorna todos os passos ocultos (elementos .step) do slide atual
+        function getSteps(slide) {
+            return slide.querySelectorAll('.step');
         }
 
-        function changeSlide(direction) {
-            showSlide(currentSlide + direction);
+        function handleAdvance() {
+            const currentSlide = slides[currentSlideIdx];
+            const steps = getSteps(currentSlide);
+            
+            // Encontra o próximo passo oculto e exibe-o
+            for (let step of steps) {
+                if (!step.classList.contains('show')) {
+                    step.classList.add('show');
+                    return; // Interrompe para não avançar de slide
+                }
+            }
+
+            // Se todos os passos já estão visíveis, avança para o próximo slide
+            if (currentSlideIdx < slides.length - 1) {
+                changeSlide(currentSlideIdx + 1);
+            }
         }
 
+        function handleBack() {
+            const currentSlide = slides[currentSlideIdx];
+            const steps = getSteps(currentSlide);
+            
+            // Remove o último passo exibido (efeito inverso)
+            for (let i = steps.length - 1; i >= 0; i--) {
+                if (steps[i].classList.contains('show')) {
+                    steps[i].classList.remove('show');
+                    return; // Interrompe para não voltar o slide completo
+                }
+            }
+
+            // Se não há mais passos acesos, volta para o slide anterior
+            if (currentSlideIdx > 0) {
+                changeSlide(currentSlideIdx - 1, true);
+            }
+        }
+
+        function changeSlide(nextIdx, comingFromBack = false) {
+            // Limpa o estado do slide antigo se estiver avançando
+            if (!comingFromBack) {
+                const currentSlide = slides[currentSlideIdx];
+                getSteps(currentSlide).forEach(s => s.classList.remove('show'));
+            }
+
+            slides[currentSlideIdx].classList.remove('active');
+            currentSlideIdx = nextIdx;
+            
+            // Se estiver voltando para um slide anterior, exibe todos os seus passos imediatamente
+            if (comingFromBack) {
+                getSteps(slides[currentSlideIdx]).forEach(s => s.classList.add('show'));
+            }
+
+            slides[currentSlideIdx].classList.add('active');
+        }
+
+        // Atalhos de teclado (Seta Direita / Espaço / Seta Esquerda)
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowRight' || e.key === ' ') {
-                changeSlide(1);
+                e.preventDefault();
+                handleAdvance();
             } else if (e.key === 'ArrowLeft') {
-                changeSlide(-1);
+                e.preventDefault();
+                handleBack();
             }
         });
     </script>
