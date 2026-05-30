@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apresentação Quadro Verde</title>
+    <title>Apresentação Quadro Riscado</title>
     <style>
         * {
             box-sizing: border-box;
@@ -15,13 +15,36 @@
             color: #fff;
             overflow: hidden;
             user-select: none;
-            /* Transição suave ao mudar o tom do verde */
-            transition: background 0.8s ease; 
+            position: relative;
+            background-color: #0f2310; /* Cor de segurança inicial */
         }
+
+        /* 🖍️ TEXTURA DE RISCOS E MARCAS DE GIZ SOB O QUADRO */
+        body::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.15; /* Controla a intensidade dos riscos (aumente para ver mais) */
+            pointer-events: none;
+            
+            /* Combinação de linhas finas que cruzam a tela simulando apagados e riscos de giz */
+            background-image: 
+                repeating-linear-gradient(45deg, rgba(255,255,255,0.1) 0px, rgba(255,255,255,0.1) 2px, transparent 2px, transparent 40px),
+                repeating-linear-gradient(-45deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 30px),
+                linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 400px 400px, 300px 300px, 20px 20px, 20px 20px;
+        }
+
         .slide-container {
             width: 100vw;
             height: 100vh;
             position: relative;
+            z-index: 2;
         }
         .slide {
             position: absolute;
@@ -55,29 +78,31 @@
             color: inherit; 
         }
 
-        /* 💛 TAG <b> FICA AMARELA (COR DE GIZ AMARELO) */
+        /* TAG <b> EM AMARELO GIZ */
         .step.show b,
         .step.show strong,
         b {
-            color: #fff59d; /* Amarelo giz suave, combina perfeitamente com o verde */
-            transition: color 0.4s ease;
+            color: #fff59d; 
+            text-shadow: 0 0 5px rgba(255,245,157,0.3); /* Leve brilho de pó de giz */
         }
 
-        /* Estilos Visuais Estilo Lousa */
+        /* Estilos de Texto imitando Giz Escrito */
         h1 {
             font-size: 3.5rem;
             margin-bottom: 30px;
             color: #ffffff;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+            /* Sombra suave para simular o relevo do giz na lousa rústica */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
+            font-weight: 600;
         }
         p {
             font-size: 2.2rem;
-            color: #f5f5f5;
+            color: #f0f0f0;
             max-width: 900px;
             line-height: 1.6;
             margin-bottom: 20px;
             text-align: center;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
         .controls {
             position: absolute;
@@ -86,18 +111,18 @@
             z-index: 10;
         }
         .btn {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.15);
             color: white;
-            border: 1px solid rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             padding: 10px 20px;
             font-size: 1rem;
             cursor: pointer;
             border-radius: 5px;
             margin-left: 10px;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(3px);
         }
         .btn:hover {
-            background-color: rgba(255, 255, 255, 0.4);
+            background-color: rgba(255, 255, 255, 0.3);
         }
     </style>
 </head>
@@ -106,19 +131,19 @@
     <div class="slide-container" onclick="handleAdvance()">
         <!-- Slide 1 -->
         <div class="slide active">
-            <h1>Efeito Quadro Verde</h1>
+            <h1>Quadro Negro Riscado</h1>
             <p>
-                Este parágrafo simula uma escrita contínua de giz. 
-                <span class="step">Ao avançar, o texto surge simulando <b>giz amarelo</b></span> 
-                <span class="step">e o fundo ganha um tom de verde fosco aleatório, imitando a lousa apagada.</span>
+                Olhe bem para o fundo verde. 
+                <span class="step">Agora ele possui ranhuras finas e marcas cruzadas,</span> 
+                <span class="step">imitando a textura real de um <b>quadro desgastado</b> pelo uso constante do giz.</span>
             </p>
         </div>
 
         <!-- Slide 2 -->
         <div class="slide">
-            <h1>Nova Cor de Quadro</h1>
+            <h1>Avanço e Cores</h1>
             <p>
-                Toda vez que você muda de slide, <span class="step">o código sorteia um novo verde de lousa antiga,</span> <span class="step">mantendo o aspecto realista de <b>quadro apagado com apagador</b>.</span>
+                As frases continuam surgindo sem quebras artificiais de linha, <span class="step">e a tonalidade do verde riscado muda aleatoriamente</span> <span class="step">a cada nova lousa que você decide <b>limpar e reescrever</b>.</span>
             </p>
         </div>
     </div>
@@ -132,25 +157,23 @@
         let currentSlideIdx = 0;
         const slides = document.querySelectorAll('.slide');
 
-        // 🎨 LISTA DE CORES COMBINADAS (Centro apagado/manchado + Borda verde escura)
+        // Tons de verde lousa com ótima visibilidade
         const quadrosVerdes = [
-            { centro: "#1e4620", borda: "#0f2310" }, // Verde clássico escuro
-            { centro: "#234e25", borda: "#112712" }, // Verde floresta fosco
-            { centro: "#2d5a27", borda: "#163013" }, // Verde lousa desgastada
-            { centro: "#1b3f2b", borda: "#0a1f14" }, // Verde esmeralda antigo
-            { centro: "#2c4c38", borda: "#14251a" }  // Verde acinzentado / apagado
+            { centro: "#1b3d1e", borda: "#0b1a0c" }, 
+            { centro: "#204622", borda: "#0e1e0f" }, 
+            { centro: "#275023", borda: "#112410" }, 
+            { centro: "#163524", borda: "#06170e" }, 
+            { centro: "#264231", borda: "#101e15" }  
         ];
 
-        // Função que aplica a textura de quadro apagado com tons aleatórios
         function aplicarFundoAleatorio() {
             const indiceAleatorio = Math.floor(Math.random() * quadrosVerdes.length);
             const quadro = quadrosVerdes[indiceAleatorio];
             
-            // Cria o gradiente radial manchado imitando o centro mais claro (onde o apagador passou mais vezes)
+            // Aplica o gradiente de fundo mantendo a camada de riscos por cima
             document.body.style.background = `radial-gradient(circle, ${quadro.centro} 0%, ${quadro.borda} 100%)`;
         }
 
-        // Inicializa o primeiro fundo ao carregar a página
         aplicarFundoAleatorio();
 
         function getSteps(slide) {
@@ -203,8 +226,6 @@
             }
 
             slides[currentSlideIdx].classList.add('active');
-            
-            // Sorteia uma nova variação de verde lousa a cada mudança de slide!
             aplicarFundoAleatorio(); 
         }
 
