@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+	<script type="text/javascript" src="https://regijs.github.io/first.js"></script>
+	<script type="text/javascript">
+	loadScript("https://regijs.github.io/second.js", function(){
+	    //initialization code
+	});
+	</script>    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apresentação Quadro com Toque Inteligente</title>
@@ -83,14 +89,27 @@
         }
 
         /* TAG <b> EM AMARELO GIZ */
-        .step.show b,
+<!--        .step.show b,
         .step.show strong,
         b {
             color: #fff59d; 
             text-shadow: 0 0 5px rgba(255,245,157,0.3);
             font-weight: normal; 
         }
-
+        -->
+    /* 🟢 CORREÇÃO: Força o negrito a também começar invisível dentro do .step */
+    .step b, 
+    .step strong {
+        color: transparent;
+        transition: color 0.4s ease;
+    }
+    
+    /* 💛 SÓ FICA AMARELO QUANDO O PASSO GANHAR A CLASSE .show */
+    .step.show b,
+    .step.show strong {
+        color: #fff59d; 
+        text-shadow: 0 0 5px rgba(255,245,157,0.3);
+    }
         /* ESTILIZAÇÃO DO TEXTO COM EFEITO GIZ */
         h1 {
             font-size: 4.2rem;
@@ -135,7 +154,7 @@
     <div class="slide-container" onclick="handleScreenClick(event)">
         <!-- Slide 1 -->
         <div class="slide active">
-            <h1>Toque Inteligente</h1>
+            <h1>1.2 Sistemas de Equações Lineares</h1>
             <p>
                 Os botões sumiram para dar mais espaço. 
                 <span class="step">Toque no <b>lado direito</b> da tela para avançar o texto ou slide.</span> 
