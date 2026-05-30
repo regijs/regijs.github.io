@@ -9,24 +9,26 @@
 	</script>    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apresentação Manual no Mesmo Parágrafo</title>
-    <!-- 🌐 IMPORTAÇÃO DA FONTE ESTILO GIZ PARA WINDOWS/ANDROID -->
-    <!-- <link href='https://fonts.googleapis.com/css?family=Nerko One' rel='stylesheet'> -->
-    <link href='https://fonts.googleapis.com/css?family=Mansalva' rel='stylesheet'>
-    <style>
-        * {
+    <title>Apresentação Quadro com Toque Inteligente</title>
+    
+<style>
+        /* 🌐 Importação robusta para navegadores móveis e desktop */
+@import url('https://fonts.googleapis.com/css2?family=Mansalva&display=swap');
+       * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
        body {
         <!--    font-family: 'Chalkduster','Nerko One'; -->
-            font-family: 'Mansalva';
+            font-family: 'Mansalva','Chalkduster';
             background-color: #0f2310;
             color: #fff;
             overflow: hidden;
             user-select: none;
 		    position:relative;
+	        touch-action: manipulation; /* Otimiza o clique duplo no celular */
+
         } 
         /* TEXTURA DE RISCOS E MARCAS DE GIZ SOB O QUADRO */
         body::after {
@@ -50,6 +52,7 @@
             width: 100vw;
             height: 100vh;
             position: relative;
+            z-index: 2;
         }
         .slide {
             position: absolute;
@@ -62,7 +65,8 @@
             justify-content: left;
             align-items: left;
             text-align: left;
-            padding: 40px;
+/*            padding: 40px;*/
+            padding: 40px 10% 40px 10%; 
             opacity: 0;
             transition: opacity 0.4s ease-in-out;
             pointer-events: none;
@@ -99,76 +103,45 @@
         h1 {
             font-size: 3.5rem;
             margin-bottom: 30px;
-            color: #00adb5;
+            color: #fff59d;
 			/*font-family: Chalkduster, fantasy;*/
         }
         p {
-            font-size: 2.2rem;
-            color: #eeeeee;
+            font-size: 2.6rem;
+<!--            color: #eeeeee; -->
+            color: #f0f0f0;
             max-width: 1200px;
             line-height: 1.6;
             margin-bottom: 20px;
             text-align: left;
 			/*font-family: Chalkduster, fantasy;*/
         }
-<!--        .controls {
+        /* 📱 INDICADOR SUTIL DE AJUDA TOUCH (APARECE RAPIDAMENTE NO INÍCIO) */
+        .touch-hint {
             position: absolute;
-            bottom: 30px;
-            right: 30px;
-            z-index: 10;
-        } -->
-			.controls {
-			    position: absolute;
-			    bottom: 50px; /* Sobe os botões para não sumirem atrás da barra do Android */
-			    right: 30px;
-			    z-index: 999; /* Garante que fiquem sempre na frente de tudo */
-			    display: flex;
-			    gap: 15px; /* Espaçamento controlado entre os botões */
-			}		
-<!--        .btn {
-            background-color: rgba(255, 255, 255, 0.15);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 10px 20px;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.4);
+            padding: 8px 16px;
+            border-radius: 20px;
             font-size: 1rem;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-left: 10px;
-            backdrop-filter: blur(3px);
-            font-family: sans-serif; /* Mantém botões normais para leitura */
+            font-family: sans-serif;
+            pointer-events: none;
+            opacity: 0.7;
+            animation: fadeOutHint 4s forwards;
         }
-        .btn:hover {
-            background-color: rgba(255, 255, 255, 0.3);
-        } -->
-.btn {
-    background-color: rgba(255, 255, 255, 0.25); /* Fica mais visível no celular */
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    padding: 15px 25px; /* Aumenta a área de toque para o dedão */
-    font-size: 1.2rem; /* Texto maior e mais legível */
-    cursor: pointer;
-    border-radius: 8px;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px); /* Suporte para navegadores mobile antigos */
-    font-family: sans-serif;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Sombra para destacar do fundo verde */
-}
-.btn:hover, .btn:active {
-    background-color: rgba(255, 255, 255, 0.45); /* Feedback visual ao tocar */
-}
+        @keyframes fadeOutHint {
+            80% { opacity: 0.7; }
+            100% { opacity: 0; display: none; }
+        }
 
-/* Garante que em telas pequenas de celular o painel fique bem posicionado */
-@media (max-width: 600px) {
-    .controls {
-        right: 20px;
-        bottom: 60px; /* Sobe ainda mais se a tela for muito pequena */
-    }
-}		
     </style>
 </head>
 <body>
 
-    <div class="slide-container" onclick="handleAdvance()">
+    <!-- Evento modificado para calcular a posição exata do clique na tela -->
+    <div class="slide-container" onclick="handleScreenClick(event)">
         <!-- Slide 1 -->
         <div class="slide active">
             <h1>1.2 Sistemas de Equações Lineares</h1>
@@ -209,10 +182,7 @@ $i,k=1,\ldots,m$ e $j=1,\ldots,n$. </span>
         </div>
     </div>
 
-    <div class="controls">
-        <button class="btn" onclick="event.stopPropagation(); handleBack()">◀ Voltar</button>
-        <button class="btn" onclick="event.stopPropagation(); handleAdvance()">Avançar ▶</button>
-    </div>
+    <div class="touch-hint">⬅️ Toque na Esquerda para Voltar | Toque na Direita para Avançar ➡️</div>
 
     <script>
         let currentSlideIdx = 0;
@@ -235,8 +205,21 @@ $i,k=1,\ldots,m$ e $j=1,\ldots,n$. </span>
         aplicarFundoAleatorio();
 
 		
-		function getSteps(slide) {
+        function getSteps(slide) {
             return slide.querySelectorAll('.step');
+        }
+
+        // 🧠 SISTEMA DE CAPTURA DO TOQUE INTELIGENTE
+        function handleScreenClick(event) {
+            const screenWidth = window.innerWidth;
+            const clickX = event.clientX;
+
+            // Define que os primeiros 30% da tela voltam e os outros 70% avançam
+            if (clickX < screenWidth * 0.30) {
+                handleBack();
+            } else {
+                handleAdvance();
+            }
         }
 
         function handleAdvance() {
@@ -285,8 +268,10 @@ $i,k=1,\ldots,m$ e $j=1,\ldots,n$. </span>
             }
 
             slides[currentSlideIdx].classList.add('active');
+            aplicarFundoAleatorio(); 
         }
 
+        // Mantém atalhos de teclado ativos caso use um computador
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowRight' || e.key === ' ') {
                 e.preventDefault();
