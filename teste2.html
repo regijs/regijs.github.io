@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apresentação Quadro Riscado À Esquerda</title>
+    <title>Apresentação Quadro Riscado com Giz</title>
+    
+    <!-- 🌐 IMPORTAÇÃO DA FONTE ESTILO GIZ PARA WINDOWS/ANDROID -->
+    <link href="https://googleapis.com" rel="stylesheet">
+
     <style>
         * {
             box-sizing: border-box;
@@ -11,8 +15,8 @@
             padding: 0;
         }
         body {
-            /* ✍️ APLICAÇÃO DAS FONTES SOLICITADAS */
-            font-family: 'Chalkduster', fantasy, sans-serif;
+            /* ✍️ COMPATIBILIDADE PERFEITA ESTILO QUADRO NEGRO */
+            font-family: 'Chalkduster', 'Architects Daughter', cursive, sans-serif;
             color: #fff;
             overflow: hidden;
             user-select: none;
@@ -54,10 +58,8 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            /* ⬅️ ALINHAMENTO DO CONTEÚDO À ESQUERDA */
             align-items: flex-start; 
             text-align: left;
-            /* Recuo nas laterais para o texto não colar nos cantos da tela */
             padding: 40px 10% 40px 10%; 
             opacity: 0;
             transition: opacity 0.4s ease-in-out;
@@ -85,7 +87,7 @@
         b {
             color: #fff59d; 
             text-shadow: 0 0 5px rgba(255,245,157,0.3);
-            font-weight: normal; /* Evita distorção em fontes artísticas */
+            font-weight: normal; 
         }
 
         /* ESTILIZAÇÃO DO TEXTO COM EFEITO GIZ */
@@ -120,7 +122,7 @@
             border-radius: 5px;
             margin-left: 10px;
             backdrop-filter: blur(3px);
-            font-family: sans-serif; /* Mantém os botões legíveis */
+            font-family: sans-serif; /* Mantém botões normais para leitura */
         }
         .btn:hover {
             background-color: rgba(255, 255, 255, 0.3);
@@ -132,19 +134,19 @@
     <div class="slide-container" onclick="handleAdvance()">
         <!-- Slide 1 -->
         <div class="slide active">
-            <h1>Alinhado à Esquerda</h1>
+            <h1>Escrita Manual com Giz</h1>
             <p>
-                O texto agora começa na lateral esquerda, seguindo um padrão natural de leitura. 
-                <span class="step">A tipografia utilizada é a <b>Chalkduster</b> combinada com a família <b>Fantasy</b>,</span> 
-                <span class="step">trazendo curvas orgânicas que simulam a escrita manual de um professor na lousa.</span>
+                Esta nova fonte corrige o visual em computadores que não possuem a Chalkduster de fábrica. 
+                <span class="step">Agora o texto adota traços mais realistas e finos,</span> 
+                <span class="step">mantendo a identidade visual de um <b>quadro escolar verdadeiro</b>.</span>
             </p>
         </div>
 
         <!-- Slide 2 -->
         <div class="slide">
-            <h1>Fluidez e Blocos</h1>
+            <h1>Pronto para Uso</h1>
             <p>
-                Repare como o parágrafo preenche os espaços corretamente. <span class="step">Mesmo alinhado na esquerda, o texto surge palavra por palavra</span> <span class="step">e destaca os trechos em <b>amarelo giz</b> sem desalinhar o restante do conteúdo.</span>
+                Basta salvar o arquivo e testar. <span class="step">As quebras de linha continuam automáticas,</span> <span class="step">e os realces em <b>amarelo giz</b> permanecem preservados com precisão.</span>
             </p>
         </div>
     </div>
