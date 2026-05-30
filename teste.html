@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Presentation</title>
+  <style>
+    /* Reset and Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #111;
+      color: #fff;
+      overflow: hidden; /* Prevents scrollbars */
+    }
+
+    /* Presentation Container */
+    .presentation {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+
+    /* Slide Styles */
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      text-align: center;
+    }
+
+    /* Active Slide State */
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Slide Themes */
+    .theme-blue { background: linear-gradient(135deg, #1e3c72, #2a5298); }
+    .theme-purple { background: linear-gradient(135deg, #4b6cb7, #182848); }
+    .theme-dark { background: linear-gradient(135deg, #232526, #414345); }
+
+    /* Typography */
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    p {
+      font-size: 1.8rem;
+      color: #e0e0e0;
+      max-width: 800px;
+      line-height: 1.6;
+    }
+    ul {
+      text-align: left;
+      font-size: 1.8rem;
+      margin-top: 20px;
+      line-height: 2;
+    }
+
+    /* Progress Bar */
+    .progress-container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: rgba(255,255,255,0.1);
+      z-index: 10;
+    }
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: #00dfa2;
+      transition: width 0.3s ease;
+    }
+
+    /* Navigation Controls Overlay */
+    .controls {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      z-index: 10;
+      display: flex;
+      gap: 10px;
+    }
+    .btn {
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+    .btn:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="presentation">
+    
+    <!-- Slide 1: Title -->
+    <div class="slide active theme-blue">
+      <h1>My HTML Presentation</h1>
+      <p>Built with pure web tech. Use your arrow keys or the buttons to navigate.</p>
+    </div>
+
+    <!-- Slide 2: Points -->
+    <div class="slide theme-purple">
+      <h1>Key Advantages</h1>
+      <ul>
+        <li>Works on any web browser</li>
+        <li>Fully responsive layout</li>
+        <li>No external software required</li>
+      </ul>
+    </div>
+
+    <!-- Slide 3: Conclusion -->
+    <div class="slide theme-dark">
+      <h1>Thank You!</h1>
+      <p>Start customizing this HTML template to create your own custom decks.</p>
+    </div>
+
+    <!-- Interactive UI Overlays -->
+    <div class="controls">
+      <button class="btn" id="prevBtn">&larr; Prev</button>
+      <button class="btn" id="nextBtn">Next &rarr;</button>
+    </div>
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+  </div>
+
+  <script>
+    // Navigation State
+    const slides = document.querySelectorAll('.slide');
+    const progressBar = document.getElementById('progressBar');
+    let currentSlide = 0;
+
+    // Update Layout View
+    function updateSlides() {
+      slides.forEach((slide, index) => {
+        if (index === currentSlide) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+      // Update Progress Bar percentage
+      const progressPercent = ((currentSlide + 1) / slides.length) * 100;
+      progressBar.style.width = `${progressPercent}%`;
+    }
+
+    // Direction Functions
+    function nextSlide() {
+      if (currentSlide < slides.length - 1) {
+        currentSlide++;
+        updateSlides();
+      }
+    }
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateSlides();
+      }
+    }
+
+    // Event Listeners for Keyboard
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
+    });
+
+    // Event Listeners for Click UI Buttons
+    document.getElementById('nextBtn').addEventListener('click', nextSlide);
+    document.getElementById('prevBtn').addEventListener('click', prevSlide);
+
+    // Initial load progress setup
+    updateSlides();
+  </script>
+</body>
+</html>
