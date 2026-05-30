@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apresentação Manual no Mesmo Parágrafo</title>
     <!-- 🌐 IMPORTAÇÃO DA FONTE ESTILO GIZ PARA WINDOWS/ANDROID -->
-    /* <link href='https://fonts.googleapis.com/css?family=Nerko One' rel='stylesheet'> */
+    <!-- <link href='https://fonts.googleapis.com/css?family=Nerko One' rel='stylesheet'> -->
     <link href='https://fonts.googleapis.com/css?family=Mansalva' rel='stylesheet'>
     <style>
         * {
@@ -20,7 +20,7 @@
             padding: 0;
         }
        body {
-        /*    font-family: 'Chalkduster','Nerko One'; */
+        <!--    font-family: 'Chalkduster','Nerko One'; -->
             font-family: 'Mansalva';
             background-color: #0f2310;
             color: #fff;
@@ -72,33 +72,7 @@
             pointer-events: auto;
         }
 
-        /* 👁️ CONTROLE DE REVELAÇÃO INTERNA (SPAN) */
-<!--        .step {
-            opacity: 0;
-           /*     display: inline-block; */
-            display: inline;
-            transform: translateX(5px);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        } 
-		/* 🟢 CORREÇÃO PARA ACEITAR NEGRITO <b> E OUTRAS TAGS INTERNAS */
-.step {
-    display: inline;
-    color: transparent;
-    transition: color 0.4s ease;
-}
 
-/* Quando o passo ativa, ele E TODOS OS SEUS FILHOS (como <b>) ganham cor */
-.step.show, 
-.step.show * {
-    color: inherit; 
-}
-
-        /* Fica visível mantendo o fluxo natural do texto */
-        .step.show {
-            opacity: 1;
-            transform: translateX(0);
-        }
---->
 		/* 🟢 CONFIGURAÇÃO PARA O TEXTO FLUIDO */
 .step {
     display: inline;
@@ -137,13 +111,21 @@
             text-align: left;
 			/*font-family: Chalkduster, fantasy;*/
         }
-        .controls {
+<!--        .controls {
             position: absolute;
             bottom: 30px;
             right: 30px;
             z-index: 10;
-        }
-        .btn {
+        } -->
+			.controls {
+			    position: absolute;
+			    bottom: 50px; /* Sobe os botões para não sumirem atrás da barra do Android */
+			    right: 30px;
+			    z-index: 999; /* Garante que fiquem sempre na frente de tudo */
+			    display: flex;
+			    gap: 15px; /* Espaçamento controlado entre os botões */
+			}		
+<!--        .btn {
             background-color: rgba(255, 255, 255, 0.15);
             color: white;
             border: 1px solid rgba(255, 255, 255, 0.3);
@@ -157,7 +139,31 @@
         }
         .btn:hover {
             background-color: rgba(255, 255, 255, 0.3);
-        }
+        } -->
+.btn {
+    background-color: rgba(255, 255, 255, 0.25); /* Fica mais visível no celular */
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 15px 25px; /* Aumenta a área de toque para o dedão */
+    font-size: 1.2rem; /* Texto maior e mais legível */
+    cursor: pointer;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); /* Suporte para navegadores mobile antigos */
+    font-family: sans-serif;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Sombra para destacar do fundo verde */
+}
+.btn:hover, .btn:active {
+    background-color: rgba(255, 255, 255, 0.45); /* Feedback visual ao tocar */
+}
+
+/* Garante que em telas pequenas de celular o painel fique bem posicionado */
+@media (max-width: 600px) {
+    .controls {
+        right: 20px;
+        bottom: 60px; /* Sobe ainda mais se a tela for muito pequena */
+    }
+}		
     </style>
 </head>
 <body>
