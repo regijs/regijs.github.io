@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apresentação Quadro Riscado</title>
+    <title>Apresentação Quadro Riscado À Esquerda</title>
     <style>
         * {
             box-sizing: border-box;
@@ -11,15 +11,16 @@
             padding: 0;
         }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* ✍️ APLICAÇÃO DAS FONTES SOLICITADAS */
+            font-family: 'Chalkduster', fantasy, sans-serif;
             color: #fff;
             overflow: hidden;
             user-select: none;
             position: relative;
-            background-color: #0f2310; /* Cor de segurança inicial */
+            background-color: #0f2310;
         }
 
-        /* 🖍️ TEXTURA DE RISCOS E MARCAS DE GIZ SOB O QUADRO */
+        /* TEXTURA DE RISCOS E MARCAS DE GIZ SOB O QUADRO */
         body::after {
             content: "";
             position: absolute;
@@ -28,10 +29,8 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            opacity: 0.15; /* Controla a intensidade dos riscos (aumente para ver mais) */
+            opacity: 0.15;
             pointer-events: none;
-            
-            /* Combinação de linhas finas que cruzam a tela simulando apagados e riscos de giz */
             background-image: 
                 repeating-linear-gradient(45deg, rgba(255,255,255,0.1) 0px, rgba(255,255,255,0.1) 2px, transparent 2px, transparent 40px),
                 repeating-linear-gradient(-45deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 30px),
@@ -55,9 +54,11 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 40px;
+            /* ⬅️ ALINHAMENTO DO CONTEÚDO À ESQUERDA */
+            align-items: flex-start; 
+            text-align: left;
+            /* Recuo nas laterais para o texto não colar nos cantos da tela */
+            padding: 40px 10% 40px 10%; 
             opacity: 0;
             transition: opacity 0.4s ease-in-out;
             pointer-events: none;
@@ -83,26 +84,25 @@
         .step.show strong,
         b {
             color: #fff59d; 
-            text-shadow: 0 0 5px rgba(255,245,157,0.3); /* Leve brilho de pó de giz */
+            text-shadow: 0 0 5px rgba(255,245,157,0.3);
+            font-weight: normal; /* Evita distorção em fontes artísticas */
         }
 
-        /* Estilos de Texto imitando Giz Escrito */
+        /* ESTILIZAÇÃO DO TEXTO COM EFEITO GIZ */
         h1 {
-            font-size: 3.5rem;
-            margin-bottom: 30px;
+            font-size: 3.8rem;
+            margin-bottom: 35px;
             color: #ffffff;
-            /* Sombra suave para simular o relevo do giz na lousa rústica */
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
-            font-weight: 600;
+            text-shadow: 3px 3px 5px rgba(0,0,0,0.6); 
+            letter-spacing: 1px;
         }
         p {
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             color: #f0f0f0;
-            max-width: 900px;
-            line-height: 1.6;
+            max-width: 1000px;
+            line-height: 1.7;
             margin-bottom: 20px;
-            text-align: center;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
         }
         .controls {
             position: absolute;
@@ -120,6 +120,7 @@
             border-radius: 5px;
             margin-left: 10px;
             backdrop-filter: blur(3px);
+            font-family: sans-serif; /* Mantém os botões legíveis */
         }
         .btn:hover {
             background-color: rgba(255, 255, 255, 0.3);
@@ -131,19 +132,19 @@
     <div class="slide-container" onclick="handleAdvance()">
         <!-- Slide 1 -->
         <div class="slide active">
-            <h1>Quadro Negro Riscado</h1>
+            <h1>Alinhado à Esquerda</h1>
             <p>
-                Olhe bem para o fundo verde. 
-                <span class="step">Agora ele possui ranhuras finas e marcas cruzadas,</span> 
-                <span class="step">imitando a textura real de um <b>quadro desgastado</b> pelo uso constante do giz.</span>
+                O texto agora começa na lateral esquerda, seguindo um padrão natural de leitura. 
+                <span class="step">A tipografia utilizada é a <b>Chalkduster</b> combinada com a família <b>Fantasy</b>,</span> 
+                <span class="step">trazendo curvas orgânicas que simulam a escrita manual de um professor na lousa.</span>
             </p>
         </div>
 
         <!-- Slide 2 -->
         <div class="slide">
-            <h1>Avanço e Cores</h1>
+            <h1>Fluidez e Blocos</h1>
             <p>
-                As frases continuam surgindo sem quebras artificiais de linha, <span class="step">e a tonalidade do verde riscado muda aleatoriamente</span> <span class="step">a cada nova lousa que você decide <b>limpar e reescrever</b>.</span>
+                Repare como o parágrafo preenche os espaços corretamente. <span class="step">Mesmo alinhado na esquerda, o texto surge palavra por palavra</span> <span class="step">e destaca os trechos em <b>amarelo giz</b> sem desalinhar o restante do conteúdo.</span>
             </p>
         </div>
     </div>
@@ -157,7 +158,6 @@
         let currentSlideIdx = 0;
         const slides = document.querySelectorAll('.slide');
 
-        // Tons de verde lousa com ótima visibilidade
         const quadrosVerdes = [
             { centro: "#1b3d1e", borda: "#0b1a0c" }, 
             { centro: "#204622", borda: "#0e1e0f" }, 
@@ -169,8 +169,6 @@
         function aplicarFundoAleatorio() {
             const indiceAleatorio = Math.floor(Math.random() * quadrosVerdes.length);
             const quadro = quadrosVerdes[indiceAleatorio];
-            
-            // Aplica o gradiente de fundo mantendo a camada de riscos por cima
             document.body.style.background = `radial-gradient(circle, ${quadro.centro} 0%, ${quadro.borda} 100%)`;
         }
 
