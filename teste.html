@@ -50,13 +50,25 @@ loadScript("https://regijs.github.io/second.js", function(){
         }
 
         /* 👁️ CONTROLE DE REVELAÇÃO INTERNA (SPAN) */
-        .step {
+<!--        .step {
             opacity: 0;
-<!--            display: inline-block; -->
+           /*     display: inline-block; */
             display: inline;
             transform: translateX(5px);
             transition: opacity 0.3s ease, transform 0.3s ease;
-        }
+        } -->
+		/* 🟢 CORREÇÃO PARA ACEITAR NEGRITO <b> E OUTRAS TAGS INTERNAS */
+.step {
+    display: inline;
+    color: transparent;
+    transition: color 0.4s ease;
+}
+
+/* Quando o passo ativa, ele E TODOS OS SEUS FILHOS (como <b>) ganham cor */
+.step.show, 
+.step.show * {
+    color: inherit; 
+}
 
         /* Fica visível mantendo o fluxo natural do texto */
         .step.show {
