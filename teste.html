@@ -36,9 +36,9 @@ loadScript("https://regijs.github.io/second.js", function(){
             height: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: left;
-            align-items: left;
-            text-align: left;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
             padding: 40px;
             opacity: 0;
             transition: opacity 0.4s ease-in-out;
@@ -101,21 +101,21 @@ loadScript("https://regijs.github.io/second.js", function(){
 <body>
 
     <div class="slide-container" onclick="handleAdvance()">
-        
-<!-- Slide 1 -->
+        <!-- Slide 1 -->
         <div class="slide active">
-            <h1>1.2 Sistemas de Equações Lineares</h1>
-
-<p>            	Um <b>sistema de equações lineares</b> ou simplesmente
-<b>sistema linear</b> 
-</span> 
-                <span class="step">    é um conjunto de equações lineares, 
-    
-    ou
-seja, é um conjunto de equações da forma
-</span> 
+            <h1>Texto Sequencial</h1>
+            <p>
+                Este parágrafo começa aqui. 
+                <span class="step">Dê um clique para revelar esta frase.</span> 
+                <span class="step">Mais um clique para esta próxima parte.</span> 
+                <span class="step">E o último clique finaliza o pensamento.</span>
+            </p>
+            <p>
+	Um <b>sistema de equações lineares</b> ou simplesmente
+<b>sistema linear</b> é um conjunto de equações lineares, <span class="step">ou
+seja, é um conjunto de equações da forma</span> 
                 <span class="step">
-                    $$
+$$
 \left\{
 \begin{array}{ccccccccccc}
 a_{11}x_1  &+&  a_{12}x_2  &+& &\ldots& &+&  a_{1n}x_n   &=&b_1\\
@@ -125,12 +125,15 @@ a_{m1}x_1  &+&  a_{m2}x_2    &+& &\ldots&     &+& a_{mn}x_n  &=& b_m
 \end{array}
 \right.
 $$
-</span> 
-                <span class="step">em que $a_{ij}$ e $b_k$ são constantes reais, para
-$i,k=1,\ldots,m$ e $j=1,\ldots,n$.
-</p>
+                    </span> 
+                <span class="step">
+em que $a_{ij}$ e $b_k$ são constantes reais, para
+$i,k=1,\ldots,m$ e $j=1,\ldots,n$. </span> 
+
+	</p>
         </div>
-        
+
+        <!-- Slide 2 -->
         <div class="slide">
             <h1>Destaque de Palavras</h1>
             <p>
@@ -214,4 +217,3 @@ $i,k=1,\ldots,m$ e $j=1,\ldots,n$.
     </script>
 </body>
 </html>
-
