@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação Quadro Verde</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+            overflow: hidden;
+            user-select: none;
+            /* Transição suave ao mudar o tom do verde */
+            transition: background 0.8s ease; 
+        }
+        .slide-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+            pointer-events: none;
+        }
+        .slide.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* CONFIGURAÇÃO DO TEXTO FLUIDO */
+        .step {
+            display: inline;
+            color: transparent;
+            transition: color 0.4s ease;
+        }
+
+        .step.show {
+            color: inherit; 
+        }
+
+        /* 💛 TAG <b> FICA AMARELA (COR DE GIZ AMARELO) */
+        .step.show b,
+        .step.show strong,
+        b {
+            color: #fff59d; /* Amarelo giz suave, combina perfeitamente com o verde */
+            transition: color 0.4s ease;
+        }
+
+        /* Estilos Visuais Estilo Lousa */
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            color: #ffffff;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        p {
+            font-size: 2.2rem;
+            color: #f5f5f5;
+            max-width: 900px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .controls {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            z-index: 10;
+        }
+        .btn {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 10px;
+            backdrop-filter: blur(5px);
+        }
+        .btn:hover {
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slide-container" onclick="handleAdvance()">
+        <!-- Slide 1 -->
+        <div class="slide active">
+            <h1>Efeito Quadro Verde</h1>
+            <p>
+                Este parágrafo simula uma escrita contínua de giz. 
+                <span class="step">Ao avançar, o texto surge simulando <b>giz amarelo</b></span> 
+                <span class="step">e o fundo ganha um tom de verde fosco aleatório, imitando a lousa apagada.</span>
+            </p>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide">
+            <h1>Nova Cor de Quadro</h1>
+            <p>
+                Toda vez que você muda de slide, <span class="step">o código sorteia um novo verde de lousa antiga,</span> <span class="step">mantendo o aspecto realista de <b>quadro apagado com apagador</b>.</span>
+            </p>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button class="btn" onclick="event.stopPropagation(); handleBack()">◀ Voltar</button>
+        <button class="btn" onclick="event.stopPropagation(); handleAdvance()">Avançar ▶</button>
+    </div>
+
+    <script>
+        let currentSlideIdx = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        // 🎨 LISTA DE CORES COMBINADAS (Centro apagado/manchado + Borda verde escura)
+        const quadrosVerdes = [
+            { centro: "#1e4620", borda: "#0f2310" }, // Verde clássico escuro
+            { centro: "#234e25", borda: "#112712" }, // Verde floresta fosco
+            { centro: "#2d5a27", borda: "#163013" }, // Verde lousa desgastada
+            { centro: "#1b3f2b", borda: "#0a1f14" }, // Verde esmeralda antigo
+            { centro: "#2c4c38", borda: "#14251a" }  // Verde acinzentado / apagado
+        ];
+
+        // Função que aplica a textura de quadro apagado com tons aleatórios
+        function aplicarFundoAleatorio() {
+            const indiceAleatorio = Math.floor(Math.random() * quadrosVerdes.length);
+            const quadro = quadrosVerdes[indiceAleatorio];
+            
+            // Cria o gradiente radial manchado imitando o centro mais claro (onde o apagador passou mais vezes)
+            document.body.style.background = `radial-gradient(circle, ${quadro.centro} 0%, ${quadro.borda} 100%)`;
+        }
+
+        // Inicializa o primeiro fundo ao carregar a página
+        aplicarFundoAleatorio();
+
+        function getSteps(slide) {
+            return slide.querySelectorAll('.step');
+        }
+
+        function handleAdvance() {
+            const currentSlide = slides[currentSlideIdx];
+            const steps = getSteps(currentSlide);
+            
+            for (let step of steps) {
+                if (!step.classList.contains('show')) {
+                    step.classList.add('show');
+                    return; 
+                }
+            }
+
+            if (currentSlideIdx < slides.length - 1) {
+                changeSlide(currentSlideIdx + 1);
+            }
+        }
+
+        function handleBack() {
+            const currentSlide = slides[currentSlideIdx];
+            const steps = getSteps(currentSlide);
+            
+            for (let i = steps.length - 1; i >= 0; i--) {
+                if (steps[i].classList.contains('show')) {
+                    steps[i].classList.remove('show');
+                    return; 
+                }
+            }
+
+            if (currentSlideIdx > 0) {
+                changeSlide(currentSlideIdx - 1, true);
+            }
+        }
+
+        function changeSlide(nextIdx, comingFromBack = false) {
+            if (!comingFromBack) {
+                const currentSlide = slides[currentSlideIdx];
+                getSteps(currentSlide).forEach(s => s.classList.remove('show'));
+            }
+
+            slides[currentSlideIdx].classList.remove('active');
+            currentSlideIdx = nextIdx;
+            
+            if (comingFromBack) {
+                getSteps(slides[currentSlideIdx]).forEach(s => s.classList.add('show'));
+            }
+
+            slides[currentSlideIdx].classList.add('active');
+            
+            // Sorteia uma nova variação de verde lousa a cada mudança de slide!
+            aplicarFundoAleatorio(); 
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                handleAdvance();
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                handleBack();
+            }
+        });
+    </script>
+</body>
+</html>
