@@ -3,25 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apresentação Quadro Riscado com Giz</title>
+    <title>Apresentação Quadro com Toque Inteligente</title>
     
-    <!-- 🌐 IMPORTAÇÃO DA FONTE NERKO ONE -->
-    <link href="https://googleapis.com" rel="stylesheet">
-
     <style>
+        /* 🌐 Importação robusta para navegadores móveis e desktop */
+        @import url('https://googleapis.com');
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
         body {
-            /* ✍️ CONFIGURAÇÃO COM A NOVA FONTE NERKO ONE */
-            font-family: 'Chalkduster', 'Nerko One', cursive, sans-serif;
+            /* ✍️ CONFIGURAÇÃO DE FONTES */
+            font-family: 'Chalkduster', 'Nerko One', 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
             color: #fff;
             overflow: hidden;
             user-select: none;
             position: relative;
             background-color: #0f2310;
+            touch-action: manipulation; /* Otimiza o clique duplo no celular */
         }
 
         /* TEXTURA DE RISCOS E MARCAS DE GIZ SOB O QUADRO */
@@ -92,69 +93,66 @@
 
         /* ESTILIZAÇÃO DO TEXTO COM EFEITO GIZ */
         h1 {
-            font-size: 4.2rem; /* Nerko One fica ótima ligeiramente maior */
+            font-size: 4.2rem;
             margin-bottom: 35px;
             color: #ffffff;
             text-shadow: 3px 3px 5px rgba(0,0,0,0.6); 
             letter-spacing: 1px;
         }
         p {
-            font-size: 2.6rem; /* Ajustado para melhor leitura visual */
+            font-size: 2.6rem;
             color: #f0f0f0;
             max-width: 1000px;
             line-height: 1.6;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
         }
-        .controls {
+
+        /* 📱 INDICADOR SUTIL DE AJUDA TOUCH (APARECE RAPIDAMENTE NO INÍCIO) */
+        .touch-hint {
             position: absolute;
-            bottom: 30px;
-            right: 30px;
-            z-index: 10;
-        }
-        .btn {
-            background-color: rgba(255, 255, 255, 0.15);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 10px 20px;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.4);
+            padding: 8px 16px;
+            border-radius: 20px;
             font-size: 1rem;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-left: 10px;
-            backdrop-filter: blur(3px);
-            font-family: sans-serif; /* Mantém os botões do sistema limpos */
+            font-family: sans-serif;
+            pointer-events: none;
+            opacity: 0.7;
+            animation: fadeOutHint 4s forwards;
         }
-        .btn:hover {
-            background-color: rgba(255, 255, 255, 0.3);
+        @keyframes fadeOutHint {
+            80% { opacity: 0.7; }
+            100% { opacity: 0; display: none; }
         }
     </style>
 </head>
 <body>
 
-    <div class="slide-container" onclick="handleAdvance()">
+    <!-- Evento modificado para calcular a posição exata do clique na tela -->
+    <div class="slide-container" onclick="handleScreenClick(event)">
         <!-- Slide 1 -->
         <div class="slide active">
-            <h1>Fonte Nerko One Ativada</h1>
+            <h1>Toque Inteligente</h1>
             <p>
-                Este texto agora roda com traços lúdicos e orgânicos. 
-                <span class="step">O estilo imita perfeitamente letras grossas de <b>giz escolar</b>,</span> 
-                <span class="step">tornando a sua apresentação muito mais imersiva e estilizada.</span>
+                Os botões sumiram para dar mais espaço. 
+                <span class="step">Toque no <b>lado direito</b> da tela para avançar o texto ou slide.</span> 
+                <span class="step">Toque no <b>lado esquerdo</b> se precisar voltar o conteúdo.</span>
             </p>
         </div>
 
         <!-- Slide 2 -->
         <div class="slide">
-            <h1>Estrutura Preservada</h1>
+            <h1>Navegação Invisível</h1>
             <p>
-                Os cliques avançam normalmente, <span class="step">os parágrafos não quebram linhas antes da hora</span> <span class="step">e os realces aplicados em <b>negrito amarelo</b> saltam aos olhos do público.</span>
+                Esse sistema funciona perfeitamente no Android, <span class="step">no computador usando o mouse,</span> <span class="step">ou através das <b>setas direcionais</b> do seu teclado.</span>
             </p>
         </div>
     </div>
 
-    <div class="controls">
-        <button class="btn" onclick="event.stopPropagation(); handleBack()">◀ Voltar</button>
-        <button class="btn" onclick="event.stopPropagation(); handleAdvance()">Avançar ▶</button>
-    </div>
+    <div class="touch-hint">⬅️ Toque na Esquerda para Voltar | Toque na Direita para Avançar ➡️</div>
 
     <script>
         let currentSlideIdx = 0;
@@ -178,6 +176,19 @@
 
         function getSteps(slide) {
             return slide.querySelectorAll('.step');
+        }
+
+        // 🧠 SISTEMA DE CAPTURA DO TOQUE INTELIGENTE
+        function handleScreenClick(event) {
+            const screenWidth = window.innerWidth;
+            const clickX = event.clientX;
+
+            // Define que os primeiros 30% da tela voltam e os outros 70% avançam
+            if (clickX < screenWidth * 0.30) {
+                handleBack();
+            } else {
+                handleAdvance();
+            }
         }
 
         function handleAdvance() {
@@ -229,6 +240,7 @@
             aplicarFundoAleatorio(); 
         }
 
+        // Mantém atalhos de teclado ativos caso use um computador
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowRight' || e.key === ' ') {
                 e.preventDefault();
