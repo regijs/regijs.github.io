@@ -56,7 +56,7 @@ loadScript("https://regijs.github.io/second.js", function(){
             display: inline;
             transform: translateX(5px);
             transition: opacity 0.3s ease, transform 0.3s ease;
-        } -->
+        } 
 		/* 🟢 CORREÇÃO PARA ACEITAR NEGRITO <b> E OUTRAS TAGS INTERNAS */
 .step {
     display: inline;
@@ -75,7 +75,25 @@ loadScript("https://regijs.github.io/second.js", function(){
             opacity: 1;
             transform: translateX(0);
         }
+--->
+		/* 🟢 CONFIGURAÇÃO PARA O TEXTO FLUIDO */
+.step {
+    display: inline;
+    color: transparent;
+    transition: color 0.4s ease;
+}
 
+/* Quando o passo ativa, o texto comum herda a cor padrão */
+.step.show {
+    color: inherit; 
+}
+
+/* 💛 A MÁGICA AQUI: Quando o passo ativa, qualquer tag <b> dentro dele fica amarela */
+.step.show b,
+.step.show strong {
+    color: #ffde22; /* Tom de amarelo destacado e legível no fundo escuro */
+}
+		
         /* Estilos Visuais */
         h1 {
             font-size: 3.5rem;
