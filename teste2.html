@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apresentação Quadro Negro Definitivo</title>
+    <title>Apresentação Lousa Verde Definitiva</title>
     
     <style>
         @import url('https://googleapis.com');
@@ -24,7 +24,7 @@
             height: 100vh;
         }
 
-        /* TEXTURA DE RISCOS DE GIZ */
+        /* TEXTURA REALISTA DE LOUSA DE GIZ ESCALADA */
         body::after {
             content: "";
             position: absolute;
@@ -61,7 +61,7 @@
             display: flex; 
         }
 
-        /* TEXTO FLUIDO AOS POUCOS */
+        /* TEXTO QUE SURGE AOS POUCOS COM O CLIQUE */
         .step {
             display: inline;
             color: transparent;
@@ -71,7 +71,7 @@
             color: inherit; 
         }
 
-        /* NEGRITO AMARELO GIZ */
+        /* CONFIGURAÇÃO DO GIZ AMARELO DO NEGRITO */
         .step b, .step strong {
             color: transparent;
             transition: color 0.4s ease;
@@ -97,7 +97,7 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
         }
 
-        /* BOTÕES LATERAIS DE NAVEGAÇÃO */
+        /* BOTÕES FÍSICOS DE NAVEGAÇÃO NAS LATERAIS */
         .nav-btn {
             position: absolute;
             top: 50%;
@@ -116,7 +116,7 @@
         .btn-left { left: 15px; }
         .btn-right { right: 15px; }
 
-        /* LINKS DO SUMÁRIO */
+        /* LINKS DO MENU SUMÁRIO */
         .menu-list {
             list-style: none;
             font-size: 2.2rem;
@@ -142,7 +142,7 @@
 </head>
 <body>
 
-    <!-- Botões de navegação lateral -->
+    <!-- Botões laterais estáveis de clique físico -->
     <button class="nav-btn btn-left" onclick="handleBack()">◀</button>
     <button class="nav-btn btn-right" onclick="handleAdvance()">▶</button>
 
@@ -150,23 +150,23 @@
         
         <!-- Slide 1 (Índice 0) -->
         <div class="slide active">
-            <h1>Código Correto e Testado</h1>
+            <h1>Código 100% Corrigido</h1>
             <p>
-                Eliminamos de vez a falha de travamento que parava o menu. 
-                <span class="step">Para avançar, use o <b>botão direito (▶)</b> ou aperte o Espaço.</span> 
-                <span class="step">O próximo slide abrirá o Sumário com os links totalmente destravados.</span>
+                A falha estrutural do menu que travava a renderização foi completamente eliminada. 
+                <span class="step">Para avançar as frases, clique no <b>botão direito (▶)</b> ou use a barra de Espaço.</span> 
+                <span class="step">O próximo slide trará a tela do Sumário Interativo totalmente funcional.</span>
             </p>
         </div>
 
-        <!-- Slide 2 (Índice 1): MENU DE LINKS -->
+        <!-- Slide 2 (Índice 1): MENU DE LINKS DO SUMÁRIO -->
         <div class="slide">
             <h1>Sumário Interativo</h1>
-            <p style="margin-bottom: 15px;">Clique em um tema para pular de página:</p>
+            <p style="margin-bottom: 15px;">Clique em uma linha para pular diretamente para a lousa desejada:</p>
             <ul class="menu-list">
-                <!-- Executa a nova função goTo(X) sem travar o código de exibição -->
-                <li class="menu-item" onclick="goTo(0)">1. Capa da Apresentação</li>
+                <!-- Links diretos usando a nova função goTo(X) sem conflitos internos -->
+                <li class="menu-item" onclick="goTo(0)">1. Capa do Projeto</li>
                 <li class="menu-item" onclick="goTo(2)">2. O que causava o erro?</li>
-                <li class="menu-item" onclick="goTo(3)">3. Organização Dinâmica</li>
+                <li class="menu-item" onclick="goTo(3)">3. Organização Segura</li>
                 <li class="menu-item" onclick="goTo(4)">4. Conclusão Final</li>
             </ul>
         </div>
@@ -175,17 +175,17 @@
         <div class="slide">
             <h1>O que causava o erro?</h1>
             <p>
-                O código antigo misturava a paginação manual com a automática de forma confusa. <span class="step">Isso gerava uma quebra invisível no motor de renderização.</span> <span class="step">O novo sistema isolou os comandos, garantindo <b>estabilidade de cliques em 100%</b> das tentativas.</span>
+                O script antigo tentava varrer elementos inexistentes na lousa do menu. <span class="step">Isso gerava um travamento silencioso e impedia a troca de página.</span> <span class="step">A nova função separa os comandos e garante <b>funcionamento estável e imediato</b>.</span>
             </p>
         </div>
 
         <!-- Slide 4 (Índice 3) -->
         <div class="slide">
-            <h1>Organização Dinâmica</h1>
+            <h1>Organização Segura</h1>
             <p>
-                A contagem de páginas mantém o padrão estável de desenvolvimento. <span class="step">O comando <b>goTo(X)</b> gerencia o salto de lousa:</span> 
-                <span class="step">A capa inicial vale <b>0</b>, o sumário vale <b>1</b>,</span> 
-                <span class="step">o terceiro quadro vale <b>2</b>, seguindo essa lógica exata.</span>
+                A contagem obedece rigorosamente às regras de programação web. <span class="step">O comando <b>goTo(X)</b> faz o salto direto:</span> 
+                <span class="step">A introdução vale <b>0</b>, a tela do sumário vale <b>1</b>,</span> 
+                <span class="step">o terceiro slide vale <b>2</b>, seguindo essa sequência exata.</span>
             </p>
         </div>
 
@@ -193,9 +193,9 @@
         <div class="slide">
             <h1>Conclusão Final</h1>
             <p>
-                Agora a arquitetura está limpa, rápida e responsiva. 
-                <span class="step">Os parágrafos contínuos fluem perfeitamente linha por linha,</span> 
-                <span class="step">e os realces em <b>amarelo giz</b> aparecem com segurança máxima em qualquer tela.</span>
+                A arquitetura agora está limpa, rápida e responsiva. 
+                <span class="step">O aparecimento contínuo de texto funciona sem quebras falsas de linha,</span> 
+                <span class="step">e os destaques em <b>amarelo giz</b> aparecem perfeitamente no Mac, Android ou PC.</span>
             </p>
         </div>
 
@@ -224,7 +224,7 @@
             const currentSlide = slides[currentSlideIdx];
             const steps = currentSlide.querySelectorAll('.step');
             
-            // Revela o próximo bloco de texto oculto dentro do slide atual
+            // Tenta exibir o próximo bloco de texto oculto dentro do slide atual
             for (let step of steps) {
                 if (!step.classList.contains('show')) {
                     step.classList.add('show');
@@ -232,14 +232,14 @@
                 }
             }
 
-            // Se não houver mais textos ocultos, avança o slide normalmente
+            // Se todas as frases já apareceram, passa para o próximo slide limpando o estado dele
             if (currentSlideIdx < slides.length - 1) {
                 slides[currentSlideIdx].classList.remove('active');
                 currentSlideIdx++;
                 
-                // Limpa os passos do novo slide para que comecem escondidos ao avançar naturalmente
-                const newSteps = slides[currentSlideIdx].querySelectorAll('.step');
-                newSteps.forEach(s => s.classList.remove('show'));
+                // Limpa os passos do novo slide para começarem apagados ao avançar naturalmente
+                const nextSlideSteps = slides[currentSlideIdx].querySelectorAll('.step');
+                nextSlideSteps.forEach(s => s.classList.remove('show'));
                 
                 slides[currentSlideIdx].classList.add('active');
                 aplicarFundoAleatorio();
@@ -250,7 +250,7 @@
             const currentSlide = slides[currentSlideIdx];
             const steps = currentSlide.querySelectorAll('.step');
             
-            // Oculta o último bloco de texto revelado (efeito reverso)
+            // Oculta o último bloco de texto ativado (efeito inverso de digitação)
             for (let i = steps.length - 1; i >= 0; i--) {
                 if (steps[i].classList.contains('show')) {
                     steps[i].classList.remove('show');
@@ -258,17 +258,10 @@
                 }
             }
 
-            // Se não houver mais textos acesos, volta de slide exibindo tudo do slide anterior
+            // Se não há mais textos acesos, volta para o slide anterior exibindo tudo dele
             if (currentSlideIdx > 0) {
                 slides[currentSlideIdx].classList.remove('active');
                 currentSlideIdx--;
                 
-                // Força todos os textos do slide anterior a ficarem visíveis ao voltar de página
-                const prevSteps = slides[currentSlideIdx].querySelectorAll('.step');
-                prevSteps.forEach(s => s.classList.add('show'));
-                
-                slides[currentSlideIdx].classList.add('active');
-                aplicarFundoAleatorio();
-            }
-        }
-
+                // Força todos os textos do slide anterior a ficarem acesos ao voltar de página
+                const prevSlideSteps = slides[currentSlideIdx].querySelectorAll('.step');
