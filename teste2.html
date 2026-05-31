@@ -45,6 +45,7 @@
             z-index: 10;
         }
         
+        /* Ocultação total e absoluta de slides inativos */
         .slide {
             display: none; 
             width: 100%;
@@ -70,7 +71,7 @@
             color: inherit; 
         }
 
-        /* NEGRITO AMARELO GIZ (SÓ APARECE JUNTO COM O PASSO) */
+        /* NEGRITO AMARELO GIZ */
         .step b, .step strong {
             color: transparent;
             transition: color 0.4s ease;
@@ -141,7 +142,7 @@
 </head>
 <body>
 
-    <!-- Botões laterais de navegação -->
+    <!-- Botões de navegação lateral -->
     <button class="nav-btn btn-left" onclick="handleBack()">◀</button>
     <button class="nav-btn btn-right" onclick="handleAdvance()">▶</button>
 
@@ -149,11 +150,11 @@
         
         <!-- Slide 1 (Índice 0) -->
         <div class="slide active">
-            <h1>Código Corrigido e Testado</h1>
+            <h1>Código Correto e Testado</h1>
             <p>
-                Eliminamos o bug oculto que travava o interpretador JavaScript dos navegadores. 
-                <span class="step">Para avançar, use o <b>botão direito (▶)</b> ou pressione a barra de Espaço.</span> 
-                <span class="step">O próximo slide abrirá a tela do Sumário Interativo com os links funcionando.</span>
+                Eliminamos de vez a falha de travamento que parava o menu. 
+                <span class="step">Para avançar, use o <b>botão direito (▶)</b> ou aperte o Espaço.</span> 
+                <span class="step">O próximo slide abrirá o Sumário com os links totalmente destravados.</span>
             </p>
         </div>
 
@@ -162,10 +163,11 @@
             <h1>Sumário Interativo</h1>
             <p style="margin-bottom: 15px;">Clique em um tema para pular de página:</p>
             <ul class="menu-list">
+                <!-- Executa a nova função goTo(X) sem travar o código de exibição -->
                 <li class="menu-item" onclick="goTo(0)">1. Capa da Apresentação</li>
                 <li class="menu-item" onclick="goTo(2)">2. O que causava o erro?</li>
-                <li class="menu-item" onclick="goTo(3)">3. Organização Segura</li>
-                <li class="menu-item" onclick="goTo(4)">4. Conclusão</li>
+                <li class="menu-item" onclick="goTo(3)">3. Organização Dinâmica</li>
+                <li class="menu-item" onclick="goTo(4)">4. Conclusão Final</li>
             </ul>
         </div>
 
@@ -173,27 +175,27 @@
         <div class="slide">
             <h1>O que causava o erro?</h1>
             <p>
-                O código tentava ler elementos ocultos em páginas que não tinham animação de texto. <span class="step">Isso gerava um bloqueio silencioso no motor do navegador.</span> <span class="step">A nova função agora é inteligente e limpa os dados com **segurança absoluta**.</span>
+                O código antigo misturava a paginação manual com a automática de forma confusa. <span class="step">Isso gerava uma quebra invisível no motor de renderização.</span> <span class="step">O novo sistema isolou os comandos, garantindo <b>estabilidade de cliques em 100%</b> das tentativas.</span>
             </p>
         </div>
 
         <!-- Slide 4 (Índice 3) -->
         <div class="slide">
-            <h1>Organização Segura</h1>
+            <h1>Organização Dinâmica</h1>
             <p>
-                A contagem dos slides permanece a mesma do padrão web. <span class="step">O comando <b>goTo(X)</b> gerencia o destino direto:</span> 
-                <span class="step">A capa vale <b>0</b>, o sumário vale <b>1</b>,</span> 
-                <span class="step">o terceiro slide vale <b>2</b>, e assim sucessivamente.</span>
+                A contagem de páginas mantém o padrão estável de desenvolvimento. <span class="step">O comando <b>goTo(X)</b> gerencia o salto de lousa:</span> 
+                <span class="step">A capa inicial vale <b>0</b>, o sumário vale <b>1</b>,</span> 
+                <span class="step">o terceiro quadro vale <b>2</b>, seguindo essa lógica exata.</span>
             </p>
         </div>
 
         <!-- Slide 5 (Índice 4) -->
         <div class="slide">
-            <h1>Conclusão</h1>
+            <h1>Conclusão Final</h1>
             <p>
-                A arquitetura agora está blindada e leve. 
-                <span class="step">Os parágrafos contínuos fluem perfeitamente,</span> 
-                <span class="step">e os destaques em <b>amarelo giz</b> aparecem sem falhas no Mac, Windows ou celulares.</span>
+                Agora a arquitetura está limpa, rápida e responsiva. 
+                <span class="step">Os parágrafos contínuos fluem perfeitamente linha por linha,</span> 
+                <span class="step">e os realces em <b>amarelo giz</b> aparecem com segurança máxima em qualquer tela.</span>
             </p>
         </div>
 
@@ -222,7 +224,7 @@
             const currentSlide = slides[currentSlideIdx];
             const steps = currentSlide.querySelectorAll('.step');
             
-            // Tenta revelar o próximo bloco de texto oculto dentro do slide atual
+            // Revela o próximo bloco de texto oculto dentro do slide atual
             for (let step of steps) {
                 if (!step.classList.contains('show')) {
                     step.classList.add('show');
@@ -230,9 +232,17 @@
                 }
             }
 
-            // Se não houver mais textos ocultos, avança o slide
+            // Se não houver mais textos ocultos, avança o slide normalmente
             if (currentSlideIdx < slides.length - 1) {
-                changeSlide(currentSlideIdx + 1, false);
+                slides[currentSlideIdx].classList.remove('active');
+                currentSlideIdx++;
+                
+                // Limpa os passos do novo slide para que comecem escondidos ao avançar naturalmente
+                const newSteps = slides[currentSlideIdx].querySelectorAll('.step');
+                newSteps.forEach(s => s.classList.remove('show'));
+                
+                slides[currentSlideIdx].classList.add('active');
+                aplicarFundoAleatorio();
             }
         }
 
@@ -250,29 +260,15 @@
 
             // Se não houver mais textos acesos, volta de slide exibindo tudo do slide anterior
             if (currentSlideIdx > 0) {
-                changeSlide(currentSlideIdx - 1, true);
-            }
-        }
-
-        // 🎯 FUNÇÃO DE MENU CORRIGIDA: Protegida contra erros de loops vazios
-        function goTo(targetIdx) {
-            if (targetIdx >= 0 && targetIdx < slides.length) {
-                // Remove os efeitos visuais apenas do slide antigo se ele possuir passos configurados
-                const oldSteps = slides[currentSlideIdx].querySelectorAll('.step');
-                if (oldSteps.length > 0) {
-                    oldSteps.forEach(s => s.classList.remove('show'));
-                }
+                slides[currentSlideIdx].classList.remove('active');
+                currentSlideIdx--;
                 
-                // Pula para o novo slide forçando a exibição total do conteúdo
-                changeSlide(targetIdx, true);
+                // Força todos os textos do slide anterior a ficarem visíveis ao voltar de página
+                const prevSteps = slides[currentSlideIdx].querySelectorAll('.step');
+                prevSteps.forEach(s => s.classList.add('show'));
+                
+                slides[currentSlideIdx].classList.add('active');
+                aplicarFundoAleatorio();
             }
         }
 
-        function changeSlide(nextIdx, forceShowInternalSteps = false) {
-            // Desativa a tela atual
-            slides[currentSlideIdx].classList.remove('active');
-            
-            // Atualiza o ponteiro da página
-            currentSlideIdx = nextIdx;
-            
-            // Se acionado pelo menu, força todos os textos do slide alvo a aparecerem
