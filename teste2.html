@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apresentação Quadro com Links Corrigidos</title>
+    <title>Apresentação Quadro Lousa Perfeita</title>
     
     <style>
-        /* 🌐 Importação robusta para navegadores móveis e desktop */
+        /* 🌐 Importação da fonte estilo giz */
         @import url('https://googleapis.com');
 
         * {
@@ -43,12 +43,14 @@
             background-size: 400px 400px, 300px 300px, 20px 20px, 20px 20px;
         }
 
+        /* CONTAINER GLOBAL COM CLIQUE ATIVO */
         .slide-container {
             width: 100vw;
             height: 100vh;
             position: relative;
             z-index: 2;
         }
+        
         .slide {
             position: absolute;
             top: 0;
@@ -63,11 +65,13 @@
             padding: 40px 10% 40px 10%; 
             opacity: 0;
             transition: opacity 0.4s ease-in-out;
-            pointer-events: none;
+            /* 🟢 CORREÇÃO CRUCIAL PARA CELULAR: permite cliques nos textos internos */
+            pointer-events: none; 
         }
+        
         .slide.active {
             opacity: 1;
-            pointer-events: auto;
+            pointer-events: auto; /* Ativa cliques apenas no slide visível */
         }
 
         /* CONFIGURAÇÃO DO TEXTO FLUIDO */
@@ -80,7 +84,7 @@
             color: inherit; 
         }
 
-        /* CORREÇÃO DO NEGRITO (INVISÍVEL ANTES DE ATIVAR) */
+        /* NEGRITO (INVISÍVEL ANTES DE ATIVAR) */
         .step b, .step strong {
             color: transparent;
             transition: color 0.4s ease;
@@ -90,7 +94,7 @@
             text-shadow: 0 0 5px rgba(255,245,157,0.3);
         }
 
-        /* ESTILIZAÇÃO DO TEXTO COM EFEITO GIZ */
+        /* ESTILIZAÇÃO DO TEXTO */
         h1 {
             font-size: 4.2rem;
             margin-bottom: 35px;
@@ -107,41 +111,23 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
         }
 
-        /* 📋 ESTILIZAÇÃO DA LISTA DE LINKS (SUMÁRIO) */
+        /* 📋 ESTILIZAÇÃO DO SUMÁRIO */
         .menu-list {
             list-style: none;
             font-size: 2.4rem;
             line-height: 1.8;
-            position: relative;
-            z-index: 20; /* Fica acima das zonas de toque invisíveis */
         }
         .menu-item {
             color: #fff59d;
             cursor: pointer;
             text-decoration: underline dotted;
-            transition: color 0.2s ease, transform 0.2s ease;
+            transition: color 0.2s ease;
             display: block;
             margin-bottom: 15px;
+            padding: 5px 0; /* Aumenta a área de toque no celular */
         }
         .menu-item:hover {
             color: #ffffff;
-            transform: translateX(10px);
-        }
-
-        /* 🎯 ZONAS DE TOQUE INTELIGENTES COMPLETAMENTE INVISÍVEIS */
-        .touch-zone {
-            position: absolute;
-            top: 0;
-            height: 100%;
-            z-index: 5; /* Fica atrás do texto do Sumário para não travar os links */
-        }
-        .touch-left {
-            left: 0;
-            width: 30%; /* 30% da tela na esquerda para voltar */
-        }
-        .touch-right {
-            right: 0;
-            width: 70%; /* 70% da tela na direita para avançar */
         }
 
         .touch-hint {
@@ -167,66 +153,63 @@
 </head>
 <body>
 
-    <!-- 🟢 ZONAS DE TOQUE SEPARADAS DA ESTRUTURA DOS SLIDES -->
-    <div class="touch-zone touch-left" onclick="handleBack()"></div>
-    <div class="touch-zone touch-right" onclick="handleAdvance()"></div>
-
-    <div class="slide-container">
+    <!-- Um único gerenciador de cliques na tela inteira -->
+    <div class="slide-container" onclick="handleGlobalClick(event)">
         
         <!-- Slide 1 -->
         <div class="slide active">
-            <h1>Capa da Apresentação</h1>
+            <h1>Quadro com Toque Inteligente</h1>
             <p>
-                Bem-vindo ao modelo de lousa escolar. 
-                <span class="step">Dê um toque no lado direito para ver o próximo slide,</span> 
-                <span class="step">que agora funciona como um <b>Sumário Interativo</b> funcional para navegar por todo o projeto.</span>
+                Este modelo foi totalmente reestruturado para celulares. 
+                <span class="step">Toque na <b>metade direita</b> para avançar ou revelar as frases.</span> 
+                <span class="step">Toque na <b>metade esquerda</b> se desejar ocultar o texto ou voltar.</span>
             </p>
         </div>
 
-        <!-- Slide 2: ÍNDICE / SUMÁRIO COM LINKS DIRETOS -->
+        <!-- Slide 2: SUMÁRIO COM LINKS DIRETOS -->
         <div class="slide">
             <h1>Sumário Interativo</h1>
-            <p style="margin-bottom: 30px;">Selecione um tópico para pular direto para ele:</p>
+            <p style="margin-bottom: 25px;">Toque diretamente em cima de qualquer linha para pular de slide:</p>
             <ul class="menu-list">
-                <!-- Os cliques aqui agora rodam livremente sem sofrer interferência da tela de fundo -->
-                <li class="menu-item" onclick="goToSlide(0)">1. Capa da Apresentação</li>
-                <li class="menu-item" onclick="goToSlide(2)">2. O que mudou no código?</li>
-                <li class="menu-item" onclick="goToSlide(3)">3. Dicas de Organização</li>
-                <li class="menu-item" onclick="goToSlide(4)">4. Encerramento</li>
+                <!-- Adicionamos o atributo data-target para o JavaScript identificar o destino sem bugs -->
+                <li class="menu-item" data-target="0">1. Capa da Apresentação</li>
+                <li class="menu-item" data-target="2">2. O que mudou?</li>
+                <li class="menu-item" data-target="3">3. Configuração dos Links</li>
+                <li class="menu-item" data-target="4">4. Conclusão</li>
             </ul>
         </div>
 
         <!-- Slide 3 -->
         <div class="slide">
-            <h1>O que mudou no código?</h1>
+            <h1>O que mudou?</h1>
             <p>
-                Separamos os cliques em camadas diferentes. <span class="step">Dessa forma, os links em <b>amarelo giz</b> ganharam prioridade máxima de clique,</span> <span class="step">enquanto as laterais invisíveis continuam responsáveis por controlar os textos.</span>
+                Eliminamos os botões e áreas invisíveis que travavam o Android. <span class="step">Agora o próprio código descobre de forma inteligente se o seu dedo tocou em um <b>link amarelo</b></span> <span class="step">ou se tocou no fundo verde para passar a página.</span>
             </p>
         </div>
 
         <!-- Slide 4 -->
         <div class="slide">
-            <h1>Dicas de Organização</h1>
+            <h1>Configuração dos Links</h1>
             <p>
-                Lembre-se de ajustar os números dentro dos comandos <span class="step"><b>goToSlide(X)</b> no seu sumário.</span> 
-                <span class="step">O primeiro slide sempre vale <b>0</b>, o segundo vale <b>1</b>,</span> 
-                <span class="step">o terceiro vale <b>2</b>, e assim sucessivamente.</span>
+                Para mudar os destinos, basta alterar o número no atributo <span class="step"><b>data-target="X"</b> direto no HTML.</span> 
+                <span class="step">O primeiro slide equivale a <b>0</b>, o sumário equivale a <b>1</b>,</span> 
+                <span class="step">o terceiro slide equivale a <b>2</b>, e assim por diante.</span>
             </p>
         </div>
 
         <!-- Slide 5 -->
         <div class="slide">
-            <h1>Fim do Projeto</h1>
+            <h1>Fim da Apresentação</h1>
             <p>
-                Pronto! Agora você tem um controle híbrido perfeito. 
-                <span class="step">Pode avançar o texto de forma linear tocando nas bordas</span> 
-                <span class="step">ou navegar de forma totalmente livre usando os <b>links do sumário</b>.</span>
+                O sistema híbrido agora está 100% calibrado. 
+                <span class="step">Aproveite a fluidez da lousa de giz digital</span> 
+                <span class="step">no computador, <b>tablet ou celular Android</b>.</span>
             </p>
         </div>
 
     </div>
 
-    <div class="touch-hint">⬅️ Esquerda Volta | Direita Avança | Clique nos links amarelos para pular de slide 👆</div>
+    <div class="touch-hint">⬅️ Toque na Esquerda Volta | Toque na Direita Avança | Toque nos Links Amarelos 👆</div>
 
     <script {nonce}>
         let currentSlideIdx = 0;
@@ -252,6 +235,29 @@
             return slide.querySelectorAll('.step');
         }
 
+        // 🧠 O CÉREBRO DO SISTEMA DE TOQUE COMPATÍVEL COM ANDROID
+        function handleGlobalClick(event) {
+            // 1. Verifica se o usuário clicou em um item do sumário
+            const clickedElement = event.target;
+            
+            if (clickedElement.classList.contains('menu-item')) {
+                // Se for um link, pega o número do slide e pula para ele direto
+                const targetIdx = parseInt(clickedElement.getAttribute('data-target'), 10);
+                goToSlide(targetIdx);
+                return; // Interrompe aqui para não acionar a mudança de slide do fundo
+            }
+
+            // 2. Se clicou em qualquer outro lugar do quadro, roda a navegação por lados
+            const screenWidth = window.innerWidth;
+            const clickX = event.clientX;
+
+            if (clickX < screenWidth * 0.30) {
+                handleBack();
+            } else {
+                handleAdvance();
+            }
+        }
+
         function handleAdvance() {
             const currentSlide = slides[currentSlideIdx];
             const steps = getSteps(currentSlide);
@@ -272,15 +278,3 @@
             const currentSlide = slides[currentSlideIdx];
             const steps = getSteps(currentSlide);
             
-            for (let i = steps.length - 1; i >= 0; i--) {
-                if (steps[i].classList.contains('show')) {
-                    steps[i].classList.remove('show');
-                    return; 
-                }
-            }
-
-            if (currentSlideIdx > 0) {
-                changeSlide(currentSlideIdx - 1, true);
-            }
-        }
-
