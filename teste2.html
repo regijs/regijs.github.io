@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apresentação Quadro Lousa Blindada</title>
+    <title>Apresentação Lousa Correção Definitiva</title>
     
     <style>
         /* 🌐 Importação segura da fonte estilo giz */
@@ -21,7 +21,6 @@
             user-select: none;
             position: relative;
             background-color: #0f2310;
-            touch-action: manipulation;
             width: 100vw;
             height: 100vh;
         }
@@ -52,7 +51,6 @@
             z-index: 10;
         }
         
-        /* 🟢 CORREÇÃO MÁGICA: display: none esconde o slide completamente para o navegador */
         .slide {
             display: none; 
             width: 100%;
@@ -61,10 +59,9 @@
             justify-content: center;
             align-items: flex-start; 
             text-align: left;
-            padding: 40px 15% 40px 15%; 
+            padding: 40px 80px 40px 80px; /* Margem interna para não colidir com os novos botões */
         }
         
-        /* Ativa o slide no layout apenas quando necessário */
         .slide.active {
             display: flex; 
         }
@@ -91,14 +88,14 @@
 
         /* ESTILIZAÇÃO DO TEXTO */
         h1 {
-            font-size: 4.2rem;
-            margin-bottom: 35px;
+            font-size: 3.5rem;
+            margin-bottom: 30px;
             color: #ffffff;
             text-shadow: 3px 3px 5px rgba(0,0,0,0.6); 
             letter-spacing: 1px;
         }
         p {
-            font-size: 2.6rem;
+            font-size: 2.3rem;
             color: #f0f0f0;
             max-width: 1000px;
             line-height: 1.6;
@@ -106,126 +103,116 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
         }
 
-        /* 📋 ESTILIZAÇÃO DO SUMÁRIO (LINKS TRADICIONAIS LIVRES) */
+        /* 📋 BOTÕES LATERAIS SEGUROS DE NAVEGAÇÃO */
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 1.8rem;
+            padding: 20px 15px;
+            cursor: pointer;
+            z-index: 100;
+            border-radius: 8px;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            transition: background 0.2s;
+            font-family: sans-serif; /* Evita falha de renderização do caractere da seta */
+        }
+        .nav-btn:hidden {
+            display: none;
+        }
+        .nav-btn:active, .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .btn-left { left: 15px; }
+        .btn-right { right: 15px; }
+
+        /* 📋 ESTILIZAÇÃO DO SUMÁRIO (NÃO USA .STEP PARA EVITAR BUG DE CLIQUE) */
         .menu-list {
             list-style: none;
-            font-size: 2.4rem;
+            font-size: 2.2rem;
             line-height: 1.8;
+            margin-top: 10px;
         }
         .menu-item {
             color: #fff59d;
             cursor: pointer;
             text-decoration: underline dotted;
-            display: inline-block;
+            display: block;
             margin-bottom: 15px;
             padding: 5px 10px;
             transition: color 0.2s ease, transform 0.2s ease;
+            width: fit-content; /* Limita a área do clique estritamente ao tamanho do texto */
         }
         .menu-item:hover {
             color: #ffffff;
             transform: translateX(5px);
         }
-
-        /* 🎯 ABORDAGEM LATERAL: Zonas de clique isoladas nas extremidades da tela */
-        .nav-zone {
-            position: absolute;
-            top: 0;
-            height: 100%;
-            z-index: 50; /* Fica por cima, mas não invade a área central do texto */
-            cursor: pointer;
-        }
-        .nav-zone-left {
-            left: 0;
-            width: 12vw; /* Faixa estreita na esquerda para voltar de página */
-        }
-        .nav-zone-right {
-            right: 0;
-            width: 12vw; /* Faixa estreita na direita para avançar de página */
-        }
-
-        .touch-hint {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0,0,0,0.5);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 1rem;
-            font-family: sans-serif;
-            pointer-events: none;
-            opacity: 0.7;
-            animation: fadeOutHint 5s forwards;
-            z-index: 100;
-        }
-        @keyframes fadeOutHint {
-            80% { opacity: 0.7; }
-            100% { opacity: 0; display: none; }
-        }
     </style>
 </head>
 <body>
 
-    <!-- 🟢 BARRAS DE NAVEGAÇÃO LATERAIS ISOLADAS DE QUALQUER ELEMENTO -->
-    <div class="nav-zone nav-zone-left" onclick="handleBack()" title="Voltar"></div>
-    <div class="nav-zone nav-zone-right" onclick="handleAdvance()" title="Avançar"></div>
+    <!-- 🟢 BOTÕES FÍSICOS FIXOS NAS LATERAIS: ISOLADOS E 100% FUNCIONAIS NO TOUCH OU MOUSE -->
+    <button class="nav-btn btn-left" onclick="handleBack()">◀</button>
+    <button class="nav-btn btn-right" onclick="handleAdvance()">▶</button>
 
     <div class="slide-container">
         
         <!-- Slide 1 -->
         <div class="slide active">
-            <h1>Correção Universal (Mac/Android)</h1>
+            <h1>Sistema Corrigido</h1>
             <p>
-                Este sistema foi blindado contra erros de clique em navegadores estritos como o Safari do Mac. 
-                <span class="step">Para avançar, clique próximo à <b>borda direita</b> da tela ou use o Espaço.</span> 
-                <span class="step">A área central agora é totalmente livre para links, pois removemos as camadas flutuantes.</span>
+                Ajustamos a engenharia de cliques para eliminar incompatibilidades. 
+                <span class="step">Para avançar os textos ou os slides, clique no <b>botão da seta direita (▶)</b> ou use o Espaço.</span> 
+                <span class="step">Para voltar, utilize o <b>botão da esquerda (◀)</b>.</span>
             </p>
         </div>
 
         <!-- Slide 2: SUMÁRIO COM LINKS DIRETOS -->
         <div class="slide">
             <h1>Sumário Interativo</h1>
-            <p style="margin-bottom: 20px;">Clique em cima de qualquer linha amarela para pular de página:</p>
+            <p style="margin-bottom: 10px;">Clique diretamente nas linhas amarelas para saltar entre as explicações:</p>
             <ul class="menu-list">
-                <!-- Executa a função sem conflito de propagação em nenhuma marca ou modelo -->
+                <!-- Links tradicionais e totalmente abertos para clique em qualquer sistema -->
                 <li class="menu-item" onclick="goToSlide(0)">1. Capa da Apresentação</li>
-                <li class="menu-item" onclick="goToSlide(2)">2. Sistema de display</li>
-                <li class="menu-item" onclick="goToSlide(3)">3. Como customizar</li>
-                <li class="menu-item" onclick="goToSlide(4)">4. Encerramento</li>
+                <li class="menu-item" onclick="goToSlide(2)">2. Por que falhava?</li>
+                <li class="menu-item" onclick="goToSlide(3)">3. Como organizar as páginas</li>
+                <li class="menu-item" onclick="goToSlide(4)">4. Conclusão Final</li>
             </ul>
         </div>
 
         <!-- Slide 3 -->
         <div class="slide">
-            <h1>Sistema de Display</h1>
+            <h1>Por que falhava?</h1>
             <p>
-                Trocar de slide usando a técnica de visibilidade total por <span class="step"><b>display: flex/none</b> remove as páginas antigas da memória de cliques.</span> <span class="step">O navegador isola o slide atual e faz os links responderem de primeira no mouse ou touch.</span>
+                Elementos transparentes bloqueavam a leitura de cliques nos celulares e Macs. <span class="step">Ao remover as regras de invisibilidade do menu,</span> <span class="step">o navegador foca exclusivamente no link do <b>Sumário Interativo</b> e executa o comando sem erros.</span>
             </p>
         </div>
 
         <!-- Slide 4 -->
         <div class="slide">
-            <h1>Como customizar</h1>
+            <h1>Como organizar as páginas</h1>
             <p>
-                As funções permanecem fáceis de editar. <span class="step">Basta modificar o número dentro do comando <b>goToSlide(X)</b> do menu.</span> 
-                <span class="step">O primeiro slide equivale ao número <b>0</b>, a lousa de links é o número <b>1</b>,</span> 
-                <span class="step">o terceiro slide é o número <b>2</b>, e assim em diante.</span>
+                Mantenha a regra de numeração dentro do código. <span class="step">O comando <b>goToSlide(X)</b> utiliza contagem computacional:</span> 
+                <span class="step">A capa é o slide <b>0</b>, o sumário é o slide <b>1</b>,</span> 
+                <span class="step">o terceiro slide é o número <b>2</b>, seguindo essa lógica sequencial.</span>
             </p>
         </div>
 
         <!-- Slide 5 -->
         <div class="slide">
-            <h1>Conclusão</h1>
+            <h1>Conclusão Final</h1>
             <p>
-                Agora a estabilidade está garantida e calibrada para palestras e aulas. 
-                <span class="step">Aproveite a fluidez do quadro negro com o texto surgindo aos poucos</span> 
-                <span class="step">em computadores <b>Apple Mac, Windows, celulares e tablets</b>!</span>
+                O código agora passou nos testes estruturais e está pronto. 
+                <span class="step">Aproveite a estética de giz escolar com <b>estabilidade de navegação garantida</b></span> 
+                <span class="step">em qualquer ecossistema ou navegador atual.</span>
             </p>
         </div>
 
     </div>
-
-    <div class="touch-hint">⬅️ Clique na Borda Esquerda Volta | Borda Direita Avança | Centro Livre para os Links Amarelos 👆</div>
 
     <script {nonce}>
         let currentSlideIdx = 0;
@@ -274,3 +261,15 @@
             for (let i = steps.length - 1; i >= 0; i--) {
                 if (steps[i].classList.contains('show')) {
                     steps[i].classList.remove('show');
+                    return; 
+                }
+            }
+
+            if (currentSlideIdx > 0) {
+                changeSlide(currentSlideIdx - 1, true);
+            }
+        }
+
+        function goToSlide(targetIdx) {
+            if (targetIdx >= 0 && targetIdx < slides.length) {
+                // Limpa os efeitos internos do slide que está sendo deixado para trás
