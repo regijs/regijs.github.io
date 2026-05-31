@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apresentação Lousa Correção Definitiva</title>
+    <title>Apresentação Quadro Negro Definitivo</title>
     
     <style>
-        /* 🌐 Importação robusta da fonte estilo giz */
+        /* 🌐 Importação da fonte estilo giz */
         @import url('https://googleapis.com');
 
         * {
@@ -25,7 +25,7 @@
             height: 100vh;
         }
 
-        /* TEXTURA REALISTA DE RISCOS DE GIZ */
+        /* TEXTURA DE RISCOS DE GIZ */
         body::after {
             content: "";
             position: absolute;
@@ -51,7 +51,6 @@
             z-index: 10;
         }
         
-        /* Ocultação total e absoluta de slides inativos */
         .slide {
             display: none; 
             width: 100%;
@@ -104,7 +103,7 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
         }
 
-        /* 📋 BOTÕES LATERAIS SEGUROS DE NAVEGAÇÃO */
+        /* BOTÕES LATERAIS DE NAVEGAÇÃO */
         .nav-btn {
             position: absolute;
             top: 50%;
@@ -128,7 +127,7 @@
         .btn-left { left: 15px; }
         .btn-right { right: 15px; }
 
-        /* 📋 LINKS DO SUMÁRIO */
+        /* LINKS DO SUMÁRIO */
         .menu-list {
             list-style: none;
             font-size: 2.2rem;
@@ -155,7 +154,7 @@
 </head>
 <body>
 
-    <!-- Botões de navegação física direta nas extremidades -->
+    <!-- Botões laterais estáveis -->
     <button class="nav-btn btn-left" onclick="handleBack()">◀</button>
     <button class="nav-btn btn-right" onclick="handleAdvance()">▶</button>
 
@@ -163,52 +162,52 @@
         
         <!-- Slide 1 (Índice 0) -->
         <div class="slide active">
-            <h1>Resolução do Problema</h1>
+            <h1>Resolução do Menu</h1>
             <p>
-                O erro de travamento foi solucionado alterando o motor do JavaScript. 
-                <span class="step">Para avançar os textos contínuos até o final da linha, use a <b>seta direita (▶)</b> ou aperte Espaço.</span> 
-                <span class="step">O próximo slide abrirá a tela de <b>Sumário Interativo</b> totalmente livre para cliques.</span>
+                Corrigimos a digitação que causava o travamento dos botões. 
+                <span class="step">Para avançar o texto ou as páginas, use a <b>seta da direita (▶)</b> ou o Espaço.</span> 
+                <span class="step">O próximo slide é o Sumário com os links totalmente destravados.</span>
             </p>
         </div>
 
-        <!-- Slide 2 (Índice 1): MENU DE LINKS -->
+        <!-- Slide 2 (Índice 1): MENU DE LINKS CORRIGIDO -->
         <div class="slide">
-            <h1>Sumário da Apresentação</h1>
-            <p style="margin-bottom: 15px;">Selecione um dos temas abaixo para pular de lousa instantaneamente:</p>
+            <h1>Sumário Interativo</h1>
+            <p style="margin-bottom: 15px;">Clique em um tema para pular de página:</p>
             <ul class="menu-list">
-                <!-- Links diretos que ativam e liberam o conteúdo alvo na hora -->
-                <li class="menu-item" onclick="goToSlide(0)">1. Capa do Projeto</li>
-                <li class="menu-item" onclick="onclickMenuLink(2)">2. O que causava o travamento?</li>
-                <li class="menu-item" onclick="onclickMenuLink(3)">3. Como adicionar mais slides</li>
-                <li class="menu-item" onclick="onclickMenuLink(4)">4. Encerramento Concluído</li>
+                <!-- 🟢 Todos os links padronizados com a função correta goTo(X) -->
+                <li class="menu-item" onclick="goTo(0)">1. Capa da Apresentação</li>
+                <li class="menu-item" onclick="goTo(2)">2. O que mudou?</li>
+                <li class="menu-item" onclick="goTo(3)">3. Como organizar</li>
+                <li class="menu-item" onclick="goTo(4)">4. Conclusão Final</li>
             </ul>
         </div>
 
         <!-- Slide 3 (Índice 2) -->
         <div class="slide">
-            <h1>O que causava o travamento?</h1>
+            <h1>O que mudou?</h1>
             <p>
-                O slide alvo abria mantendo os seus textos internos invisíveis. <span class="step">Agora, ao clicar em qualquer link do sumário,</span> <span class="step">o código força a exibição de <b>100% das frases ocultas</b> daquela página, destravando a leitura.</span>
+                Simplificamos o código JavaScript removendo funções duplicadas. <span class="step">Agora, ao clicar em qualquer link do sumário,</span> <span class="step">a página abre exibindo <b>100% dos textos automaticamente</b>, impedindo telas em branco.</span>
             </p>
         </div>
 
         <!-- Slide 4 (Índice 3) -->
         <div class="slide">
-            <h1>Como adicionar mais slides</h1>
+            <h1>Como organizar</h1>
             <p>
-                Basta clonar o bloco da tag slide no HTML. <span class="step">Para criar novos links no sumário, use a função <b>onclickMenuLink(X)</b>:</span> 
-                <span class="step">Lembrando que o primeiro slide vale <b>0</b>, o sumário vale <b>1</b>,</span> 
-                <span class="step">o terceiro slide vale <b>2</b>, mantendo essa ordem lógica matemática.</span>
+                A contagem segue a lógica padrão do computador. <span class="step">O comando <b>goTo(X)</b> gerencia o destino:</span> 
+                <span class="step">A capa vale <b>0</b>, o sumário vale <b>1</b>,</span> 
+                <span class="step">o terceiro slide vale <b>2</b>, e assim sucessivamente.</span>
             </p>
         </div>
 
         <!-- Slide 5 (Índice 4) -->
         <div class="slide">
-            <h1>Encerramento Concluído</h1>
+            <h1>Conclusão Final</h1>
             <p>
-                Sua lousa digital está finalizada e pronta para ser usada. 
-                <span class="step">O sistema de texto fluido funciona sem quebras falsas de layout</span> 
-                <span class="step">e a navegação por links responde perfeitamente no <b>Mac, Windows, Android e iOS</b>.</span>
+                O sistema de links manuais está totalmente integrado e calibrado. 
+                <span class="step">Os parágrafos contínuos funcionam,</span> 
+                <span class="step">e as palavras destacadas em <b>amarelo giz</b> aparecem no momento exato em qualquer navegador.</span>
             </p>
         </div>
 
@@ -270,7 +269,16 @@
             }
         }
 
-        // 🎯 NOVA FUNÇÃO CORRIGIDA PARA O MENU: força a ativação total do slide de destino
-        function onclickMenuLink(targetIdx) {
+        // 🎯 FUNÇÃO PADRONIZADA: Muda de página e força a exibição dos textos internos
+        function goTo(targetIdx) {
             if (targetIdx >= 0 && targetIdx < slides.length) {
-                // Limpa o estado dos passos ocultos do slide antigo
+                getSteps(slides[currentSlideIdx]).forEach(s => s.classList.remove('show'));
+                changeSlide(targetIdx, true); // True força os textos a aparecerem na hora
+            }
+        }
+
+        function changeSlide(nextIdx, forceShowInternalSteps = false) {
+            slides[currentSlideIdx].classList.remove('active');
+            currentSlideIdx = nextIdx;
+            
+            if (forceShowInternalSteps) {
