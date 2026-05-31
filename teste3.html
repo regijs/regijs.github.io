@@ -154,31 +154,26 @@
     <div class="slide-container" onclick="handleScreenClick(event)">
         <!-- Slide 1 -->
         <div class="slide active">
-            <h1>1.2 Sistemas de Equações Lineares</h1>
+            <h1>Exemplo 1.</h1>
             <p> 
 				<span class="step">
-				Um <b>sistema de equações lineares</b> </span>
+				            Considere
+$$f(t)=g(t)=\begin{cases}1,&\text{ se } 0< t< 1,\\0,&\text{caso contrário}
+\end{cases}$$</span>
 				<span class="step">
-					ou simplesmente <b>sistema linear</b> </span>
-				<span class="step"> é um conjunto de equações lineares, </span>
-				<span class="step"> ou seja, é um conjunto de equações da forma</span> 
-	                <span class="step">
-$$
-\left\{
-\begin{array}{ccccccccccc}
-a_{11}x_1  &+&  a_{12}x_2  &+& &\ldots& &+&  a_{1n}x_n   &=&b_1\\
-a_{21}x_1  &+&  a_{22}x_2   &+& &\ldots& &+&  a_{2n}x_n  &=& b_2\\
-\vdots   &&               & & & & &&    \vdots&=& \vdots\\
-a_{m1}x_1  &+&  a_{m2}x_2    &+& &\ldots&     &+& a_{mn}x_n  &=& b_m
-\end{array}
-\right.
-$$
-                    </span> 
-                <span class="step">
-em que $a_{ij}$ e $b_k$ são constantes reais, para
-$i,k=1,\ldots,m$ e $j=1,\ldots,n$. </span> 
-
+$$(f*g)(t)=\int_0^tf(t-\tau)g(\tau)d\tau =\begin{cases}
+\int_0^td\tau=t,&\mbox{ se } 0< t< 1,\\
+\int_{t-1}^1d\tau=2-t,&\mbox{ se } 1\le t<2,\\
+0,&\mbox{ se } t\ge 2.
+\end{cases}  $$ </span>
 	</p>
+				<span class="step">
+<iframe scrolling="no" title="Convolução" 
+           src="https://www.geogebra.org/material/iframe/id/cgxfjzmy/width/700/height/500/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/false" 
+           width="700px" height="500px" style="border:0px;"> </iframe> </span>
+				
+
+	
         </div>
 
 		<!-- Slide 2 -->
