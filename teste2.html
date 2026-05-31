@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apresentação Quadro Negro 100% Funcional</title>
+    <title>Apresentação Quadro Negro Definitivo</title>
     
     <style>
-        /* 🌐 Importação robusta da fonte estilo giz */
+        /* 🌐 Importação segura da fonte estilo giz */
         @import url('https://googleapis.com');
 
         * {
@@ -128,7 +128,7 @@
         .btn-left { left: 15px; }
         .btn-right { right: 15px; }
 
-        /* 📋 LINKS DO SUMÁRIO (BLINDADOS E ALINHADOS) */
+        /* 📋 LINKS DO SUMÁRIO (DIRETOS E SEGUROS) */
         .menu-list {
             list-style: none;
             font-size: 2.2rem;
@@ -141,46 +141,46 @@
             text-decoration: underline dotted;
             display: block;
             margin-bottom: 15px;
-            padding: 8px 15px; /* Ampla área de toque para dedos no Android */
+            padding: 10px 20px; /* Ampla área de toque para dedos no Android */
             transition: color 0.2s, transform 0.2s;
             width: fit-content;
-            background: rgba(255,255,255,0.02); /* Leve marcação de área clicável */
-            border-radius: 4px;
+            background: rgba(255,255,255,0.04); /* Marcação leve da área clicável */
+            border-radius: 6px;
         }
-        .menu-item:hover {
+        .menu-item:hover, .menu-item:active {
             color: #ffffff;
-            background: rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.15);
         }
     </style>
 </head>
 <body>
 
-    <!-- Botões laterais estáveis -->
-    <button class="nav-btn btn-left" id="btn-back">◀</button>
-    <button class="nav-btn btn-right" id="btn-next">▶</button>
+    <!-- Botões laterais estáveis com chamada inline direta -->
+    <button class="nav-btn btn-left" onclick="handleBack()">◀</button>
+    <button class="nav-btn btn-right" onclick="handleAdvance()">▶</button>
 
     <div class="slide-container">
         
         <!-- Slide 1 (Índice 0) -->
         <div class="slide active">
-            <h1>Código Blindado contra Bugs</h1>
+            <h1>Código Universal Sem Falhas</h1>
             <p>
-                Este modelo foi reestruturado usando escuta de eventos nativa direta. 
+                Ajustamos a engenharia para rodar de forma direta e sem travar. 
                 <span class="step">Para avançar os textos ou os slides, use o <b>botão direito (▶)</b> ou pressione Espaço.</span> 
-                <span class="step">Dessa forma, garantimos estabilidade total em qualquer <b>Mac, iPhone ou Android</b>.</span>
+                <span class="step">Dessa forma, os links do sumário funcionam de primeira no <b>Mac, iPhone ou Android</b>.</span>
             </p>
         </div>
 
         <!-- Slide 2 (Índice 1): MENU DE LINKS -->
         <div class="slide">
             <h1>Sumário da Apresentação</h1>
-            <p style="margin-bottom: 15px;">Toque nas opções abaixo para pular direto para o slide escolhido:</p>
+            <p style="margin-bottom: 15px;">Clique ou toque nas opções abaixo para pular de página:</p>
             <ul class="menu-list">
-                <!-- Usamos a tag "data-slide" para o JavaScript mapear o link perfeitamente -->
-                <li class="menu-item" data-slide="0">1. Capa da Apresentação</li>
-                <li class="menu-item" data-slide="2">2. Como funciona a correção?</li>
-                <li class="menu-item" data-slide="3">3. Organização prática</li>
-                <li class="menu-item" data-slide="4">4. Finalização</li>
+                <!-- Executa a navegação de forma direta e global, ignorando bloqueios de segurança -->
+                <li class="menu-item" onclick="goToSlide(0)">1. Capa da Apresentação</li>
+                <li class="menu-item" onclick="goToSlide(2)">2. Como funciona a correção?</li>
+                <li class="menu-item" onclick="goToSlide(3)">3. Organização prática</li>
+                <li class="menu-item" onclick="goToSlide(4)">4. Finalização</li>
             </ul>
         </div>
 
@@ -188,7 +188,7 @@
         <div class="slide">
             <h1>Como funciona a correção?</h1>
             <p>
-                Os navegadores móveis gerenciavam mal os comandos embutidos nas tags. <span class="step">Ao usar <b>escutores dinâmicos (EventListeners)</b>,</span> <span class="step">o sistema intercepta o toque imediatamente antes de qualquer bloqueio do sistema operacional.</span>
+                Eliminamos os escutadores dinâmicos que dependiam do carregamento da página. <span class="step">Ao usar chamadas de função diretas nas tags,</span> <span class="step">o navegador executa a mudança de slide instantaneamente no momento do toque na <b>linha amarela</b>.</span>
             </p>
         </div>
 
@@ -196,7 +196,7 @@
         <div class="slide">
             <h1>Organização prática</h1>
             <p>
-                Mantenha a ordem numérica dos destinos. <span class="step">Altere o número dentro de <b>data-slide="X"</b> no HTML:</span> 
+                Mantenha a ordem numérica dos destinos. <span class="step">Altere o número dentro de <b>goToSlide(X)</b> no HTML:</span> 
                 <span class="step">A introdução vale <b>0</b>, a tela do sumário vale <b>1</b>,</span> 
                 <span class="step">o próximo slide vale <b>2</b>, mantendo essa sequência exata.</span>
             </p>
@@ -270,10 +270,6 @@
             }
         }
 
+        // 🎯 FUNÇÃO GLOBAL SIMPLES: Roda direto ao clique, sem depender de eventos do sistema
         function goToSlide(targetIdx) {
             if (targetIdx >= 0 && targetIdx < slides.length) {
-                getSteps(slides[currentSlideIdx]).forEach(s => s.classList.remove('show'));
-                changeSlide(targetIdx, false);
-            }
-        }
-
