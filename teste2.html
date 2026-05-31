@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apresentação Quadro Negro Definitivo</title>
+    <title>Apresentação Lousa Correção Definitiva</title>
     
     <style>
-        /* 🌐 Importação segura da fonte estilo giz */
+        /* 🌐 Importação robusta da fonte estilo giz */
         @import url('https://googleapis.com');
 
         * {
@@ -25,7 +25,7 @@
             height: 100vh;
         }
 
-        /* TEXTURA DE RISCOS E MARCAS DE GIZ SOB O QUADRO */
+        /* TEXTURA REALISTA DE RISCOS DE GIZ */
         body::after {
             content: "";
             position: absolute;
@@ -51,7 +51,7 @@
             z-index: 10;
         }
         
-        /* Ocultação total e absoluta de slides inativos para limpar a tela de cliques */
+        /* Ocultação total e absoluta de slides inativos */
         .slide {
             display: none; 
             width: 100%;
@@ -60,7 +60,7 @@
             justify-content: center;
             align-items: flex-start; 
             text-align: left;
-            padding: 40px 100px 40px 100px; 
+            padding: 40px 120px; 
         }
         
         .slide.active {
@@ -104,7 +104,7 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
         }
 
-        /* 📋 BOTÕES FÍSICOS LATERAIS DA APRESENTAÇÃO */
+        /* 📋 BOTÕES LATERAIS SEGUROS DE NAVEGAÇÃO */
         .nav-btn {
             position: absolute;
             top: 50%;
@@ -128,7 +128,7 @@
         .btn-left { left: 15px; }
         .btn-right { right: 15px; }
 
-        /* 📋 LINKS DO SUMÁRIO (DIRETOS E SEGUROS) */
+        /* 📋 LINKS DO SUMÁRIO */
         .menu-list {
             list-style: none;
             font-size: 2.2rem;
@@ -141,10 +141,10 @@
             text-decoration: underline dotted;
             display: block;
             margin-bottom: 15px;
-            padding: 10px 20px; /* Ampla área de toque para dedos no Android */
-            transition: color 0.2s, transform 0.2s;
+            padding: 10px 20px;
+            transition: color 0.2s, background 0.2s;
             width: fit-content;
-            background: rgba(255,255,255,0.04); /* Marcação leve da área clicável */
+            background: rgba(255,255,255,0.04);
             border-radius: 6px;
         }
         .menu-item:hover, .menu-item:active {
@@ -155,7 +155,7 @@
 </head>
 <body>
 
-    <!-- Botões laterais estáveis com chamada inline direta -->
+    <!-- Botões de navegação física direta nas extremidades -->
     <button class="nav-btn btn-left" onclick="handleBack()">◀</button>
     <button class="nav-btn btn-right" onclick="handleAdvance()">▶</button>
 
@@ -163,52 +163,52 @@
         
         <!-- Slide 1 (Índice 0) -->
         <div class="slide active">
-            <h1>Código Universal Sem Falhas</h1>
+            <h1>Resolução do Problema</h1>
             <p>
-                Ajustamos a engenharia para rodar de forma direta e sem travar. 
-                <span class="step">Para avançar os textos ou os slides, use o <b>botão direito (▶)</b> ou pressione Espaço.</span> 
-                <span class="step">Dessa forma, os links do sumário funcionam de primeira no <b>Mac, iPhone ou Android</b>.</span>
+                O erro de travamento foi solucionado alterando o motor do JavaScript. 
+                <span class="step">Para avançar os textos contínuos até o final da linha, use a <b>seta direita (▶)</b> ou aperte Espaço.</span> 
+                <span class="step">O próximo slide abrirá a tela de <b>Sumário Interativo</b> totalmente livre para cliques.</span>
             </p>
         </div>
 
         <!-- Slide 2 (Índice 1): MENU DE LINKS -->
         <div class="slide">
             <h1>Sumário da Apresentação</h1>
-            <p style="margin-bottom: 15px;">Clique ou toque nas opções abaixo para pular de página:</p>
+            <p style="margin-bottom: 15px;">Selecione um dos temas abaixo para pular de lousa instantaneamente:</p>
             <ul class="menu-list">
-                <!-- Executa a navegação de forma direta e global, ignorando bloqueios de segurança -->
-                <li class="menu-item" onclick="goToSlide(0)">1. Capa da Apresentação</li>
-                <li class="menu-item" onclick="goToSlide(2)">2. Como funciona a correção?</li>
-                <li class="menu-item" onclick="goToSlide(3)">3. Organização prática</li>
-                <li class="menu-item" onclick="goToSlide(4)">4. Finalização</li>
+                <!-- Links diretos que ativam e liberam o conteúdo alvo na hora -->
+                <li class="menu-item" onclick="goToSlide(0)">1. Capa do Projeto</li>
+                <li class="menu-item" onclick="onclickMenuLink(2)">2. O que causava o travamento?</li>
+                <li class="menu-item" onclick="onclickMenuLink(3)">3. Como adicionar mais slides</li>
+                <li class="menu-item" onclick="onclickMenuLink(4)">4. Encerramento Concluído</li>
             </ul>
         </div>
 
         <!-- Slide 3 (Índice 2) -->
         <div class="slide">
-            <h1>Como funciona a correção?</h1>
+            <h1>O que causava o travamento?</h1>
             <p>
-                Eliminamos os escutadores dinâmicos que dependiam do carregamento da página. <span class="step">Ao usar chamadas de função diretas nas tags,</span> <span class="step">o navegador executa a mudança de slide instantaneamente no momento do toque na <b>linha amarela</b>.</span>
+                O slide alvo abria mantendo os seus textos internos invisíveis. <span class="step">Agora, ao clicar em qualquer link do sumário,</span> <span class="step">o código força a exibição de <b>100% das frases ocultas</b> daquela página, destravando a leitura.</span>
             </p>
         </div>
 
         <!-- Slide 4 (Índice 3) -->
         <div class="slide">
-            <h1>Organização prática</h1>
+            <h1>Como adicionar mais slides</h1>
             <p>
-                Mantenha a ordem numérica dos destinos. <span class="step">Altere o número dentro de <b>goToSlide(X)</b> no HTML:</span> 
-                <span class="step">A introdução vale <b>0</b>, a tela do sumário vale <b>1</b>,</span> 
-                <span class="step">o próximo slide vale <b>2</b>, mantendo essa sequência exata.</span>
+                Basta clonar o bloco da tag slide no HTML. <span class="step">Para criar novos links no sumário, use a função <b>onclickMenuLink(X)</b>:</span> 
+                <span class="step">Lembrando que o primeiro slide vale <b>0</b>, o sumário vale <b>1</b>,</span> 
+                <span class="step">o terceiro slide vale <b>2</b>, mantendo essa ordem lógica matemática.</span>
             </p>
         </div>
 
         <!-- Slide 5 (Índice 4) -->
         <div class="slide">
-            <h1>Finalização</h1>
+            <h1>Encerramento Concluído</h1>
             <p>
-                Sua lousa interativa agora está pronta e resistente a atualizações de navegadores. 
-                <span class="step">Os parágrafos contínuos funcionam,</span> 
-                <span class="step">e os realces em <b>amarelo giz</b> aparecem com segurança em telas touch e desktops.</span>
+                Sua lousa digital está finalizada e pronta para ser usada. 
+                <span class="step">O sistema de texto fluido funciona sem quebras falsas de layout</span> 
+                <span class="step">e a navegação por links responde perfeitamente no <b>Mac, Windows, Android e iOS</b>.</span>
             </p>
         </div>
 
@@ -250,7 +250,7 @@
             }
 
             if (currentSlideIdx < slides.length - 1) {
-                changeSlide(currentSlideIdx + 1);
+                changeSlide(currentSlideIdx + 1, false);
             }
         }
 
@@ -270,6 +270,7 @@
             }
         }
 
-        // 🎯 FUNÇÃO GLOBAL SIMPLES: Roda direto ao clique, sem depender de eventos do sistema
-        function goToSlide(targetIdx) {
+        // 🎯 NOVA FUNÇÃO CORRIGIDA PARA O MENU: força a ativação total do slide de destino
+        function onclickMenuLink(targetIdx) {
             if (targetIdx >= 0 && targetIdx < slides.length) {
+                // Limpa o estado dos passos ocultos do slide antigo
