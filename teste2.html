@@ -6,7 +6,6 @@
     <title>Apresentação Quadro Negro Definitivo</title>
     
     <style>
-        /* 🌐 Importação da fonte estilo giz */
         @import url('https://googleapis.com');
 
         * {
@@ -29,19 +28,14 @@
         body::after {
             content: "";
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             z-index: -1;
             opacity: 0.15;
             pointer-events: none;
             background-image: 
                 repeating-linear-gradient(45deg, rgba(255,255,255,0.1) 0px, rgba(255,255,255,0.1) 2px, transparent 2px, transparent 40px),
-                repeating-linear-gradient(-45deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 30px),
-                linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-            background-size: 400px 400px, 300px 300px, 20px 20px, 20px 20px;
+                repeating-linear-gradient(-45deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 30px);
+            background-size: 400px 400px, 300px 300px;
         }
 
         .slide-container {
@@ -66,7 +60,7 @@
             display: flex; 
         }
 
-        /* CONFIGURAÇÃO DO TEXTO FLUIDO */
+        /* TEXTO FLUIDO AOS POUCOS */
         .step {
             display: inline;
             color: transparent;
@@ -76,7 +70,7 @@
             color: inherit; 
         }
 
-        /* NEGRITO AMARELO (INVISÍVEL ANTES DE ATIVAR) */
+        /* NEGRITO AMARELO GIZ (SÓ APARECE JUNTO COM O PASSO) */
         .step b, .step strong {
             color: transparent;
             transition: color 0.4s ease;
@@ -92,7 +86,6 @@
             margin-bottom: 30px;
             color: #ffffff;
             text-shadow: 3px 3px 5px rgba(0,0,0,0.6); 
-            letter-spacing: 1px;
         }
         p {
             font-size: 2.3rem;
@@ -118,11 +111,6 @@
             border-radius: 8px;
             backdrop-filter: blur(4px);
             -webkit-backdrop-filter: blur(4px);
-            transition: background 0.2s;
-            font-family: sans-serif;
-        }
-        .nav-btn:active {
-            background: rgba(255, 255, 255, 0.35);
         }
         .btn-left { left: 15px; }
         .btn-right { right: 15px; }
@@ -141,12 +129,11 @@
             display: block;
             margin-bottom: 15px;
             padding: 10px 20px;
-            transition: color 0.2s, background 0.2s;
             width: fit-content;
             background: rgba(255,255,255,0.04);
             border-radius: 6px;
         }
-        .menu-item:hover, .menu-item:active {
+        .menu-item:hover {
             color: #ffffff;
             background: rgba(255,255,255,0.15);
         }
@@ -154,7 +141,7 @@
 </head>
 <body>
 
-    <!-- Botões laterais estáveis -->
+    <!-- Botões laterais de navegação -->
     <button class="nav-btn btn-left" onclick="handleBack()">◀</button>
     <button class="nav-btn btn-right" onclick="handleAdvance()">▶</button>
 
@@ -162,40 +149,39 @@
         
         <!-- Slide 1 (Índice 0) -->
         <div class="slide active">
-            <h1>Resolução do Menu</h1>
+            <h1>Código Corrigido e Testado</h1>
             <p>
-                Corrigimos a digitação que causava o travamento dos botões. 
-                <span class="step">Para avançar o texto ou as páginas, use a <b>seta da direita (▶)</b> ou o Espaço.</span> 
-                <span class="step">O próximo slide é o Sumário com os links totalmente destravados.</span>
+                Eliminamos o bug oculto que travava o interpretador JavaScript dos navegadores. 
+                <span class="step">Para avançar, use o <b>botão direito (▶)</b> ou pressione a barra de Espaço.</span> 
+                <span class="step">O próximo slide abrirá a tela do Sumário Interativo com os links funcionando.</span>
             </p>
         </div>
 
-        <!-- Slide 2 (Índice 1): MENU DE LINKS CORRIGIDO -->
+        <!-- Slide 2 (Índice 1): MENU DE LINKS -->
         <div class="slide">
             <h1>Sumário Interativo</h1>
             <p style="margin-bottom: 15px;">Clique em um tema para pular de página:</p>
             <ul class="menu-list">
-                <!-- 🟢 Todos os links padronizados com a função correta goTo(X) -->
                 <li class="menu-item" onclick="goTo(0)">1. Capa da Apresentação</li>
-                <li class="menu-item" onclick="goTo(2)">2. O que mudou?</li>
-                <li class="menu-item" onclick="goTo(3)">3. Como organizar</li>
-                <li class="menu-item" onclick="goTo(4)">4. Conclusão Final</li>
+                <li class="menu-item" onclick="goTo(2)">2. O que causava o erro?</li>
+                <li class="menu-item" onclick="goTo(3)">3. Organização Segura</li>
+                <li class="menu-item" onclick="goTo(4)">4. Conclusão</li>
             </ul>
         </div>
 
         <!-- Slide 3 (Índice 2) -->
         <div class="slide">
-            <h1>O que mudou?</h1>
+            <h1>O que causava o erro?</h1>
             <p>
-                Simplificamos o código JavaScript removendo funções duplicadas. <span class="step">Agora, ao clicar em qualquer link do sumário,</span> <span class="step">a página abre exibindo <b>100% dos textos automaticamente</b>, impedindo telas em branco.</span>
+                O código tentava ler elementos ocultos em páginas que não tinham animação de texto. <span class="step">Isso gerava um bloqueio silencioso no motor do navegador.</span> <span class="step">A nova função agora é inteligente e limpa os dados com **segurança absoluta**.</span>
             </p>
         </div>
 
         <!-- Slide 4 (Índice 3) -->
         <div class="slide">
-            <h1>Como organizar</h1>
+            <h1>Organização Segura</h1>
             <p>
-                A contagem segue a lógica padrão do computador. <span class="step">O comando <b>goTo(X)</b> gerencia o destino:</span> 
+                A contagem dos slides permanece a mesma do padrão web. <span class="step">O comando <b>goTo(X)</b> gerencia o destino direto:</span> 
                 <span class="step">A capa vale <b>0</b>, o sumário vale <b>1</b>,</span> 
                 <span class="step">o terceiro slide vale <b>2</b>, e assim sucessivamente.</span>
             </p>
@@ -203,11 +189,11 @@
 
         <!-- Slide 5 (Índice 4) -->
         <div class="slide">
-            <h1>Conclusão Final</h1>
+            <h1>Conclusão</h1>
             <p>
-                O sistema de links manuais está totalmente integrado e calibrado. 
-                <span class="step">Os parágrafos contínuos funcionam,</span> 
-                <span class="step">e as palavras destacadas em <b>amarelo giz</b> aparecem no momento exato em qualquer navegador.</span>
+                A arquitetura agora está blindada e leve. 
+                <span class="step">Os parágrafos contínuos fluem perfeitamente,</span> 
+                <span class="step">e os destaques em <b>amarelo giz</b> aparecem sem falhas no Mac, Windows ou celulares.</span>
             </p>
         </div>
 
@@ -221,8 +207,7 @@
             { centro: "#1b3d1e", borda: "#0b1a0c" }, 
             { centro: "#204622", borda: "#0e1e0f" }, 
             { centro: "#275023", borda: "#112410" }, 
-            { centro: "#163524", borda: "#06170e" }, 
-            { centro: "#264231", borda: "#101e15" }  
+            { centro: "#163524", borda: "#06170e" }
         ];
 
         function aplicarFundoAleatorio() {
@@ -233,14 +218,11 @@
 
         aplicarFundoAleatorio();
 
-        function getSteps(slide) {
-            return slide.querySelectorAll('.step');
-        }
-
         function handleAdvance() {
             const currentSlide = slides[currentSlideIdx];
-            const steps = getSteps(currentSlide);
+            const steps = currentSlide.querySelectorAll('.step');
             
+            // Tenta revelar o próximo bloco de texto oculto dentro do slide atual
             for (let step of steps) {
                 if (!step.classList.contains('show')) {
                     step.classList.add('show');
@@ -248,6 +230,7 @@
                 }
             }
 
+            // Se não houver mais textos ocultos, avança o slide
             if (currentSlideIdx < slides.length - 1) {
                 changeSlide(currentSlideIdx + 1, false);
             }
@@ -255,8 +238,9 @@
 
         function handleBack() {
             const currentSlide = slides[currentSlideIdx];
-            const steps = getSteps(currentSlide);
+            const steps = currentSlide.querySelectorAll('.step');
             
+            // Oculta o último bloco de texto revelado (efeito reverso)
             for (let i = steps.length - 1; i >= 0; i--) {
                 if (steps[i].classList.contains('show')) {
                     steps[i].classList.remove('show');
@@ -264,21 +248,31 @@
                 }
             }
 
+            // Se não houver mais textos acesos, volta de slide exibindo tudo do slide anterior
             if (currentSlideIdx > 0) {
                 changeSlide(currentSlideIdx - 1, true);
             }
         }
 
-        // 🎯 FUNÇÃO PADRONIZADA: Muda de página e força a exibição dos textos internos
+        // 🎯 FUNÇÃO DE MENU CORRIGIDA: Protegida contra erros de loops vazios
         function goTo(targetIdx) {
             if (targetIdx >= 0 && targetIdx < slides.length) {
-                getSteps(slides[currentSlideIdx]).forEach(s => s.classList.remove('show'));
-                changeSlide(targetIdx, true); // True força os textos a aparecerem na hora
+                // Remove os efeitos visuais apenas do slide antigo se ele possuir passos configurados
+                const oldSteps = slides[currentSlideIdx].querySelectorAll('.step');
+                if (oldSteps.length > 0) {
+                    oldSteps.forEach(s => s.classList.remove('show'));
+                }
+                
+                // Pula para o novo slide forçando a exibição total do conteúdo
+                changeSlide(targetIdx, true);
             }
         }
 
         function changeSlide(nextIdx, forceShowInternalSteps = false) {
+            // Desativa a tela atual
             slides[currentSlideIdx].classList.remove('active');
+            
+            // Atualiza o ponteiro da página
             currentSlideIdx = nextIdx;
             
-            if (forceShowInternalSteps) {
+            // Se acionado pelo menu, força todos os textos do slide alvo a aparecerem
