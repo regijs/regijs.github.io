@@ -1,33 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <script type="text/javascript" src="https://regijs.github.io/first.js"></script>
-    <script type="text/javascript">
-    loadScript("https://regijs.github.io/second.js", function(){
-        //initialization code
-    });
-    </script>     <meta charset="UTF-8">
-    
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apresentação Quadro Riscado com Giz</title>
+    <title>Apresentação Quadro com Sumário Interativo</title>
     
-    <!-- 🌐 IMPORTAÇÃO DA FONTE ESTILO GIZ PARA WINDOWS/ANDROID -->
-    <link href='https://fonts.googleapis.com/css?family=Nerko One' rel='stylesheet'>
-
     <style>
+        /* 🌐 Importação robusta para navegadores móveis e desktop */
+        @import url('https://googleapis.com');
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
         body {
-            /* ✍️ COMPATIBILIDADE PERFEITA ESTILO QUADRO NEGRO */
-            font-family: 'Nerko One','Chalkduster' ;
+            font-family: 'Chalkduster', 'Nerko One', 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
             color: #fff;
             overflow: hidden;
             user-select: none;
             position: relative;
             background-color: #0f2310;
+            touch-action: manipulation;
         }
 
         /* TEXTURA DE RISCOS E MARCAS DE GIZ SOB O QUADRO */
@@ -82,104 +76,137 @@
             color: transparent;
             transition: color 0.4s ease;
         }
-
         .step.show {
             color: inherit; 
         }
 
-        /* TAG <b> EM AMARELO GIZ */
-        .step.show b,
-        .step.show strong,
-        b {
+        /* CORREÇÃO DO NEGRITO (INVISÍVEL ANTES DE ATIVAR) */
+        .step b, .step strong {
+            color: transparent;
+            transition: color 0.4s ease;
+        }
+        .step.show b, .step.show strong {
             color: #fff59d; 
             text-shadow: 0 0 5px rgba(255,245,157,0.3);
-            font-weight: normal; 
         }
 
         /* ESTILIZAÇÃO DO TEXTO COM EFEITO GIZ */
         h1 {
-            font-size: 3.8rem;
+            font-size: 4.2rem;
             margin-bottom: 35px;
             color: #ffffff;
             text-shadow: 3px 3px 5px rgba(0,0,0,0.6); 
             letter-spacing: 1px;
         }
         p {
-            font-size: 2.4rem;
+            font-size: 2.6rem;
             color: #f0f0f0;
             max-width: 1000px;
-            line-height: 1.7;
+            line-height: 1.6;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
         }
-        .controls {
-            position: absolute;
-            bottom: 30px;
-            right: 30px;
-            z-index: 10;
+
+        /* 📋 ESTILIZAÇÃO DA LISTA DE LINKS (SUMÁRIO) */
+        .menu-list {
+            list-style: none;
+            font-size: 2.4rem;
+            line-height: 1.8;
         }
-        .btn {
-            background-color: rgba(255, 255, 255, 0.15);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 10px 20px;
-            font-size: 1rem;
+        .menu-item {
+            color: #fff59d;
             cursor: pointer;
-            border-radius: 5px;
-            margin-left: 10px;
-            backdrop-filter: blur(3px);
-            font-family: sans-serif; /* Mantém botões normais para leitura */
+            text-decoration: underline dotted;
+            transition: color 0.2s ease, transform 0.2s ease;
+            display: block;
+            margin-bottom: 15px;
         }
-        .btn:hover {
-            background-color: rgba(255, 255, 255, 0.3);
+        .menu-item:hover {
+            color: #ffffff;
+            transform: translateX(10px); /* Leve efeito ao passar o mouse */
+        }
+
+        .touch-hint {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.4);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 1rem;
+            font-family: sans-serif;
+            pointer-events: none;
+            opacity: 0.7;
+            animation: fadeOutHint 4s forwards;
+        }
+        @keyframes fadeOutHint {
+            80% { opacity: 0.7; }
+            100% { opacity: 0; display: none; }
         }
     </style>
 </head>
 <body>
 
-    <div class="slide-container" onclick="handleAdvance()">
-            <!-- Slide 1 -->
+    <div class="slide-container" onclick="handleScreenClick(event)">
+        
+        <!-- Slide 1 -->
         <div class="slide active">
-            <h1>1.2 Sistemas de Equações Lineares</h1>
-            <p> 
-				<span class="step">
-				Um <b>sistema de equações lineares</b> </span>
-				<span class="step">
-					ou simplesmente <b>sistema linear</b> </span>
-				<span class="step"> é um conjunto de equações lineares, </span>
-				<span class="step"> ou seja, é um conjunto de equações da forma</span> 
-	                <span class="step">
-$$
-\left\{
-\begin{array}{ccccccccccc}
-a_{11}x_1  &+&  a_{12}x_2  &+& &\ldots& &+&  a_{1n}x_n   &=&b_1\\
-a_{21}x_1  &+&  a_{22}x_2   &+& &\ldots& &+&  a_{2n}x_n  &=& b_2\\
-\vdots   &&               & & & & &&    \vdots&=& \vdots\\
-a_{m1}x_1  &+&  a_{m2}x_2    &+& &\ldots&     &+& a_{mn}x_n  &=& b_m
-\end{array}
-\right.
-$$
-                    </span> 
-                <span class="step">
-em que $a_{ij}$ e $b_k$ são constantes reais, para
-$i,k=1,\ldots,m$ e $j=1,\ldots,n$. </span> 
-
-	</p>
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="slide">
-            <h1>Pronto para Uso</h1>
+            <h1>Capa da Apresentação</h1>
             <p>
-                Basta salvar o arquivo e testar. <span class="step">As quebras de linha continuam automáticas,</span> <span class="step">e os realces em <b>amarelo giz</b> permanecem preservados com precisão.</span>
+                Bem-vindo ao modelo de lousa escolar. 
+                <span class="step">Dê um toque no lado direito para ver o próximo slide,</span> 
+                <span class="step">que agora funciona como um <b>Sumário Interativo</b> para navegar por todo o projeto.</span>
             </p>
         </div>
+
+        <!-- Slide 2: ÍNDICE / SUMÁRIO COM LINKS DIRETOS -->
+        <div class="slide">
+            <h1>Sumário Interativo</h1>
+            <p>Selecione um tópico para pular direto para ele:</p>
+            <ul class="menu-list">
+                <!-- Usamos onclick passando o número do slide (começando em 0 para o primeiro slide) -->
+                <!-- event.stopPropagation() impede que o clique de seleção mude de slide sozinho -->
+                <li class="menu-item" onclick="event.stopPropagation(); goToSlide(0)">1. Capa da Apresentação</li>
+                <li class="menu-item" onclick="event.stopPropagation(); goToSlide(2)">2. O que mudou no código?</li>
+                <li class="menu-item" onclick="event.stopPropagation(); goToSlide(3)">3. Dicas de Organização</li>
+                <li class="menu-item" onclick="event.stopPropagation(); goToSlide(4)">4. Encerramento</li>
+            </ul>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide">
+            <h1>O que mudou no código?</h1>
+            <p>
+                Adicionamos a função JavaScript chamada <span class="step"><b>goToSlide</b>.</span> 
+                <span class="step">Ela permite que listas ou elementos específicos limpem o estado atual</span> 
+                <span class="step">e saltem diretamente para o índice numérico da página escolhida.</span>
+            </p>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="slide">
+            <h1>Dicas de Organização</h1>
+            <p>
+                Lembre-se de ajustar os números dentro dos comandos <span class="step"><b>goToSlide(X)</b> no seu sumário.</span> 
+                <span class="step">O primeiro slide sempre vale <b>0</b>, o segundo vale <b>1</b>,</span> 
+                <span class="step">o terceiro vale <b>2</b>, e assim sucessivamente.</span>
+            </p>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="slide">
+            <h1>Fim do Projeto</h1>
+            <p>
+                Pronto! Agora você tem um controle híbrido perfeito. 
+                <span class="step">Pode avançar o texto de forma linear tocando nas bordas</span> 
+                <span class="step">ou navegar de forma totalmente livre usando os <b>links do sumário</b>.</span>
+            </p>
+        </div>
+
     </div>
 
-    <div class="controls">
-        <button class="btn" onclick="event.stopPropagation(); handleBack()">◀ Voltar</button>
-        <button class="btn" onclick="event.stopPropagation(); handleAdvance()">Avançar ▶</button>
-    </div>
+    <div class="touch-hint">⬅️ Esquerda Volta | Direita Avança | Clique nos links amarelos para pular de slide 👆</div>
 
     <script>
         let currentSlideIdx = 0;
@@ -203,6 +230,17 @@ $i,k=1,\ldots,m$ e $j=1,\ldots,n$. </span>
 
         function getSteps(slide) {
             return slide.querySelectorAll('.step');
+        }
+
+        function handleScreenClick(event) {
+            const screenWidth = window.innerWidth;
+            const clickX = event.clientX;
+
+            if (clickX < screenWidth * 0.30) {
+                handleBack();
+            } else {
+                handleAdvance();
+            }
         }
 
         function handleAdvance() {
@@ -237,32 +275,7 @@ $i,k=1,\ldots,m$ e $j=1,\ldots,n$. </span>
             }
         }
 
-        function changeSlide(nextIdx, comingFromBack = false) {
-            if (!comingFromBack) {
-                const currentSlide = slides[currentSlideIdx];
-                getSteps(currentSlide).forEach(s => s.classList.remove('show'));
-            }
-
-            slides[currentSlideIdx].classList.remove('active');
-            currentSlideIdx = nextIdx;
-            
-            if (comingFromBack) {
-                getSteps(slides[currentSlideIdx]).forEach(s => s.classList.add('show'));
-            }
-
-            slides[currentSlideIdx].classList.add('active');
-            aplicarFundoAleatorio(); 
-        }
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight' || e.key === ' ') {
-                e.preventDefault();
-                handleAdvance();
-            } else if (e.key === 'ArrowLeft') {
-                e.preventDefault();
-                handleBack();
-            }
-        });
-    </script>
-</body>
-</html>
+        // 🎯 NOVA FUNÇÃO: PULA DIRETAMENTE PARA O SLIDE INDICADO PELO LINK
+        function goToSlide(targetIdx) {
+            if (targetIdx >= 0 && targetIdx < slides.length) {
+                // Limpa os passos ocultos do slide que você está saindo
