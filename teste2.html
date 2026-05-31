@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apresentação Quadro com Sumário Interativo</title>
+    <title>Apresentação Quadro com Links Corrigidos</title>
     
     <style>
         /* 🌐 Importação robusta para navegadores móveis e desktop */
@@ -112,6 +112,8 @@
             list-style: none;
             font-size: 2.4rem;
             line-height: 1.8;
+            position: relative;
+            z-index: 20; /* Fica acima das zonas de toque invisíveis */
         }
         .menu-item {
             color: #fff59d;
@@ -123,7 +125,23 @@
         }
         .menu-item:hover {
             color: #ffffff;
-            transform: translateX(10px); /* Leve efeito ao passar o mouse */
+            transform: translateX(10px);
+        }
+
+        /* 🎯 ZONAS DE TOQUE INTELIGENTES COMPLETAMENTE INVISÍVEIS */
+        .touch-zone {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            z-index: 5; /* Fica atrás do texto do Sumário para não travar os links */
+        }
+        .touch-left {
+            left: 0;
+            width: 30%; /* 30% da tela na esquerda para voltar */
+        }
+        .touch-right {
+            right: 0;
+            width: 70%; /* 70% da tela na direita para avançar */
         }
 
         .touch-hint {
@@ -139,6 +157,7 @@
             pointer-events: none;
             opacity: 0.7;
             animation: fadeOutHint 4s forwards;
+            z-index: 100;
         }
         @keyframes fadeOutHint {
             80% { opacity: 0.7; }
@@ -148,7 +167,11 @@
 </head>
 <body>
 
-    <div class="slide-container" onclick="handleScreenClick(event)">
+    <!-- 🟢 ZONAS DE TOQUE SEPARADAS DA ESTRUTURA DOS SLIDES -->
+    <div class="touch-zone touch-left" onclick="handleBack()"></div>
+    <div class="touch-zone touch-right" onclick="handleAdvance()"></div>
+
+    <div class="slide-container">
         
         <!-- Slide 1 -->
         <div class="slide active">
@@ -156,21 +179,20 @@
             <p>
                 Bem-vindo ao modelo de lousa escolar. 
                 <span class="step">Dê um toque no lado direito para ver o próximo slide,</span> 
-                <span class="step">que agora funciona como um <b>Sumário Interativo</b> para navegar por todo o projeto.</span>
+                <span class="step">que agora funciona como um <b>Sumário Interativo</b> funcional para navegar por todo o projeto.</span>
             </p>
         </div>
 
         <!-- Slide 2: ÍNDICE / SUMÁRIO COM LINKS DIRETOS -->
         <div class="slide">
             <h1>Sumário Interativo</h1>
-            <p>Selecione um tópico para pular direto para ele:</p>
+            <p style="margin-bottom: 30px;">Selecione um tópico para pular direto para ele:</p>
             <ul class="menu-list">
-                <!-- Usamos onclick passando o número do slide (começando em 0 para o primeiro slide) -->
-                <!-- event.stopPropagation() impede que o clique de seleção mude de slide sozinho -->
-                <li class="menu-item" onclick="event.stopPropagation(); goToSlide(0)">1. Capa da Apresentação</li>
-                <li class="menu-item" onclick="event.stopPropagation(); goToSlide(2)">2. O que mudou no código?</li>
-                <li class="menu-item" onclick="event.stopPropagation(); goToSlide(3)">3. Dicas de Organização</li>
-                <li class="menu-item" onclick="event.stopPropagation(); goToSlide(4)">4. Encerramento</li>
+                <!-- Os cliques aqui agora rodam livremente sem sofrer interferência da tela de fundo -->
+                <li class="menu-item" onclick="goToSlide(0)">1. Capa da Apresentação</li>
+                <li class="menu-item" onclick="goToSlide(2)">2. O que mudou no código?</li>
+                <li class="menu-item" onclick="goToSlide(3)">3. Dicas de Organização</li>
+                <li class="menu-item" onclick="goToSlide(4)">4. Encerramento</li>
             </ul>
         </div>
 
@@ -178,9 +200,7 @@
         <div class="slide">
             <h1>O que mudou no código?</h1>
             <p>
-                Adicionamos a função JavaScript chamada <span class="step"><b>goToSlide</b>.</span> 
-                <span class="step">Ela permite que listas ou elementos específicos limpem o estado atual</span> 
-                <span class="step">e saltem diretamente para o índice numérico da página escolhida.</span>
+                Separamos os cliques em camadas diferentes. <span class="step">Dessa forma, os links em <b>amarelo giz</b> ganharam prioridade máxima de clique,</span> <span class="step">enquanto as laterais invisíveis continuam responsáveis por controlar os textos.</span>
             </p>
         </div>
 
@@ -208,7 +228,7 @@
 
     <div class="touch-hint">⬅️ Esquerda Volta | Direita Avança | Clique nos links amarelos para pular de slide 👆</div>
 
-    <script>
+    <script {nonce}>
         let currentSlideIdx = 0;
         const slides = document.querySelectorAll('.slide');
 
@@ -230,17 +250,6 @@
 
         function getSteps(slide) {
             return slide.querySelectorAll('.step');
-        }
-
-        function handleScreenClick(event) {
-            const screenWidth = window.innerWidth;
-            const clickX = event.clientX;
-
-            if (clickX < screenWidth * 0.30) {
-                handleBack();
-            } else {
-                handleAdvance();
-            }
         }
 
         function handleAdvance() {
@@ -275,7 +284,3 @@
             }
         }
 
-        // 🎯 NOVA FUNÇÃO: PULA DIRETAMENTE PARA O SLIDE INDICADO PELO LINK
-        function goToSlide(targetIdx) {
-            if (targetIdx >= 0 && targetIdx < slides.length) {
-                // Limpa os passos ocultos do slide que você está saindo
