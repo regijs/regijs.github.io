@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apresentação Quadro Lousa Perfeita</title>
+    <title>Apresentação Quadro Lousa Blindada</title>
     
     <style>
-        /* 🌐 Importação da fonte estilo giz */
+        /* 🌐 Importação segura da fonte estilo giz */
         @import url('https://googleapis.com');
 
         * {
@@ -22,6 +22,8 @@
             position: relative;
             background-color: #0f2310;
             touch-action: manipulation;
+            width: 100vw;
+            height: 100vh;
         }
 
         /* TEXTURA DE RISCOS E MARCAS DE GIZ SOB O QUADRO */
@@ -43,35 +45,28 @@
             background-size: 400px 400px, 300px 300px, 20px 20px, 20px 20px;
         }
 
-        /* CONTAINER GLOBAL COM CLIQUE ATIVO */
         .slide-container {
-            width: 100vw;
-            height: 100vh;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
-            display: flex;
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* 🟢 CORREÇÃO MÁGICA: display: none esconde o slide completamente para o navegador */
+        .slide {
+            display: none; 
+            width: 100%;
+            height: 100%;
             flex-direction: column;
             justify-content: center;
             align-items: flex-start; 
             text-align: left;
-            padding: 40px 10% 40px 10%; 
-            opacity: 0;
-            transition: opacity 0.4s ease-in-out;
-            /* 🟢 CORREÇÃO CRUCIAL PARA CELULAR: permite cliques nos textos internos */
-            pointer-events: none; 
+            padding: 40px 15% 40px 15%; 
         }
         
+        /* Ativa o slide no layout apenas quando necessário */
         .slide.active {
-            opacity: 1;
-            pointer-events: auto; /* Ativa cliques apenas no slide visível */
+            display: flex; 
         }
 
         /* CONFIGURAÇÃO DO TEXTO FLUIDO */
@@ -111,7 +106,7 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
         }
 
-        /* 📋 ESTILIZAÇÃO DO SUMÁRIO */
+        /* 📋 ESTILIZAÇÃO DO SUMÁRIO (LINKS TRADICIONAIS LIVRES) */
         .menu-list {
             list-style: none;
             font-size: 2.4rem;
@@ -121,13 +116,31 @@
             color: #fff59d;
             cursor: pointer;
             text-decoration: underline dotted;
-            transition: color 0.2s ease;
-            display: block;
+            display: inline-block;
             margin-bottom: 15px;
-            padding: 5px 0; /* Aumenta a área de toque no celular */
+            padding: 5px 10px;
+            transition: color 0.2s ease, transform 0.2s ease;
         }
         .menu-item:hover {
             color: #ffffff;
+            transform: translateX(5px);
+        }
+
+        /* 🎯 ABORDAGEM LATERAL: Zonas de clique isoladas nas extremidades da tela */
+        .nav-zone {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            z-index: 50; /* Fica por cima, mas não invade a área central do texto */
+            cursor: pointer;
+        }
+        .nav-zone-left {
+            left: 0;
+            width: 12vw; /* Faixa estreita na esquerda para voltar de página */
+        }
+        .nav-zone-right {
+            right: 0;
+            width: 12vw; /* Faixa estreita na direita para avançar de página */
         }
 
         .touch-hint {
@@ -135,14 +148,14 @@
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(0,0,0,0.4);
+            background: rgba(0,0,0,0.5);
             padding: 8px 16px;
             border-radius: 20px;
             font-size: 1rem;
             font-family: sans-serif;
             pointer-events: none;
             opacity: 0.7;
-            animation: fadeOutHint 4s forwards;
+            animation: fadeOutHint 5s forwards;
             z-index: 100;
         }
         @keyframes fadeOutHint {
@@ -153,63 +166,66 @@
 </head>
 <body>
 
-    <!-- Um único gerenciador de cliques na tela inteira -->
-    <div class="slide-container" onclick="handleGlobalClick(event)">
+    <!-- 🟢 BARRAS DE NAVEGAÇÃO LATERAIS ISOLADAS DE QUALQUER ELEMENTO -->
+    <div class="nav-zone nav-zone-left" onclick="handleBack()" title="Voltar"></div>
+    <div class="nav-zone nav-zone-right" onclick="handleAdvance()" title="Avançar"></div>
+
+    <div class="slide-container">
         
         <!-- Slide 1 -->
         <div class="slide active">
-            <h1>Quadro com Toque Inteligente</h1>
+            <h1>Correção Universal (Mac/Android)</h1>
             <p>
-                Este modelo foi totalmente reestruturado para celulares. 
-                <span class="step">Toque na <b>metade direita</b> para avançar ou revelar as frases.</span> 
-                <span class="step">Toque na <b>metade esquerda</b> se desejar ocultar o texto ou voltar.</span>
+                Este sistema foi blindado contra erros de clique em navegadores estritos como o Safari do Mac. 
+                <span class="step">Para avançar, clique próximo à <b>borda direita</b> da tela ou use o Espaço.</span> 
+                <span class="step">A área central agora é totalmente livre para links, pois removemos as camadas flutuantes.</span>
             </p>
         </div>
 
         <!-- Slide 2: SUMÁRIO COM LINKS DIRETOS -->
         <div class="slide">
             <h1>Sumário Interativo</h1>
-            <p style="margin-bottom: 25px;">Toque diretamente em cima de qualquer linha para pular de slide:</p>
+            <p style="margin-bottom: 20px;">Clique em cima de qualquer linha amarela para pular de página:</p>
             <ul class="menu-list">
-                <!-- Adicionamos o atributo data-target para o JavaScript identificar o destino sem bugs -->
-                <li class="menu-item" data-target="0">1. Capa da Apresentação</li>
-                <li class="menu-item" data-target="2">2. O que mudou?</li>
-                <li class="menu-item" data-target="3">3. Configuração dos Links</li>
-                <li class="menu-item" data-target="4">4. Conclusão</li>
+                <!-- Executa a função sem conflito de propagação em nenhuma marca ou modelo -->
+                <li class="menu-item" onclick="goToSlide(0)">1. Capa da Apresentação</li>
+                <li class="menu-item" onclick="goToSlide(2)">2. Sistema de display</li>
+                <li class="menu-item" onclick="goToSlide(3)">3. Como customizar</li>
+                <li class="menu-item" onclick="goToSlide(4)">4. Encerramento</li>
             </ul>
         </div>
 
         <!-- Slide 3 -->
         <div class="slide">
-            <h1>O que mudou?</h1>
+            <h1>Sistema de Display</h1>
             <p>
-                Eliminamos os botões e áreas invisíveis que travavam o Android. <span class="step">Agora o próprio código descobre de forma inteligente se o seu dedo tocou em um <b>link amarelo</b></span> <span class="step">ou se tocou no fundo verde para passar a página.</span>
+                Trocar de slide usando a técnica de visibilidade total por <span class="step"><b>display: flex/none</b> remove as páginas antigas da memória de cliques.</span> <span class="step">O navegador isola o slide atual e faz os links responderem de primeira no mouse ou touch.</span>
             </p>
         </div>
 
         <!-- Slide 4 -->
         <div class="slide">
-            <h1>Configuração dos Links</h1>
+            <h1>Como customizar</h1>
             <p>
-                Para mudar os destinos, basta alterar o número no atributo <span class="step"><b>data-target="X"</b> direto no HTML.</span> 
-                <span class="step">O primeiro slide equivale a <b>0</b>, o sumário equivale a <b>1</b>,</span> 
-                <span class="step">o terceiro slide equivale a <b>2</b>, e assim por diante.</span>
+                As funções permanecem fáceis de editar. <span class="step">Basta modificar o número dentro do comando <b>goToSlide(X)</b> do menu.</span> 
+                <span class="step">O primeiro slide equivale ao número <b>0</b>, a lousa de links é o número <b>1</b>,</span> 
+                <span class="step">o terceiro slide é o número <b>2</b>, e assim em diante.</span>
             </p>
         </div>
 
         <!-- Slide 5 -->
         <div class="slide">
-            <h1>Fim da Apresentação</h1>
+            <h1>Conclusão</h1>
             <p>
-                O sistema híbrido agora está 100% calibrado. 
-                <span class="step">Aproveite a fluidez da lousa de giz digital</span> 
-                <span class="step">no computador, <b>tablet ou celular Android</b>.</span>
+                Agora a estabilidade está garantida e calibrada para palestras e aulas. 
+                <span class="step">Aproveite a fluidez do quadro negro com o texto surgindo aos poucos</span> 
+                <span class="step">em computadores <b>Apple Mac, Windows, celulares e tablets</b>!</span>
             </p>
         </div>
 
     </div>
 
-    <div class="touch-hint">⬅️ Toque na Esquerda Volta | Toque na Direita Avança | Toque nos Links Amarelos 👆</div>
+    <div class="touch-hint">⬅️ Clique na Borda Esquerda Volta | Borda Direita Avança | Centro Livre para os Links Amarelos 👆</div>
 
     <script {nonce}>
         let currentSlideIdx = 0;
@@ -235,29 +251,6 @@
             return slide.querySelectorAll('.step');
         }
 
-        // 🧠 O CÉREBRO DO SISTEMA DE TOQUE COMPATÍVEL COM ANDROID
-        function handleGlobalClick(event) {
-            // 1. Verifica se o usuário clicou em um item do sumário
-            const clickedElement = event.target;
-            
-            if (clickedElement.classList.contains('menu-item')) {
-                // Se for um link, pega o número do slide e pula para ele direto
-                const targetIdx = parseInt(clickedElement.getAttribute('data-target'), 10);
-                goToSlide(targetIdx);
-                return; // Interrompe aqui para não acionar a mudança de slide do fundo
-            }
-
-            // 2. Se clicou em qualquer outro lugar do quadro, roda a navegação por lados
-            const screenWidth = window.innerWidth;
-            const clickX = event.clientX;
-
-            if (clickX < screenWidth * 0.30) {
-                handleBack();
-            } else {
-                handleAdvance();
-            }
-        }
-
         function handleAdvance() {
             const currentSlide = slides[currentSlideIdx];
             const steps = getSteps(currentSlide);
@@ -278,3 +271,6 @@
             const currentSlide = slides[currentSlideIdx];
             const steps = getSteps(currentSlide);
             
+            for (let i = steps.length - 1; i >= 0; i--) {
+                if (steps[i].classList.contains('show')) {
+                    steps[i].classList.remove('show');
